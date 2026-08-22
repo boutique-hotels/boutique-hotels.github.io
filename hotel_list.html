@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ホテル料金比較</title>
+  <style>
+    :root {
+      --accent: #2563eb;
+      --accent-soft: #eef2ff;
+      --border: #dcdfe4;
+      --text-muted: #6b7280;
+      --bg-stripe: #f9fafb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, "Hiragino Kaku Gothic ProN", sans-serif;
+      padding: 16px;
+      color: #1f2328;
+      background: #fff;
+    }
+    h1 { margin-bottom: 4px; font-size: 22px; }
+    .subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; }
+    h2 { margin-top: 32px; margin-bottom: 10px; font-size: 17px; border-left: 4px solid var(--accent); padding-left: 8px; }
+
+    /* ---- ホテルカード ---- */
+    details > summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 6px 2px;
+      border-left: 4px solid var(--accent);
+      padding-left: 8px;
+      margin-top: 24px;
+    }
+    .hotel-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 10px 0 8px;
+    }
+    .hotel-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 13px;
+      background: #fff;
+    }
+    .hotel-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 14px;
+    }
+    .hotel-card .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 3px 0;
+      color: var(--text-muted);
+    }
+    .hotel-card .row .val { color: #1f2328; text-align: right; }
+    .hotel-card a { color: var(--accent); text-decoration: none; }
+    .hotel-card a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin: 2px 3px 0 0;
+    }
+    .badge.vacant { background: #dcfce7; color: #16a34a; }
+    .badge.full { background: #fee2e2; color: #dc2626; }
+    .badge.na { background: #f3f4f6; color: var(--text-muted); }
+    .amenity-tags { margin-top: 4px; }
+    .amenity-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      padding: 1px 6px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin: 2px 3px 0 0;
+      color: #444;
+    }
+    .no-data { color: #bbb; font-style: italic; }
+
+    /* 料金比較表・部屋比較表: タイトル(summary)も一緒に固定表示 */
+    .sticky-section > summary {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #fff;
+    }
+    .sticky-section .sticky-toolbar {
+      position: sticky;
+      top: var(--summary-h, 34px);
+      z-index: 25;
+      background: #fff;
+      padding: 6px 2px;
+      display: block;
+      width: 100%;
+    }
+    .sticky-section thead th {
+      top: calc(var(--summary-h, 34px) + var(--toolbar-h, 0px));
+      z-index: 20;
+    }
+    .sticky-section th:first-child { z-index: 21; }
+
+    /* ---- 表 ---- */
+    .table-scroll {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 24px;
+    }
+    table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
+    th, td { border-bottom: 1px solid var(--border); border-right: 1px solid #eee; padding: 6px 8px; text-align:center; white-space: nowrap; }
+    th { background: #f4f4f4; position: sticky; top: 0; z-index: 10; cursor: pointer; user-select: none; }
+    th.sortable:hover { background: #eaeaea; }
+    th .sort-arrow { font-size: 10px; color: var(--accent); margin-left: 2px; }
+    /* 1列目（ホテル名）を横スクロールでも固定表示 */
+    th:first-child, td:first-child {
+      position: sticky; left: 0; background: #fff; z-index: 5;
+      text-align: left; white-space: normal; max-width: 160px;
+    }
+    th:first-child { z-index: 15; background: #f4f4f4; }
+    tbody tr:nth-child(even) td { background: var(--bg-stripe); }
+    tbody tr:nth-child(even) td:first-child { background: #f3f4f6; }
+    tbody tr:hover td { background: #eef2ff; }
+    tbody tr:hover td:first-child { background: #e0e7ff; }
+
+    .filter-input { width: 95%; font-size: 12px; }
+    .filter-wide { width: 150px; font-size: 12px; }
+    .filter-range { width: 64px; font-size: 12px; }
+    .filter-row { font-size: 11px; }
+    .clear-btn {
+      margin: 8px 0; padding: 5px 12px; font-size: 12px;
+      border: 1px solid var(--accent); color: var(--accent);
+      background: #fff; border-radius: 5px; cursor: pointer;
+    }
+    .clear-btn:hover { background: var(--accent-soft); }
+    .sticky-toolbar.subtitle { margin: 0; padding-bottom: 10px; }
+
+    @media (max-width: 640px) {
+      body { padding: 8px; }
+      .hotel-cards { grid-template-columns: 1fr; }
+    }
+
+    /* ---- サイドバーメニュー ---- */
+    body {
+      margin-left: 220px;
+      transition: margin-left 0.2s ease;
+    }
+    body.sidebar-collapsed { margin-left: 48px; }
+
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 220px;
+      height: 100vh;
+      background: #f8f9fa;
+      border-right: 1px solid var(--border);
+      padding: 14px 12px;
+      overflow-y: auto;
+      z-index: 200;
+      transition: width 0.2s ease, transform 0.2s ease;
+      box-sizing: border-box;
+    }
+    .sidebar-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .sidebar-brand {
+      font-weight: 700;
+      font-size: 13.5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .sidebar-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1;
+      padding: 5px 8px;
+      color: #444;
+      flex-shrink: 0;
+    }
+    .sidebar-toggle:hover { background: var(--accent-soft); color: var(--accent); }
+    .sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 6px;
+      border-radius: 6px;
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .sidebar nav a:hover { background: var(--accent-soft); color: var(--accent); }
+    .sidebar-icon { width: 18px; text-align: center; flex-shrink: 0; }
+    .sidebar-label { overflow: hidden; text-overflow: ellipsis; }
+
+    /* 折りたたみ（デスクトップ：アイコンのみの細いバーに） */
+    .sidebar.collapsed { width: 48px; padding: 14px 8px; }
+    .sidebar.collapsed .sidebar-brand,
+    .sidebar.collapsed .sidebar-label { display: none; }
+    .sidebar.collapsed .sidebar-top { justify-content: center; }
+
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 150;
+    }
+    .sidebar-backdrop.show { display: block; }
+
+    @media (max-width: 640px) {
+      body { margin-left: 0 !important; }
+      .sidebar {
+        width: 230px;
+        transform: translateX(-100%);
+        box-shadow: 2px 0 14px rgba(0,0,0,0.15);
+      }
+      .sidebar.mobile-open { transform: translateX(0); }
+      .sidebar.collapsed { width: 230px; padding: 14px 12px; }
+      .sidebar.collapsed .sidebar-brand,
+      .sidebar.collapsed .sidebar-label { display: inline; }
+      .sidebar.collapsed .sidebar-top { justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <span class="sidebar-brand">メニュー</span>
+    <button class="sidebar-toggle" id="sidebarToggle" title="メニューの開閉" type="button">☰</button>
+  </div>
+  <nav>
+    <a href="#section-hotels"><span class="sidebar-icon">🏨</span><span class="sidebar-label">ホテル一覧</span></a>
+    <a href="#section-price"><span class="sidebar-icon">💴</span><span class="sidebar-label">料金比較表</span></a>
+    <a href="#section-rooms"><span class="sidebar-icon">🛏️</span><span class="sidebar-label">部屋比較表</span></a>
+  </nav>
+</div>
+
+
+<h1>ホテル料金比較</h1>
+<div class="subtitle">hotels.json を読み込んで自動生成しています</div>
+<div id="content">読み込み中...</div>
+
+<script>
+  // ---- サイドバー開閉 ----
+  (function () {
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("sidebarToggle");
+    const backdrop = document.getElementById("sidebarBackdrop");
+
+    function isMobile() {
+      return window.innerWidth <= 640;
+    }
+
+    let open = !isMobile(); // デスクトップ: デフォルト展開 / モバイル: デフォルト折りたたみ
+
+    function applyState() {
+      if (isMobile()) {
+        sidebar.classList.remove("collapsed");
+        sidebar.classList.toggle("mobile-open", open);
+        backdrop.classList.toggle("show", open);
+        document.body.classList.remove("sidebar-collapsed");
+      } else {
+        sidebar.classList.remove("mobile-open");
+        backdrop.classList.remove("show");
+        sidebar.classList.toggle("collapsed", !open);
+        document.body.classList.toggle("sidebar-collapsed", !open);
+      }
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      open = !open;
+      applyState();
+    });
+
+    backdrop.addEventListener("click", () => {
+      open = false;
+      applyState();
+    });
+
+    // モバイルではメニュー項目タップ後に自動で閉じる／対象セクションが折りたたまれていれば展開する
+    sidebar.querySelectorAll("nav a").forEach(a => {
+      a.addEventListener("click", (e) => {
+        const targetId = a.getAttribute("href").slice(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl && targetEl.tagName === "DETAILS" && !targetEl.open) {
+          e.preventDefault();
+          targetEl.open = true;
+          requestAnimationFrame(() => {
+            targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+        if (isMobile()) {
+          open = false;
+          applyState();
+        }
+      });
+    });
+
+    window.addEventListener("resize", applyState);
+
+    applyState();
+  })();
+
+  fetch("hotels.json")
+    .then(res => res.json())
+    .then(hotels => render(hotels))
+    .catch(err => {
+      document.getElementById("content").textContent = "JSON読み込みエラー: " + err;
+    });
+
+  // プラン種類判定
+  function detectPlanType(planName) {
+    const name = planName.toLowerCase();
+
+    if (name.includes("stay")) return "宿泊";
+    if (name.includes("rest")) return "休憩";
+    if (name.includes("flex") || name.includes("フレックス")) return "フリータイム";
+	if (name.includes("service time") || name.includes("srevice time") || planName.includes("サービスタイム"))
+	  return "フリータイム";
+
+    if (planName.includes("宿泊")) return "宿泊";
+    if (planName.includes("休憩")) return "休憩";
+    if (planName.includes("フリー") || planName.includes("フレックスタイム")) return "フリータイム";
+    if (planName.includes("ショート")) return "ショートタイム";
+
+    return "その他";
+  }
+
+  // 種類一覧を JSON から抽出
+  function getPlanTypes(hotels) {
+    const types = new Set();
+    hotels.forEach(hotel => {
+      hotel.prices.forEach(plan => {
+        types.add(detectPlanType(plan.name));
+      });
+    });
+    return Array.from(types);
+  }
+
+  // 料金抽出（最低料金・最高料金）
+  function parsePriceRange(priceStr) {
+    // 「xxx均一」対応：両方同じ値にする
+    if (priceStr.includes("均一")) {
+      const num = parseInt(priceStr.replace(/[￥,均一]/g, ""));
+      return [num, num];
+    }
+
+    // 通常の「￥5,900～￥15,070」など
+    const nums = priceStr.replace(/[￥,]/g, "").split("～");
+    if (nums.length === 1) {
+      const v = parseInt(nums[0]);
+      return [v, v];
+    }
+    return [parseInt(nums[0]), parseInt(nums[1])];
+  }
+
+
+  // 時間抽出（数値化）
+  // 時間の数値化結果を小数第2位までに丸める（1.5, 2.25 などを綺麗に保つ）
+  function roundHours(h) {
+    return Math.round(h * 100) / 100;
+  }
+
+  function parseTimeToHours(timeZone) {
+    // "最大X時間Y分" または "最大X時間"（Y分は任意）
+    const maxMatch = timeZone.match(/最大\s*([0-9]+)\s*時間(?:\s*([0-9]+)\s*分)?/);
+    if (maxMatch) {
+      const h = parseInt(maxMatch[1]);
+      const min = maxMatch[2] ? parseInt(maxMatch[2]) : 0;
+      return roundHours(h + min / 60);
+    }
+
+    // "X時間Y分" または "X時間"（Y分は任意）
+    const hourMatch = timeZone.match(/([0-9]+)\s*時間(?:\s*([0-9]+)\s*分)?/);
+    if (hourMatch) {
+      const h = parseInt(hourMatch[1]);
+      const min = hourMatch[2] ? parseInt(hourMatch[2]) : 0;
+      return roundHours(h + min / 60);
+    }
+
+    // 時間表記が無く「Y分」のみの場合
+    const minOnlyMatch = timeZone.match(/^\s*([0-9]+)\s*分\s*$/);
+    if (minOnlyMatch) {
+      return roundHours(parseInt(minOnlyMatch[1]) / 60);
+    }
+
+    const rangeMatch = timeZone.match(/([0-9:]+)～(.+)/);
+    if (rangeMatch) {
+      const start = rangeMatch[1];
+      const end = rangeMatch[2];
+
+      const toMinutes = t => {
+        const [h, m] = t.split(":").map(Number);
+        return h * 60 + (m || 0);
+      };
+
+      let s = toMinutes(start);
+      let e = toMinutes(end.replace("翌 ", ""));
+
+      if (end.includes("翌")) e += 24 * 60;
+
+      return roundHours((e - s) / 60);
+    }
+
+    return null;
+  }
+
+  // 曜日判定（完全版）
+  function detectWeekFlags(text) {
+
+    // ============================
+    // 0. ピンポイント例外処理（最優先）
+    // ============================
+
+    const raw = text.replace(/[【】]/g, "").trim();
+
+    // 金 / 金曜 / 金曜日
+    if (/^金$|^金曜$|^金曜日$/.test(raw)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"", 日:"", 祝:"", 祝前:"" };
+    }
+
+    // 土・祝前
+    if (/^土.?祝前$/.test(raw)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"", 土:"○", 日:"", 祝:"", 祝前:"○" };
+    }
+
+    // 日・祝
+    if (/^日.?祝$/.test(raw)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"", 土:"", 日:"○", 祝:"○", 祝前:"" };
+    }
+
+    // 土・特日 → 特日は祝扱い
+    if (/^土.?特日$/.test(raw)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"", 土:"○", 日:"", 祝:"○", 祝前:"" };
+    }
+
+    // 金・祝前
+    if (/^金.?祝前$/.test(raw)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"", 日:"", 祝:"", 祝前:"○" };
+    }
+
+    // 金・土・日・祝・祝前
+    if (/^金.?土.?日.?祝.?祝前$/.test(raw)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"○", 日:"○", 祝:"○", 祝前:"○" };
+    }
+
+
+    // ============================
+    // 1. クレンジング辞書（表記ゆれ吸収）
+    // ============================
+    const CLEANSE_MAP = {
+      // 単独曜日（日本語）
+      "月": "月", "火": "火", "水": "水", "木": "木",
+      "金": "金", "土": "土", "日": "日",
+
+      "月曜": "月", "月曜日": "月",
+      "火曜": "火", "火曜日": "火",
+      "水曜": "水", "水曜日": "水",
+      "木曜": "木", "木曜日": "木",
+      "金曜": "金", "金曜日": "金",
+      "土曜": "土", "土曜日": "土",
+      "日曜": "日", "日曜日": "日",
+
+      // 英語 → 日本語
+      "friday": "金",
+      "sataday": "土",
+      "saturday": "土",
+      "sunday": "日",
+      "week day": ["月","火","水","木","金"],
+      "weekday": ["月","火","水","木","金"],
+      "holidays": "祝",
+      "before holidays": "祝前",
+
+      // 特殊語
+      "平日": ["月","火","水","木","金"],
+      "週末": ["土","日","祝"],
+      "休日": ["日","祝"],
+      "特日": "祝",
+      "祝前日": "祝前",
+      "祝中": "祝",
+      "全日": ["月","火","水","木","金","土","日","祝","祝前"],
+
+      // 無視語
+      "連休中日": null,
+      "連休中": null,
+      "特別日": "祝",
+      "1部": null,
+      "2部": null,
+      "I部": null,
+      "II部": null,
+      "Aタイプ": null,
+      "Bタイプ": null,
+      "ランク": null,
+    };
+
+
+    // ============================
+    // 2. クレンジング（辞書＋前処理）
+    // ============================
+    function cleanseWeekText(raw) {
+      if (!raw) return [];
+
+      let t = raw.toLowerCase();
+
+      // 条件文削除
+      t = t.split("※")[0];
+      t = t.replace(/（チェックイン.*?）/g, "");
+      t = t.replace(/\(チェックイン.*?\)/g, "");
+
+      // 部制削除
+      t = t.replace(/1部|2部|I部|II部/g, "");
+
+      // ランク条件削除
+      t = t.replace(/Aランク|Bランク|Cランク|Dランク|Eランク/g, "");
+
+      // 括弧削除
+      t = t.replace(/[（）\(\)［］【】]/g, "");
+
+      // 全角中点統一
+      t = t.replace(/･/g, "・");
+
+      // 連結語分割
+      t = t.replace(/土日祝/g, "土・日・祝");
+      t = t.replace(/土日/g, "土・日");
+
+      // 英語→日本語（辞書）
+      Object.keys(CLEANSE_MAP).forEach(key => {
+        const lowerKey = key.toLowerCase();
+        if (t.includes(lowerKey)) {
+          const v = CLEANSE_MAP[key];
+          const rep = Array.isArray(v) ? v.join("・") : (v || "");
+          t = t.replace(new RegExp(lowerKey, "g"), rep);
+        }
+      });
+
+      // トークン化
+      let tokens = t.split(/・|\/|／|,/)
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+
+      return tokens;
+    }
+
+
+    // ============================
+    // 3. 構造解析（意味抽出）
+    // ============================
+    function interpretWeekTokens(tokens) {
+      const flags = {
+        "月": "", "火": "", "水": "", "木": "", "金": "", "土": "", "日": "", "祝": "", "祝前": ""
+      };
+
+      const days = ["日","月","火","水","木","金","土"];
+
+      let excludeHoliday = false;
+      let excludeBeforeHoliday = false;
+
+      tokens.forEach(token => {
+
+        // 除く系
+        if (token.includes("除く")) {
+          if (token.includes("祝前")) excludeBeforeHoliday = true;
+          if (token.includes("祝")) excludeHoliday = true;
+          if (token.includes("特日")) excludeHoliday = true;
+          return;
+        }
+
+        // 区間系
+        const range = token.match(/([日月火水木金土])曜?～([日月火水木金土])曜?/);
+        if (range) {
+          const s = days.indexOf(range[1]);
+          const e = days.indexOf(range[2]);
+          for (let i = s; i <= e; i++) flags[days[i]] = "○";
+          return;
+        }
+
+        // 複数系
+        const parts = token.split(/・/);
+        if (parts.length > 1) {
+          parts.forEach(p => {
+            if (CLEANSE_MAP[p]) {
+              const v = CLEANSE_MAP[p];
+              if (Array.isArray(v)) {
+                v.forEach(d => flags[d] = "○");
+              } else if (v) {
+                flags[v] = "○";
+              }
+            } else if (days.includes(p)) {
+              flags[p] = "○";
+            }
+          });
+          return;
+        }
+
+        // 特殊語
+        if (token === "平日") {
+          ["月","火","水","木","金"].forEach(d => flags[d] = "○");
+          return;
+        }
+        if (token === "週末") {
+          ["土","日","祝"].forEach(d => flags[d] = "○");
+          return;
+        }
+        if (token === "休日") {
+          ["日","祝"].forEach(d => flags[d] = "○");
+          return;
+        }
+        if (token === "特日") {
+          flags["祝"] = "○";
+          return;
+        }
+        if (token === "全日") {
+          ["月","火","水","木","金","土","日","祝","祝前"].forEach(d => flags[d] = "○");
+          return;
+        }
+
+        // 単独曜日
+        if (days.includes(token)) {
+          flags[token] = "○";
+          return;
+        }
+
+        // 祝前
+        if (token === "祝前") {
+          flags["祝前"] = "○";
+          return;
+        }
+
+        // 祝
+        if (token === "祝" || token === "祝日") {
+          flags["祝"] = "○";
+          return;
+        }
+      });
+
+      // 除く処理
+      if (excludeHoliday) flags["祝"] = "";
+      if (excludeBeforeHoliday) flags["祝前"] = "";
+
+      return flags;
+    }
+
+
+    // ============================
+    // 4. 最終判定（辞書＋構造解析のハイブリッド）
+    // ============================
+    const tokens = cleanseWeekText(text);
+    return interpretWeekTokens(tokens);
+  }
+
+
+  function render(hotels) {
+    const container = document.getElementById("content");
+    container.innerHTML = "";
+
+    // ---- ホテル基本情報カード（アクセス・設備・口コミ・在庫） ----
+    const cardDetails = document.createElement("details");
+    cardDetails.id = "section-hotels";
+    cardDetails.innerHTML = `<summary id="cardSummary">ホテル一覧（${hotels.length}件・クリックで展開）</summary>`;
+
+    // フィルタツールバー
+    const amenitySet = new Set();
+    hotels.forEach(h => {
+      const amenities = h.amenities || {};
+      Object.values(amenities).forEach(items => items.forEach(a => amenitySet.add(a)));
+    });
+    const amenityOptions = Array.from(amenitySet).sort((a, b) => a.localeCompare(b, "ja"));
+
+    const cardToolbar = document.createElement("div");
+    cardToolbar.style.cssText = "margin:10px 0 4px; font-size:12px; display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end;";
+    cardToolbar.innerHTML = `
+      <div>
+        <div style="color:var(--text-muted);margin-bottom:2px;">口コミ評価（以上）</div>
+        <input id="cardMinReview" type="number" step="0.1" min="0" max="5" class="filter-range" placeholder="例: 4.0">
+      </div>
+      <div>
+        <div style="color:var(--text-muted);margin-bottom:2px;">在庫</div>
+        <label style="display:flex;align-items:center;gap:4px;">
+          <input id="cardVacantOnly" type="checkbox"> 空室ありのみ
+        </label>
+      </div>
+      <div>
+        <div style="color:var(--text-muted);margin-bottom:2px;">設備（すべて満たす）</div>
+        <select id="cardAmenityFilter" class="filter-wide" multiple size="1" style="min-width:180px;">
+          ${amenityOptions.map(a => `<option value="${a}">${a}</option>`).join("")}
+        </select>
+      </div>
+      <button id="cardClearBtn" class="clear-btn" type="button">条件クリア</button>
+      <div id="cardResultCount" style="color:var(--text-muted);"></div>
+    `;
+
+    const cardGrid = document.createElement("div");
+    cardGrid.className = "hotel-cards";
+
+    function buildHotelCard(h) {
+      const card = document.createElement("div");
+      card.className = "hotel-card";
+
+      // アクセス
+      const access = h.access || {};
+      let accessHtml = `<span class="no-data">情報なし</span>`;
+      if (access.stations && access.stations.length) {
+        accessHtml = access.stations.map(s => {
+          if (s.station) {
+            return s.walk_min ? `${s.station}（徒歩${s.walk_min}分）` : s.station;
+          }
+          return "";
+        }).filter(Boolean).join("、");
+      }
+      if (accessHtml === "" ) accessHtml = `<span class="no-data">情報なし</span>`;
+      const mapLink = access.map_url
+        ? ` <a href="${access.map_url}" target="_blank">地図</a>`
+        : "";
+
+      // 口コミ
+      const review = h.review || {};
+      const reviewHtml = (review.score != null)
+        ? `★ ${review.score}${review.count != null ? `（${review.count}件）` : ""}`
+        : `<span class="no-data">未取得</span>`;
+
+      // 在庫（reservePlans由来のリアルタイム空室情報）
+      const vac = h.vacancy || {};
+      let vacBadge = `<span class="badge na">情報なし</span>`;
+      let vacDetailHtml = "";
+      if (vac.details && vac.details.length) {
+        if (vac.has_vacancy === true) {
+          vacBadge = `<span class="badge vacant">空室あり（最大${vac.max_stock}室）</span>`;
+        } else if (vac.has_vacancy === false) {
+          vacBadge = `<span class="badge full">満室</span>`;
+        }
+        // プランごとの空室内訳（上位3件まで表示）
+        vacDetailHtml = `<div class="amenity-tags">` + vac.details.slice(0, 3).map(d => {
+          const label = d.room_rank_name ? `${d.plan_name}/${d.room_rank_name}` : d.plan_name;
+          return `<span class="amenity-tag">${label}: ${d.stock_text ?? "—"}</span>`;
+        }).join("") + `</div>`;
+      }
+
+      // アメニティ（カテゴリごとのdict）
+      const amenities = h.amenities || {};
+      const amenityKeys = Object.keys(amenities);
+      const amenityHtml = amenityKeys.length
+        ? amenityKeys.map(cat => `
+            <div style="margin-top:4px;"><b style="font-size:11.5px;">${cat}</b>
+              <div class="amenity-tags">${amenities[cat].map(a => `<span class="amenity-tag">${a}</span>`).join("")}</div>
+            </div>`).join("")
+        : `<div class="amenity-tags"><span class="no-data">情報なし</span></div>`;
+
+      card.innerHTML = `
+        <h3>${h.name || "(名称不明)"}</h3>
+        <div class="row"><span>住所</span><span class="val">${h.address || "—"}</span></div>
+        <div class="row"><span>アクセス</span><span class="val">${accessHtml}${mapLink}</span></div>
+        <div class="row"><span>口コミ</span><span class="val">${reviewHtml}</span></div>
+        <div class="row"><span>在庫</span><span class="val">${vacBadge}</span></div>
+        ${vacDetailHtml}
+        <div style="margin-top:6px;">設備</div>
+        ${amenityHtml}
+      `;
+      return card;
+    }
+
+    function hotelAmenityFlatList(h) {
+      const amenities = h.amenities || {};
+      return Object.values(amenities).flat();
+    }
+
+    function drawCards() {
+      const minReviewRaw = document.getElementById("cardMinReview").value;
+      const minReview = minReviewRaw !== "" ? parseFloat(minReviewRaw) : null;
+      const vacantOnly = document.getElementById("cardVacantOnly").checked;
+      const selectedAmenities = Array.from(document.getElementById("cardAmenityFilter").selectedOptions).map(o => o.value);
+
+      const filtered = hotels.filter(h => {
+        if (minReview != null) {
+          const score = h.review && h.review.score != null ? parseFloat(h.review.score) : null;
+          if (score == null || isNaN(score) || score < minReview) return false;
+        }
+        if (vacantOnly) {
+          if (!(h.vacancy && h.vacancy.has_vacancy === true)) return false;
+        }
+        if (selectedAmenities.length) {
+          const flat = hotelAmenityFlatList(h);
+          const hasAll = selectedAmenities.every(a => flat.includes(a));
+          if (!hasAll) return false;
+        }
+        return true;
+      });
+
+      cardGrid.innerHTML = "";
+      filtered.forEach(h => cardGrid.appendChild(buildHotelCard(h)));
+      document.getElementById("cardResultCount").textContent =
+        `${filtered.length} / ${hotels.length} 件表示中`;
+    }
+
+    cardDetails.appendChild(cardToolbar);
+    cardDetails.appendChild(cardGrid);
+    container.appendChild(cardDetails);
+
+    drawCards();
+    document.getElementById("cardMinReview").addEventListener("input", drawCards);
+    document.getElementById("cardVacantOnly").addEventListener("change", drawCards);
+    document.getElementById("cardAmenityFilter").addEventListener("change", drawCards);
+    document.getElementById("cardClearBtn").addEventListener("click", () => {
+      document.getElementById("cardMinReview").value = "";
+      document.getElementById("cardVacantOnly").checked = false;
+      Array.from(document.getElementById("cardAmenityFilter").options).forEach(o => o.selected = false);
+      drawCards();
+    });
+
+    const planTypes = getPlanTypes(hotels);
+
+    const priceDetails = document.createElement("details");
+    priceDetails.id = "section-price";
+    priceDetails.className = "sticky-section";
+    priceDetails.open = true;
+    priceDetails.innerHTML = `<summary>料金比較表</summary>`;
+    container.appendChild(priceDetails);
+
+    const clearBtnWrap = document.createElement("div");
+    clearBtnWrap.className = "sticky-toolbar";
+    const clearBtn = document.createElement("button");
+    clearBtn.textContent = "フィルタをクリア";
+    clearBtn.className = "clear-btn";
+    clearBtnWrap.appendChild(clearBtn);
+    priceDetails.appendChild(clearBtnWrap);
+
+    const priceTable = document.createElement("table");
+    priceTable.id = "priceTable";
+    priceTable.innerHTML = `
+      <thead>
+        <tr>
+          <th class="sortable" data-col="hotel">ホテル名 <span class="sort-arrow" data-arrow="hotel"></span><br>
+            <input id="filterHotel" class="filter-wide" placeholder="部分一致検索">
+          </th>
+          <th class="sortable" data-col="plan">プラン名 <span class="sort-arrow" data-arrow="plan"></span><br>
+            <input id="filterPlan" class="filter-wide" placeholder="部分一致検索">
+          </th>
+          <th class="sortable" data-col="type">種類 <span class="sort-arrow" data-arrow="type"></span><br>
+            <select id="filterType" class="filter-wide" multiple>
+              ${planTypes.map(t => `<option value="${t}">${t}</option>`).join("")}
+            </select>
+          </th>
+          <th>料金（元データ）</th>
+          <th class="sortable" data-col="minPrice">最低料金 <span class="sort-arrow" data-arrow="minPrice"></span><br>
+            <input id="minPrice" type="number" class="filter-range" placeholder="min">
+          </th>
+          <th class="sortable" data-col="maxPrice">最高料金 <span class="sort-arrow" data-arrow="maxPrice"></span><br>
+            <input id="maxPrice" type="number" class="filter-range" placeholder="max">
+          </th>
+          <th>時間条件（元データ）<br>
+            <input id="filterTimeZone" class="filter-input" placeholder="部分一致検索">
+          </th>
+          <th class="sortable" data-col="hours">時間（数値化） <span class="sort-arrow" data-arrow="hours"></span><br>
+            <input id="minHours" type="number" class="filter-range" placeholder="min">
+            <input id="maxHours" type="number" class="filter-range" placeholder="max">
+          </th>
+          <th>曜日（元データ）</th>
+		  <th class="filter-row">月<br><input type="checkbox" name="week" value="月"></th>
+		  <th class="filter-row">火<br><input type="checkbox" name="week" value="火"></th>
+		  <th class="filter-row">水<br><input type="checkbox" name="week" value="水"></th>
+		  <th class="filter-row">木<br><input type="checkbox" name="week" value="木"></th>
+		  <th class="filter-row">金<br><input type="checkbox" name="week" value="金"></th>
+		  <th class="filter-row">土<br><input type="checkbox" name="week" value="土"></th>
+		  <th class="filter-row">日<br><input type="checkbox" name="week" value="日"></th>
+		  <th class="filter-row">祝<br><input type="checkbox" name="week" value="祝"></th>
+		  <th class="filter-row">祝前<br><input type="checkbox" name="week" value="祝前"></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+    const priceScroll = document.createElement("div");
+    priceScroll.className = "table-scroll";
+    priceScroll.appendChild(priceTable);
+    priceDetails.appendChild(priceScroll);
+
+    const priceBody = priceTable.querySelector("tbody");
+    let sortState = { column: null, asc: true };
+
+    function drawTable() {
+      priceBody.innerHTML = "";
+
+      const hotelFilter = document.getElementById("filterHotel").value.toLowerCase();
+      const planFilter = document.getElementById("filterPlan").value.toLowerCase();
+      const typeFilter = Array.from(document.getElementById("filterType").selectedOptions).map(o => o.value);
+      const timeZoneFilter = document.getElementById("filterTimeZone").value.toLowerCase();
+
+      const minPrice = parseInt(document.getElementById("minPrice").value) || 0;
+      const maxPrice = parseInt(document.getElementById("maxPrice").value) || Infinity;
+
+      const minHours = parseInt(document.getElementById("minHours").value) || 0;
+      const maxHours = parseInt(document.getElementById("maxHours").value) || Infinity;
+
+      const weekChecks = Array.from(document.querySelectorAll("input[name='week']:checked")).map(c => c.value);
+
+      let rows = [];
+
+      hotels.forEach(hotel => {
+        hotel.prices.forEach(plan => {
+          const planType = detectPlanType(plan.name);
+
+          plan.priceInfo.forEach(info => {
+			// const flags = detectWeekFlags(info.week + " " + plan.name);
+			let flags = detectWeekFlags(info.week);
+
+			// ○が1つも付いていない場合 → plan.name でも判定する
+			if (!Object.values(flags).includes("○")) {
+			  flags = detectWeekFlags(plan.name);
+			}
+
+            info.timePrice.forEach(tp => {
+              const [minP, maxP] = parsePriceRange(tp.price);
+              const hours = parseTimeToHours(tp.timeZone);
+
+              if (hotelFilter && !hotel.name.toLowerCase().includes(hotelFilter)) return;
+              if (planFilter && !plan.name.toLowerCase().includes(planFilter)) return;
+              if (typeFilter.length && !typeFilter.includes(planType)) return;
+              if (timeZoneFilter && !tp.timeZone.toLowerCase().includes(timeZoneFilter)) return;
+
+              if (minP < minPrice || maxP > maxPrice) return;
+              if (hours !== null && (hours < minHours || hours > maxHours)) return;
+
+              if (weekChecks.length) {
+                let ok = false;
+                weekChecks.forEach(w => {
+                  if (flags[w] === "○") ok = true;
+                });
+                if (!ok) return;
+              }
+
+              rows.push({
+                hotel: hotel.name,
+                plan: plan.name,
+                type: planType,
+                priceRaw: tp.price,
+                minPrice: minP,
+                maxPrice: maxP,
+                timeZone: tp.timeZone,
+                hours: hours,
+                weekText: info.week,
+                flags: flags
+              });
+            });
+          });
+        });
+      });
+
+      if (sortState.column) {
+        rows.sort((a, b) => {
+          let va = a[sortState.column];
+          let vb = b[sortState.column];
+          let cmp;
+          if (typeof va === "string" || typeof vb === "string") {
+            cmp = String(va ?? "").localeCompare(String(vb ?? ""), "ja");
+          } else {
+            va = va ?? -Infinity;
+            vb = vb ?? -Infinity;
+            cmp = va - vb;
+          }
+          return sortState.asc ? cmp : -cmp;
+        });
+      }
+
+      // ヘッダーの並び替え矢印を更新
+      priceTable.querySelectorAll(".sort-arrow").forEach(el => {
+        const col = el.dataset.arrow;
+        el.textContent = (sortState.column === col) ? (sortState.asc ? "▲" : "▼") : "";
+      });
+
+      rows.forEach(r => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${r.hotel}</td>
+          <td>${r.plan}</td>
+          <td>${r.type}</td>
+          <td>${r.priceRaw}</td>
+          <td>${r.minPrice}</td>
+          <td>${r.maxPrice}</td>
+          <td>${r.timeZone}</td>
+          <td>${r.hours ?? ""}</td>
+          <td>${r.weekText}</td>
+		  <td>${r.flags["月"]}</td>
+		  <td>${r.flags["火"]}</td>
+		  <td>${r.flags["水"]}</td>
+		  <td>${r.flags["木"]}</td>
+		  <td>${r.flags["金"]}</td>
+		  <td>${r.flags["土"]}</td>
+		  <td>${r.flags["日"]}</td>
+		  <td>${r.flags["祝"]}</td>
+		  <td>${r.flags["祝前"]}</td>
+        `;
+        priceBody.appendChild(tr);
+      });
+    }
+
+    drawTable();
+
+    document.querySelectorAll("input,select").forEach(el => {
+      el.oninput = drawTable;
+      el.onchange = drawTable;
+    });
+
+    priceTable.querySelectorAll("th.sortable").forEach(th => {
+      th.addEventListener("click", (e) => {
+        // ヘッダー内の input/select クリック時はソートを発火させない
+        if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+        const col = th.dataset.col;
+        if (sortState.column === col) {
+          sortState.asc = !sortState.asc;
+        } else {
+          sortState.column = col;
+          sortState.asc = true;
+        }
+        drawTable();
+      });
+    });
+
+    clearBtn.onclick = () => {
+      document.querySelectorAll("input").forEach(el => {
+        if (el.type === "checkbox") el.checked = false;
+        else el.value = "";
+      });
+      document.getElementById("filterType").selectedIndex = -1;
+      sortState = { column: null, asc: true };
+      drawTable();
+    };
+
+	const roomDetails = document.createElement("details");
+	roomDetails.id = "section-rooms";
+	roomDetails.className = "sticky-section";
+	roomDetails.open = true;
+	roomDetails.innerHTML = `<summary>部屋比較表</summary>`;
+	container.appendChild(roomDetails);
+
+	const roomNote = document.createElement("div");
+	roomNote.className = "subtitle sticky-toolbar";
+	roomNote.textContent = "※「在庫参考値」は部屋の空室状況ではなく、キープ機能（仮予約）対応の可能性がある値（keep_flag・要検証）です。リアルタイムの空室状況は上のホテルカードの「在庫」を参照してください。";
+	roomDetails.appendChild(roomNote);
+
+	// ---- 部屋データをフラット化 ----
+	const allRoomRows = [];
+	hotels.forEach(hotel => {
+	  hotel.rooms.forEach(room => {
+	    allRoomRows.push({
+	      hotelName: hotel.name ?? "",
+	      roomNo: room.room_no ?? null,
+	      roomName: room.room_name ?? "",
+	      typeName: room.type_name ?? "",
+	      rankId: room.rank_id ?? null,
+	      keepFlag: (room.keep_flag === undefined || room.keep_flag === null) ? null : room.keep_flag,
+	      image: room.image ?? "",
+	    });
+	  });
+	});
+
+	const keepValues = Array.from(new Set(allRoomRows.map(r => r.keepFlag)))
+	  .sort((a, b) => {
+	    if (a === null) return 1;
+	    if (b === null) return -1;
+	    return a - b;
+	  });
+
+	const roomTable = document.createElement("table");
+	roomTable.innerHTML = `
+	  <thead>
+	    <tr>
+	      <th class="sortable" data-col="hotelName">ホテル名 <span class="sort-arrow" data-arrow="hotelName"></span></th>
+	      <th class="sortable" data-col="roomNo">部屋番号 <span class="sort-arrow" data-arrow="roomNo"></span></th>
+	      <th class="sortable" data-col="roomName">部屋名 <span class="sort-arrow" data-arrow="roomName"></span></th>
+	      <th class="sortable" data-col="typeName">タイプ名 <span class="sort-arrow" data-arrow="typeName"></span></th>
+	      <th class="sortable" data-col="rankId">グレードID <span class="sort-arrow" data-arrow="rankId"></span></th>
+	      <th class="sortable" data-col="keepFlag">在庫参考値 <span class="sort-arrow" data-arrow="keepFlag"></span><br>
+	        <span style="font-weight:normal;font-size:10px;color:#888;">(keep_flag・要検証)</span><br>
+	        <select id="filterKeepValue" class="filter-range">
+	          <option value="">すべて</option>
+	          ${keepValues.map(v => `<option value="${v === null ? "" : v}">${v === null ? "不明" : v}</option>`).join("")}
+	        </select>
+	      </th>
+	      <th>画像</th>
+	    </tr>
+	  </thead>
+	  <tbody></tbody>
+	`;
+	const roomBody = roomTable.querySelector("tbody");
+
+	let roomSortState = { column: null, asc: true };
+
+	function drawRoomTable() {
+	  let rows = allRoomRows.filter(r => {
+	    if (document.getElementById("filterKeepValue").selectedIndex > 0) {
+	      const sel = document.getElementById("filterKeepValue").value;
+	      const rVal = r.keepFlag === null ? "" : String(r.keepFlag);
+	      if (sel !== rVal) return false;
+	    }
+	    return true;
+	  });
+
+	  if (roomSortState.column) {
+	    rows = rows.slice().sort((a, b) => {
+	      let va = a[roomSortState.column];
+	      let vb = b[roomSortState.column];
+	      let cmp;
+	      if (typeof va === "string" || typeof vb === "string") {
+	        cmp = String(va ?? "").localeCompare(String(vb ?? ""), "ja");
+	      } else {
+	        va = va ?? -Infinity;
+	        vb = vb ?? -Infinity;
+	        cmp = va - vb;
+	      }
+	      return roomSortState.asc ? cmp : -cmp;
+	    });
+	  }
+
+	  roomTable.querySelectorAll("[data-arrow]").forEach(el => {
+	    const col = el.dataset.arrow;
+	    el.textContent = (roomSortState.column === col) ? (roomSortState.asc ? "▲" : "▼") : "";
+	  });
+
+	  roomBody.innerHTML = "";
+	  rows.forEach(r => {
+	    const tr = document.createElement("tr");
+	    const keepDisplay = r.keepFlag === null ? "—" : r.keepFlag;
+	    tr.innerHTML = `
+	      <td>${r.hotelName}</td>
+	      <td>${r.roomNo ?? "—"}</td>
+	      <td>${r.roomName}</td>
+	      <td>${r.typeName}</td>
+	      <td>${r.rankId ?? "—"}</td>
+	      <td>${keepDisplay}</td>
+	      <td>
+	        <a href="${r.image}" target="_blank">
+	          <img src="${r.image}" style="width:80px;height:auto;border-radius:4px;">
+	        </a>
+	      </td>
+	    `;
+	    roomBody.appendChild(tr);
+	  });
+	}
+
+	roomTable.querySelectorAll("th.sortable").forEach(th => {
+	  th.addEventListener("click", (e) => {
+	    if (e.target.tagName === "SELECT" || e.target.tagName === "OPTION") return;
+	    const col = th.dataset.col;
+	    if (roomSortState.column === col) {
+	      roomSortState.asc = !roomSortState.asc;
+	    } else {
+	      roomSortState.column = col;
+	      roomSortState.asc = true;
+	    }
+	    drawRoomTable();
+	  });
+	});
+
+	const roomScroll = document.createElement("div");
+	roomScroll.className = "table-scroll";
+	roomScroll.appendChild(roomTable);
+	roomDetails.appendChild(roomScroll);
+
+	drawRoomTable();
+	document.getElementById("filterKeepValue").addEventListener("change", drawRoomTable);
+
+	syncStickyOffsets();
+  }
+
+  // 「料金比較表」「部屋比較表」のタイトル(summary)と、直下のツールバー
+  // （フィルタをクリア／在庫参考値の注記）の実測高さを、
+  // 各セクション配下のthead th の sticky top オフセットに反映する
+  function updateSectionStickyLayout(sec) {
+    const summary = sec.querySelector(":scope > summary");
+    const toolbar = sec.querySelector(":scope > .sticky-toolbar");
+    const scrollArea = sec.querySelector(".table-scroll");
+    const tableEl = scrollArea ? scrollArea.querySelector("table") : null;
+
+    // タイトル・ツールバーの幅を「ブラウザの表示幅」ではなく「表(table要素)の実際の幅」に合わせる。
+    // .table-scroll は overflow を持たないため、中の table が min-width で
+    // はみ出しても div 自体は広がらない。そのため div ではなく table 自身の
+    // レンダリング幅を測る必要がある。
+    // +2px は端数（サブピクセル）による1pxの透けすき間を防ぐための安全マージン。
+    if (tableEl) {
+      const tableWidth = (Math.ceil(tableEl.getBoundingClientRect().width) + 2) + "px";
+      if (summary) summary.style.width = tableWidth;
+      if (toolbar) toolbar.style.width = tableWidth;
+    }
+
+    if (summary) {
+      sec.style.setProperty("--summary-h", summary.getBoundingClientRect().height + "px");
+    }
+    if (toolbar) {
+      sec.style.setProperty("--toolbar-h", toolbar.getBoundingClientRect().height + "px");
+    } else {
+      sec.style.setProperty("--toolbar-h", "0px");
+    }
+  }
+
+  function syncStickyOffsets() {
+    document.querySelectorAll(".sticky-section").forEach(updateSectionStickyLayout);
+  }
+  window.addEventListener("resize", syncStickyOffsets);
+
+  // 表のサイズは、フィルタ操作や画像読み込み、フォント確定などで
+  // レイアウト後にも変化しうるため、ResizeObserverで継続的に幅を追従させる。
+  if (typeof ResizeObserver !== "undefined") {
+    document.querySelectorAll(".sticky-section").forEach(sec => {
+      const tableEl = sec.querySelector(".table-scroll table");
+      if (tableEl) {
+        const ro = new ResizeObserver(() => updateSectionStickyLayout(sec));
+        ro.observe(tableEl);
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
