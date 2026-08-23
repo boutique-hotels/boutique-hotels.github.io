@@ -92,18 +92,18 @@
     }
     .no-data { color: #bbb; font-style: italic; }
 
-    /* 料金比較表・部屋比較表: タイトル(summary)も一緒に固定表示 */
-    /* summary は既定で display:list-item になっており、position:sticky との
-       組み合わせが一部ブラウザ（特にモバイル）で不安定なため、display:block に
-       変更する。失われる開閉の▼マークは疑似要素で自前で再現する。 */
+    /* 料金比較表・部屋比較表: タイトル・ツールバー・列見出しの固定表示
+       CSSの position:sticky はブラウザ（特にモバイル）によって挙動が不安定なため、
+       JS側でスクロール位置を見て position:fixed を直接切り替える方式にしている。
+       ここでは基本スタイルのみを定義し、position/top/left/width はJSが
+       インラインstyleで都度セットする。 */
     .sticky-section > summary {
       display: block;
       list-style: none;
       cursor: pointer;
-      position: sticky;
-      top: 0;
       z-index: 30;
       background: #fff;
+      box-sizing: border-box;
     }
     .sticky-section > summary::-webkit-details-marker { display: none; }
     .sticky-section > summary::before {
@@ -116,19 +116,26 @@
       content: "▼";
     }
     .sticky-section .sticky-toolbar {
-      position: sticky;
-      top: var(--summary-h, 34px);
       z-index: 25;
       background: #fff;
       padding: 6px 2px;
       display: block;
-      width: 100%;
+      box-sizing: border-box;
     }
     .sticky-section thead th {
-      top: calc(var(--summary-h, 34px) + var(--toolbar-h, 0px));
+      position: static;
       z-index: 20;
+      box-sizing: border-box;
     }
-    .sticky-section th:first-child { z-index: 21; }
+    /* 横スクロール時の1列目固定(sticky-left)は、縦方向のJS fixed制御と
+       競合するため sticky-section 内では無効化する（トレードオフ） */
+    .sticky-section th:first-child,
+    .sticky-section td:first-child {
+      position: static;
+      left: auto;
+      z-index: auto;
+    }
+    .sticky-spacer { display: none; }
 
     /* ---- 表 ---- */
     .table-scroll {
@@ -144,7 +151,7 @@
     /* 1列目（ホテル名）を横スクロールでも固定表示 */
     th:first-child, td:first-child {
       position: sticky; left: 0; background: #fff; z-index: 5;
-      text-align: left; white-space: normal; max-width: 160px;
+      text-align: left; white-space: normal; max-width: 260px;
     }
     th:first-child { z-index: 15; background: #f4f4f4; }
     tbody tr:nth-child(even) td { background: var(--bg-stripe); }
@@ -156,6 +163,18 @@
     .filter-wide { width: 150px; font-size: 12px; }
     .filter-range { width: 64px; font-size: 12px; }
     .filter-row { font-size: 11px; }
+    /* プラン名: 通常のfilter-wideの約半分幅 */
+    .filter-half-wide { width: 75px; font-size: 12px; }
+    /* 種類: 「ショートタイム」が1行に収まる程度の幅 */
+    .filter-type-select { width: 105px; font-size: 12px; }
+    /* 時間（数値化）: min/maxを縦に並べるので個々の入力欄は狭くてよい */
+    .filter-range-narrow { width: 46px; font-size: 12px; }
+    .filter-range-stack { display: flex; flex-direction: column; gap: 3px; align-items: center; }
+    /* プラン名列は長い文言でも折り返して列幅を抑える */
+    .sticky-section td:nth-child(2), .sticky-section th:nth-child(2) {
+      max-width: 90px;
+      white-space: normal;
+    }
     .clear-btn {
       margin: 8px 0; padding: 5px 12px; font-size: 12px;
       border: 1px solid var(--accent); color: var(--accent);
@@ -183,7 +202,8 @@
 
       /* フォーム部品のタップ領域を確保（44px目安） */
       input[type="text"], input[type="number"], input.filter-input,
-      input.filter-wide, input.filter-range, select {
+      input.filter-wide, input.filter-range, input.filter-half-wide,
+      input.filter-range-narrow, select, select.filter-type-select {
         font-size: 14px;
         min-height: 34px;
         padding: 4px 6px;
@@ -210,7 +230,7 @@
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
       table { font-size: 12px; }
       th, td { padding: 5px 6px; }
-      th:first-child, td:first-child { max-width: 120px; }
+      th:first-child, td:first-child { max-width: 160px; }
 
       /* ホテルカードの内訳タグも詰めて表示 */
       .amenity-tag, .badge { font-size: 10px; }
@@ -926,10 +946,10 @@
             <input id="filterHotel" class="filter-wide" placeholder="部分一致検索">
           </th>
           <th class="sortable" data-col="plan">プラン名 <span class="sort-arrow" data-arrow="plan"></span><br>
-            <input id="filterPlan" class="filter-wide" placeholder="部分一致検索">
+            <input id="filterPlan" class="filter-half-wide" placeholder="部分一致検索">
           </th>
           <th class="sortable" data-col="type">種類 <span class="sort-arrow" data-arrow="type"></span><br>
-            <select id="filterType" class="filter-wide" multiple>
+            <select id="filterType" class="filter-type-select" multiple>
               ${planTypes.map(t => `<option value="${t}">${t}</option>`).join("")}
             </select>
           </th>
@@ -944,8 +964,10 @@
             <input id="filterTimeZone" class="filter-input" placeholder="部分一致検索">
           </th>
           <th class="sortable" data-col="hours">時間（数値化） <span class="sort-arrow" data-arrow="hours"></span><br>
-            <input id="minHours" type="number" class="filter-range" placeholder="min">
-            <input id="maxHours" type="number" class="filter-range" placeholder="max">
+            <div class="filter-range-stack">
+              <input id="minHours" type="number" class="filter-range-narrow" placeholder="min">
+              <input id="maxHours" type="number" class="filter-range-narrow" placeholder="max">
+            </div>
           </th>
           <th>曜日（元データ）</th>
 		  <th class="filter-row">月<br><input type="checkbox" name="week" value="月"></th>
@@ -1256,56 +1278,217 @@
 	drawRoomTable();
 	document.getElementById("filterKeepValue").addEventListener("change", drawRoomTable);
 
-	syncStickyOffsets();
+	initFakeStickyHeader(priceDetails);
+	initFakeStickyHeader(roomDetails);
   }
 
-  // 「料金比較表」「部屋比較表」のタイトル(summary)と、直下のツールバー
-  // （フィルタをクリア／在庫参考値の注記）の実測高さを、
-  // 各セクション配下のthead th の sticky top オフセットに反映する
-  function updateSectionStickyLayout(sec) {
+  // ============================================================
+  // 「料金比較表」「部屋比較表」のタイトル・ツールバー・列見出しを
+  // スクロールに応じて position:fixed で固定表示する。
+  //
+  // CSSの position:sticky はブラウザ（特にモバイル）によって挙動が
+  // 不安定なことが分かったため、window のスクロール位置を見て
+  // JS側で直接 position を切り替える方式にしている。
+  //
+  // 各要素（summary / ツールバー / thead）の「本来の（固定されて
+  // いない）ドキュメント上の絶対Y座標」を最初に1回だけ測っておき
+  // （スペーサーで高さを保持するので、この値は固定状態が変わっても
+  // ずれない）、スクロール位置と比較して固定/解除を切り替える。
+  //
+  // トレードオフ: 横スクロール時に1列目（ホテル名）だけを画面端に
+  // 固定する機能は、この縦方向の固定処理と競合するため無効にしている。
+  // ============================================================
+  function initFakeStickyHeader(sec) {
     const summary = sec.querySelector(":scope > summary");
     const toolbar = sec.querySelector(":scope > .sticky-toolbar");
-    const scrollArea = sec.querySelector(".table-scroll");
-    const tableEl = scrollArea ? scrollArea.querySelector("table") : null;
+    const table = sec.querySelector(".table-scroll table");
+    const thead = table ? table.querySelector("thead") : null;
+    const headerRow = thead ? thead.querySelector("tr") : null;
+    const ths = headerRow ? Array.from(headerRow.children) : [];
+    if (!summary && !headerRow) return;
 
-    // タイトル・ツールバーの幅を「ブラウザの表示幅」ではなく「表(table要素)の実際の幅」に合わせる。
-    // .table-scroll は overflow を持たないため、中の table が min-width で
-    // はみ出しても div 自体は広がらない。そのため div ではなく table 自身の
-    // レンダリング幅を測る必要がある。
-    // +2px は端数（サブピクセル）による1pxの透けすき間を防ぐための安全マージン。
-    if (tableEl) {
-      const tableWidth = (Math.ceil(tableEl.getBoundingClientRect().width) + 2) + "px";
-      if (summary) summary.style.width = tableWidth;
-      if (toolbar) toolbar.style.width = tableWidth;
+    function makeSpacer(el) {
+      const spacer = document.createElement("div");
+      spacer.className = "sticky-spacer";
+      el.parentNode.insertBefore(spacer, el.nextSibling);
+      return spacer;
+    }
+    const summarySpacer = summary ? makeSpacer(summary) : null;
+    const toolbarSpacer = toolbar ? makeSpacer(toolbar) : null;
+
+    // thead用のスペーサー行（table構造を保ったまま高さだけ確保する）
+    let spacerRow = null;
+    if (headerRow) {
+      spacerRow = headerRow.cloneNode(true);
+      spacerRow.className = "sticky-spacer-row";
+      spacerRow.style.display = "none";
+      spacerRow.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+      headerRow.parentNode.insertBefore(spacerRow, headerRow.nextSibling);
     }
 
-    if (summary) {
-      sec.style.setProperty("--summary-h", summary.getBoundingClientRect().height + "px");
-    }
-    if (toolbar) {
-      sec.style.setProperty("--toolbar-h", toolbar.getBoundingClientRect().height + "px");
-    } else {
-      sec.style.setProperty("--toolbar-h", "0px");
-    }
-  }
+    const natural = {}; // 各要素の「固定されていない」ドキュメント上の絶対Y座標
+    const sizes = {};   // 各要素の高さ
 
-  function syncStickyOffsets() {
-    document.querySelectorAll(".sticky-section").forEach(updateSectionStickyLayout);
-  }
-  window.addEventListener("resize", syncStickyOffsets);
-
-  // 表のサイズは、フィルタ操作や画像読み込み、フォント確定などで
-  // タイトル・ツールバーの高さ（--summary-h / --toolbar-h）はウィンドウ幅によって
-  // 表のサイズは、フィルタ操作や画像読み込み、フォント確定などで
-  // レイアウト後にも変化しうるため、ResizeObserverで継続的に幅を追従させる。
-  if (typeof ResizeObserver !== "undefined") {
-    document.querySelectorAll(".sticky-section").forEach(sec => {
-      const tableEl = sec.querySelector(".table-scroll table");
-      if (tableEl) {
-        const ro = new ResizeObserver(() => updateSectionStickyLayout(sec));
-        ro.observe(tableEl);
+    function measureNatural() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      if (summary) {
+        natural.summary = summary.getBoundingClientRect().top + scrollY;
+        sizes.summary = summary.offsetHeight;
       }
-    });
+      if (toolbar) {
+        natural.toolbar = toolbar.getBoundingClientRect().top + scrollY;
+        sizes.toolbar = toolbar.offsetHeight;
+      }
+      if (headerRow) {
+        natural.thead = headerRow.getBoundingClientRect().top + scrollY;
+        sizes.thead = headerRow.offsetHeight;
+        ths.forEach(th => { th._fixedWidth = th.getBoundingClientRect().width; });
+      }
+    }
+
+    function unfixAll() {
+      if (summary) {
+        summary.style.position = "";
+        summary.style.top = "";
+        summary.style.left = "";
+        summary.style.width = "";
+        summarySpacer.style.display = "none";
+      }
+      if (toolbar) {
+        toolbar.style.position = "";
+        toolbar.style.top = "";
+        toolbar.style.left = "";
+        toolbar.style.width = "";
+        toolbarSpacer.style.display = "none";
+      }
+      if (headerRow) {
+        ths.forEach(th => {
+          th.style.position = "";
+          th.style.top = "";
+          th.style.left = "";
+          th.style.width = "";
+          th.style.height = "";
+        });
+        spacerRow.style.display = "none";
+      }
+    }
+
+    function update() {
+      // details が閉じている場合は何もしない
+      if (sec.tagName === "DETAILS" && !sec.open) {
+        unfixAll();
+        return;
+      }
+
+      const scrollY = window.scrollY || window.pageYOffset;
+      const sectionRect = sec.getBoundingClientRect();
+      const tableRect = table ? table.getBoundingClientRect() : sectionRect;
+      const leftPx = sectionRect.left;
+      const widthPx = Math.ceil((table || sec).getBoundingClientRect().width) + 2;
+
+      // セクション全体（表の下端）を過ぎたら固定を解除する
+      const totalStickyHeight = (sizes.summary || 0) + (sizes.toolbar || 0) + (sizes.thead || 0);
+      const sectionBottom = sec.getBoundingClientRect().bottom;
+      if (sectionBottom <= totalStickyHeight) {
+        unfixAll();
+        return;
+      }
+
+      let offset = 0;
+
+      if (summary) {
+        const shouldStick = scrollY >= natural.summary - offset;
+        if (shouldStick) {
+          summary.style.position = "fixed";
+          summary.style.top = offset + "px";
+          summary.style.left = leftPx + "px";
+          summary.style.width = widthPx + "px";
+          summarySpacer.style.display = "block";
+          summarySpacer.style.height = sizes.summary + "px";
+        } else {
+          summary.style.position = "";
+          summary.style.top = "";
+          summary.style.left = "";
+          summary.style.width = "";
+          summarySpacer.style.display = "none";
+        }
+        offset += sizes.summary;
+      }
+
+      if (toolbar) {
+        const shouldStick = scrollY >= natural.toolbar - offset;
+        if (shouldStick) {
+          toolbar.style.position = "fixed";
+          toolbar.style.top = offset + "px";
+          toolbar.style.left = leftPx + "px";
+          toolbar.style.width = widthPx + "px";
+          toolbarSpacer.style.display = "block";
+          toolbarSpacer.style.height = sizes.toolbar + "px";
+        } else {
+          toolbar.style.position = "";
+          toolbar.style.top = "";
+          toolbar.style.left = "";
+          toolbar.style.width = "";
+          toolbarSpacer.style.display = "none";
+        }
+        offset += sizes.toolbar;
+      }
+
+      if (headerRow) {
+        const shouldStick = scrollY >= natural.thead - offset;
+        if (shouldStick) {
+          let x = tableRect.left;
+          ths.forEach(th => {
+            const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
+            th.style.position = "fixed";
+            th.style.top = offset + "px";
+            th.style.left = x + "px";
+            th.style.width = w + "px";
+            th.style.height = sizes.thead + "px";
+            x += w;
+          });
+          spacerRow.style.display = "table-row";
+        } else {
+          ths.forEach(th => {
+            th.style.position = "";
+            th.style.top = "";
+            th.style.left = "";
+            th.style.width = "";
+            th.style.height = "";
+          });
+          spacerRow.style.display = "none";
+        }
+      }
+    }
+
+    let ticking = false;
+    function onScrollOrResize() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+    }
+
+    function remeasureAndUpdate() {
+      // 一旦すべて解除してから自然な位置を測り直す（fixed状態のままだと正しく測れないため）
+      unfixAll();
+      measureNatural();
+      update();
+    }
+
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", remeasureAndUpdate);
+    sec.addEventListener("toggle", remeasureAndUpdate);
+
+    if (typeof ResizeObserver !== "undefined" && table) {
+      const ro = new ResizeObserver(remeasureAndUpdate);
+      ro.observe(table);
+    }
+
+    measureNatural();
+    update();
   }
 </script>
 
