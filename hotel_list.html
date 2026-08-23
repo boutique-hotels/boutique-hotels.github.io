@@ -93,11 +93,27 @@
     .no-data { color: #bbb; font-style: italic; }
 
     /* 料金比較表・部屋比較表: タイトル(summary)も一緒に固定表示 */
+    /* summary は既定で display:list-item になっており、position:sticky との
+       組み合わせが一部ブラウザ（特にモバイル）で不安定なため、display:block に
+       変更する。失われる開閉の▼マークは疑似要素で自前で再現する。 */
     .sticky-section > summary {
+      display: block;
+      list-style: none;
+      cursor: pointer;
       position: sticky;
       top: 0;
       z-index: 30;
       background: #fff;
+    }
+    .sticky-section > summary::-webkit-details-marker { display: none; }
+    .sticky-section > summary::before {
+      content: "▶";
+      display: inline-block;
+      width: 1em;
+      color: var(--accent);
+    }
+    .sticky-section[open] > summary::before {
+      content: "▼";
     }
     .sticky-section .sticky-toolbar {
       position: sticky;
