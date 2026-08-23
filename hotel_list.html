@@ -115,10 +115,16 @@
     .sticky-section th:first-child { z-index: 21; }
 
     /* ---- 表 ---- */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
     .table-scroll {
       border: 1px solid var(--border);
       border-radius: 6px;
       margin-bottom: 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
     th, td { border-bottom: 1px solid var(--border); border-right: 1px solid #eee; padding: 6px 8px; text-align:center; white-space: nowrap; }
@@ -1249,19 +1255,13 @@
   function updateSectionStickyLayout(sec) {
     const summary = sec.querySelector(":scope > summary");
     const toolbar = sec.querySelector(":scope > .sticky-toolbar");
-    const scrollArea = sec.querySelector(".table-scroll");
-    const tableEl = scrollArea ? scrollArea.querySelector("table") : null;
 
-    // タイトル・ツールバーの幅を「ブラウザの表示幅」ではなく「表(table要素)の実際の幅」に合わせる。
-    // .table-scroll は overflow を持たないため、中の table が min-width で
-    // はみ出しても div 自体は広がらない。そのため div ではなく table 自身の
-    // レンダリング幅を測る必要がある。
-    // +2px は端数（サブピクセル）による1pxの透けすき間を防ぐための安全マージン。
-    if (tableEl) {
-      const tableWidth = (Math.ceil(tableEl.getBoundingClientRect().width) + 2) + "px";
-      if (summary) summary.style.width = tableWidth;
-      if (toolbar) toolbar.style.width = tableWidth;
-    }
+    // 表の横スクロールは .table-scroll の中だけに閉じ込めているため、
+    // タイトル・ツールバーは通常のブロック要素として親幅（＝画面内に収まる幅）に
+    // 合わせればよい。以前あった「表の実際の幅に明示的に合わせる」処理は、
+    // ページ全体が表の幅まで広がっていた時代の対処だったため撤去。
+    if (summary) summary.style.width = "";
+    if (toolbar) toolbar.style.width = "";
 
     if (summary) {
       sec.style.setProperty("--summary-h", summary.getBoundingClientRect().height + "px");
@@ -1279,14 +1279,15 @@
   window.addEventListener("resize", syncStickyOffsets);
 
   // 表のサイズは、フィルタ操作や画像読み込み、フォント確定などで
-  // レイアウト後にも変化しうるため、ResizeObserverで継続的に幅を追従させる。
+  // タイトル・ツールバーの高さ（--summary-h / --toolbar-h）はウィンドウ幅によって
+  // テキストの折り返しが変わり変化しうるため、ResizeObserverで継続的に追従させる。
   if (typeof ResizeObserver !== "undefined") {
     document.querySelectorAll(".sticky-section").forEach(sec => {
-      const tableEl = sec.querySelector(".table-scroll table");
-      if (tableEl) {
-        const ro = new ResizeObserver(() => updateSectionStickyLayout(sec));
-        ro.observe(tableEl);
-      }
+      const summary = sec.querySelector(":scope > summary");
+      const toolbar = sec.querySelector(":scope > .sticky-toolbar");
+      const ro = new ResizeObserver(() => updateSectionStickyLayout(sec));
+      if (summary) ro.observe(summary);
+      if (toolbar) ro.observe(toolbar);
     });
   }
 </script>
