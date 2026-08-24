@@ -151,7 +151,10 @@
     /* 1列目（ホテル名）を横スクロールでも固定表示 */
     th:first-child, td:first-child {
       position: sticky; left: 0; background: #fff; z-index: 5;
-      text-align: left; white-space: normal; max-width: 260px;
+      text-align: left; white-space: normal;
+      width: 250px;
+      min-width: 250px;
+      max-width: 250px;
     }
     th:first-child { z-index: 15; background: #f4f4f4; }
     tbody tr:nth-child(even) td { background: var(--bg-stripe); }
@@ -164,17 +167,43 @@
     .filter-range { width: 64px; font-size: 12px; }
     .filter-row { font-size: 11px; }
     /* プラン名: 通常のfilter-wideの約半分幅 */
-    .filter-half-wide { width: 75px; font-size: 12px; }
+    .filter-half-wide { width: 105px; font-size: 12px; }
     /* 種類: 「ショートタイム」が1行に収まる程度の幅 */
     .filter-type-select { width: 105px; font-size: 12px; }
-    /* 時間（数値化）: min/maxを縦に並べるので個々の入力欄は狭くてよい */
+    /* 時間（数値）: min/maxを縦に並べるので個々の入力欄は狭くてよい */
     .filter-range-narrow { width: 46px; font-size: 12px; }
     .filter-range-stack { display: flex; flex-direction: column; gap: 3px; align-items: center; }
-    /* プラン名列は長い文言でも折り返して列幅を抑える */
-    .sticky-section td:nth-child(2), .sticky-section th:nth-child(2) {
-      max-width: 90px;
+    /* プラン名・種類の列は同じ幅に揃える（空室情報列の追加で3,4列目にずれている） */
+    .sticky-section td:nth-child(3), .sticky-section th:nth-child(3),
+    .sticky-section td:nth-child(4), .sticky-section th:nth-child(4) {
+      width: 130px;
+      min-width: 130px;
+      max-width: 130px;
       white-space: normal;
     }
+    .room-table th:first-child, .room-table td:first-child {
+      width: 250px;
+      min-width: 250px;
+      max-width: 250px;
+      overflow-wrap: anywhere;
+    }
+    .room-table {
+      width: max-content;
+      min-width: 0;
+    }
+    #priceTable th.week-source, #priceTable td.week-source {
+      width: 160px;
+      min-width: 160px;
+      max-width: 160px;
+      white-space: normal;
+    }
+    .vacancy-cell {
+      min-width: 180px;
+      white-space: normal;
+      text-align: left;
+    }
+    .vacancy-cell .vacancy-status { font-weight: 600; }
+    .vacancy-cell .vacancy-detail { font-size: 11px; color: var(--text-muted); }
     .clear-btn {
       margin: 8px 0; padding: 5px 12px; font-size: 12px;
       border: 1px solid var(--accent); color: var(--accent);
@@ -230,7 +259,16 @@
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
       table { font-size: 12px; }
       th, td { padding: 5px 6px; }
-      th:first-child, td:first-child { max-width: 160px; }
+      th:first-child, td:first-child {
+        width: 200px;
+        min-width: 200px;
+        max-width: 200px;
+      }
+      .room-table th:first-child, .room-table td:first-child {
+        width: 220px;
+        min-width: 220px;
+        max-width: 220px;
+      }
 
       /* ホテルカードの内訳タグも詰めて表示 */
       .amenity-tag, .badge { font-size: 10px; }
@@ -346,10 +384,20 @@
 
 
 <h1>ホテル料金比較</h1>
-<div class="subtitle">hotels.json を読み込んで自動生成しています</div>
+<div class="subtitle" id="dataSource">読み込み中...</div>
 <div id="content">読み込み中...</div>
 
 <script>
+  const stationData = {
+    ikebukuro: { label: "池袋", file: "hotels.json" },
+    shinjuku: { label: "新宿", file: "新宿_hotels_detail.json" },
+    gotanda: { label: "五反田", file: "五反田_hotels_detail.json" },
+  };
+  const stationKey = new URLSearchParams(window.location.search).get("station") || "ikebukuro";
+  const selectedStation = stationData[stationKey] || stationData.ikebukuro;
+  document.getElementById("dataSource").textContent =
+    `${selectedStation.label}のデータ（${selectedStation.file}）を読み込んでいます`;
+
   // ---- サイドバー開閉 ----
   (function () {
     const sidebar = document.getElementById("sidebar");
@@ -410,8 +458,13 @@
     applyState();
   })();
 
-  fetch("hotels.json")
-    .then(res => res.json())
+  fetch(selectedStation.file)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`JSONファイルが存在しません: ${selectedStation.file} (${res.status})`);
+      }
+      return res.json();
+    })
     .then(hotels => render(hotels))
     .catch(err => {
       document.getElementById("content").textContent = "JSON読み込みエラー: " + err;
@@ -464,8 +517,8 @@
   }
 
 
-  // 時間抽出（数値化）
-  // 時間の数値化結果を小数第2位までに丸める（1.5, 2.25 などを綺麗に保つ）
+  // 時間抽出（数値）
+  // 時間の数値結果を小数第2位までに丸める（1.5, 2.25 などを綺麗に保つ）
   function roundHours(h) {
     return Math.round(h * 100) / 100;
   }
@@ -522,6 +575,29 @@
     // ============================
 
     const raw = text.replace(/[【】]/g, "").trim();
+    const rawCompact = raw.replace(/\s/g, "");
+
+    // プラン名などの説明文が続く複合表記は、曜日条件部分を優先する
+    if (/^金・土・日・祝前・祝(?:インペリアルスイート)?/.test(rawCompact)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"○", 日:"○", 祝:"○", 祝前:"○" };
+    }
+    if (/^月～金・祝前日（A・Bタイプは7時間）$/.test(rawCompact)) {
+      return { 月:"○", 火:"○", 水:"○", 木:"○", 金:"○", 土:"", 日:"", 祝:"", 祝前:"○" };
+    }
+    if (/^金・土・日祝前日・祝日・連休中日$/.test(rawCompact)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"○", 日:"○", 祝:"○", 祝前:"○" };
+    }
+    if (/^金土日・祝日・祝日前$/.test(rawCompact)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"○", 日:"○", 祝:"○", 祝前:"○" };
+    }
+
+    // 括弧内の曜日条件を含む代表表記
+    if (/^休日[（(]土[・･]特日[）)]$/.test(rawCompact)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"", 土:"○", 日:"○", 祝:"○", 祝前:"" };
+    }
+    if (/^平日[（(]金[・･]祝前[）)]$/.test(rawCompact)) {
+      return { 月:"", 火:"", 水:"", 木:"", 金:"○", 土:"", 日:"", 祝:"", 祝前:"○" };
+    }
 
     // 金 / 金曜 / 金曜日
     if (/^金$|^金曜$|^金曜日$/.test(raw)) {
@@ -615,9 +691,18 @@
       t = t.split("※")[0];
       t = t.replace(/（チェックイン.*?）/g, "");
       t = t.replace(/\(チェックイン.*?\)/g, "");
+      if (/[月火水木金土日祝]/.test(t)) t = t.replace(/\s/g, "");
+
+      // 曜日・祝日の表記を先に正規化（例: 土曜日、祝前日、祝日）
+      t = t.replace(/([月火水木金土日])曜日?/g, "$1");
+      t = t.replace(/祝前日/g, "祝前");
+      t = t.replace(/祝日/g, "祝");
 
       // 部制削除
-      t = t.replace(/1部|2部|I部|II部/g, "");
+      t = t.replace(/[0-9]+部|I部|II部/g, "");
+
+      // 連休中は曜日フラグの対象外なので、除外条件ごと取り除く
+      t = t.replace(/連休中を除く/g, "");
 
       // ランク条件削除
       t = t.replace(/Aランク|Bランク|Cランク|Dランク|Eランク/g, "");
@@ -625,8 +710,12 @@
       // 括弧削除
       t = t.replace(/[（）\(\)［］【】]/g, "");
 
+      // 範囲の直後に付く除外条件を別トークンに分離
+      t = t.replace(/([月火水木金土日])～([月火水木金土日])(?=祝前?除く)/g, "$1～$2・");
+
       // 全角中点統一
       t = t.replace(/･/g, "・");
+      t = t.replace(/\s*([・\/／,])\s*/g, "$1");
 
       // 連結語分割
       t = t.replace(/土日祝/g, "土・日・祝");
@@ -679,7 +768,12 @@
         if (range) {
           const s = days.indexOf(range[1]);
           const e = days.indexOf(range[2]);
-          for (let i = s; i <= e; i++) flags[days[i]] = "○";
+          if (s <= e) {
+            for (let i = s; i <= e; i++) flags[days[i]] = "○";
+          } else {
+            for (let i = s; i < days.length; i++) flags[days[i]] = "○";
+            for (let i = 0; i <= e; i++) flags[days[i]] = "○";
+          }
           return;
         }
 
@@ -754,7 +848,12 @@
     // 4. 最終判定（辞書＋構造解析のハイブリッド）
     // ============================
     const tokens = cleanseWeekText(text);
-    return interpretWeekTokens(tokens);
+    const parsed = interpretWeekTokens(tokens);
+    const result = {};
+    ["月", "火", "水", "木", "金", "土", "日", "祝", "祝前"].forEach(day => {
+      result[day] = parsed[day] || "";
+    });
+    return result;
   }
 
 
@@ -801,6 +900,19 @@
     const cardGrid = document.createElement("div");
     cardGrid.className = "hotel-cards";
 
+    function displayVacancyText(value) {
+      if (value === "売切れ") return "満室";
+      return typeof value === "string" ? value.replace(/^あと\s*/, "") : value;
+    }
+
+    function getVacancyTotal(vacancy) {
+      const details = Array.isArray(vacancy.details) ? vacancy.details : [];
+      return details.reduce((total, detail) => {
+        const stockCount = Number(detail.stock_count);
+        return total + (Number.isFinite(stockCount) ? stockCount : 0);
+      }, 0);
+    }
+
     function buildHotelCard(h) {
       const card = document.createElement("div");
       card.className = "hotel-card";
@@ -833,14 +945,14 @@
       let vacDetailHtml = "";
       if (vac.details && vac.details.length) {
         if (vac.has_vacancy === true) {
-          vacBadge = `<span class="badge vacant">空室あり（最大${vac.max_stock}室）</span>`;
+          vacBadge = `<span class="badge vacant">空室あり（${getVacancyTotal(vac)}室）</span>`;
         } else if (vac.has_vacancy === false) {
           vacBadge = `<span class="badge full">満室</span>`;
         }
         // プランごとの空室内訳（上位3件まで表示）
         vacDetailHtml = `<div class="amenity-tags">` + vac.details.slice(0, 3).map(d => {
           const label = d.room_rank_name ? `${d.plan_name}/${d.room_rank_name}` : d.plan_name;
-          return `<span class="amenity-tag">${label}: ${d.stock_text ?? "—"}</span>`;
+          return `<span class="amenity-tag">${label}: ${displayVacancyText(d.stock_text) ?? "—"}</span>`;
         }).join("") + `</div>`;
       }
 
@@ -945,6 +1057,11 @@
           <th class="sortable" data-col="hotel">ホテル名 <span class="sort-arrow" data-arrow="hotel"></span><br>
             <input id="filterHotel" class="filter-wide" placeholder="部分一致検索">
           </th>
+          <th class="vacancy-cell">空室情報<br>
+            <label style="font-weight:normal;font-size:11px;">
+              <input id="filterVacancyAvailable" type="checkbox"> 空室ありのみ
+            </label>
+          </th>
           <th class="sortable" data-col="plan">プラン名 <span class="sort-arrow" data-arrow="plan"></span><br>
             <input id="filterPlan" class="filter-half-wide" placeholder="部分一致検索">
           </th>
@@ -953,23 +1070,23 @@
               ${planTypes.map(t => `<option value="${t}">${t}</option>`).join("")}
             </select>
           </th>
-          <th>料金（元データ）</th>
+          <th>料金（元情報）</th>
           <th class="sortable" data-col="minPrice">最低料金 <span class="sort-arrow" data-arrow="minPrice"></span><br>
             <input id="minPrice" type="number" class="filter-range" placeholder="min">
           </th>
           <th class="sortable" data-col="maxPrice">最高料金 <span class="sort-arrow" data-arrow="maxPrice"></span><br>
             <input id="maxPrice" type="number" class="filter-range" placeholder="max">
           </th>
-          <th>時間条件（元データ）<br>
+          <th>時間条件（元情報）<br>
             <input id="filterTimeZone" class="filter-input" placeholder="部分一致検索">
           </th>
-          <th class="sortable" data-col="hours">時間（数値化） <span class="sort-arrow" data-arrow="hours"></span><br>
+          <th class="sortable" data-col="hours">時間（数値） <span class="sort-arrow" data-arrow="hours"></span><br>
             <div class="filter-range-stack">
               <input id="minHours" type="number" class="filter-range-narrow" placeholder="min">
               <input id="maxHours" type="number" class="filter-range-narrow" placeholder="max">
             </div>
           </th>
-          <th>曜日（元データ）</th>
+          <th class="week-source">曜日（元情報）</th>
 		  <th class="filter-row">月<br><input type="checkbox" name="week" value="月"></th>
 		  <th class="filter-row">火<br><input type="checkbox" name="week" value="火"></th>
 		  <th class="filter-row">水<br><input type="checkbox" name="week" value="水"></th>
@@ -991,6 +1108,27 @@
     const priceBody = priceTable.querySelector("tbody");
     let sortState = { column: null, asc: true };
 
+    function formatVacancy(hotel) {
+      const vacancy = hotel.vacancy || {};
+      const details = Array.isArray(vacancy.details) ? vacancy.details : [];
+      if (!details.length) {
+        return `<span class="no-data">情報なし</span>`;
+      }
+
+      const status = vacancy.has_vacancy === true
+        ? `空室あり（${getVacancyTotal(vacancy)}室）`
+        : vacancy.has_vacancy === false ? "満室" : "取得済み";
+      const detailHtml = details.map(detail => {
+        const room = detail.room_rank_name || "部屋ランク不明";
+        const stock = displayVacancyText(detail.stock_text) || "—";
+        const chargeText = displayVacancyText(detail.charge_text);
+        const charge = chargeText && chargeText !== stock ? ` / ${chargeText}` : "";
+        return `${room}: ${stock}${charge}`;
+      }).join("<br>");
+
+      return `<span class="vacancy-status">${status}</span><br><span class="vacancy-detail">${detailHtml}</span>`;
+    }
+
     function drawTable() {
       priceBody.innerHTML = "";
 
@@ -998,6 +1136,7 @@
       const planFilter = document.getElementById("filterPlan").value.toLowerCase();
       const typeFilter = Array.from(document.getElementById("filterType").selectedOptions).map(o => o.value);
       const timeZoneFilter = document.getElementById("filterTimeZone").value.toLowerCase();
+      const vacancyAvailableOnly = document.getElementById("filterVacancyAvailable").checked;
 
       const minPrice = parseInt(document.getElementById("minPrice").value) || 0;
       const maxPrice = parseInt(document.getElementById("maxPrice").value) || Infinity;
@@ -1027,6 +1166,7 @@
               const hours = parseTimeToHours(tp.timeZone);
 
               if (hotelFilter && !hotel.name.toLowerCase().includes(hotelFilter)) return;
+              if (vacancyAvailableOnly && !(hotel.vacancy && hotel.vacancy.has_vacancy === true)) return;
               if (planFilter && !plan.name.toLowerCase().includes(planFilter)) return;
               if (typeFilter.length && !typeFilter.includes(planType)) return;
               if (timeZoneFilter && !tp.timeZone.toLowerCase().includes(timeZoneFilter)) return;
@@ -1044,6 +1184,7 @@
 
               rows.push({
                 hotel: hotel.name,
+                vacancy: formatVacancy(hotel),
                 plan: plan.name,
                 type: planType,
                 priceRaw: tp.price,
@@ -1085,6 +1226,7 @@
         const tr = document.createElement("tr");
         tr.innerHTML = `
           <td>${r.hotel}</td>
+          <td class="vacancy-cell">${r.vacancy}</td>
           <td>${r.plan}</td>
           <td>${r.type}</td>
           <td>${r.priceRaw}</td>
@@ -1092,7 +1234,7 @@
           <td>${r.maxPrice}</td>
           <td>${r.timeZone}</td>
           <td>${r.hours ?? ""}</td>
-          <td>${r.weekText}</td>
+          <td class="week-source">${r.weekText}</td>
 		  <td>${r.flags["月"]}</td>
 		  <td>${r.flags["火"]}</td>
 		  <td>${r.flags["水"]}</td>
@@ -1180,6 +1322,7 @@
 	  });
 
 	const roomTable = document.createElement("table");
+  roomTable.className = "room-table";
 	roomTable.innerHTML = `
 	  <thead>
 	    <tr>
@@ -1302,6 +1445,7 @@
     const summary = sec.querySelector(":scope > summary");
     const toolbar = sec.querySelector(":scope > .sticky-toolbar");
     const table = sec.querySelector(".table-scroll table");
+    const tableScroll = table ? table.closest(".table-scroll") : null;
     const thead = table ? table.querySelector("thead") : null;
     const headerRow = thead ? thead.querySelector("tr") : null;
     const ths = headerRow ? Array.from(headerRow.children) : [];
@@ -1352,6 +1496,7 @@
         summary.style.top = "";
         summary.style.left = "";
         summary.style.width = "";
+        summary.style.marginTop = "";
         summarySpacer.style.display = "none";
       }
       if (toolbar) {
@@ -1403,6 +1548,7 @@
           summary.style.top = offset + "px";
           summary.style.left = leftPx + "px";
           summary.style.width = widthPx + "px";
+          summary.style.marginTop = "0";
           summarySpacer.style.display = "block";
           summarySpacer.style.height = sizes.summary + "px";
         } else {
@@ -1410,6 +1556,7 @@
           summary.style.top = "";
           summary.style.left = "";
           summary.style.width = "";
+          summary.style.marginTop = "";
           summarySpacer.style.display = "none";
         }
         offset += sizes.summary;
@@ -1479,8 +1626,13 @@
     }
 
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    if (tableScroll) {
+      tableScroll.addEventListener("scroll", onScrollOrResize, { passive: true });
+    }
     window.addEventListener("resize", remeasureAndUpdate);
-    sec.addEventListener("toggle", remeasureAndUpdate);
+    document.querySelectorAll("details").forEach(details => {
+      details.addEventListener("toggle", remeasureAndUpdate);
+    });
 
     if (typeof ResizeObserver !== "undefined" && table) {
       const ro = new ResizeObserver(remeasureAndUpdate);
