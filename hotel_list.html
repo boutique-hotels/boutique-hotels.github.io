@@ -1671,6 +1671,13 @@
       tableScroll.addEventListener("scroll", onScrollOrResize, { passive: true });
     }
     window.addEventListener("resize", onScrollOrResize);
+    window.addEventListener("touchstart", onScrollOrResize, { passive: true });
+    window.addEventListener("touchmove", onScrollOrResize, { passive: true });
+    window.addEventListener("touchend", onScrollOrResize, { passive: true });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("scroll", onScrollOrResize, { passive: true });
+      window.visualViewport.addEventListener("resize", onScrollOrResize, { passive: true });
+    }
     document.querySelectorAll("details").forEach(details => {
       details.addEventListener("toggle", onScrollOrResize);
     });
