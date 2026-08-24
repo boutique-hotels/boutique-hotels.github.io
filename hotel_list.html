@@ -136,6 +136,7 @@
       z-index: auto;
     }
     .sticky-spacer { display: none; }
+    .sticky-spacer-row { visibility: hidden; }
 
     /* ---- 表 ---- */
     .table-scroll {
@@ -173,8 +174,13 @@
     /* 時間（数値）: min/maxを縦に並べるので個々の入力欄は狭くてよい */
     .filter-range-narrow { width: 46px; font-size: 12px; }
     .filter-range-stack { display: flex; flex-direction: column; gap: 3px; align-items: center; }
-    /* プラン名・種類の列は同じ幅に揃える（空室情報列の追加で3,4列目にずれている） */
-    .sticky-section td:nth-child(3), .sticky-section th:nth-child(3),
+    /* プラン名列は空室情報列の追加で3列目にずれている */
+    .sticky-section td:nth-child(3), .sticky-section th:nth-child(3) {
+      width: 143px;
+      min-width: 143px;
+      max-width: 143px;
+      white-space: normal;
+    }
     .sticky-section td:nth-child(4), .sticky-section th:nth-child(4) {
       width: 130px;
       min-width: 130px;
@@ -198,7 +204,9 @@
       white-space: normal;
     }
     .vacancy-cell {
-      min-width: 180px;
+      width: 200px;
+      min-width: 200px;
+      max-width: 200px;
       white-space: normal;
       text-align: left;
     }
@@ -389,7 +397,7 @@
 
 <script>
   const stationData = {
-    ikebukuro: { label: "池袋", file: "hotels.json" },
+    ikebukuro: { label: "池袋", file: "池袋_hotels_detail.json" },
     shinjuku: { label: "新宿", file: "新宿_hotels_detail.json" },
     gotanda: { label: "五反田", file: "五反田_hotels_detail.json" },
   };
@@ -1491,6 +1499,13 @@
       spacerRow = headerRow.cloneNode(true);
       spacerRow.className = "sticky-spacer-row";
       spacerRow.style.display = "none";
+      spacerRow.querySelectorAll("th, td").forEach((cell, index) => {
+        const width = ths[index].getBoundingClientRect().width;
+        cell.innerHTML = "";
+        cell.style.width = width + "px";
+        cell.style.minWidth = width + "px";
+        cell.style.maxWidth = width + "px";
+      });
       spacerRow.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
       headerRow.parentNode.insertBefore(spacerRow, headerRow.nextSibling);
     }
@@ -1501,7 +1516,13 @@
       if (summary) sizes.summary = summary.offsetHeight;
       if (toolbar) sizes.toolbar = toolbar.offsetHeight;
       if (headerRow) {
-        sizes.thead = headerRow.offsetHeight;
+        const naturalHeaders = ths.filter(th => th.style.position !== "fixed");
+        if (naturalHeaders.length) {
+          sizes.thead = Math.max(
+            headerRow.offsetHeight,
+            ...naturalHeaders.map(th => th.getBoundingClientRect().height)
+          );
+        }
         ths.forEach(th => {
           if (th.style.position !== "fixed") th._fixedWidth = th.getBoundingClientRect().width;
         });
@@ -1615,6 +1636,8 @@
             th.style.left = x + "px";
             th.style.width = w + "px";
             th.style.height = sizes.thead + "px";
+            th.style.zIndex = "40";
+            th.style.background = "#f4f4f4";
             x += w;
           });
           spacerRow.style.display = "table-row";
@@ -1625,6 +1648,8 @@
             th.style.left = "";
             th.style.width = "";
             th.style.height = "";
+            th.style.zIndex = "";
+            th.style.background = "";
           });
           spacerRow.style.display = "none";
         }
