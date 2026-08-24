@@ -263,6 +263,13 @@
         color: var(--text-muted);
         margin: 4px 0 6px;
       }
+      /* モバイルはブラウザ標準のstickyで表ヘッダーを固定する */
+      .sticky-section thead th {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #f4f4f4;
+      }
 
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
       table { font-size: 12px; }
@@ -1625,6 +1632,19 @@
       }
 
       if (headerRow) {
+        if (window.innerWidth <= 640) {
+          ths.forEach(th => {
+            th.style.position = "";
+            th.style.top = "";
+            th.style.left = "";
+            th.style.width = "";
+            th.style.height = "";
+            th.style.zIndex = "";
+            th.style.background = "";
+          });
+          spacerRow.style.display = "none";
+          return;
+        }
         const naturalTop = theadMarkerRow.getBoundingClientRect().top + scrollY;
         const shouldStick = scrollY >= naturalTop - offset;
         if (shouldStick) {
