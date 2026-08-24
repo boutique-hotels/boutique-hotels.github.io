@@ -1451,18 +1451,43 @@
     const ths = headerRow ? Array.from(headerRow.children) : [];
     if (!summary && !headerRow) return;
 
-    function makeSpacer(el) {
+    // 高さ0のマーカー要素を「本来の位置」の目印として常に静的配置のまま残す。
+    // summary/toolbar/theadRow 自体は fixed になったり戻ったりするが、
+    // マーカーは絶対に動かないので、いつ読んでも正確な「自然な位置」が取れる。
+    // （以前はこの位置を1回だけキャッシュしていたが、モバイルでアドレスバーの
+    //   表示/非表示によるビューポートのリサイズが挟まると値がずれてしまい、
+    //   スクロール方向によって固定が効いたり効かなかったりする不具合があった）
+    function makeMarker(beforeEl) {
+      const marker = document.createElement("div");
+      marker.style.cssText = "height:0;margin:0;padding:0;border:0;overflow:hidden;";
+      marker.setAttribute("aria-hidden", "true");
+      beforeEl.parentNode.insertBefore(marker, beforeEl);
+      return marker;
+    }
+    function makeSpacer(afterEl) {
       const spacer = document.createElement("div");
       spacer.className = "sticky-spacer";
-      el.parentNode.insertBefore(spacer, el.nextSibling);
+      afterEl.parentNode.insertBefore(spacer, afterEl.nextSibling);
       return spacer;
     }
+
+    const summaryMarker = summary ? makeMarker(summary) : null;
     const summarySpacer = summary ? makeSpacer(summary) : null;
+    const toolbarMarker = toolbar ? makeMarker(toolbar) : null;
     const toolbarSpacer = toolbar ? makeSpacer(toolbar) : null;
 
-    // thead用のスペーサー行（table構造を保ったまま高さだけ確保する）
+    let theadMarkerRow = null;
     let spacerRow = null;
     if (headerRow) {
+      theadMarkerRow = document.createElement("tr");
+      theadMarkerRow.setAttribute("aria-hidden", "true");
+      theadMarkerRow.style.cssText = "height:0;line-height:0;visibility:hidden;";
+      const markerCell = document.createElement("td");
+      markerCell.style.cssText = "height:0;padding:0;border:0;margin:0;";
+      markerCell.colSpan = ths.length || 1;
+      theadMarkerRow.appendChild(markerCell);
+      headerRow.parentNode.insertBefore(theadMarkerRow, headerRow);
+
       spacerRow = headerRow.cloneNode(true);
       spacerRow.className = "sticky-spacer-row";
       spacerRow.style.display = "none";
@@ -1470,23 +1495,16 @@
       headerRow.parentNode.insertBefore(spacerRow, headerRow.nextSibling);
     }
 
-    const natural = {}; // 各要素の「固定されていない」ドキュメント上の絶対Y座標
-    const sizes = {};   // 各要素の高さ
+    const sizes = {}; // 各要素の高さ（offsetHeightはfixed状態でも正確に測れる）
 
-    function measureNatural() {
-      const scrollY = window.scrollY || window.pageYOffset;
-      if (summary) {
-        natural.summary = summary.getBoundingClientRect().top + scrollY;
-        sizes.summary = summary.offsetHeight;
-      }
-      if (toolbar) {
-        natural.toolbar = toolbar.getBoundingClientRect().top + scrollY;
-        sizes.toolbar = toolbar.offsetHeight;
-      }
+    function measureSizes() {
+      if (summary) sizes.summary = summary.offsetHeight;
+      if (toolbar) sizes.toolbar = toolbar.offsetHeight;
       if (headerRow) {
-        natural.thead = headerRow.getBoundingClientRect().top + scrollY;
         sizes.thead = headerRow.offsetHeight;
-        ths.forEach(th => { th._fixedWidth = th.getBoundingClientRect().width; });
+        ths.forEach(th => {
+          if (th.style.position !== "fixed") th._fixedWidth = th.getBoundingClientRect().width;
+        });
       }
     }
 
@@ -1531,6 +1549,8 @@
       const leftPx = sectionRect.left;
       const widthPx = Math.ceil((table || sec).getBoundingClientRect().width) + 2;
 
+      measureSizes();
+
       // セクション全体（表の下端）を過ぎたら固定を解除する
       const totalStickyHeight = (sizes.summary || 0) + (sizes.toolbar || 0) + (sizes.thead || 0);
       const sectionBottom = sec.getBoundingClientRect().bottom;
@@ -1542,7 +1562,8 @@
       let offset = 0;
 
       if (summary) {
-        const shouldStick = scrollY >= natural.summary - offset;
+        const naturalTop = summaryMarker.getBoundingClientRect().top + scrollY;
+        const shouldStick = scrollY >= naturalTop - offset;
         if (shouldStick) {
           summary.style.position = "fixed";
           summary.style.top = offset + "px";
@@ -1563,7 +1584,8 @@
       }
 
       if (toolbar) {
-        const shouldStick = scrollY >= natural.toolbar - offset;
+        const naturalTop = toolbarMarker.getBoundingClientRect().top + scrollY;
+        const shouldStick = scrollY >= naturalTop - offset;
         if (shouldStick) {
           toolbar.style.position = "fixed";
           toolbar.style.top = offset + "px";
@@ -1582,7 +1604,8 @@
       }
 
       if (headerRow) {
-        const shouldStick = scrollY >= natural.thead - offset;
+        const naturalTop = theadMarkerRow.getBoundingClientRect().top + scrollY;
+        const shouldStick = scrollY >= naturalTop - offset;
         if (shouldStick) {
           let x = tableRect.left;
           ths.forEach(th => {
@@ -1618,28 +1641,20 @@
       });
     }
 
-    function remeasureAndUpdate() {
-      // 一旦すべて解除してから自然な位置を測り直す（fixed状態のままだと正しく測れないため）
-      unfixAll();
-      measureNatural();
-      update();
-    }
-
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
     if (tableScroll) {
       tableScroll.addEventListener("scroll", onScrollOrResize, { passive: true });
     }
-    window.addEventListener("resize", remeasureAndUpdate);
+    window.addEventListener("resize", onScrollOrResize);
     document.querySelectorAll("details").forEach(details => {
-      details.addEventListener("toggle", remeasureAndUpdate);
+      details.addEventListener("toggle", onScrollOrResize);
     });
 
     if (typeof ResizeObserver !== "undefined" && table) {
-      const ro = new ResizeObserver(remeasureAndUpdate);
+      const ro = new ResizeObserver(onScrollOrResize);
       ro.observe(table);
     }
 
-    measureNatural();
     update();
   }
 </script>
