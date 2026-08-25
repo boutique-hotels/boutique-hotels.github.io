@@ -1632,23 +1632,15 @@
       }
 
       if (headerRow) {
-        if (window.innerWidth <= 640) {
-          ths.forEach(th => {
-            th.style.position = "";
-            th.style.top = "";
-            th.style.left = "";
-            th.style.width = "";
-            th.style.height = "";
-            th.style.zIndex = "";
-            th.style.background = "";
-          });
-          spacerRow.style.display = "none";
-          return;
-        }
+        // モバイルでも固定ヘッダーは必要なため、ここで無効化しない。
+        // ここに戻すと「スマホで全く固定されない」状態になっていた。
         const naturalTop = theadMarkerRow.getBoundingClientRect().top + scrollY;
         const shouldStick = scrollY >= naturalTop - offset;
         if (shouldStick) {
           let x = tableRect.left;
+          if (window.innerWidth <= 640) {
+            x = Math.max(0, tableRect.left);
+          }
           ths.forEach(th => {
             const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
             th.style.position = "fixed";
