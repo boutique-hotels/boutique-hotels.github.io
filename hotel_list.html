@@ -164,6 +164,9 @@
       border: none;
       border-radius: 0;
       margin-bottom: 24px;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
     }
     table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
     th, td { border-bottom: 1px solid var(--border); border-right: 1px solid #eee; padding: 6px 8px; text-align:center; white-space: nowrap; }
@@ -240,6 +243,32 @@
     }
     .clear-btn:hover { background: var(--accent-soft); }
     .sticky-toolbar.subtitle { margin: 0; padding-bottom: 10px; }
+
+    .station-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 16px;
+    }
+    .station-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: #1f2328;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .station-link.current {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
 
     @media (max-width: 640px) {
       body { padding: 10px 10px 24px; }
@@ -424,6 +453,7 @@
 
 <h1>ホテル料金比較</h1>
 <div class="subtitle" id="dataSource">読み込み中...</div>
+<div class="station-links" id="stationLinks" aria-label="駅切り替え"></div>
 <div id="content">読み込み中...</div>
 
 <script>
@@ -434,6 +464,17 @@
   };
   const stationKey = new URLSearchParams(window.location.search).get("station") || "ikebukuro";
   const selectedStation = stationData[stationKey] || stationData.ikebukuro;
+
+  function renderStationLinks() {
+    const container = document.getElementById("stationLinks");
+    if (!container) return;
+    container.innerHTML = Object.entries(stationData).map(([key, info]) => {
+      const isCurrent = key === stationKey;
+      return `<a class="station-link ${isCurrent ? "current" : ""}" href="?station=${key}" ${isCurrent ? "aria-current=\"page\"" : ""}>${info.label}</a>`;
+    }).join("");
+  }
+
+  renderStationLinks();
   document.getElementById("dataSource").textContent =
     `${selectedStation.label}のデータ（${selectedStation.file}）を読み込んでいます`;
 
@@ -1492,18 +1533,6 @@
 
     const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
     if (isMobile) {
-      if (summary) {
-        summary.style.position = "sticky";
-        summary.style.top = "0px";
-        summary.style.zIndex = "60";
-        summary.style.width = "100%";
-      }
-      if (toolbar) {
-        toolbar.style.position = "sticky";
-        toolbar.style.top = "0px";
-        toolbar.style.zIndex = "55";
-        toolbar.style.width = "100%";
-      }
       if (headerRow) {
         ths.forEach(th => {
           th.style.position = "sticky";
@@ -1615,36 +1644,6 @@
 
     function update() {
       if (window.innerWidth <= 640) {
-        if (summary) {
-          summary.style.position = "sticky";
-          summary.style.top = "0px";
-          summary.style.left = "";
-          summary.style.width = "100%";
-          summary.style.marginTop = "0";
-          summary.style.zIndex = "60";
-          if (summarySpacer) summarySpacer.style.display = "none";
-        }
-        if (toolbar) {
-          toolbar.style.position = "sticky";
-          toolbar.style.top = "0px";
-          toolbar.style.left = "";
-          toolbar.style.width = "100%";
-          toolbar.style.zIndex = "55";
-          if (toolbarSpacer) toolbarSpacer.style.display = "none";
-        }
-        if (headerRow) {
-          ths.forEach((th, idx) => {
-            const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
-            th.style.position = "sticky";
-            th.style.top = "0px";
-            th.style.left = "";
-            th.style.width = w + "px";
-            th.style.height = "";
-            th.style.zIndex = "50";
-            th.style.background = "#f4f4f4";
-          });
-          if (spacerRow) spacerRow.style.display = "none";
-        }
         return;
       }
 
