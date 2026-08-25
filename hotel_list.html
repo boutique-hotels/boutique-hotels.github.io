@@ -140,8 +140,8 @@
 
     /* ---- 表 ---- */
     .table-scroll {
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border: none;
+      border-radius: 0;
       margin-bottom: 24px;
     }
     table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
@@ -164,13 +164,13 @@
     tbody tr:hover td:first-child { background: #e0e7ff; }
 
     .filter-input { width: 95%; font-size: 12px; }
-    .filter-wide { width: 150px; font-size: 12px; }
+    .filter-wide { width: 100%; max-width: 100%; min-width: 0; font-size: 12px; }
     .filter-range { width: 64px; font-size: 12px; }
     .filter-row { font-size: 11px; }
     /* プラン名: 通常のfilter-wideの約半分幅 */
-    .filter-half-wide { width: 105px; font-size: 12px; }
+    .filter-half-wide { width: 100%; max-width: 100%; min-width: 0; font-size: 12px; }
     /* 種類: 「ショートタイム」が1行に収まる程度の幅 */
-    .filter-type-select { width: 105px; font-size: 12px; }
+    .filter-type-select { width: 100%; max-width: 100%; min-width: 0; font-size: 12px; }
     /* 時間（数値）: min/maxを縦に並べるので個々の入力欄は狭くてよい */
     .filter-range-narrow { width: 46px; font-size: 12px; }
     .filter-range-stack { display: flex; flex-direction: column; gap: 3px; align-items: center; }
@@ -275,14 +275,24 @@
       table { font-size: 12px; }
       th, td { padding: 5px 6px; }
       th:first-child, td:first-child {
-        width: 200px;
-        min-width: 200px;
-        max-width: 200px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
       }
       .room-table th:first-child, .room-table td:first-child {
-        width: 220px;
-        min-width: 220px;
-        max-width: 220px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+      }
+      .sticky-section td:nth-child(3), .sticky-section th:nth-child(3) {
+        width: 143px;
+        min-width: 143px;
+        max-width: 143px;
+      }
+      .sticky-section td:nth-child(4), .sticky-section th:nth-child(4) {
+        width: 130px;
+        min-width: 130px;
+        max-width: 130px;
       }
 
       /* ホテルカードの内訳タグも詰めて表示 */
