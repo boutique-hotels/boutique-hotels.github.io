@@ -114,7 +114,9 @@
        ここでは基本スタイルのみを定義し、position/top/left/width はJSが
        インラインstyleで都度セットする。 */
     .sticky-section > summary {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 6px;
       list-style: none;
       cursor: pointer;
       z-index: 30;
@@ -127,6 +129,9 @@
       display: inline-block;
       width: 1em;
       color: var(--accent);
+      font-size: 12px;
+      line-height: 1;
+      transform: translateY(-1px);
     }
     .sticky-section[open] > summary::before {
       content: "▼";
