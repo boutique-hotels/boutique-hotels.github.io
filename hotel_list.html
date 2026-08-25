@@ -1490,6 +1490,31 @@
     const ths = headerRow ? Array.from(headerRow.children) : [];
     if (!summary && !headerRow) return;
 
+    const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
+    if (isMobile) {
+      if (summary) {
+        summary.style.position = "sticky";
+        summary.style.top = "0px";
+        summary.style.zIndex = "60";
+        summary.style.width = "100%";
+      }
+      if (toolbar) {
+        toolbar.style.position = "sticky";
+        toolbar.style.top = "0px";
+        toolbar.style.zIndex = "55";
+        toolbar.style.width = "100%";
+      }
+      if (headerRow) {
+        ths.forEach(th => {
+          th.style.position = "sticky";
+          th.style.top = "0px";
+          th.style.zIndex = "50";
+          th.style.background = "#f4f4f4";
+        });
+      }
+      return;
+    }
+
     // 高さ0のマーカー要素を「本来の位置」の目印として常に静的配置のまま残す。
     // summary/toolbar/theadRow 自体は fixed になったり戻ったりするが、
     // マーカーは絶対に動かないので、いつ読んでも正確な「自然な位置」が取れる。
@@ -1589,6 +1614,40 @@
     }
 
     function update() {
+      if (window.innerWidth <= 640) {
+        if (summary) {
+          summary.style.position = "sticky";
+          summary.style.top = "0px";
+          summary.style.left = "";
+          summary.style.width = "100%";
+          summary.style.marginTop = "0";
+          summary.style.zIndex = "60";
+          if (summarySpacer) summarySpacer.style.display = "none";
+        }
+        if (toolbar) {
+          toolbar.style.position = "sticky";
+          toolbar.style.top = "0px";
+          toolbar.style.left = "";
+          toolbar.style.width = "100%";
+          toolbar.style.zIndex = "55";
+          if (toolbarSpacer) toolbarSpacer.style.display = "none";
+        }
+        if (headerRow) {
+          ths.forEach((th, idx) => {
+            const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
+            th.style.position = "sticky";
+            th.style.top = "0px";
+            th.style.left = "";
+            th.style.width = w + "px";
+            th.style.height = "";
+            th.style.zIndex = "50";
+            th.style.background = "#f4f4f4";
+          });
+          if (spacerRow) spacerRow.style.display = "none";
+        }
+        return;
+      }
+
       // details が閉じている場合は何もしない
       if (sec.tagName === "DETAILS" && !sec.open) {
         unfixAll();
