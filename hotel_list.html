@@ -28,10 +28,26 @@
       cursor: pointer;
       font-weight: 600;
       font-size: 15px;
-      padding: 6px 2px;
+      padding: 6px 2px 6px 8px;
       border-left: 4px solid var(--accent);
-      padding-left: 8px;
       margin-top: 24px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary::before {
+      content: "▶";
+      display: inline-block;
+      width: 1em;
+      color: var(--accent);
+      font-size: 12px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+    details[open] > summary::before {
+      content: "▼";
     }
     .hotel-cards {
       display: grid;
@@ -262,13 +278,6 @@
         font-size: 11px;
         color: var(--text-muted);
         margin: 4px 0 6px;
-      }
-      /* モバイルはブラウザ標準のstickyで表ヘッダーを固定する */
-      .sticky-section thead th {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: #f4f4f4;
       }
 
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
@@ -1642,15 +1651,10 @@
       }
 
       if (headerRow) {
-        // モバイルでも固定ヘッダーは必要なため、ここで無効化しない。
-        // ここに戻すと「スマホで全く固定されない」状態になっていた。
         const naturalTop = theadMarkerRow.getBoundingClientRect().top + scrollY;
         const shouldStick = scrollY >= naturalTop - offset;
         if (shouldStick) {
           let x = tableRect.left;
-          if (window.innerWidth <= 640) {
-            x = Math.max(0, tableRect.left);
-          }
           ths.forEach(th => {
             const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
             th.style.position = "fixed";
