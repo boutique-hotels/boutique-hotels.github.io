@@ -1799,7 +1799,7 @@
         const tableRect = table.getBoundingClientRect();
         const sectionRect = sec.getBoundingClientRect();
         const headerHeight = headerRow.getBoundingClientRect().height;
-        const visible = sectionRect.top <= 0 && sectionRect.bottom > headerHeight;
+        const visible = sectionRect.top <= 1 && sectionRect.bottom > headerHeight;
         mobileHeader.style.display = visible ? "block" : "none";
         if (!visible) return;
         mobileHeader.style.left = scrollRect.left + "px";
@@ -1811,6 +1811,10 @@
       tableScroll.addEventListener("scroll", updateMobileHeader, { passive: true });
       window.addEventListener("scroll", updateMobileHeader, { passive: true });
       window.addEventListener("resize", updateMobileHeader);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("scroll", updateMobileHeader, { passive: true });
+        window.visualViewport.addEventListener("resize", updateMobileHeader, { passive: true });
+      }
       document.querySelectorAll("details").forEach(details => {
         details.addEventListener("toggle", updateMobileHeader);
       });
