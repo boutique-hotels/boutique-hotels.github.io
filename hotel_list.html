@@ -187,14 +187,26 @@
       width: max-content;
       min-width: 0;
     }
+    .horizontal-scrollbar {
+      width: 100%;
+      height: 18px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      margin-bottom: 2px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-gutter: stable;
+    }
+    .horizontal-scrollbar-inner {
+      height: 1px;
+    }
 
     /* ---- 表 ---- */
     .table-scroll {
       border: none;
       border-radius: 0;
       margin-bottom: 24px;
-      overflow-x: auto;
-      overflow-y: visible;
+      overflow-x: scroll;
+      overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
     }
     table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
@@ -358,6 +370,10 @@
         top: 0;
         z-index: 100;
         background: #f4f4f4;
+      }
+      .table-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
       }
 
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
@@ -1269,6 +1285,7 @@
     const priceScroll = document.createElement("div");
     priceScroll.className = "table-scroll";
     priceScroll.appendChild(priceTable);
+    addHorizontalScrollbar(priceDetails, priceScroll, priceTable);
     priceDetails.appendChild(priceScroll);
 
     const priceBody = priceTable.querySelector("tbody");
@@ -1582,6 +1599,7 @@
 	const roomScroll = document.createElement("div");
 	roomScroll.className = "table-scroll";
 	roomScroll.appendChild(roomTable);
+  addHorizontalScrollbar(roomDetails, roomScroll, roomTable);
 	roomDetails.appendChild(roomScroll);
 
 	drawRoomTable();
@@ -1589,6 +1607,53 @@
 
 	initFakeStickyHeader(priceDetails);
 	initFakeStickyHeader(roomDetails);
+  }
+
+  function addHorizontalScrollbar(parent, tableScroll, table) {
+    const scrollbar = document.createElement("div");
+    scrollbar.className = "horizontal-scrollbar";
+    const inner = document.createElement("div");
+    inner.className = "horizontal-scrollbar-inner";
+    scrollbar.appendChild(inner);
+    const scrollbarRow = document.createElement("tr");
+    const scrollbarCell = document.createElement("th");
+    scrollbarCell.colSpan = table.querySelectorAll("thead tr:first-child th").length || 1;
+    scrollbarCell.style.padding = "0";
+    scrollbarCell.appendChild(scrollbar);
+    scrollbarRow.appendChild(scrollbarCell);
+    table.querySelector("thead")?.appendChild(scrollbarRow);
+
+    const updateWidth = () => {
+      inner.style.width = Math.max(table.scrollWidth, table.getBoundingClientRect().width) + "px";
+      const needsScroll = table.scrollWidth > tableScroll.clientWidth + 1;
+      scrollbar.style.display = needsScroll ? "block" : "none";
+      if (!needsScroll) {
+        scrollbar.style.position = "";
+        scrollbar.style.top = "";
+        scrollbar.style.left = "";
+        scrollbar.style.width = "";
+        scrollbar.style.zIndex = "";
+      }
+    };
+    let syncing = false;
+    scrollbar.addEventListener("scroll", () => {
+      if (syncing) return;
+      syncing = true;
+      tableScroll.scrollLeft = scrollbar.scrollLeft;
+      syncing = false;
+    }, { passive: true });
+    tableScroll.addEventListener("scroll", () => {
+      if (syncing) return;
+      syncing = true;
+      scrollbar.scrollLeft = tableScroll.scrollLeft;
+      syncing = false;
+    }, { passive: true });
+    window.addEventListener("resize", updateWidth);
+    if (typeof ResizeObserver !== "undefined") {
+      const observer = new ResizeObserver(updateWidth);
+      observer.observe(table);
+    }
+    updateWidth();
   }
 
   // ============================================================
@@ -1612,6 +1677,7 @@
     const toolbar = sec.querySelector(":scope > .sticky-toolbar");
     const table = sec.querySelector(".table-scroll table");
     const tableScroll = table ? table.closest(".table-scroll") : null;
+    const horizontalScrollbar = sec.querySelector(".horizontal-scrollbar");
     const thead = table ? table.querySelector("thead") : null;
     const headerRow = thead ? thead.querySelector("tr") : null;
     const ths = headerRow ? Array.from(headerRow.children) : [];
@@ -1643,6 +1709,9 @@
       const mobileTable = table.cloneNode(true);
       const mobileBody = mobileTable.querySelector("tbody");
       if (mobileBody) mobileBody.remove();
+      mobileTable.querySelectorAll(".horizontal-scrollbar").forEach(el => {
+        el.closest("tr")?.remove();
+      });
       mobileTable.querySelectorAll("input, select, button").forEach(control => {
         const originalId = control.id;
         const originalControl = originalId ? document.getElementById(originalId) : null;
@@ -1781,6 +1850,13 @@
     }
 
     function unfixAll() {
+      if (horizontalScrollbar) {
+        horizontalScrollbar.style.position = "";
+        horizontalScrollbar.style.top = "";
+        horizontalScrollbar.style.left = "";
+        horizontalScrollbar.style.width = "";
+        horizontalScrollbar.style.zIndex = "";
+      }
       if (summary) {
         summary.style.position = "";
         summary.style.top = "";
@@ -1895,6 +1971,14 @@
             th.style.background = "#f4f4f4";
             x += w;
           });
+          if (horizontalScrollbar && tableScroll && getComputedStyle(horizontalScrollbar).display !== "none") {
+            const scrollRect = tableScroll.getBoundingClientRect();
+            horizontalScrollbar.style.position = "fixed";
+            horizontalScrollbar.style.top = (offset + sizes.thead) + "px";
+            horizontalScrollbar.style.left = scrollRect.left + "px";
+            horizontalScrollbar.style.width = scrollRect.width + "px";
+            horizontalScrollbar.style.zIndex = "45";
+          }
           spacerRow.style.display = "table-row";
         } else {
           ths.forEach(th => {
@@ -1906,6 +1990,13 @@
             th.style.zIndex = "";
             th.style.background = "";
           });
+          if (horizontalScrollbar) {
+            horizontalScrollbar.style.position = "";
+            horizontalScrollbar.style.top = "";
+            horizontalScrollbar.style.left = "";
+            horizontalScrollbar.style.width = "";
+            horizontalScrollbar.style.zIndex = "";
+          }
           spacerRow.style.display = "none";
         }
       }
