@@ -166,8 +166,21 @@
       width: 100vw;
       overflow: hidden;
       z-index: 300;
-      pointer-events: none;
+      pointer-events: auto;
       background: #f4f4f4;
+    }
+    .mobile-sticky-header > .mobile-sticky-summary,
+    .mobile-sticky-header > .mobile-sticky-toolbar {
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .mobile-sticky-header > .mobile-sticky-summary {
+      display: block;
+      padding: 10px 2px 10px 10px;
+      font-weight: 600;
+    }
+    .mobile-sticky-header > .mobile-sticky-toolbar {
+      padding: 6px 2px;
     }
     .mobile-sticky-header table {
       margin: 0;
@@ -1610,12 +1623,61 @@
 
       const mobileHeader = document.createElement("div");
       mobileHeader.className = "mobile-sticky-header";
+      const mobileSummary = summary.cloneNode(true);
+      mobileSummary.className = "mobile-sticky-summary";
+      mobileSummary.removeAttribute("id");
+      mobileSummary.addEventListener("click", () => summary.click());
+      mobileHeader.appendChild(mobileSummary);
+
+      if (toolbar) {
+        const mobileToolbar = toolbar.cloneNode(true);
+        mobileToolbar.className = "mobile-sticky-toolbar";
+        mobileToolbar.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+        mobileToolbar.querySelectorAll("button").forEach(button => {
+          const originalButton = toolbar.querySelector("button");
+          if (originalButton) button.addEventListener("click", () => originalButton.click());
+        });
+        mobileHeader.appendChild(mobileToolbar);
+      }
+
       const mobileTable = table.cloneNode(true);
       const mobileBody = mobileTable.querySelector("tbody");
       if (mobileBody) mobileBody.remove();
-      mobileTable.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-      mobileTable.querySelectorAll("input, select, button").forEach(el => {
-        el.disabled = true;
+      mobileTable.querySelectorAll("input, select, button").forEach(control => {
+        const originalId = control.id;
+        const originalControl = originalId ? document.getElementById(originalId) : null;
+        control.removeAttribute("id");
+        if (!originalControl) return;
+        if (control.type === "checkbox" || control.type === "radio") {
+          control.checked = originalControl.checked;
+        } else if (control.tagName === "SELECT") {
+          Array.from(control.options).forEach((option, index) => {
+            option.selected = Boolean(originalControl.options[index]?.selected);
+          });
+        } else {
+          control.value = originalControl.value;
+        }
+        const syncControl = () => {
+          if (control.type === "checkbox" || control.type === "radio") {
+            originalControl.checked = control.checked;
+          } else if (control.tagName === "SELECT") {
+            Array.from(originalControl.options).forEach((option, index) => {
+              option.selected = Boolean(control.options[index]?.selected);
+            });
+          } else {
+            originalControl.value = control.value;
+          }
+          originalControl.dispatchEvent(new Event("input", { bubbles: true }));
+          originalControl.dispatchEvent(new Event("change", { bubbles: true }));
+        };
+        control.addEventListener("input", syncControl);
+        control.addEventListener("change", syncControl);
+      });
+      mobileTable.querySelectorAll("th.sortable").forEach((mobileTh, index) => {
+        mobileTh.addEventListener("click", event => {
+          if (event.target.matches("input, select, option")) return;
+          ths[index]?.click();
+        });
       });
       mobileHeader.appendChild(mobileTable);
       document.body.appendChild(mobileHeader);
@@ -1627,14 +1689,15 @@
         }
         const scrollRect = tableScroll.getBoundingClientRect();
         const tableRect = table.getBoundingClientRect();
+        const sectionRect = sec.getBoundingClientRect();
         const headerHeight = headerRow.getBoundingClientRect().height;
-        const visible = scrollRect.top <= 0 && scrollRect.bottom > headerHeight;
+        const visible = sectionRect.top <= 0 && sectionRect.bottom > headerHeight;
         mobileHeader.style.display = visible ? "block" : "none";
         if (!visible) return;
         mobileHeader.style.left = scrollRect.left + "px";
         mobileHeader.style.width = Math.max(0, scrollRect.width) + "px";
         mobileTable.style.transform = `translateX(${tableRect.left - scrollRect.left}px)`;
-        mobileHeader.style.height = headerHeight + "px";
+        mobileHeader.style.height = "auto";
       }
 
       tableScroll.addEventListener("scroll", updateMobileHeader, { passive: true });
