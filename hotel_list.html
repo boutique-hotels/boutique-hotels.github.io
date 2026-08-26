@@ -190,6 +190,9 @@
     .horizontal-scrollbar {
       width: 100%;
       height: 18px;
+      position: absolute;
+      top: 0;
+      left: 0;
       overflow-x: scroll;
       overflow-y: hidden;
       margin-bottom: 2px;
@@ -205,6 +208,7 @@
       border: none;
       border-radius: 0;
       margin-bottom: 24px;
+      position: relative;
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
@@ -370,6 +374,9 @@
         top: 0;
         z-index: 100;
         background: #f4f4f4;
+      }
+      .horizontal-scrollbar {
+        display: none !important;
       }
       .table-scroll {
         overflow-x: auto;
@@ -1615,17 +1622,14 @@
     const inner = document.createElement("div");
     inner.className = "horizontal-scrollbar-inner";
     scrollbar.appendChild(inner);
-    const scrollbarRow = document.createElement("tr");
-    const scrollbarCell = document.createElement("th");
-    scrollbarCell.colSpan = table.querySelectorAll("thead tr:first-child th").length || 1;
-    scrollbarCell.style.padding = "0";
-    scrollbarCell.appendChild(scrollbar);
-    scrollbarRow.appendChild(scrollbarCell);
-    table.querySelector("thead")?.appendChild(scrollbarRow);
+    tableScroll.insertBefore(scrollbar, tableScroll.firstChild);
 
     const updateWidth = () => {
       inner.style.width = Math.max(table.scrollWidth, table.getBoundingClientRect().width) + "px";
       const needsScroll = table.scrollWidth > tableScroll.clientWidth + 1;
+      scrollbar.style.width = tableScroll.clientWidth + "px";
+      const headerRow = table.querySelector("thead tr");
+      scrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
       scrollbar.style.display = needsScroll ? "block" : "none";
       if (!needsScroll) {
         scrollbar.style.position = "";
