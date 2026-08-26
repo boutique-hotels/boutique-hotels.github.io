@@ -1,0 +1,47 @@
+name: Scrape hotel data
+
+# 30分ごとに自動実行。GitHubの手元でも「Actions」タブから手動実行できるようにしている。
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+# data/ ディレクトリの変更をこのリポジトリ自身にコミット・プッシュするための権限
+permissions:
+  contents: write
+
+# 前回の実行がまだ終わっていない状態で次のスケジュールが来ても、
+# 同時に2つ動いてコミットが競合しないようにする
+concurrency:
+  group: scrape-hotel-data
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run scraper (all stations)
+        run: python extract_hotels.py --station all
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: update hotel data ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi

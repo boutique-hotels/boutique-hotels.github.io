@@ -38,6 +38,10 @@ STATION_CONFIGS = {
     },
 }
 
+DATA_DIR = Path("data")
+CURRENT_DATA_DIR = DATA_DIR / "current"
+ARCHIVE_DATA_DIR = DATA_DIR / "archive"
+
 # -------------------------
 # ユーティリティ
 # -------------------------
@@ -433,7 +437,7 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
             results.append(detail)
         sleep(sleep_sec)
 
-    # 保存
+    # 最新ファイルと履歴ファイルを保存
     generated_at = datetime.now().astimezone().isoformat(timespec="minutes")
     detail_payload = {
         "metadata": {
@@ -441,14 +445,33 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
         },
         "hotels": results,
     }
-    with open(f"{label}_hotels_detail.json", "w", encoding="utf-8") as f:
+    CURRENT_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    ARCHIVE_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    detail_filename = f"{label}_hotels_detail.json"
+    failure_filename = f"{label}_hotels_failures.json"
+    detail_path = CURRENT_DATA_DIR / detail_filename
+    failure_path = CURRENT_DATA_DIR / failure_filename
+
+    with open(detail_path, "w", encoding="utf-8") as f:
         json.dump(detail_payload, f, ensure_ascii=False, indent=2)
-    with open(f"{label}_hotels_failures.json", "w", encoding="utf-8") as f:
+    with open(failure_path, "w", encoding="utf-8") as f:
+        json.dump(failures, f, ensure_ascii=False, indent=2)
+
+    # アーカイブ用のファイル名は「currentファイルの更新日時(mtime)」から作る。
+    # datetime.now() を別途呼ぶのではなく、実際に書き込んだファイルの
+    # タイムスタンプを読み直すことで、ファイル名が実体の更新日時と確実に一致する。
+    mtime = detail_path.stat().st_mtime
+    timestamp_suffix = datetime.fromtimestamp(mtime).strftime("%Y%m%d_%H%M%S")
+
+    with open(ARCHIVE_DATA_DIR / f"{label}_hotels_detail_{timestamp_suffix}.json", "w", encoding="utf-8") as f:
+        json.dump(detail_payload, f, ensure_ascii=False, indent=2)
+    with open(ARCHIVE_DATA_DIR / f"{label}_hotels_failures_{timestamp_suffix}.json", "w", encoding="utf-8") as f:
         json.dump(failures, f, ensure_ascii=False, indent=2)
 
     generate_station_manifest()
 
-    print(f"保存完了: {label}_hotels_detail.json")
+    print(f"保存完了: {CURRENT_DATA_DIR / detail_filename}")
     print(f"失敗件数: {len(failures)} (詳細は {label}_hotels_failures.json)")
 
 
@@ -456,7 +479,7 @@ def generate_station_manifest() -> None:
     """詳細 JSON の一覧と JSON 内の生成日時を HTML 用に保存する。"""
     label_by_key = {key: config["label"] for key, config in STATION_CONFIGS.items()}
     stations = []
-    for path in sorted(Path(".").glob("*_hotels_detail.json")):
+    for path in sorted(CURRENT_DATA_DIR.glob("*_hotels_detail.json")):
         label = path.name.removesuffix("_hotels_detail.json")
         key = next((k for k, value in label_by_key.items() if value == label), label)
         with path.open(encoding="utf-8-sig") as f:
@@ -465,11 +488,12 @@ def generate_station_manifest() -> None:
         stations.append({
             "key": key,
             "label": label,
-            "file": path.name,
+            "file": path.as_posix(),
             "updatedAt": metadata.get("generatedAt"),
         })
 
-    with open("hotel_data_manifest.json", "w", encoding="utf-8") as f:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    with open(DATA_DIR / "hotel_data_manifest.json", "w", encoding="utf-8") as f:
         json.dump(stations, f, ensure_ascii=False, indent=2)
     print("マニフェスト更新: hotel_data_manifest.json")
 
@@ -480,9 +504,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="HappyHotelの駅周辺ホテルを取得します")
     parser.add_argument(
         "--station",
-        choices=STATION_CONFIGS,
+        choices=list(STATION_CONFIGS) + ["all"],
         default="ikebukuro",
-        help="取得対象の駅（既定値: ikebukuro）",
+        help="取得対象の駅（既定値: ikebukuro）。'all' を指定すると全駅を順番に処理する",
     )
     parser.add_argument(
         "--sleep",
@@ -490,13 +514,35 @@ if __name__ == "__main__":
         default=1.0,
         help="リクエスト間隔（秒、既定値: 1.0）",
     )
-    args = parser.parse_args()
-    station = STATION_CONFIGS[args.station]
-
-    scrape_all_hotels_kodawari(
-        pref_id=station["pref_id"],
-        route_id=station["route_id"],
-        station_id=station["station_id"],
-        label=station["label"],
-        sleep_sec=args.sleep,
+    parser.add_argument(
+        "--station-sleep",
+        type=float,
+        default=5.0,
+        help="--station all のとき、駅と駅の間に空ける間隔（秒、既定値: 5.0）",
     )
+    args = parser.parse_args()
+
+    if args.station == "all":
+        station_items = list(STATION_CONFIGS.items())
+        for i, (key, station) in enumerate(station_items, 1):
+            print(f"\n===== [{i}/{len(station_items)}] {station['label']} の取得を開始 =====")
+            scrape_all_hotels_kodawari(
+                pref_id=station["pref_id"],
+                route_id=station["route_id"],
+                station_id=station["station_id"],
+                label=station["label"],
+                sleep_sec=args.sleep,
+            )
+            # 最後の駅の後は待たない
+            if i < len(station_items):
+                sleep(args.station_sleep)
+        print(f"\n===== 全{len(station_items)}駅の取得が完了しました =====")
+    else:
+        station = STATION_CONFIGS[args.station]
+        scrape_all_hotels_kodawari(
+            pref_id=station["pref_id"],
+            route_id=station["route_id"],
+            station_id=station["station_id"],
+            label=station["label"],
+            sleep_sec=args.sleep,
+        )

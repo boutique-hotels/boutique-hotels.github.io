@@ -28,26 +28,10 @@
       cursor: pointer;
       font-weight: 600;
       font-size: 15px;
-      padding: 6px 2px 6px 8px;
+      padding: 6px 2px;
       border-left: 4px solid var(--accent);
+      padding-left: 8px;
       margin-top: 24px;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    details > summary::-webkit-details-marker { display: none; }
-    details > summary::before {
-      content: "▶";
-      display: inline-block;
-      width: 1em;
-      color: var(--accent);
-      font-size: 12px;
-      line-height: 1;
-      transform: translateY(-1px);
-    }
-    details[open] > summary::before {
-      content: "▼";
     }
     .hotel-cards {
       display: grid;
@@ -107,28 +91,6 @@
       color: #444;
     }
     .no-data { color: #bbb; font-style: italic; }
-    .group-row > td {
-      background: #f8fafc;
-      font-weight: 600;
-      cursor: pointer;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      line-height: 1.5;
-      vertical-align: middle;
-    }
-    .group-row > td:first-child { background: #f8fafc; }
-    .group-row:nth-child(even) > td,
-    .group-row:nth-child(even) > td:first-child { background: #f8fafc; }
-    .group-row > td:first-child::before {
-      content: "▶";
-      display: inline-block;
-      width: 1em;
-      color: var(--accent);
-      font-size: 11px;
-      margin-right: 6px;
-    }
-    .group-row.expanded > td:first-child::before { content: "▼"; }
-    .detail-row[hidden] { display: none; }
 
     /* 料金比較表・部屋比較表: タイトル・ツールバー・列見出しの固定表示
        CSSの position:sticky はブラウザ（特にモバイル）によって挙動が不安定なため、
@@ -136,17 +98,12 @@
        ここでは基本スタイルのみを定義し、position/top/left/width はJSが
        インラインstyleで都度セットする。 */
     .sticky-section > summary {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      display: block;
       list-style: none;
       cursor: pointer;
       z-index: 30;
       background: #fff;
       box-sizing: border-box;
-    }
-    .sticky-section {
-      position: relative;
     }
     .sticky-section > summary::-webkit-details-marker { display: none; }
     .sticky-section > summary::before {
@@ -154,9 +111,6 @@
       display: inline-block;
       width: 1em;
       color: var(--accent);
-      font-size: 12px;
-      line-height: 1;
-      transform: translateY(-1px);
     }
     .sticky-section[open] > summary::before {
       content: "▼";
@@ -183,68 +137,12 @@
     }
     .sticky-spacer { display: none; }
     .sticky-spacer-row { visibility: hidden; }
-    .mobile-sticky-header {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      overflow: hidden;
-      z-index: 300;
-      pointer-events: auto;
-      background: #f4f4f4;
-    }
-    .mobile-sticky-header > .mobile-sticky-summary,
-    .mobile-sticky-header > .mobile-sticky-toolbar {
-      background: #fff;
-      box-sizing: border-box;
-    }
-    .mobile-sticky-header > .mobile-sticky-summary {
-      display: block;
-      padding: 10px 2px 10px 10px;
-      font-weight: 600;
-    }
-    .mobile-sticky-header > .mobile-sticky-toolbar {
-      padding: 6px 2px;
-    }
-    .mobile-sticky-header > .mobile-sticky-scroll-hint {
-      display: block;
-      margin: 4px 0 6px;
-      padding: 0 2px;
-      color: var(--text-muted);
-      font-size: 11px;
-      background: #fff;
-    }
-    .mobile-sticky-header table {
-      margin: 0;
-      width: max-content;
-      min-width: 0;
-    }
-    .horizontal-scrollbar {
-      width: 100%;
-      height: 18px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      box-sizing: border-box;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      margin-bottom: 2px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-gutter: stable;
-    }
-    .horizontal-scrollbar-inner {
-      height: 1px;
-    }
 
     /* ---- 表 ---- */
     .table-scroll {
       border: none;
       border-radius: 0;
       margin-bottom: 24px;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
     }
     table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
     th, td { border-bottom: 1px solid var(--border); border-right: 1px solid #eee; padding: 6px 8px; text-align:center; white-space: nowrap; }
@@ -322,37 +220,6 @@
     .clear-btn:hover { background: var(--accent-soft); }
     .sticky-toolbar.subtitle { margin: 0; padding-bottom: 10px; }
 
-    .station-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 8px 0 16px;
-    }
-    .station-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: #fff;
-      color: #1f2328;
-      text-decoration: none;
-      font-size: 12px;
-      line-height: 1.2;
-    }
-    .station-link.current {
-      background: var(--accent-soft);
-      border-color: var(--accent);
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .data-updated-at {
-      color: var(--text-muted);
-      font-size: 12px;
-      margin: -10px 0 10px;
-    }
-
     @media (max-width: 640px) {
       body { padding: 10px 10px 24px; }
       h1 { font-size: 18px; }
@@ -395,25 +262,6 @@
         font-size: 11px;
         color: var(--text-muted);
         margin: 4px 0 6px;
-      }
-      .sticky-section > summary {
-        position: static;
-      }
-      .sticky-section .sticky-toolbar {
-        position: static;
-      }
-      .sticky-section thead th {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: #f4f4f4;
-      }
-      .horizontal-scrollbar {
-        display: none !important;
-      }
-      .table-scroll {
-        overflow-x: auto;
-        overflow-y: hidden;
       }
 
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
@@ -553,9 +401,8 @@
 </div>
 
 
-<h1 id="pageTitle">ホテル料金比較</h1>
-<div class="station-links" id="stationLinks" aria-label="駅切り替え"></div>
-<div class="data-updated-at" id="dataUpdatedAt"></div>
+<h1>ホテル料金比較</h1>
+<div class="subtitle" id="dataSource">読み込み中...</div>
 <div id="content">読み込み中...</div>
 
 <script>
@@ -566,49 +413,8 @@
   };
   const stationKey = new URLSearchParams(window.location.search).get("station") || "ikebukuro";
   const selectedStation = stationData[stationKey] || stationData.ikebukuro;
-
-  function formatUpdatedAt(timestamp) {
-    if (!timestamp) return "";
-    const date = typeof timestamp === "number" ? new Date(timestamp * 1000) : new Date(timestamp);
-    if (Number.isNaN(date.getTime())) return "";
-    const pad = value => String(value).padStart(2, "0");
-    return `${date.getFullYear()}/${pad(date.getMonth() + 1)}/${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}時点`;
-  }
-
-  function renderStationLinks(stations) {
-    const container = document.getElementById("stationLinks");
-    if (!container) return;
-    container.innerHTML = stations.map(info => {
-      const isCurrent = info.key === stationKey;
-      return `<a class="station-link ${isCurrent ? "current" : ""}" href="?station=${encodeURIComponent(info.key)}" ${isCurrent ? "aria-current=\"page\"" : ""}>${info.label}</a>`;
-    }).join("");
-  }
-
-  function updateStationDisplay(info) {
-    const title = `ホテル料金比較　${info.label}`;
-    document.getElementById("pageTitle").textContent = title;
-    document.title = title;
-    document.getElementById("dataUpdatedAt").textContent =
-      formatUpdatedAt(info.updatedAt);
-  }
-
-  renderStationLinks(Object.entries(stationData).map(([key, info]) => ({ key, ...info })));
-  updateStationDisplay(selectedStation);
-
-  fetch("hotel_data_manifest.json", { cache: "no-store" })
-    .then(res => {
-      if (!res.ok) throw new Error(`マニフェストが存在しません (${res.status})`);
-      return res.json();
-    })
-    .then(stations => {
-      if (!Array.isArray(stations) || !stations.length) return;
-      renderStationLinks(stations);
-      const current = stations.find(info => info.key === stationKey) || stations[0];
-      updateStationDisplay(current);
-    })
-    .catch(err => {
-      console.warn("駅データ一覧を読み込めません:", err);
-    });
+  document.getElementById("dataSource").textContent =
+    `${selectedStation.label}のデータ（${selectedStation.file}）を読み込んでいます`;
 
   // ---- サイドバー開閉 ----
   (function () {
@@ -670,24 +476,14 @@
     applyState();
   })();
 
-  fetch(selectedStation.file, { cache: "no-store" })
+  fetch(selectedStation.file)
     .then(res => {
       if (!res.ok) {
         throw new Error(`JSONファイルが存在しません: ${selectedStation.file} (${res.status})`);
       }
       return res.json();
     })
-    .then(payload => {
-      const hotels = Array.isArray(payload) ? payload : payload.hotels;
-      if (!Array.isArray(hotels)) {
-        throw new Error("JSON のホテルデータ形式が不正です");
-      }
-      if (payload.metadata && payload.metadata.generatedAt) {
-        document.getElementById("dataUpdatedAt").textContent =
-          formatUpdatedAt(payload.metadata.generatedAt);
-      }
-      render(hotels);
-    })
+    .then(hotels => render(hotels))
     .catch(err => {
       document.getElementById("content").textContent = "JSON読み込みエラー: " + err;
     });
@@ -1326,11 +1122,9 @@
     priceScroll.className = "table-scroll";
     priceScroll.appendChild(priceTable);
     priceDetails.appendChild(priceScroll);
-    addHorizontalScrollbar(priceDetails, priceScroll, priceTable);
 
     const priceBody = priceTable.querySelector("tbody");
     let sortState = { column: null, asc: true };
-    const expandedPriceHotels = new Set();
 
     function formatVacancy(hotel) {
       const vacancy = hotel.vacancy || {};
@@ -1446,37 +1240,8 @@
         el.textContent = (sortState.column === col) ? (sortState.asc ? "▲" : "▼") : "";
       });
 
-      const groupedRows = new Map();
-      rows.forEach(row => {
-        if (!groupedRows.has(row.hotel)) groupedRows.set(row.hotel, []);
-        groupedRows.get(row.hotel).push(row);
-      });
-
-      groupedRows.forEach((hotelRows, hotelName) => {
-        const first = hotelRows[0];
-        const types = Array.from(new Set(hotelRows.map(row => row.type))).join(" / ");
-        const minPrice = Math.min(...hotelRows.map(row => row.minPrice));
-        const maxPrice = Math.max(...hotelRows.map(row => row.maxPrice));
-        const groupRow = document.createElement("tr");
-        groupRow.className = "group-row" + (expandedPriceHotels.has(hotelName) ? " expanded" : "");
-        groupRow.dataset.hotel = hotelName;
-        groupRow.innerHTML = `
-          <td>${hotelName}</td>
-          <td class="vacancy-cell">${first.vacancy}</td>
-          <td>${types}</td>
-          <td>明細 ${hotelRows.length} 件</td>
-          <td>—</td>
-          <td>${minPrice}</td>
-          <td>${maxPrice}</td>
-          <td colspan="12">ホテル単位で集約中</td>
-        `;
-        priceBody.appendChild(groupRow);
-
-        hotelRows.forEach(r => {
+      rows.forEach(r => {
         const tr = document.createElement("tr");
-        tr.className = "detail-row";
-        tr.dataset.hotel = hotelName;
-        tr.hidden = !expandedPriceHotels.has(hotelName);
         tr.innerHTML = `
           <td>${r.hotel}</td>
           <td class="vacancy-cell">${r.vacancy}</td>
@@ -1499,7 +1264,6 @@
 		  <td>${r.flags["祝前"]}</td>
         `;
         priceBody.appendChild(tr);
-        });
       });
     }
 
@@ -1523,14 +1287,6 @@
         }
         drawTable();
       });
-    });
-    priceBody.addEventListener("click", event => {
-      const groupRow = event.target.closest(".group-row");
-      if (!groupRow) return;
-      const hotelName = groupRow.dataset.hotel;
-      if (expandedPriceHotels.has(hotelName)) expandedPriceHotels.delete(hotelName);
-      else expandedPriceHotels.add(hotelName);
-      drawTable();
     });
 
     clearBtn.onclick = () => {
@@ -1608,7 +1364,6 @@
 	const roomBody = roomTable.querySelector("tbody");
 
 	let roomSortState = { column: null, asc: true };
-  const expandedRoomHotels = new Set();
 
 	function drawRoomTable() {
 	  let rows = allRoomRows.filter(r => {
@@ -1642,28 +1397,8 @@
 	  });
 
 	  roomBody.innerHTML = "";
-    const groupedRows = new Map();
-    rows.forEach(row => {
-      if (!groupedRows.has(row.hotelName)) groupedRows.set(row.hotelName, []);
-      groupedRows.get(row.hotelName).push(row);
-    });
-
-    groupedRows.forEach((hotelRows, hotelName) => {
-      const groupRow = document.createElement("tr");
-      groupRow.className = "group-row" + (expandedRoomHotels.has(hotelName) ? " expanded" : "");
-      groupRow.dataset.hotel = hotelName;
-      groupRow.innerHTML = `
-        <td>${hotelName}</td>
-        <td>明細 ${hotelRows.length} 件</td>
-        <td colspan="5">ホテル単位で集約中</td>
-      `;
-      roomBody.appendChild(groupRow);
-
-      hotelRows.forEach(r => {
+	  rows.forEach(r => {
 	    const tr = document.createElement("tr");
-        tr.className = "detail-row";
-        tr.dataset.hotel = hotelName;
-        tr.hidden = !expandedRoomHotels.has(hotelName);
 	    const keepDisplay = r.keepFlag === null ? "—" : r.keepFlag;
 	    tr.innerHTML = `
 	      <td>${r.hotelName}</td>
@@ -1679,8 +1414,7 @@
 	      </td>
 	    `;
 	    roomBody.appendChild(tr);
-    });
-  });
+	  });
 	}
 
 	roomTable.querySelectorAll("th.sortable").forEach(th => {
@@ -1696,78 +1430,17 @@
 	    drawRoomTable();
 	  });
 	});
-  roomBody.addEventListener("click", event => {
-    const groupRow = event.target.closest(".group-row");
-    if (!groupRow) return;
-    const hotelName = groupRow.dataset.hotel;
-    if (expandedRoomHotels.has(hotelName)) expandedRoomHotels.delete(hotelName);
-    else expandedRoomHotels.add(hotelName);
-    drawRoomTable();
-  });
 
 	const roomScroll = document.createElement("div");
 	roomScroll.className = "table-scroll";
 	roomScroll.appendChild(roomTable);
 	roomDetails.appendChild(roomScroll);
-  addHorizontalScrollbar(roomDetails, roomScroll, roomTable);
 
 	drawRoomTable();
 	document.getElementById("filterKeepValue").addEventListener("change", drawRoomTable);
 
 	initFakeStickyHeader(priceDetails);
 	initFakeStickyHeader(roomDetails);
-  }
-
-  function addHorizontalScrollbar(parent, tableScroll, table) {
-    const scrollbar = document.createElement("div");
-    scrollbar.className = "horizontal-scrollbar";
-    const inner = document.createElement("div");
-    inner.className = "horizontal-scrollbar-inner";
-    scrollbar.appendChild(inner);
-    parent.insertBefore(scrollbar, tableScroll);
-
-    const updateWidth = () => {
-      const visibleWidth = tableScroll.getBoundingClientRect().width;
-      const tableWidth = Math.max(table.scrollWidth, table.getBoundingClientRect().width);
-      inner.style.width = tableWidth + "px";
-      const needsScroll = tableWidth > visibleWidth + 1;
-      scrollbar.style.width = visibleWidth + "px";
-      const headerRow = table.querySelector("thead tr:not([aria-hidden='true'])");
-      if (getComputedStyle(scrollbar).position !== "fixed") {
-        const parentRect = parent.getBoundingClientRect();
-        const scrollRect = tableScroll.getBoundingClientRect();
-        scrollbar.style.top = (scrollRect.top - parentRect.top + (headerRow?.getBoundingClientRect().height || 0)) + "px";
-        scrollbar.style.left = (scrollRect.left - parentRect.left) + "px";
-      }
-      scrollbar.style.display = needsScroll ? "block" : "none";
-      if (!needsScroll) {
-        scrollbar.style.position = "";
-        scrollbar.style.top = "";
-        scrollbar.style.left = "";
-        scrollbar.style.width = "";
-        scrollbar.style.zIndex = "";
-      }
-    };
-    let syncing = false;
-    scrollbar.addEventListener("scroll", () => {
-      if (syncing) return;
-      syncing = true;
-      tableScroll.scrollLeft = scrollbar.scrollLeft;
-      syncing = false;
-    }, { passive: true });
-    tableScroll.addEventListener("scroll", () => {
-      if (syncing) return;
-      syncing = true;
-      scrollbar.scrollLeft = tableScroll.scrollLeft;
-      syncing = false;
-    }, { passive: true });
-    window.addEventListener("resize", updateWidth);
-    if (typeof ResizeObserver !== "undefined") {
-      const observer = new ResizeObserver(updateWidth);
-      observer.observe(table);
-    }
-    scrollbar._updateWidth = updateWidth;
-    updateWidth();
   }
 
   // ============================================================
@@ -1789,129 +1462,12 @@
   function initFakeStickyHeader(sec) {
     const summary = sec.querySelector(":scope > summary");
     const toolbar = sec.querySelector(":scope > .sticky-toolbar");
-    const scrollHint = sec.querySelector(":scope > .scroll-hint");
     const table = sec.querySelector(".table-scroll table");
     const tableScroll = table ? table.closest(".table-scroll") : null;
-    const horizontalScrollbar = sec.querySelector(".horizontal-scrollbar");
     const thead = table ? table.querySelector("thead") : null;
     const headerRow = thead ? thead.querySelector("tr") : null;
     const ths = headerRow ? Array.from(headerRow.children) : [];
     if (!summary && !headerRow) return;
-
-    const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
-    if (isMobile) {
-      if (!headerRow || !tableScroll) return;
-
-      const mobileHeader = document.createElement("div");
-      mobileHeader.className = "mobile-sticky-header";
-      const mobileSummary = summary.cloneNode(true);
-      mobileSummary.className = "mobile-sticky-summary";
-      mobileSummary.removeAttribute("id");
-      mobileSummary.addEventListener("click", () => summary.click());
-      mobileHeader.appendChild(mobileSummary);
-
-      if (toolbar) {
-        const mobileToolbar = toolbar.cloneNode(true);
-        mobileToolbar.classList.add("mobile-sticky-toolbar");
-        mobileToolbar.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-        mobileToolbar.querySelectorAll("button").forEach(button => {
-          const originalButton = toolbar.querySelector("button");
-          if (originalButton) button.addEventListener("click", () => originalButton.click());
-        });
-        mobileHeader.appendChild(mobileToolbar);
-      }
-      if (scrollHint) {
-        const mobileScrollHint = scrollHint.cloneNode(true);
-        mobileScrollHint.className = "mobile-sticky-scroll-hint";
-        mobileHeader.appendChild(mobileScrollHint);
-      }
-
-      const mobileTable = table.cloneNode(true);
-      const mobileBody = mobileTable.querySelector("tbody");
-      if (mobileBody) mobileBody.remove();
-      mobileTable.querySelectorAll(".horizontal-scrollbar").forEach(el => {
-        el.closest("tr")?.remove();
-      });
-      mobileTable.querySelectorAll("input, select, button").forEach(control => {
-        const originalId = control.id;
-        const originalControl = originalId ? document.getElementById(originalId) : null;
-        control.removeAttribute("id");
-        if (!originalControl) return;
-        if (control.type === "checkbox" || control.type === "radio") {
-          control.checked = originalControl.checked;
-        } else if (control.tagName === "SELECT") {
-          Array.from(control.options).forEach((option, index) => {
-            option.selected = Boolean(originalControl.options[index]?.selected);
-          });
-        } else {
-          control.value = originalControl.value;
-        }
-        const syncControl = () => {
-          if (control.type === "checkbox" || control.type === "radio") {
-            originalControl.checked = control.checked;
-          } else if (control.tagName === "SELECT") {
-            Array.from(originalControl.options).forEach((option, index) => {
-              option.selected = Boolean(control.options[index]?.selected);
-            });
-          } else {
-            originalControl.value = control.value;
-          }
-          originalControl.dispatchEvent(new Event("input", { bubbles: true }));
-          originalControl.dispatchEvent(new Event("change", { bubbles: true }));
-        };
-        control.addEventListener("input", syncControl);
-        control.addEventListener("change", syncControl);
-      });
-      const mobileHeaderCells = mobileTable.querySelectorAll("thead tr:first-child th");
-      ths.forEach((originalTh, index) => {
-        const mobileTh = mobileHeaderCells[index];
-        if (!mobileTh) return;
-        const width = originalTh.getBoundingClientRect().width;
-        mobileTh.style.width = width + "px";
-        mobileTh.style.minWidth = width + "px";
-        mobileTh.style.maxWidth = width + "px";
-      });
-      mobileTable.style.width = table.getBoundingClientRect().width + "px";
-      mobileTable.querySelectorAll("th.sortable").forEach((mobileTh, index) => {
-        mobileTh.addEventListener("click", event => {
-          if (event.target.matches("input, select, option")) return;
-          ths[index]?.click();
-        });
-      });
-      mobileHeader.appendChild(mobileTable);
-      document.body.appendChild(mobileHeader);
-
-      function updateMobileHeader() {
-        if (sec.tagName === "DETAILS" && !sec.open) {
-          mobileHeader.style.display = "none";
-          return;
-        }
-        const scrollRect = tableScroll.getBoundingClientRect();
-        const tableRect = table.getBoundingClientRect();
-        const sectionRect = sec.getBoundingClientRect();
-        const headerHeight = headerRow.getBoundingClientRect().height;
-        const visible = sectionRect.top <= 1 && sectionRect.bottom > headerHeight;
-        mobileHeader.style.display = visible ? "block" : "none";
-        if (!visible) return;
-        mobileHeader.style.left = scrollRect.left + "px";
-        mobileHeader.style.width = Math.max(0, scrollRect.width) + "px";
-        mobileTable.style.transform = `translateX(${tableRect.left - scrollRect.left}px)`;
-        mobileHeader.style.height = "auto";
-      }
-
-      tableScroll.addEventListener("scroll", updateMobileHeader, { passive: true });
-      window.addEventListener("scroll", updateMobileHeader, { passive: true });
-      window.addEventListener("resize", updateMobileHeader);
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener("scroll", updateMobileHeader, { passive: true });
-        window.visualViewport.addEventListener("resize", updateMobileHeader, { passive: true });
-      }
-      document.querySelectorAll("details").forEach(details => {
-        details.addEventListener("toggle", updateMobileHeader);
-      });
-      updateMobileHeader();
-      return;
-    }
 
     // 高さ0のマーカー要素を「本来の位置」の目印として常に静的配置のまま残す。
     // summary/toolbar/theadRow 自体は fixed になったり戻ったりするが、
@@ -1984,15 +1540,6 @@
     }
 
     function unfixAll() {
-      if (horizontalScrollbar) {
-        horizontalScrollbar.style.position = "absolute";
-        const sectionRect = sec.getBoundingClientRect();
-        const scrollRect = tableScroll ? tableScroll.getBoundingClientRect() : sectionRect;
-        horizontalScrollbar.style.top = (scrollRect.top - sectionRect.top + (headerRow?.getBoundingClientRect().height || 0)) + "px";
-        horizontalScrollbar.style.left = (scrollRect.left - sectionRect.left) + "px";
-        horizontalScrollbar.style.width = "";
-        horizontalScrollbar.style.zIndex = "";
-      }
       if (summary) {
         summary.style.position = "";
         summary.style.top = "";
@@ -2021,10 +1568,6 @@
     }
 
     function update() {
-      if (window.innerWidth <= 640) {
-        return;
-      }
-
       // details が閉じている場合は何もしない
       if (sec.tagName === "DETAILS" && !sec.open) {
         unfixAll();
@@ -2044,7 +1587,6 @@
       const sectionBottom = sec.getBoundingClientRect().bottom;
       if (sectionBottom <= totalStickyHeight) {
         unfixAll();
-        requestAnimationFrame(() => horizontalScrollbar?._updateWidth?.());
         return;
       }
 
@@ -2108,16 +1650,10 @@
             th.style.background = "#f4f4f4";
             x += w;
           });
-          if (horizontalScrollbar && tableScroll && getComputedStyle(horizontalScrollbar).display !== "none") {
-            const scrollRect = tableScroll.getBoundingClientRect();
-            const headerBottom = Math.max(...ths.map(th => th.getBoundingClientRect().bottom));
-            horizontalScrollbar.style.position = "fixed";
-            horizontalScrollbar.style.top = Math.ceil(headerBottom) + "px";
-            horizontalScrollbar.style.left = scrollRect.left + "px";
-            horizontalScrollbar.style.width = scrollRect.width + "px";
-            horizontalScrollbar.style.zIndex = "45";
-          }
           spacerRow.style.display = "table-row";
+          spacerRow.querySelectorAll("th, td").forEach(cell => {
+            cell.style.height = sizes.thead + "px";
+          });
         } else {
           ths.forEach(th => {
             th.style.position = "";
@@ -2128,14 +1664,6 @@
             th.style.zIndex = "";
             th.style.background = "";
           });
-          if (horizontalScrollbar) {
-            horizontalScrollbar.style.position = "absolute";
-            horizontalScrollbar.style.top = (tableScroll.getBoundingClientRect().top - sec.getBoundingClientRect().top + headerRow.getBoundingClientRect().height) + "px";
-            horizontalScrollbar.style.left = (tableScroll.getBoundingClientRect().left - sec.getBoundingClientRect().left) + "px";
-            horizontalScrollbar.style.width = "";
-            horizontalScrollbar.style.zIndex = "";
-            requestAnimationFrame(() => horizontalScrollbar._updateWidth?.());
-          }
           spacerRow.style.display = "none";
         }
       }
