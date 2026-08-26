@@ -193,6 +193,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      box-sizing: border-box;
       overflow-x: scroll;
       overflow-y: hidden;
       margin-bottom: 2px;
@@ -1625,9 +1626,11 @@
     tableScroll.insertBefore(scrollbar, tableScroll.firstChild);
 
     const updateWidth = () => {
-      inner.style.width = Math.max(table.scrollWidth, table.getBoundingClientRect().width) + "px";
-      const needsScroll = table.scrollWidth > tableScroll.clientWidth + 1;
-      scrollbar.style.width = tableScroll.clientWidth + "px";
+      const visibleWidth = tableScroll.getBoundingClientRect().width;
+      const tableWidth = Math.max(table.scrollWidth, table.getBoundingClientRect().width);
+      inner.style.width = tableWidth + "px";
+      const needsScroll = tableWidth > visibleWidth + 1;
+      scrollbar.style.width = visibleWidth + "px";
       const headerRow = table.querySelector("thead tr");
       scrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
       scrollbar.style.display = needsScroll ? "block" : "none";
@@ -1701,7 +1704,7 @@
 
       if (toolbar) {
         const mobileToolbar = toolbar.cloneNode(true);
-        mobileToolbar.className = "mobile-sticky-toolbar";
+        mobileToolbar.classList.add("mobile-sticky-toolbar");
         mobileToolbar.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
         mobileToolbar.querySelectorAll("button").forEach(button => {
           const originalButton = toolbar.querySelector("button");
