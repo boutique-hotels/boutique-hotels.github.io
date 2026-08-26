@@ -182,6 +182,14 @@
     .mobile-sticky-header > .mobile-sticky-toolbar {
       padding: 6px 2px;
     }
+    .mobile-sticky-header > .mobile-sticky-scroll-hint {
+      display: block;
+      margin: 4px 0 6px;
+      padding: 0 2px;
+      color: var(--text-muted);
+      font-size: 11px;
+      background: #fff;
+    }
     .mobile-sticky-header table {
       margin: 0;
       width: max-content;
@@ -190,9 +198,7 @@
     .horizontal-scrollbar {
       width: 100%;
       height: 18px;
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: static;
       box-sizing: border-box;
       overflow-x: scroll;
       overflow-y: hidden;
@@ -1293,8 +1299,8 @@
     const priceScroll = document.createElement("div");
     priceScroll.className = "table-scroll";
     priceScroll.appendChild(priceTable);
-    addHorizontalScrollbar(priceDetails, priceScroll, priceTable);
     priceDetails.appendChild(priceScroll);
+    addHorizontalScrollbar(priceDetails, priceScroll, priceTable);
 
     const priceBody = priceTable.querySelector("tbody");
     let sortState = { column: null, asc: true };
@@ -1607,8 +1613,8 @@
 	const roomScroll = document.createElement("div");
 	roomScroll.className = "table-scroll";
 	roomScroll.appendChild(roomTable);
-  addHorizontalScrollbar(roomDetails, roomScroll, roomTable);
 	roomDetails.appendChild(roomScroll);
+  addHorizontalScrollbar(roomDetails, roomScroll, roomTable);
 
 	drawRoomTable();
 	document.getElementById("filterKeepValue").addEventListener("change", drawRoomTable);
@@ -1623,7 +1629,7 @@
     const inner = document.createElement("div");
     inner.className = "horizontal-scrollbar-inner";
     scrollbar.appendChild(inner);
-    tableScroll.insertBefore(scrollbar, tableScroll.firstChild);
+    parent.insertBefore(scrollbar, tableScroll);
 
     const updateWidth = () => {
       const visibleWidth = tableScroll.getBoundingClientRect().width;
@@ -1682,6 +1688,7 @@
   function initFakeStickyHeader(sec) {
     const summary = sec.querySelector(":scope > summary");
     const toolbar = sec.querySelector(":scope > .sticky-toolbar");
+    const scrollHint = sec.querySelector(":scope > .scroll-hint");
     const table = sec.querySelector(".table-scroll table");
     const tableScroll = table ? table.closest(".table-scroll") : null;
     const horizontalScrollbar = sec.querySelector(".horizontal-scrollbar");
@@ -1711,6 +1718,11 @@
           if (originalButton) button.addEventListener("click", () => originalButton.click());
         });
         mobileHeader.appendChild(mobileToolbar);
+      }
+      if (scrollHint) {
+        const mobileScrollHint = scrollHint.cloneNode(true);
+        mobileScrollHint.className = "mobile-sticky-scroll-hint";
+        mobileHeader.appendChild(mobileScrollHint);
       }
 
       const mobileTable = table.cloneNode(true);
@@ -1980,8 +1992,9 @@
           });
           if (horizontalScrollbar && tableScroll && getComputedStyle(horizontalScrollbar).display !== "none") {
             const scrollRect = tableScroll.getBoundingClientRect();
+            const headerBottom = Math.max(...ths.map(th => th.getBoundingClientRect().bottom));
             horizontalScrollbar.style.position = "fixed";
-            horizontalScrollbar.style.top = (offset + sizes.thead) + "px";
+            horizontalScrollbar.style.top = Math.ceil(headerBottom) + "px";
             horizontalScrollbar.style.left = scrollRect.left + "px";
             horizontalScrollbar.style.width = scrollRect.width + "px";
             horizontalScrollbar.style.zIndex = "45";
