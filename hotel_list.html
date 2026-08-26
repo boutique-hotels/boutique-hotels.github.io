@@ -107,6 +107,28 @@
       color: #444;
     }
     .no-data { color: #bbb; font-style: italic; }
+    .group-row > td {
+      background: #f8fafc;
+      font-weight: 600;
+      cursor: pointer;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+    .group-row > td:first-child { background: #f8fafc; }
+    .group-row:nth-child(even) > td,
+    .group-row:nth-child(even) > td:first-child { background: #f8fafc; }
+    .group-row > td:first-child::before {
+      content: "▶";
+      display: inline-block;
+      width: 1em;
+      color: var(--accent);
+      font-size: 11px;
+      margin-right: 6px;
+    }
+    .group-row.expanded > td:first-child::before { content: "▼"; }
+    .detail-row[hidden] { display: none; }
 
     /* 料金比較表・部屋比較表: タイトル・ツールバー・列見出しの固定表示
        CSSの position:sticky はブラウザ（特にモバイル）によって挙動が不安定なため、
@@ -1308,6 +1330,7 @@
 
     const priceBody = priceTable.querySelector("tbody");
     let sortState = { column: null, asc: true };
+    const expandedPriceHotels = new Set();
 
     function formatVacancy(hotel) {
       const vacancy = hotel.vacancy || {};
@@ -1423,8 +1446,37 @@
         el.textContent = (sortState.column === col) ? (sortState.asc ? "▲" : "▼") : "";
       });
 
-      rows.forEach(r => {
+      const groupedRows = new Map();
+      rows.forEach(row => {
+        if (!groupedRows.has(row.hotel)) groupedRows.set(row.hotel, []);
+        groupedRows.get(row.hotel).push(row);
+      });
+
+      groupedRows.forEach((hotelRows, hotelName) => {
+        const first = hotelRows[0];
+        const types = Array.from(new Set(hotelRows.map(row => row.type))).join(" / ");
+        const minPrice = Math.min(...hotelRows.map(row => row.minPrice));
+        const maxPrice = Math.max(...hotelRows.map(row => row.maxPrice));
+        const groupRow = document.createElement("tr");
+        groupRow.className = "group-row" + (expandedPriceHotels.has(hotelName) ? " expanded" : "");
+        groupRow.dataset.hotel = hotelName;
+        groupRow.innerHTML = `
+          <td>${hotelName}</td>
+          <td class="vacancy-cell">${first.vacancy}</td>
+          <td>${types}</td>
+          <td>明細 ${hotelRows.length} 件</td>
+          <td>—</td>
+          <td>${minPrice}</td>
+          <td>${maxPrice}</td>
+          <td colspan="12">ホテル単位で集約中</td>
+        `;
+        priceBody.appendChild(groupRow);
+
+        hotelRows.forEach(r => {
         const tr = document.createElement("tr");
+        tr.className = "detail-row";
+        tr.dataset.hotel = hotelName;
+        tr.hidden = !expandedPriceHotels.has(hotelName);
         tr.innerHTML = `
           <td>${r.hotel}</td>
           <td class="vacancy-cell">${r.vacancy}</td>
@@ -1447,6 +1499,7 @@
 		  <td>${r.flags["祝前"]}</td>
         `;
         priceBody.appendChild(tr);
+        });
       });
     }
 
@@ -1470,6 +1523,14 @@
         }
         drawTable();
       });
+    });
+    priceBody.addEventListener("click", event => {
+      const groupRow = event.target.closest(".group-row");
+      if (!groupRow) return;
+      const hotelName = groupRow.dataset.hotel;
+      if (expandedPriceHotels.has(hotelName)) expandedPriceHotels.delete(hotelName);
+      else expandedPriceHotels.add(hotelName);
+      drawTable();
     });
 
     clearBtn.onclick = () => {
@@ -1547,6 +1608,7 @@
 	const roomBody = roomTable.querySelector("tbody");
 
 	let roomSortState = { column: null, asc: true };
+  const expandedRoomHotels = new Set();
 
 	function drawRoomTable() {
 	  let rows = allRoomRows.filter(r => {
@@ -1580,8 +1642,28 @@
 	  });
 
 	  roomBody.innerHTML = "";
-	  rows.forEach(r => {
+    const groupedRows = new Map();
+    rows.forEach(row => {
+      if (!groupedRows.has(row.hotelName)) groupedRows.set(row.hotelName, []);
+      groupedRows.get(row.hotelName).push(row);
+    });
+
+    groupedRows.forEach((hotelRows, hotelName) => {
+      const groupRow = document.createElement("tr");
+      groupRow.className = "group-row" + (expandedRoomHotels.has(hotelName) ? " expanded" : "");
+      groupRow.dataset.hotel = hotelName;
+      groupRow.innerHTML = `
+        <td>${hotelName}</td>
+        <td>明細 ${hotelRows.length} 件</td>
+        <td colspan="5">ホテル単位で集約中</td>
+      `;
+      roomBody.appendChild(groupRow);
+
+      hotelRows.forEach(r => {
 	    const tr = document.createElement("tr");
+        tr.className = "detail-row";
+        tr.dataset.hotel = hotelName;
+        tr.hidden = !expandedRoomHotels.has(hotelName);
 	    const keepDisplay = r.keepFlag === null ? "—" : r.keepFlag;
 	    tr.innerHTML = `
 	      <td>${r.hotelName}</td>
@@ -1597,7 +1679,8 @@
 	      </td>
 	    `;
 	    roomBody.appendChild(tr);
-	  });
+    });
+  });
 	}
 
 	roomTable.querySelectorAll("th.sortable").forEach(th => {
@@ -1613,6 +1696,14 @@
 	    drawRoomTable();
 	  });
 	});
+  roomBody.addEventListener("click", event => {
+    const groupRow = event.target.closest(".group-row");
+    if (!groupRow) return;
+    const hotelName = groupRow.dataset.hotel;
+    if (expandedRoomHotels.has(hotelName)) expandedRoomHotels.delete(hotelName);
+    else expandedRoomHotels.add(hotelName);
+    drawRoomTable();
+  });
 
 	const roomScroll = document.createElement("div");
 	roomScroll.className = "table-scroll";
