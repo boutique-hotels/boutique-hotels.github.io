@@ -123,6 +123,9 @@
       background: #fff;
       box-sizing: border-box;
     }
+    .sticky-section {
+      position: relative;
+    }
     .sticky-section > summary::-webkit-details-marker { display: none; }
     .sticky-section > summary::before {
       content: "▶";
@@ -217,7 +220,6 @@
       border: none;
       border-radius: 0;
       margin-bottom: 24px;
-      position: relative;
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
@@ -1631,7 +1633,7 @@
     const inner = document.createElement("div");
     inner.className = "horizontal-scrollbar-inner";
     scrollbar.appendChild(inner);
-    tableScroll.insertBefore(scrollbar, tableScroll.firstChild);
+    parent.insertBefore(scrollbar, tableScroll);
 
     const updateWidth = () => {
       const visibleWidth = tableScroll.getBoundingClientRect().width;
@@ -1639,9 +1641,12 @@
       inner.style.width = tableWidth + "px";
       const needsScroll = tableWidth > visibleWidth + 1;
       scrollbar.style.width = visibleWidth + "px";
-      const headerRow = table.querySelector("thead tr");
+      const headerRow = table.querySelector("thead tr:not([aria-hidden='true'])");
       if (getComputedStyle(scrollbar).position !== "fixed") {
-        scrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
+        const parentRect = parent.getBoundingClientRect();
+        const scrollRect = tableScroll.getBoundingClientRect();
+        scrollbar.style.top = (scrollRect.top - parentRect.top + (headerRow?.getBoundingClientRect().height || 0)) + "px";
+        scrollbar.style.left = (scrollRect.left - parentRect.left) + "px";
       }
       scrollbar.style.display = needsScroll ? "block" : "none";
       if (!needsScroll) {
@@ -1876,8 +1881,10 @@
     function unfixAll() {
       if (horizontalScrollbar) {
         horizontalScrollbar.style.position = "absolute";
-        horizontalScrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
-        horizontalScrollbar.style.left = "";
+        const sectionRect = sec.getBoundingClientRect();
+        const scrollRect = tableScroll ? tableScroll.getBoundingClientRect() : sectionRect;
+        horizontalScrollbar.style.top = (scrollRect.top - sectionRect.top + (headerRow?.getBoundingClientRect().height || 0)) + "px";
+        horizontalScrollbar.style.left = (scrollRect.left - sectionRect.left) + "px";
         horizontalScrollbar.style.width = "";
         horizontalScrollbar.style.zIndex = "";
       }
@@ -2018,8 +2025,8 @@
           });
           if (horizontalScrollbar) {
             horizontalScrollbar.style.position = "absolute";
-            horizontalScrollbar.style.top = headerRow.getBoundingClientRect().height + "px";
-            horizontalScrollbar.style.left = "";
+            horizontalScrollbar.style.top = (tableScroll.getBoundingClientRect().top - sec.getBoundingClientRect().top + headerRow.getBoundingClientRect().height) + "px";
+            horizontalScrollbar.style.left = (tableScroll.getBoundingClientRect().left - sec.getBoundingClientRect().left) + "px";
             horizontalScrollbar.style.width = "";
             horizontalScrollbar.style.zIndex = "";
             requestAnimationFrame(() => horizontalScrollbar._updateWidth?.());
