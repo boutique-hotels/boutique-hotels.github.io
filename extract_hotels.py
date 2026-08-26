@@ -3,6 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import re
+from pathlib import Path
+from datetime import datetime
 from time import sleep
 from typing import List, Tuple
 
@@ -432,13 +434,44 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
         sleep(sleep_sec)
 
     # 保存
+    generated_at = datetime.now().astimezone().isoformat(timespec="minutes")
+    detail_payload = {
+        "metadata": {
+            "generatedAt": generated_at,
+        },
+        "hotels": results,
+    }
     with open(f"{label}_hotels_detail.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
+        json.dump(detail_payload, f, ensure_ascii=False, indent=2)
     with open(f"{label}_hotels_failures.json", "w", encoding="utf-8") as f:
         json.dump(failures, f, ensure_ascii=False, indent=2)
 
+    generate_station_manifest()
+
     print(f"保存完了: {label}_hotels_detail.json")
     print(f"失敗件数: {len(failures)} (詳細は {label}_hotels_failures.json)")
+
+
+def generate_station_manifest() -> None:
+    """詳細 JSON の一覧と JSON 内の生成日時を HTML 用に保存する。"""
+    label_by_key = {key: config["label"] for key, config in STATION_CONFIGS.items()}
+    stations = []
+    for path in sorted(Path(".").glob("*_hotels_detail.json")):
+        label = path.name.removesuffix("_hotels_detail.json")
+        key = next((k for k, value in label_by_key.items() if value == label), label)
+        with path.open(encoding="utf-8-sig") as f:
+            payload = json.load(f)
+        metadata = payload.get("metadata", {}) if isinstance(payload, dict) else {}
+        stations.append({
+            "key": key,
+            "label": label,
+            "file": path.name,
+            "updatedAt": metadata.get("generatedAt"),
+        })
+
+    with open("hotel_data_manifest.json", "w", encoding="utf-8") as f:
+        json.dump(stations, f, ensure_ascii=False, indent=2)
+    print("マニフェスト更新: hotel_data_manifest.json")
 
 # -------------------------
 # 実行（池袋の例）

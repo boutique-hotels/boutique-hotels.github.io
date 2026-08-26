@@ -269,6 +269,11 @@
       color: var(--accent);
       font-weight: 600;
     }
+    .data-updated-at {
+      color: var(--text-muted);
+      font-size: 12px;
+      margin: -10px 0 10px;
+    }
 
     @media (max-width: 640px) {
       body { padding: 10px 10px 24px; }
@@ -312,6 +317,18 @@
         font-size: 11px;
         color: var(--text-muted);
         margin: 4px 0 6px;
+      }
+      .sticky-section > summary {
+        position: static;
+      }
+      .sticky-section .sticky-toolbar {
+        position: static;
+      }
+      .sticky-section thead th {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #f4f4f4;
       }
 
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
@@ -451,9 +468,9 @@
 </div>
 
 
-<h1>ホテル料金比較</h1>
-<div class="subtitle" id="dataSource">読み込み中...</div>
+<h1 id="pageTitle">ホテル料金比較</h1>
 <div class="station-links" id="stationLinks" aria-label="駅切り替え"></div>
+<div class="data-updated-at" id="dataUpdatedAt"></div>
 <div id="content">読み込み中...</div>
 
 <script>
@@ -465,18 +482,48 @@
   const stationKey = new URLSearchParams(window.location.search).get("station") || "ikebukuro";
   const selectedStation = stationData[stationKey] || stationData.ikebukuro;
 
-  function renderStationLinks() {
+  function formatUpdatedAt(timestamp) {
+    if (!timestamp) return "";
+    const date = typeof timestamp === "number" ? new Date(timestamp * 1000) : new Date(timestamp);
+    if (Number.isNaN(date.getTime())) return "";
+    const pad = value => String(value).padStart(2, "0");
+    return `${date.getFullYear()}/${pad(date.getMonth() + 1)}/${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}時点`;
+  }
+
+  function renderStationLinks(stations) {
     const container = document.getElementById("stationLinks");
     if (!container) return;
-    container.innerHTML = Object.entries(stationData).map(([key, info]) => {
-      const isCurrent = key === stationKey;
-      return `<a class="station-link ${isCurrent ? "current" : ""}" href="?station=${key}" ${isCurrent ? "aria-current=\"page\"" : ""}>${info.label}</a>`;
+    container.innerHTML = stations.map(info => {
+      const isCurrent = info.key === stationKey;
+      return `<a class="station-link ${isCurrent ? "current" : ""}" href="?station=${encodeURIComponent(info.key)}" ${isCurrent ? "aria-current=\"page\"" : ""}>${info.label}</a>`;
     }).join("");
   }
 
-  renderStationLinks();
-  document.getElementById("dataSource").textContent =
-    `${selectedStation.label}のデータ（${selectedStation.file}）を読み込んでいます`;
+  function updateStationDisplay(info) {
+    const title = `ホテル料金比較　${info.label}`;
+    document.getElementById("pageTitle").textContent = title;
+    document.title = title;
+    document.getElementById("dataUpdatedAt").textContent =
+      formatUpdatedAt(info.updatedAt);
+  }
+
+  renderStationLinks(Object.entries(stationData).map(([key, info]) => ({ key, ...info })));
+  updateStationDisplay(selectedStation);
+
+  fetch("hotel_data_manifest.json", { cache: "no-store" })
+    .then(res => {
+      if (!res.ok) throw new Error(`マニフェストが存在しません (${res.status})`);
+      return res.json();
+    })
+    .then(stations => {
+      if (!Array.isArray(stations) || !stations.length) return;
+      renderStationLinks(stations);
+      const current = stations.find(info => info.key === stationKey) || stations[0];
+      updateStationDisplay(current);
+    })
+    .catch(err => {
+      console.warn("駅データ一覧を読み込めません:", err);
+    });
 
   // ---- サイドバー開閉 ----
   (function () {
@@ -538,14 +585,24 @@
     applyState();
   })();
 
-  fetch(selectedStation.file)
+  fetch(selectedStation.file, { cache: "no-store" })
     .then(res => {
       if (!res.ok) {
         throw new Error(`JSONファイルが存在しません: ${selectedStation.file} (${res.status})`);
       }
       return res.json();
     })
-    .then(hotels => render(hotels))
+    .then(payload => {
+      const hotels = Array.isArray(payload) ? payload : payload.hotels;
+      if (!Array.isArray(hotels)) {
+        throw new Error("JSON のホテルデータ形式が不正です");
+      }
+      if (payload.metadata && payload.metadata.generatedAt) {
+        document.getElementById("dataUpdatedAt").textContent =
+          formatUpdatedAt(payload.metadata.generatedAt);
+      }
+      render(hotels);
+    })
     .catch(err => {
       document.getElementById("content").textContent = "JSON読み込みエラー: " + err;
     });
