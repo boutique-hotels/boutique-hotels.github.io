@@ -1880,7 +1880,6 @@
         horizontalScrollbar.style.left = "";
         horizontalScrollbar.style.width = "";
         horizontalScrollbar.style.zIndex = "";
-        horizontalScrollbar._updateWidth?.();
       }
       if (summary) {
         summary.style.position = "";
@@ -1933,6 +1932,7 @@
       const sectionBottom = sec.getBoundingClientRect().bottom;
       if (sectionBottom <= totalStickyHeight) {
         unfixAll();
+        requestAnimationFrame(() => horizontalScrollbar?._updateWidth?.());
         return;
       }
 
@@ -2022,7 +2022,7 @@
             horizontalScrollbar.style.left = "";
             horizontalScrollbar.style.width = "";
             horizontalScrollbar.style.zIndex = "";
-            horizontalScrollbar._updateWidth?.();
+            requestAnimationFrame(() => horizontalScrollbar._updateWidth?.());
           }
           spacerRow.style.display = "none";
         }
