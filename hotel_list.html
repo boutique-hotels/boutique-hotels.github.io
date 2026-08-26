@@ -1771,6 +1771,16 @@
         control.addEventListener("input", syncControl);
         control.addEventListener("change", syncControl);
       });
+      const mobileHeaderCells = mobileTable.querySelectorAll("thead tr:first-child th");
+      ths.forEach((originalTh, index) => {
+        const mobileTh = mobileHeaderCells[index];
+        if (!mobileTh) return;
+        const width = originalTh.getBoundingClientRect().width;
+        mobileTh.style.width = width + "px";
+        mobileTh.style.minWidth = width + "px";
+        mobileTh.style.maxWidth = width + "px";
+      });
+      mobileTable.style.width = table.getBoundingClientRect().width + "px";
       mobileTable.querySelectorAll("th.sortable").forEach((mobileTh, index) => {
         mobileTh.addEventListener("click", event => {
           if (event.target.matches("input, select, option")) return;
