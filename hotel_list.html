@@ -198,7 +198,9 @@
     .horizontal-scrollbar {
       width: 100%;
       height: 18px;
-      position: static;
+      position: absolute;
+      top: 0;
+      left: 0;
       box-sizing: border-box;
       overflow-x: scroll;
       overflow-y: hidden;
@@ -1629,7 +1631,7 @@
     const inner = document.createElement("div");
     inner.className = "horizontal-scrollbar-inner";
     scrollbar.appendChild(inner);
-    parent.insertBefore(scrollbar, tableScroll);
+    tableScroll.insertBefore(scrollbar, tableScroll.firstChild);
 
     const updateWidth = () => {
       const visibleWidth = tableScroll.getBoundingClientRect().width;
@@ -1638,7 +1640,9 @@
       const needsScroll = tableWidth > visibleWidth + 1;
       scrollbar.style.width = visibleWidth + "px";
       const headerRow = table.querySelector("thead tr");
-      scrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
+      if (getComputedStyle(scrollbar).position !== "fixed") {
+        scrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
+      }
       scrollbar.style.display = needsScroll ? "block" : "none";
       if (!needsScroll) {
         scrollbar.style.position = "";
@@ -1666,6 +1670,7 @@
       const observer = new ResizeObserver(updateWidth);
       observer.observe(table);
     }
+    scrollbar._updateWidth = updateWidth;
     updateWidth();
   }
 
@@ -1870,11 +1875,12 @@
 
     function unfixAll() {
       if (horizontalScrollbar) {
-        horizontalScrollbar.style.position = "";
-        horizontalScrollbar.style.top = "";
+        horizontalScrollbar.style.position = "absolute";
+        horizontalScrollbar.style.top = headerRow ? headerRow.getBoundingClientRect().height + "px" : "0px";
         horizontalScrollbar.style.left = "";
         horizontalScrollbar.style.width = "";
         horizontalScrollbar.style.zIndex = "";
+        horizontalScrollbar._updateWidth?.();
       }
       if (summary) {
         summary.style.position = "";
@@ -2011,11 +2017,12 @@
             th.style.background = "";
           });
           if (horizontalScrollbar) {
-            horizontalScrollbar.style.position = "";
-            horizontalScrollbar.style.top = "";
+            horizontalScrollbar.style.position = "absolute";
+            horizontalScrollbar.style.top = headerRow.getBoundingClientRect().height + "px";
             horizontalScrollbar.style.left = "";
             horizontalScrollbar.style.width = "";
             horizontalScrollbar.style.zIndex = "";
+            horizontalScrollbar._updateWidth?.();
           }
           spacerRow.style.display = "none";
         }
