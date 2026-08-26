@@ -158,6 +158,22 @@
     }
     .sticky-spacer { display: none; }
     .sticky-spacer-row { visibility: hidden; }
+    .mobile-sticky-header {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      overflow: hidden;
+      z-index: 300;
+      pointer-events: none;
+      background: #f4f4f4;
+    }
+    .mobile-sticky-header table {
+      margin: 0;
+      width: max-content;
+      min-width: 0;
+    }
 
     /* ---- 表 ---- */
     .table-scroll {
@@ -1590,14 +1606,44 @@
 
     const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
     if (isMobile) {
-      if (headerRow) {
-        ths.forEach(th => {
-          th.style.position = "sticky";
-          th.style.top = "0px";
-          th.style.zIndex = "50";
-          th.style.background = "#f4f4f4";
-        });
+      if (!headerRow || !tableScroll) return;
+
+      const mobileHeader = document.createElement("div");
+      mobileHeader.className = "mobile-sticky-header";
+      const mobileTable = table.cloneNode(true);
+      const mobileBody = mobileTable.querySelector("tbody");
+      if (mobileBody) mobileBody.remove();
+      mobileTable.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+      mobileTable.querySelectorAll("input, select, button").forEach(el => {
+        el.disabled = true;
+      });
+      mobileHeader.appendChild(mobileTable);
+      document.body.appendChild(mobileHeader);
+
+      function updateMobileHeader() {
+        if (sec.tagName === "DETAILS" && !sec.open) {
+          mobileHeader.style.display = "none";
+          return;
+        }
+        const scrollRect = tableScroll.getBoundingClientRect();
+        const tableRect = table.getBoundingClientRect();
+        const headerHeight = headerRow.getBoundingClientRect().height;
+        const visible = scrollRect.top <= 0 && scrollRect.bottom > headerHeight;
+        mobileHeader.style.display = visible ? "block" : "none";
+        if (!visible) return;
+        mobileHeader.style.left = scrollRect.left + "px";
+        mobileHeader.style.width = Math.max(0, scrollRect.width) + "px";
+        mobileTable.style.transform = `translateX(${tableRect.left - scrollRect.left}px)`;
+        mobileHeader.style.height = headerHeight + "px";
       }
+
+      tableScroll.addEventListener("scroll", updateMobileHeader, { passive: true });
+      window.addEventListener("scroll", updateMobileHeader, { passive: true });
+      window.addEventListener("resize", updateMobileHeader);
+      document.querySelectorAll("details").forEach(details => {
+        details.addEventListener("toggle", updateMobileHeader);
+      });
+      updateMobileHeader();
       return;
     }
 
