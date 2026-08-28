@@ -402,18 +402,8 @@
       .sticky-section .sticky-toolbar {
         position: static;
       }
-      .sticky-section thead th {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: #f4f4f4;
-      }
       .horizontal-scrollbar {
         display: none !important;
-      }
-      .table-scroll {
-        overflow-x: auto;
-        overflow-y: hidden;
       }
 
       /* 表本体は少しコンパクトに（ヘッダー固定の白帯とも揃えたいので min-width はそのまま） */
@@ -1837,6 +1827,7 @@
       }
 
       const mobileTable = table.cloneNode(true);
+      mobileTable.removeAttribute("id");
       const mobileBody = mobileTable.querySelector("tbody");
       if (mobileBody) mobileBody.remove();
       mobileTable.querySelectorAll(".horizontal-scrollbar").forEach(el => {
@@ -1872,16 +1863,6 @@
         control.addEventListener("input", syncControl);
         control.addEventListener("change", syncControl);
       });
-      const mobileHeaderCells = mobileTable.querySelectorAll("thead tr:first-child th");
-      ths.forEach((originalTh, index) => {
-        const mobileTh = mobileHeaderCells[index];
-        if (!mobileTh) return;
-        const width = originalTh.getBoundingClientRect().width;
-        mobileTh.style.width = width + "px";
-        mobileTh.style.minWidth = width + "px";
-        mobileTh.style.maxWidth = width + "px";
-      });
-      mobileTable.style.width = table.getBoundingClientRect().width + "px";
       mobileTable.querySelectorAll("th.sortable").forEach((mobileTh, index) => {
         mobileTh.addEventListener("click", event => {
           if (event.target.matches("input, select, option")) return;
@@ -1891,11 +1872,27 @@
       mobileHeader.appendChild(mobileTable);
       document.body.appendChild(mobileHeader);
 
-      function updateMobileHeader() {
+      function syncMobileHeaderWidths() {
+        const mobileHeaderCells = mobileTable.querySelectorAll("thead tr:first-child th");
+        ths.forEach((originalTh, index) => {
+          const mobileTh = mobileHeaderCells[index];
+          if (!mobileTh) return;
+          const width = originalTh.getBoundingClientRect().width;
+          mobileTh.style.width = width + "px";
+          mobileTh.style.minWidth = width + "px";
+          mobileTh.style.maxWidth = width + "px";
+        });
+        mobileTable.style.width = table.getBoundingClientRect().width + "px";
+      }
+
+      function updateMobileHeaderNow() {
         if (sec.tagName === "DETAILS" && !sec.open) {
           mobileHeader.style.display = "none";
           return;
         }
+        // 列幅はソート/フィルタ操作等で本体側が変化しうるため、毎回同期し直す
+        // （安いDOM読み取りのみなので、rAFで1フレームに1回にまとめれば負荷は問題ない）
+        syncMobileHeaderWidths();
         const scrollRect = tableScroll.getBoundingClientRect();
         const tableRect = table.getBoundingClientRect();
         const sectionRect = sec.getBoundingClientRect();
@@ -1909,6 +1906,20 @@
         mobileHeader.style.height = "auto";
       }
 
+      // スクロールイベントは（特にモバイルのフリック操作中）非常に高頻度で発火するため、
+      // rAFで1フレームに1回だけ実行するよう間引く。これが無いと、素早くスクロールした際に
+      // ネイティブのスクロール描画にJS側の追従（transformの更新）が間に合わず、
+      // ヘッダーと明細の横位置が一時的にずれて見える。
+      let mobileTicking = false;
+      function updateMobileHeader() {
+        if (mobileTicking) return;
+        mobileTicking = true;
+        requestAnimationFrame(() => {
+          updateMobileHeaderNow();
+          mobileTicking = false;
+        });
+      }
+
       tableScroll.addEventListener("scroll", updateMobileHeader, { passive: true });
       window.addEventListener("scroll", updateMobileHeader, { passive: true });
       window.addEventListener("resize", updateMobileHeader);
@@ -1919,7 +1930,11 @@
       document.querySelectorAll("details").forEach(details => {
         details.addEventListener("toggle", updateMobileHeader);
       });
-      updateMobileHeader();
+      if (typeof ResizeObserver !== "undefined") {
+        const mobileRo = new ResizeObserver(updateMobileHeader);
+        mobileRo.observe(table);
+      }
+      updateMobileHeaderNow();
       return;
     }
 
