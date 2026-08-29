@@ -220,16 +220,22 @@
       width: max-content;
       min-width: 0;
     }
+    /* 横スクロールバーは表の中の本物の行(tr.scrollbar-row)として組み込む。
+       以前は position:absolute で浮かせて重ねる実装だったため、見出しとの
+       重なり・隠れが位置計算のずれで何度も再発していた。本物の行にすれば
+       レイアウト上ちゃんと場所を占有するので、原理的に重なりようがない。 */
+    tr.scrollbar-row td {
+      padding: 0;
+      border-right: none;
+      height: 10px;
+      background: #f4f4f4;
+    }
     .horizontal-scrollbar {
       width: 100%;
-      height: 18px;
-      position: absolute;
-      top: 0;
-      left: 0;
+      height: 10px;
       box-sizing: border-box;
       overflow-x: scroll;
       overflow-y: hidden;
-      margin-bottom: 2px;
       -webkit-overflow-scrolling: touch;
       scrollbar-gutter: stable;
     }
@@ -402,7 +408,7 @@
       .sticky-section .sticky-toolbar {
         position: static;
       }
-      .horizontal-scrollbar {
+      tr.scrollbar-row {
         display: none !important;
       }
 
@@ -1719,35 +1725,38 @@
   }
 
   function addHorizontalScrollbar(parent, tableScroll, table) {
+    const headerRow = table.querySelector("thead tr:not([aria-hidden='true'])");
+    const colCount = headerRow ? headerRow.children.length : 1;
+
+    // 以前は position:absolute でヘッダーの上に「浮かせて」重ねる実装だったが、
+    // 実際のレイアウトに高さが反映されないため、余白の確保やz-indexの調整を
+    // 何度繰り返しても見出しとの重なり・隠れが解消しなかった。
+    // 表の中の本物の <tr> として組み込めば、そもそも重なりようがなくなる。
+    const scrollbarRow = document.createElement("tr");
+    scrollbarRow.className = "scrollbar-row";
+    scrollbarRow.setAttribute("aria-hidden", "true");
+    const cell = document.createElement("td");
+    cell.colSpan = colCount;
     const scrollbar = document.createElement("div");
     scrollbar.className = "horizontal-scrollbar";
     const inner = document.createElement("div");
     inner.className = "horizontal-scrollbar-inner";
     scrollbar.appendChild(inner);
-    parent.insertBefore(scrollbar, tableScroll);
+    cell.appendChild(scrollbar);
+    scrollbarRow.appendChild(cell);
+
+    if (headerRow && headerRow.parentNode) {
+      headerRow.parentNode.insertBefore(scrollbarRow, headerRow.nextSibling);
+    }
 
     const updateWidth = () => {
       const visibleWidth = tableScroll.getBoundingClientRect().width;
       const tableWidth = Math.max(table.scrollWidth, table.getBoundingClientRect().width);
       inner.style.width = tableWidth + "px";
       const needsScroll = tableWidth > visibleWidth + 1;
-      scrollbar.style.width = visibleWidth + "px";
-      const headerRow = table.querySelector("thead tr:not([aria-hidden='true'])");
-      if (getComputedStyle(scrollbar).position !== "fixed") {
-        const parentRect = parent.getBoundingClientRect();
-        const scrollRect = tableScroll.getBoundingClientRect();
-        scrollbar.style.top = (scrollRect.top - parentRect.top + (headerRow?.getBoundingClientRect().height || 0)) + "px";
-        scrollbar.style.left = (scrollRect.left - parentRect.left) + "px";
-      }
-      scrollbar.style.display = needsScroll ? "block" : "none";
-      if (!needsScroll) {
-        scrollbar.style.position = "";
-        scrollbar.style.top = "";
-        scrollbar.style.left = "";
-        scrollbar.style.width = "";
-        scrollbar.style.zIndex = "";
-      }
+      scrollbarRow.style.display = needsScroll ? "table-row" : "none";
     };
+
     let syncing = false;
     scrollbar.addEventListener("scroll", () => {
       if (syncing) return;
@@ -1768,6 +1777,8 @@
     }
     scrollbar._updateWidth = updateWidth;
     updateWidth();
+
+    return { scrollbarRow, scrollbar };
   }
 
   // ============================================================
@@ -1792,10 +1803,11 @@
     const scrollHint = sec.querySelector(":scope > .scroll-hint");
     const table = sec.querySelector(".table-scroll table");
     const tableScroll = table ? table.closest(".table-scroll") : null;
-    const horizontalScrollbar = sec.querySelector(".horizontal-scrollbar");
     const thead = table ? table.querySelector("thead") : null;
     const headerRow = thead ? thead.querySelector("tr") : null;
     const ths = headerRow ? Array.from(headerRow.children) : [];
+    const scrollbarRow = thead ? thead.querySelector("tr.scrollbar-row") : null;
+    const scrollbarCell = scrollbarRow ? scrollbarRow.querySelector("td") : null;
     if (!summary && !headerRow) return;
 
     const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
@@ -1989,34 +2001,78 @@
       headerRow.parentNode.insertBefore(spacerRow, headerRow.nextSibling);
     }
 
+    // 横スクロールバー行(tr.scrollbar-row)も、見出しと同じ考え方で
+    // マーカー(自然な位置の目印)とスペーサー(固定中の場所取り)を用意する。
+    let scrollbarMarkerRow = null;
+    let scrollbarSpacerRow = null;
+    if (scrollbarRow) {
+      scrollbarMarkerRow = document.createElement("tr");
+      scrollbarMarkerRow.setAttribute("aria-hidden", "true");
+      scrollbarMarkerRow.style.cssText = "height:0;line-height:0;visibility:hidden;";
+      const scrollbarMarkerCell = document.createElement("td");
+      scrollbarMarkerCell.style.cssText = "height:0;padding:0;border:0;margin:0;";
+      scrollbarMarkerCell.colSpan = ths.length || 1;
+      scrollbarMarkerRow.appendChild(scrollbarMarkerCell);
+      scrollbarRow.parentNode.insertBefore(scrollbarMarkerRow, scrollbarRow);
+
+      scrollbarSpacerRow = scrollbarRow.cloneNode(true);
+      scrollbarSpacerRow.className = "sticky-spacer-row";
+      scrollbarSpacerRow.style.display = "none";
+      scrollbarRow.parentNode.insertBefore(scrollbarSpacerRow, scrollbarRow.nextSibling);
+    }
+
     const sizes = {}; // 各要素の高さ（offsetHeightはfixed状態でも正確に測れる）
 
     function measureSizes() {
       if (summary) sizes.summary = summary.offsetHeight;
       if (toolbar) sizes.toolbar = toolbar.offsetHeight;
       if (headerRow) {
-        const naturalHeaders = ths.filter(th => th.style.position !== "fixed");
-        if (naturalHeaders.length) {
-          sizes.thead = Math.max(
-            headerRow.offsetHeight,
-            ...naturalHeaders.map(th => th.getBoundingClientRect().height)
-          );
+        // th の幅は、固定(position:fixed)されたままだと「今表示している幅」しか
+        // 読めず、集約行の展開/折りたたみ等でtbody側の内容が変わって本来の列幅が
+        // 変化していても検知できない（＝ヘッダーと明細がずれる原因になっていた）。
+        // 一旦すべて解除して素のレイアウトで幅を測り直し、その後 update() 側で
+        // 改めて fixed を再適用する（同じ同期処理内で行うため描画のちらつきは無い）。
+        const wasFixed = ths.map(th => th.style.position === "fixed");
+        if (wasFixed.some(Boolean)) {
+          ths.forEach(th => {
+            th.style.position = "";
+            th.style.top = "";
+            th.style.left = "";
+            th.style.width = "";
+            th.style.height = "";
+          });
         }
-        ths.forEach(th => {
-          if (th.style.position !== "fixed") th._fixedWidth = th.getBoundingClientRect().width;
-        });
+
+        sizes.thead = Math.max(headerRow.offsetHeight, ...ths.map(th => th.getBoundingClientRect().height));
+        ths.forEach(th => { th._fixedWidth = th.getBoundingClientRect().width; });
+
+        // スペーサー行（見出しが固定されている間、元の場所の高さ・幅を保持する
+        // ダミー行）も、同じく作成時の幅のまま固定されていたため更新する。
+        if (spacerRow) {
+          spacerRow.querySelectorAll("th, td").forEach((cell, index) => {
+            const width = ths[index]._fixedWidth;
+            cell.style.width = width + "px";
+            cell.style.minWidth = width + "px";
+            cell.style.maxWidth = width + "px";
+          });
+        }
+        // このタイミングでは position:fixed を戻さない。呼び出し元の update() が
+        // このあとすぐ shouldStick の判定結果に応じて再適用するため、
+        // 二度手間にならないようここでは測定のみ行う。
+      }
+      if (scrollbarRow) {
+        const visible = getComputedStyle(scrollbarRow).display !== "none";
+        sizes.scrollbarRow = visible ? (scrollbarCell.offsetHeight || 10) : 0;
       }
     }
 
     function unfixAll() {
-      if (horizontalScrollbar) {
-        horizontalScrollbar.style.position = "absolute";
-        const sectionRect = sec.getBoundingClientRect();
-        const scrollRect = tableScroll ? tableScroll.getBoundingClientRect() : sectionRect;
-        horizontalScrollbar.style.top = (scrollRect.top - sectionRect.top + (headerRow?.getBoundingClientRect().height || 0)) + "px";
-        horizontalScrollbar.style.left = (scrollRect.left - sectionRect.left) + "px";
-        horizontalScrollbar.style.width = "";
-        horizontalScrollbar.style.zIndex = "";
+      if (scrollbarCell) {
+        scrollbarCell.style.position = "";
+        scrollbarCell.style.top = "";
+        scrollbarCell.style.left = "";
+        scrollbarCell.style.width = "";
+        if (scrollbarSpacerRow) scrollbarSpacerRow.style.display = "none";
       }
       if (summary) {
         summary.style.position = "";
@@ -2065,11 +2121,10 @@
       measureSizes();
 
       // セクション全体（表の下端）を過ぎたら固定を解除する
-      const totalStickyHeight = (sizes.summary || 0) + (sizes.toolbar || 0) + (sizes.thead || 0);
+      const totalStickyHeight = (sizes.summary || 0) + (sizes.toolbar || 0) + (sizes.thead || 0) + (sizes.scrollbarRow || 0);
       const sectionBottom = sec.getBoundingClientRect().bottom;
       if (sectionBottom <= totalStickyHeight) {
         unfixAll();
-        requestAnimationFrame(() => horizontalScrollbar?._updateWidth?.());
         return;
       }
 
@@ -2133,15 +2188,6 @@
             th.style.background = "#f4f4f4";
             x += w;
           });
-          if (horizontalScrollbar && tableScroll && getComputedStyle(horizontalScrollbar).display !== "none") {
-            const scrollRect = tableScroll.getBoundingClientRect();
-            const headerBottom = Math.max(...ths.map(th => th.getBoundingClientRect().bottom));
-            horizontalScrollbar.style.position = "fixed";
-            horizontalScrollbar.style.top = Math.ceil(headerBottom) + "px";
-            horizontalScrollbar.style.left = scrollRect.left + "px";
-            horizontalScrollbar.style.width = scrollRect.width + "px";
-            horizontalScrollbar.style.zIndex = "45";
-          }
           spacerRow.style.display = "table-row";
         } else {
           ths.forEach(th => {
@@ -2153,16 +2199,30 @@
             th.style.zIndex = "";
             th.style.background = "";
           });
-          if (horizontalScrollbar) {
-            horizontalScrollbar.style.position = "absolute";
-            horizontalScrollbar.style.top = (tableScroll.getBoundingClientRect().top - sec.getBoundingClientRect().top + headerRow.getBoundingClientRect().height) + "px";
-            horizontalScrollbar.style.left = (tableScroll.getBoundingClientRect().left - sec.getBoundingClientRect().left) + "px";
-            horizontalScrollbar.style.width = "";
-            horizontalScrollbar.style.zIndex = "";
-            requestAnimationFrame(() => horizontalScrollbar._updateWidth?.());
-          }
           spacerRow.style.display = "none";
         }
+        offset += sizes.thead || 0;
+      }
+
+      // 横スクロールバー行: 見出しと同じ考え方で、必要な時だけ画面上部に固定する。
+      // 本物の <tr> なので、位置がずれても明細に重なって隠れることはない。
+      if (scrollbarRow && getComputedStyle(scrollbarRow).display !== "none") {
+        const naturalTop = scrollbarMarkerRow.getBoundingClientRect().top + scrollY;
+        const shouldStick = scrollY >= naturalTop - offset;
+        if (shouldStick) {
+          scrollbarCell.style.position = "fixed";
+          scrollbarCell.style.top = offset + "px";
+          scrollbarCell.style.left = tableRect.left + "px";
+          scrollbarCell.style.width = widthPx + "px";
+          scrollbarSpacerRow.style.display = "table-row";
+        } else {
+          scrollbarCell.style.position = "";
+          scrollbarCell.style.top = "";
+          scrollbarCell.style.left = "";
+          scrollbarCell.style.width = "";
+          scrollbarSpacerRow.style.display = "none";
+        }
+        offset += sizes.scrollbarRow || 0;
       }
     }
 
