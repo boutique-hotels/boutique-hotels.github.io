@@ -16201,5 +16201,688 @@
         "plans": []
       }
     ]
+  },
+  {
+    "generatedAt": "2026-08-30T23:05+00:00",
+    "hotels": [
+      {
+        "name": "ホテルプティバリ池袋店（タワー館＆リゾート館）",
+        "hasVacancy": true,
+        "maxStock": 2,
+        "totalStock": 9,
+        "plans": [
+          {
+            "planName": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
+            "planType": "休憩",
+            "roomRankName": "バリューB(喫煙)",
+            "stockCount": 1
+          },
+          {
+            "planName": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
+            "planType": "休憩",
+            "roomRankName": "バリューB(喫煙)",
+            "stockCount": 1
+          },
+          {
+            "planName": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
+            "planType": "休憩",
+            "roomRankName": "モデレート(喫煙)",
+            "stockCount": 1
+          },
+          {
+            "planName": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
+            "planType": "宿泊",
+            "roomRankName": "バリューB(喫煙)",
+            "stockCount": 2
+          },
+          {
+            "planName": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
+            "planType": "宿泊",
+            "roomRankName": "モデレート(禁煙)",
+            "stockCount": 2
+          },
+          {
+            "planName": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
+            "planType": "宿泊",
+            "roomRankName": "モデレート(喫煙)",
+            "stockCount": 2
+          }
+        ]
+      },
+      {
+        "name": "ホテルバリアンリゾートフォレスト池袋西口店",
+        "hasVacancy": true,
+        "maxStock": 2,
+        "totalStock": 7,
+        "plans": [
+          {
+            "planName": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
+            "planType": "休憩",
+            "roomRankName": "コンフォートタイプ",
+            "stockCount": 1
+          },
+          {
+            "planName": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
+            "planType": "休憩",
+            "roomRankName": "モデレート禁煙タイプ",
+            "stockCount": 1
+          },
+          {
+            "planName": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
+            "planType": "休憩",
+            "roomRankName": "コンフォートタイプ",
+            "stockCount": 1
+          },
+          {
+            "planName": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
+            "planType": "休憩",
+            "roomRankName": "モデレート禁煙タイプ",
+            "stockCount": 1
+          },
+          {
+            "planName": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
+            "planType": "宿泊",
+            "roomRankName": "コンフォートタイプ",
+            "stockCount": 2
+          },
+          {
+            "planName": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
+            "planType": "宿泊",
+            "roomRankName": "モデレート禁煙タイプ",
+            "stockCount": 1
+          }
+        ]
+      },
+      {
+        "name": "ホテル クイーン 池袋",
+        "hasVacancy": true,
+        "maxStock": 1,
+        "totalStock": 3,
+        "plans": [
+          {
+            "planName": "【人気☆モデレート】平日21時チェックインプラン",
+            "planType": "宿泊",
+            "roomRankName": "モデレート",
+            "stockCount": 1
+          },
+          {
+            "planName": "【人気☆ラグジュアリー】平日21時チェックインプラン",
+            "planType": "宿泊",
+            "roomRankName": "ラグジュアリー",
+            "stockCount": 1
+          },
+          {
+            "planName": "【スタンダード】☆コスパ最強☆平日21時チェックインプラン",
+            "planType": "宿泊",
+            "roomRankName": "スタンダード",
+            "stockCount": 1
+          }
+        ]
+      },
+      {
+        "name": "ホテル パークサイド 池袋",
+        "hasVacancy": true,
+        "maxStock": 1,
+        "totalStock": 9,
+        "plans": [
+          {
+            "planName": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "planType": "宿泊",
+            "roomRankName": "スタンダード",
+            "stockCount": 1
+          },
+          {
+            "planName": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "planType": "宿泊",
+            "roomRankName": "モデレート",
+            "stockCount": 1
+          },
+          {
+            "planName": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "planType": "宿泊",
+            "roomRankName": "ラグジュアリー",
+            "stockCount": 1
+          },
+          {
+            "planName": "月～木（平日）・当日、スタンダードルーム180分デイユースプラン！チェックイン10時～27時",
+            "planType": "休憩",
+            "roomRankName": "スタンダード",
+            "stockCount": 1
+          },
+          {
+            "planName": "月～木（平日）・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
+            "planType": "休憩",
+            "roomRankName": "モデレート",
+            "stockCount": 1
+          },
+          {
+            "planName": "月～木（平日）・当日、ラグジュアリールーム180分デイユースプラン！チェックイン10時～27時",
+            "planType": "休憩",
+            "roomRankName": "ラグジュアリー",
+            "stockCount": 1
+          },
+          {
+            "planName": "月～木（平日）・当日、スタンダードルーム240分デイユースプラン！チェックイン10時～27時",
+            "planType": "休憩",
+            "roomRankName": "スタンダード",
+            "stockCount": 1
+          },
+          {
+            "planName": "月～木（平日）・当日、モデレートルーム240分デイユースプラン！チェックイン10時～27時",
+            "planType": "休憩",
+            "roomRankName": "モデレート",
+            "stockCount": 1
+          },
+          {
+            "planName": "月～木（平日）・当日、ラグジュアリールーム240分デイユースプラン！チェックイン10時～27時",
+            "planType": "休憩",
+            "roomRankName": "ラグジュアリー",
+            "stockCount": 1
+          }
+        ]
+      },
+      {
+        "name": "ホテル チャリチョコ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル マリンブルー",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "RAMSES CLUB【ラムセスグループ】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル バリバリ 池袋",
+        "hasVacancy": true,
+        "maxStock": 3,
+        "totalStock": 5,
+        "plans": [
+          {
+            "planName": "プリティルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "planType": "宿泊",
+            "roomRankName": "プリティ",
+            "stockCount": 1
+          },
+          {
+            "planName": "モデレートルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "planType": "宿泊",
+            "roomRankName": "モデレート",
+            "stockCount": 3
+          },
+          {
+            "planName": "スーペリアルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "planType": "宿泊",
+            "roomRankName": "スーペリア",
+            "stockCount": 1
+          }
+        ]
+      },
+      {
+        "name": "X",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "VARKIN ANNEX",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "アトランタ ホテル 池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル サード 池袋",
+        "hasVacancy": true,
+        "maxStock": 2,
+        "totalStock": 2,
+        "plans": [
+          {
+            "planName": "日～木限定！当日予約21時チェックイン素泊まりプラン！",
+            "planType": "宿泊",
+            "roomRankName": "全部屋均一",
+            "stockCount": 2
+          }
+        ]
+      },
+      {
+        "name": "HOTEL LOTUS 池袋店（ホテル ロータス）【Best Delight Group】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL ZEBRA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "RAMSES SEVEN【ラムセスグループ】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ティファナイン 池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル Fooo",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル WILL池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "Premium Resort ホテル ガネーシャ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル 艶",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL CHOCOLAT",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "VARKIN 池袋西口店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "LINDEN池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル スカイロード",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL LOTUS BALI Resorts 池袋【Best Delight Group】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL SWEET PARK",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "プルミエ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "THE ATTA（ジ アッタ）",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル トトロ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "MASHA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "kocona",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "エリアス池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "LIXIA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL SMILE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL CHECK INN BALI",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "RAMSES TOWER【ラムセスグループ】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL VARKIN",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "RAMSES CLASSIC【ラムセスグループ】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "SWEETS HOTEL 池袋店（スイーツホテル）【Best Delight Group】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ルージュ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ウエストワン 池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル タイムズ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL REFRAIN",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "SPERANZA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL Shuffle",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ムーンパティオ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル グラス",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "スターダスト",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "LALA33",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "エルス",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ジェード",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "Airs Rock",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ナポリ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル クリオ東口店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "キング",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル GERBERA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "モンタナ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "アミー",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "エーゲ海",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "エクセルシオ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "キャッツ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL CORE 池袋",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "Time’s One",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ティファニー",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ときわ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "THE HOTEL TOKIWA WEST",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ファースト",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ブルーシャトー",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "メープル",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ラフォーレ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "レイ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ワールド",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      }
+    ]
   }
 ]
