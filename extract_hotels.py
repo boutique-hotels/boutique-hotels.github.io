@@ -469,10 +469,81 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
     with open(ARCHIVE_DATA_DIR / f"{label}_hotels_failures_{timestamp_suffix}.json", "w", encoding="utf-8") as f:
         json.dump(failures, f, ensure_ascii=False, indent=2)
 
+    append_vacancy_history(label, generated_at, results)
     generate_station_manifest()
 
     print(f"保存完了: {CURRENT_DATA_DIR / detail_filename}")
     print(f"失敗件数: {len(failures)} (詳細は {label}_hotels_failures.json)")
+
+
+def append_vacancy_history(label: str, generated_at: str, hotels: list) -> None:
+    """
+    空室状況（stock_count）だけを抜き出した軽量な履歴を追記する。
+    フルの detail JSON は毎回のスナップショットが数百KB〜MB単位になり得るが、
+    「動きのある空室状況の推移だけ見たい」という用途には情報過多なため、
+    別ファイルに必要最小限のサマリーだけを積み重ねていく。
+
+    形式: data/archive/{label}_vacancy_history.json
+    [
+      {
+        "generatedAt": "2026-08-26T10:00",
+        "hotels": [
+          {
+            "name": "...",
+            "hasVacancy": true,
+            "maxStock": 3,
+            "totalStock": 5,
+            "plans": [
+              {"planName": "...", "planType": "休憩", "roomRankName": "...", "stockCount": 1}
+            ]
+          }
+        ]
+      },
+      ...
+    ]
+    """
+    ARCHIVE_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    history_path = ARCHIVE_DATA_DIR / f"{label}_vacancy_history.json"
+
+    if history_path.exists():
+        with history_path.open(encoding="utf-8-sig") as f:
+            try:
+                history = json.load(f)
+            except json.JSONDecodeError:
+                history = []
+    else:
+        history = []
+
+    snapshot_hotels = []
+    for hotel in hotels:
+        vacancy = hotel.get("vacancy") or {}
+        details = vacancy.get("details") or []
+        # 満室(stock_countがNone)の部屋は推移を見るうえでノイズになるだけなので除外する
+        available = [d for d in details if d.get("stock_count") is not None]
+        snapshot_hotels.append({
+            "name": hotel.get("name"),
+            "hasVacancy": vacancy.get("has_vacancy"),
+            "maxStock": vacancy.get("max_stock"),
+            "totalStock": sum(d.get("stock_count") or 0 for d in available),
+            "plans": [
+                {
+                    "planName": d.get("plan_name"),
+                    "planType": d.get("plan_type"),
+                    "roomRankName": d.get("room_rank_name"),
+                    "stockCount": d.get("stock_count"),
+                }
+                for d in available
+            ],
+        })
+
+    history.append({
+        "generatedAt": generated_at,
+        "hotels": snapshot_hotels,
+    })
+
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+    print(f"空室履歴を追記: {history_path}（累計{len(history)}件のスナップショット）")
 
 
 def generate_station_manifest() -> None:
@@ -485,11 +556,13 @@ def generate_station_manifest() -> None:
         with path.open(encoding="utf-8-sig") as f:
             payload = json.load(f)
         metadata = payload.get("metadata", {}) if isinstance(payload, dict) else {}
+        history_path = ARCHIVE_DATA_DIR / f"{label}_vacancy_history.json"
         stations.append({
             "key": key,
             "label": label,
             "file": path.as_posix(),
             "updatedAt": metadata.get("generatedAt"),
+            "vacancyHistoryFile": history_path.as_posix() if history_path.exists() else None,
         })
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)

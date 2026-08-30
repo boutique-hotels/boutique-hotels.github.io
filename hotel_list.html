@@ -319,7 +319,11 @@
       text-align: left;
     }
     .vacancy-cell .vacancy-status { font-weight: 600; }
-    .vacancy-cell .vacancy-detail { font-size: 11px; color: var(--text-muted); }
+    .vacancy-cell .vacancy-detail { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+    .vacancy-plan { margin-top: 4px; font-weight: 600; color: #444; }
+    .vacancy-plan:first-child { margin-top: 0; }
+    .vacancy-type { margin-left: 8px; margin-top: 2px; color: #666; }
+    .vacancy-room { margin-left: 16px; color: var(--text-muted); }
     .clear-btn {
       margin: 8px 0; padding: 5px 12px; font-size: 12px;
       border: 1px solid var(--accent); color: var(--accent);
@@ -555,6 +559,7 @@
     <a href="#section-hotels"><span class="sidebar-icon">🏨</span><span class="sidebar-label">ホテル一覧</span></a>
     <a href="#section-price"><span class="sidebar-icon">💴</span><span class="sidebar-label">料金比較表</span></a>
     <a href="#section-rooms"><span class="sidebar-icon">🛏️</span><span class="sidebar-label">部屋比較表</span></a>
+    <a href="vacancy_history.html"><span class="sidebar-icon">📈</span><span class="sidebar-label">空室推移</span></a>
   </nav>
 </div>
 
@@ -1348,15 +1353,36 @@
       const status = vacancy.has_vacancy === true
         ? `空室あり（${getVacancyTotal(vacancy)}室）`
         : vacancy.has_vacancy === false ? "満室" : "取得済み";
-      const detailHtml = details.map(detail => {
-        const room = detail.room_rank_name || "部屋ランク不明";
-        const stock = displayVacancyText(detail.stock_text) || "—";
-        const chargeText = displayVacancyText(detail.charge_text);
-        const charge = chargeText && chargeText !== stock ? ` / ${chargeText}` : "";
-        return `${room}: ${stock}${charge}`;
-      }).join("<br>");
 
-      return `<span class="vacancy-status">${status}</span><br><span class="vacancy-detail">${detailHtml}</span>`;
+      // 満室（stock_count が null）の部屋は表示しない
+      const available = details.filter(d => d.stock_count !== null && d.stock_count !== undefined);
+      if (!available.length) {
+        return `<span class="vacancy-status">${status}</span>`;
+      }
+
+      // 大分類: plan_name → 中分類: plan_type → 小分類: room_rank_name（明細: 空室数）
+      const planMap = new Map();
+      available.forEach(d => {
+        const planName = d.plan_name || "プラン名不明";
+        const planType = d.plan_type || "種別不明";
+        if (!planMap.has(planName)) planMap.set(planName, new Map());
+        const typeMap = planMap.get(planName);
+        if (!typeMap.has(planType)) typeMap.set(planType, []);
+        typeMap.get(planType).push(d);
+      });
+
+      const planHtml = Array.from(planMap.entries()).map(([planName, typeMap]) => {
+        const typeHtml = Array.from(typeMap.entries()).map(([planType, items]) => {
+          const roomHtml = items.map(d => {
+            const room = d.room_rank_name || "部屋ランク不明";
+            return `<div class="vacancy-room">${room}: ${d.stock_count}室</div>`;
+          }).join("");
+          return `<div class="vacancy-type">${planType}${roomHtml}</div>`;
+        }).join("");
+        return `<div class="vacancy-plan">${planName}${typeHtml}</div>`;
+      }).join("");
+
+      return `<span class="vacancy-status">${status}</span><div class="vacancy-detail">${planHtml}</div>`;
     }
 
     function drawTable() {
@@ -2018,6 +2044,9 @@
       scrollbarSpacerRow = scrollbarRow.cloneNode(true);
       scrollbarSpacerRow.className = "sticky-spacer-row";
       scrollbarSpacerRow.style.display = "none";
+      // 中身（複製されたスクロールバーdiv）は幅が同期されず紛らわしい
+      // 見た目になるだけなので空にし、高さ確保専用の空セルにする。
+      scrollbarSpacerRow.querySelectorAll("td").forEach(td => { td.innerHTML = ""; });
       scrollbarRow.parentNode.insertBefore(scrollbarSpacerRow, scrollbarRow.nextSibling);
     }
 
@@ -2072,6 +2101,7 @@
         scrollbarCell.style.top = "";
         scrollbarCell.style.left = "";
         scrollbarCell.style.width = "";
+        scrollbarCell.style.height = "";
         if (scrollbarSpacerRow) scrollbarSpacerRow.style.display = "none";
       }
       if (summary) {
@@ -2204,25 +2234,31 @@
         offset += sizes.thead || 0;
       }
 
-      // 横スクロールバー行: 見出しと同じ考え方で、必要な時だけ画面上部に固定する。
-      // 本物の <tr> なので、位置がずれても明細に重なって隠れることはない。
+      // 横スクロールバー行: 「見えている表示領域の幅」に合わせて常に
+      // position:fixed で描画する（stuck/unstuck を問わない）。
+      // 理由: このバーは実表示幅に対する現在位置を示すミニチュア版の
+      // スクロールバーなので、表全体の幅（widthPx / tableRect）ではなく、
+      // .table-scroll の「見えている範囲」の幅・左端を基準にしないと、
+      // 固定時に表全体の幅まで広がってしまったり、位置がずれたりする。
       if (scrollbarRow && getComputedStyle(scrollbarRow).display !== "none") {
         const naturalTop = scrollbarMarkerRow.getBoundingClientRect().top + scrollY;
         const shouldStick = scrollY >= naturalTop - offset;
-        if (shouldStick) {
-          scrollbarCell.style.position = "fixed";
-          scrollbarCell.style.top = offset + "px";
-          scrollbarCell.style.left = tableRect.left + "px";
-          scrollbarCell.style.width = widthPx + "px";
-          scrollbarSpacerRow.style.display = "table-row";
-        } else {
-          scrollbarCell.style.position = "";
-          scrollbarCell.style.top = "";
-          scrollbarCell.style.left = "";
-          scrollbarCell.style.width = "";
-          scrollbarSpacerRow.style.display = "none";
-        }
-        offset += sizes.scrollbarRow || 0;
+        const viewportRect = tableScroll.getBoundingClientRect();
+        const rowHeight = sizes.scrollbarRow || 10;
+        const topPx = shouldStick ? offset : (naturalTop - scrollY);
+
+        scrollbarCell.style.position = "fixed";
+        scrollbarCell.style.top = topPx + "px";
+        scrollbarCell.style.left = viewportRect.left + "px";
+        scrollbarCell.style.width = viewportRect.width + "px";
+        scrollbarCell.style.height = rowHeight + "px";
+        scrollbarCell.style.zIndex = "40";
+        // 常に fixed で場所を占有するので、スペーサーも常に確保しておく
+        scrollbarSpacerRow.style.display = "table-row";
+
+        offset += rowHeight;
+      } else if (scrollbarSpacerRow) {
+        scrollbarSpacerRow.style.display = "none";
       }
     }
 

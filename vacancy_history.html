@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>空室状況の推移</title>
+  <style>
+    :root {
+      --accent: #2563eb;
+      --accent-soft: #eef2ff;
+      --border: #dcdfe4;
+      --text-muted: #6b7280;
+      --bg-stripe: #f9fafb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, "Hiragino Kaku Gothic ProN", sans-serif;
+      padding: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #1f2328;
+      background: #fff;
+    }
+    h1 { font-size: 19px; margin-bottom: 4px; }
+    .subtitle { color: var(--text-muted); font-size: 12px; margin-bottom: 14px; }
+    a.back-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+    a.back-link:hover { text-decoration: underline; }
+
+    .station-links { display: flex; gap: 6px; margin: 10px 0 16px; flex-wrap: wrap; }
+    .station-link {
+      display: inline-block; padding: 5px 12px; border-radius: 999px;
+      border: 1px solid var(--border); color: #444; text-decoration: none; font-size: 13px;
+    }
+    .station-link.current { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+    .toolbar {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end;
+      margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .toolbar label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+    .toolbar select, .toolbar input {
+      font-size: 13px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 5px; min-width: 220px;
+    }
+
+    .status-summary { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .status-card {
+      border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 13px; min-width: 140px;
+    }
+    .status-card .label { font-size: 11px; color: var(--text-muted); }
+    .status-card .value { font-size: 18px; font-weight: 700; margin-top: 2px; }
+    .badge { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; }
+    .badge.vacant { background: #dcfce7; color: #16a34a; }
+    .badge.full { background: #fee2e2; color: #dc2626; }
+    .badge.na { background: #f3f4f6; color: var(--text-muted); }
+
+    .chart-wrap { border: 1px solid var(--border); border-radius: 8px; padding: 10px; margin-bottom: 20px; overflow-x: auto; }
+    .chart-wrap svg { display: block; }
+    .chart-empty { color: var(--text-muted); font-size: 13px; padding: 30px 0; text-align: center; }
+
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th, td { border-bottom: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: #f4f4f4; position: sticky; top: 0; }
+    tbody tr:nth-child(even) { background: var(--bg-stripe); }
+    .plan-line { font-size: 11.5px; color: var(--text-muted); }
+    .plan-line + .plan-line { margin-top: 2px; }
+    .no-data { color: #bbb; font-style: italic; }
+    .loading, .error-msg { color: var(--text-muted); font-size: 13px; padding: 20px 0; }
+    .error-msg { color: #dc2626; }
+  </style>
+</head>
+<body>
+
+<a class="back-link" href="hotel_list.html">← 料金比較表に戻る</a>
+<h1 id="pageTitle">空室状況の推移</h1>
+<div class="subtitle" id="pageSubtitle">スクレイピングのたびに蓄積される空室状況（在庫）だけの軽量な履歴を表示します。価格・設備・口コミなどはほぼ変化しないため対象外にしています。</div>
+
+<div class="station-links" id="stationLinks"></div>
+
+<div class="toolbar">
+  <div>
+    <label for="hotelSelect">ホテル</label>
+    <select id="hotelSelect"></select>
+  </div>
+  <div>
+    <label for="hotelFilter">絞り込み（部分一致）</label>
+    <input id="hotelFilter" type="text" placeholder="ホテル名で検索">
+  </div>
+</div>
+
+<div id="content">
+  <div class="loading">読み込み中...</div>
+</div>
+
+<script>
+  const stationData = {
+    ikebukuro: { label: "池袋", historyFile: "./data/archive/池袋_vacancy_history.json" },
+    shinjuku: { label: "新宿", historyFile: "./data/archive/新宿_vacancy_history.json" },
+    gotanda: { label: "五反田", historyFile: "./data/archive/五反田_vacancy_history.json" },
+  };
+  const stationKey = new URLSearchParams(window.location.search).get("station") || "ikebukuro";
+  const selectedStation = stationData[stationKey] || stationData.ikebukuro;
+
+  function renderStationLinks() {
+    const container = document.getElementById("stationLinks");
+    container.innerHTML = Object.entries(stationData).map(([key, info]) => {
+      const isCurrent = key === stationKey;
+      return `<a class="station-link ${isCurrent ? "current" : ""}" href="?station=${encodeURIComponent(key)}">${info.label}</a>`;
+    }).join("");
+  }
+  renderStationLinks();
+  document.getElementById("pageTitle").textContent = `空室状況の推移　${selectedStation.label}`;
+  document.title = `空室状況の推移 ${selectedStation.label}`;
+
+  // マニフェストがあれば、そちらに載っている実際のファイルパスを優先して使う
+  // （extract_hotels.py 側でファイル名や配置が変わっても追従できるようにするため）
+  fetch("hotel_data_manifest.json", { cache: "no-store" })
+    .then(res => (res.ok ? res.json() : []))
+    .then(stations => {
+      const match = Array.isArray(stations) ? stations.find(s => s.key === stationKey || s.label === selectedStation.label) : null;
+      const historyFile = (match && match.vacancyHistoryFile) || selectedStation.historyFile;
+      loadHistory(historyFile);
+    })
+    .catch(() => loadHistory(selectedStation.historyFile));
+
+  let allSnapshots = [];
+  let hotelNames = [];
+
+  function loadHistory(historyFile) {
+    fetch(historyFile, { cache: "no-store" })
+      .then(res => {
+        if (!res.ok) throw new Error(`履歴ファイルが見つかりません: ${historyFile} (${res.status})`);
+        return res.json();
+      })
+      .then(snapshots => {
+        if (!Array.isArray(snapshots) || !snapshots.length) {
+          document.getElementById("content").innerHTML = `<div class="error-msg">履歴データがまだありません（スクレイピングが2回以上実行されると蓄積されます）。</div>`;
+          return;
+        }
+        allSnapshots = snapshots;
+        const nameSet = new Set();
+        snapshots.forEach(snap => (snap.hotels || []).forEach(h => { if (h.name) nameSet.add(h.name); }));
+        hotelNames = Array.from(nameSet).sort((a, b) => a.localeCompare(b, "ja"));
+        populateHotelSelect(hotelNames);
+        renderForHotel(hotelNames[0]);
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = `<div class="error-msg">読み込みエラー: ${err}</div>`;
+      });
+  }
+
+  function populateHotelSelect(names) {
+    const select = document.getElementById("hotelSelect");
+    select.innerHTML = names.map(n => `<option value="${n}">${n}</option>`).join("");
+    select.addEventListener("change", () => renderForHotel(select.value));
+  }
+
+  document.getElementById("hotelFilter").addEventListener("input", e => {
+    const q = e.target.value.trim();
+    const filtered = q ? hotelNames.filter(n => n.includes(q)) : hotelNames;
+    const select = document.getElementById("hotelSelect");
+    const prevValue = select.value;
+    select.innerHTML = filtered.map(n => `<option value="${n}">${n}</option>`).join("");
+    if (filtered.includes(prevValue)) {
+      select.value = prevValue;
+    } else if (filtered.length) {
+      renderForHotel(filtered[0]);
+    } else {
+      document.getElementById("content").innerHTML = `<div class="no-data">該当するホテルがありません</div>`;
+    }
+  });
+
+  function formatTimestamp(iso) {
+    const date = new Date(iso);
+    if (Number.isNaN(date.getTime())) return iso || "—";
+    const pad = v => String(v).padStart(2, "0");
+    return `${date.getMonth() + 1}/${date.getDate()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  }
+
+  function buildSeries(hotelName) {
+    return allSnapshots.map(snap => {
+      const entry = (snap.hotels || []).find(h => h.name === hotelName);
+      return {
+        generatedAt: snap.generatedAt,
+        hasVacancy: entry ? entry.hasVacancy : null,
+        totalStock: entry ? (entry.totalStock || 0) : null,
+        plans: entry ? (entry.plans || []) : [],
+      };
+    });
+  }
+
+  function renderChart(series) {
+    const values = series.map(s => s.totalStock ?? 0);
+    const maxVal = Math.max(1, ...values);
+    const w = Math.max(320, series.length * 36);
+    const h = 140;
+    const padL = 28, padB = 18, padT = 10;
+    const plotH = h - padB - padT;
+    const stepX = series.length > 1 ? (w - padL - 10) / (series.length - 1) : 0;
+
+    const points = series.map((s, i) => {
+      const x = padL + i * stepX;
+      const y = padT + plotH - (plotH * (s.totalStock ?? 0) / maxVal);
+      return { x, y, s };
+    });
+
+    const linePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(" ");
+    const circles = points.map(p => {
+      const color = p.s.hasVacancy === true ? "#16a34a" : p.s.hasVacancy === false ? "#dc2626" : "#9ca3af";
+      return `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="${color}">
+        <title>${formatTimestamp(p.s.generatedAt)}: ${p.s.totalStock ?? "不明"}室</title>
+      </circle>`;
+    }).join("");
+
+    const gridLines = [0, 0.5, 1].map(f => {
+      const y = padT + plotH * (1 - f);
+      const label = Math.round(maxVal * f);
+      return `<line x1="${padL}" y1="${y}" x2="${w - 5}" y2="${y}" stroke="#eee" />
+        <text x="2" y="${y + 4}" font-size="10" fill="#999">${label}</text>`;
+    }).join("");
+
+    return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
+      ${gridLines}
+      <path d="${linePath}" fill="none" stroke="#2563eb" stroke-width="2" />
+      ${circles}
+    </svg>`;
+  }
+
+  function renderForHotel(hotelName) {
+    document.getElementById("hotelSelect").value = hotelName;
+    const series = buildSeries(hotelName);
+    const latest = series[series.length - 1];
+
+    let badge = `<span class="badge na">情報なし</span>`;
+    if (latest && latest.hasVacancy === true) badge = `<span class="badge vacant">空室あり</span>`;
+    else if (latest && latest.hasVacancy === false) badge = `<span class="badge full">満室</span>`;
+
+    const summaryHtml = `
+      <div class="status-summary">
+        <div class="status-card">
+          <div class="label">最新状況</div>
+          <div class="value">${badge}</div>
+        </div>
+        <div class="status-card">
+          <div class="label">最新の空室数</div>
+          <div class="value">${latest && latest.totalStock != null ? latest.totalStock + "室" : "—"}</div>
+        </div>
+        <div class="status-card">
+          <div class="label">記録件数</div>
+          <div class="value">${series.length}件</div>
+        </div>
+      </div>
+    `;
+
+    const hasAnyStock = series.some(s => s.totalStock != null);
+    const chartHtml = hasAnyStock
+      ? `<div class="chart-wrap">${renderChart(series)}</div>`
+      : `<div class="chart-wrap"><div class="chart-empty">グラフ化できる空室数データがありません</div></div>`;
+
+    const rowsHtml = series.slice().reverse().map(s => {
+      const planLines = s.plans.length
+        ? s.plans.map(p => `<div class="plan-line">${p.planName || "—"} / ${p.roomRankName || "—"}: ${p.stockCount}室</div>`).join("")
+        : `<span class="no-data">空室なし</span>`;
+      const statusBadge = s.hasVacancy === true
+        ? `<span class="badge vacant">空室あり</span>`
+        : s.hasVacancy === false
+          ? `<span class="badge full">満室</span>`
+          : `<span class="badge na">不明</span>`;
+      return `
+        <tr>
+          <td>${formatTimestamp(s.generatedAt)}</td>
+          <td>${statusBadge}</td>
+          <td>${s.totalStock ?? "—"}</td>
+          <td>${planLines}</td>
+        </tr>
+      `;
+    }).join("");
+
+    const tableHtml = `
+      <table>
+        <thead>
+          <tr><th>日時</th><th>状況</th><th>空室数</th><th>内訳</th></tr>
+        </thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+    `;
+
+    document.getElementById("content").innerHTML = summaryHtml + chartHtml + tableHtml;
+  }
+</script>
+
+</body>
+</html>
