@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-30T09:07+00:00"
+    "generatedAt": "2026-08-30T08:37+00:00"
   },
   "hotels": [
     {
@@ -10610,12 +10610,12 @@
             "plan_name": "【日曜・祝日】サンデーSP当日宿泊予約ハピホテ限定",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと3室",
+            "stock_count": 3,
             "charge_text": "￥9,980"
           }
         ],
-        "max_stock": 2,
+        "max_stock": 3,
         "has_vacancy": true
       }
     },
