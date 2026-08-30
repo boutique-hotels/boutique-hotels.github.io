@@ -1,14 +1,1 @@
-[
-  {
-    "id": null,
-    "name": null,
-    "address": null,
-    "prices": [],
-    "rooms": [],
-    "access": {},
-    "amenities": {},
-    "review": {},
-    "vacancy": {},
-    "error": "request_error:('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
-  }
-]
+[]
