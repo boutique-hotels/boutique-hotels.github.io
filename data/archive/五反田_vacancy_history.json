@@ -16086,5 +16086,191 @@
         "plans": []
       }
     ]
+  },
+  {
+    "generatedAt": "2026-08-31T05:08+00:00",
+    "hotels": [
+      {
+        "name": "SARA GRANDE五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL B-SIDE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL ZHIPAGO",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "The CALM Hotel Tokyo",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル バリバリANNEX 五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル バリバリ 五反田",
+        "hasVacancy": true,
+        "maxStock": 4,
+        "totalStock": 4,
+        "plans": [
+          {
+            "planName": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
+            "planType": "宿泊",
+            "roomRankName": "Ctype",
+            "stockCount": 4
+          }
+        ]
+      },
+      {
+        "name": "ホテル エメラルド 五反田",
+        "hasVacancy": true,
+        "maxStock": 2,
+        "totalStock": 3,
+        "plans": [
+          {
+            "planName": "【当日限定】日～木 宿泊プラン",
+            "planType": "宿泊",
+            "roomRankName": "Aランク",
+            "stockCount": 2
+          },
+          {
+            "planName": "【当日限定】日～木 宿泊プラン",
+            "planType": "宿泊",
+            "roomRankName": "Bランク",
+            "stockCount": 1
+          }
+        ]
+      },
+      {
+        "name": "HOTEL PEACE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "SARA五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL W1",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル MARE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL BIX",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ウエスト",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL LiosIII",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "DESIGN HOTEL NOX",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL LUXE SHINAGAWA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "hotel min.",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル イーアイ五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル マーブル",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "シーズ五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ヒルズホテル五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "宝翠",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      }
+    ]
   }
 ]
