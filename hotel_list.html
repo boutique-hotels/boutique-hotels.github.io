@@ -244,13 +244,15 @@
     }
 
     /* ---- 表 ---- */
+    /* .table-scroll には overflow を付けない。JS側の座標計算（固定ヘッダーの
+       位置決め等）はすべて「ページ全体で横スクロールする」ことを前提にしており、
+       ここに overflow-x を付けると表がこの中だけでスクロールするようになり、
+       計算全体が食い違う（過去に何度も原因になった不具合パターン）。
+       表が画面より広い場合は、ページ自体が横スクロールする形になる。 */
     .table-scroll {
       border: none;
       border-radius: 0;
       margin-bottom: 24px;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
     }
     table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
     th, td { border-bottom: 1px solid var(--border); border-right: 1px solid #eee; padding: 6px 8px; text-align:center; white-space: nowrap; }
@@ -1784,17 +1786,23 @@
     };
 
     let syncing = false;
+    let scrollTicking = false;
+    // .table-scroll 自体はもうスクロールしない（ページ全体が横スクロールする）ため、
+    // カスタムバーをドラッグしたときはページ全体を横スクロールさせ、
+    // 逆にページを横スクロールしたときはバーのつまみ位置を追従させる。
     scrollbar.addEventListener("scroll", () => {
       if (syncing) return;
       syncing = true;
-      tableScroll.scrollLeft = scrollbar.scrollLeft;
+      window.scrollTo(scrollbar.scrollLeft, window.scrollY);
       syncing = false;
     }, { passive: true });
-    tableScroll.addEventListener("scroll", () => {
-      if (syncing) return;
-      syncing = true;
-      scrollbar.scrollLeft = tableScroll.scrollLeft;
-      syncing = false;
+    window.addEventListener("scroll", () => {
+      if (syncing || scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        if (!syncing) scrollbar.scrollLeft = window.scrollX;
+        scrollTicking = false;
+      });
     }, { passive: true });
     window.addEventListener("resize", updateWidth);
     if (typeof ResizeObserver !== "undefined") {

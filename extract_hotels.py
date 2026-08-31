@@ -476,6 +476,37 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
     print(f"失敗件数: {len(failures)} (詳細は {label}_hotels_failures.json)")
 
 
+def _build_vacancy_snapshot_hotels(hotels: list) -> list:
+    """
+    ホテル一覧(detail JSON の "hotels" 相当)から、空室状況だけを
+    抜き出した軽量なサマリーのリストを作る。
+    append_vacancy_history（毎回の追記）と
+    migrate_vacancy_history_from_archive（過去分の一括移行）の両方で使う。
+    """
+    snapshot_hotels = []
+    for hotel in hotels:
+        vacancy = hotel.get("vacancy") or {}
+        details = vacancy.get("details") or []
+        # 満室(stock_countがNone)の部屋は推移を見るうえでノイズになるだけなので除外する
+        available = [d for d in details if d.get("stock_count") is not None]
+        snapshot_hotels.append({
+            "name": hotel.get("name"),
+            "hasVacancy": vacancy.get("has_vacancy"),
+            "maxStock": vacancy.get("max_stock"),
+            "totalStock": sum(d.get("stock_count") or 0 for d in available),
+            "plans": [
+                {
+                    "planName": d.get("plan_name"),
+                    "planType": d.get("plan_type"),
+                    "roomRankName": d.get("room_rank_name"),
+                    "stockCount": d.get("stock_count"),
+                }
+                for d in available
+            ],
+        })
+    return snapshot_hotels
+
+
 def append_vacancy_history(label: str, generated_at: str, hotels: list) -> None:
     """
     空室状況（stock_count）だけを抜き出した軽量な履歴を追記する。
@@ -514,27 +545,7 @@ def append_vacancy_history(label: str, generated_at: str, hotels: list) -> None:
     else:
         history = []
 
-    snapshot_hotels = []
-    for hotel in hotels:
-        vacancy = hotel.get("vacancy") or {}
-        details = vacancy.get("details") or []
-        # 満室(stock_countがNone)の部屋は推移を見るうえでノイズになるだけなので除外する
-        available = [d for d in details if d.get("stock_count") is not None]
-        snapshot_hotels.append({
-            "name": hotel.get("name"),
-            "hasVacancy": vacancy.get("has_vacancy"),
-            "maxStock": vacancy.get("max_stock"),
-            "totalStock": sum(d.get("stock_count") or 0 for d in available),
-            "plans": [
-                {
-                    "planName": d.get("plan_name"),
-                    "planType": d.get("plan_type"),
-                    "roomRankName": d.get("room_rank_name"),
-                    "stockCount": d.get("stock_count"),
-                }
-                for d in available
-            ],
-        })
+    snapshot_hotels = _build_vacancy_snapshot_hotels(hotels)
 
     history.append({
         "generatedAt": generated_at,
@@ -544,6 +555,69 @@ def append_vacancy_history(label: str, generated_at: str, hotels: list) -> None:
     with open(history_path, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
     print(f"空室履歴を追記: {history_path}（累計{len(history)}件のスナップショット）")
+
+
+def migrate_vacancy_history_from_archive(label: str) -> None:
+    """
+    既に data/archive/ に溜まっている過去の
+    {label}_hotels_detail_{timestamp}.json 群から、
+    vacancy_history.json を作り直す（移行用）。
+
+    vacancy_history.json の仕組みを追加する前からスクレイピングを
+    続けていた場合、それ以前の分の推移が空白になってしまうため、
+    既存のアーカイブファイルを読み直して遡って埋める。
+
+    既存の vacancy_history.json があれば上書きする
+    （アーカイブに残っている全期間で作り直すため）。
+    """
+    pattern = f"{label}_hotels_detail_*.json"
+    paths = sorted(ARCHIVE_DATA_DIR.glob(pattern))
+    if not paths:
+        print(f"{label}: 移行対象のアーカイブファイルが見つかりません（{ARCHIVE_DATA_DIR / pattern}）")
+        return
+
+    history = []
+    skipped = 0
+    for path in paths:
+        with path.open(encoding="utf-8-sig") as f:
+            try:
+                payload = json.load(f)
+            except json.JSONDecodeError:
+                print(f"  スキップ（JSON解析エラー）: {path.name}")
+                skipped += 1
+                continue
+
+        hotels = payload.get("hotels") if isinstance(payload, dict) else payload
+        if not isinstance(hotels, list):
+            print(f"  スキップ（hotels配列が見つからない）: {path.name}")
+            skipped += 1
+            continue
+
+        metadata = payload.get("metadata", {}) if isinstance(payload, dict) else {}
+        generated_at = metadata.get("generatedAt")
+        if not generated_at:
+            # 古い形式のファイルには metadata が無いことがあるため、
+            # ファイル名末尾のタイムスタンプ（例: ..._detail_20260826_100236.json）
+            # から復元する。それも無理なら、ファイル自体の更新日時を使う。
+            m = re.search(r"_(\d{8}_\d{6})\.json$", path.name)
+            if m:
+                generated_at = datetime.strptime(m.group(1), "%Y%m%d_%H%M%S").isoformat(timespec="minutes")
+            else:
+                generated_at = datetime.fromtimestamp(path.stat().st_mtime).isoformat(timespec="minutes")
+
+        history.append({
+            "generatedAt": generated_at,
+            "hotels": _build_vacancy_snapshot_hotels(hotels),
+        })
+        print(f"  取り込み: {path.name} -> {generated_at}")
+
+    history_path = ARCHIVE_DATA_DIR / f"{label}_vacancy_history.json"
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+    print(
+        f"{label}: アーカイブ{len(paths)}件中{len(history)}件を取り込み"
+        f"（スキップ{skipped}件） -> {history_path}"
+    )
 
 
 def generate_station_manifest() -> None:
@@ -593,9 +667,27 @@ if __name__ == "__main__":
         default=5.0,
         help="--station all のとき、駅と駅の間に空ける間隔（秒、既定値: 5.0）",
     )
+    parser.add_argument(
+        "--migrate-vacancy-history",
+        action="store_true",
+        help=(
+            "スクレイピングを実行せず、既に data/archive/ にある過去の detail JSON から "
+            "vacancy_history.json を作り直す（--station で対象駅を指定、既定はall扱いで全駅）"
+        ),
+    )
     args = parser.parse_args()
 
-    if args.station == "all":
+    if args.migrate_vacancy_history:
+        targets = (
+            list(STATION_CONFIGS.values())
+            if args.station == "all"
+            else [STATION_CONFIGS[args.station]]
+        )
+        for station in targets:
+            print(f"\n===== {station['label']} の空室履歴を移行 =====")
+            migrate_vacancy_history_from_archive(station["label"])
+        generate_station_manifest()
+    elif args.station == "all":
         station_items = list(STATION_CONFIGS.items())
         for i, (key, station) in enumerate(station_items, 1):
             print(f"\n===== [{i}/{len(station_items)}] {station['label']} の取得を開始 =====")
