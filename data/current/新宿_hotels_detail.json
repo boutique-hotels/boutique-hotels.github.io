@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T20:09+00:00"
+    "generatedAt": "2026-09-02T20:41+00:00"
   },
   "hotels": [
     {
@@ -7247,9 +7247,26 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "日～木 当日22時チェックイン スタンダードルーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Standard",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥11,800"
+          },
+          {
+            "plan_name": "日～木 当日22時チェックイン モデレートルーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Moderate",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
