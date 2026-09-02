@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T21:39+00:00"
+    "generatedAt": "2026-09-02T22:09+00:00"
   },
   "hotels": [
     {
@@ -3741,9 +3741,26 @@
         "count": 31
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日予約】平日限定 レイトチェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,900"
+          },
+          {
+            "plan_name": "【当日予約】平日限定 アーリーチェックアウトプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,900"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
