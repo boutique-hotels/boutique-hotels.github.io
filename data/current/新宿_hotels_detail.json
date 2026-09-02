@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T19:37+00:00"
+    "generatedAt": "2026-09-02T20:09+00:00"
   },
   "hotels": [
     {
@@ -1050,9 +1050,122 @@
         "count": 15
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日曜～木曜）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥17,300"
+          },
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日曜～木曜）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥17,300"
+          },
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日曜～木曜）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日曜～木曜）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,300"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥20,800"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥20,800"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥19,800"
+          },
+          {
+            "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木・祝）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,400"
+          },
+          {
+            "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木・祝）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,400"
+          },
+          {
+            "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木・祝）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュー",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥11,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -4349,9 +4462,122 @@
         "count": 18
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥16,800"
+          },
+          {
+            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレートタイプ　喫煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,300"
+          },
+          {
+            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレートタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,000"
+          },
+          {
+            "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレートタイプ　喫煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレートタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレートタイプ　喫煙",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレートタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
+        "max_stock": 3,
+        "has_vacancy": true
       }
     },
     {
@@ -9465,7 +9691,24 @@
         "count": 11
       },
       "vacancy": {
-        "details": [],
+        "details": [
+          {
+            "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "プリティタイプ 禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "プリティタイプ 喫煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
         "max_stock": null,
         "has_vacancy": null
       }
