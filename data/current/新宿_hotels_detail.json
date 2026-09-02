@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T23:08+00:00"
+    "generatedAt": "2026-09-02T23:38+00:00"
   },
   "hotels": [
     {
@@ -5112,6 +5112,62 @@
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "プリティ(ユニットバス)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "プリティ(ユニットバス)(禁煙ルーム)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥7,800"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリア(喫煙ルーム)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリア(禁煙ルーム)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "グレイス(露天風呂つき)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥11,300"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "ロイヤル(露天風呂つき)(禁煙ルーム)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約ご希望の方】平日デイユースプラン：昼の部 電話受付も大歓迎♪",
+            "plan_type": "休憩",
+            "room_rank_name": "ヴィラ(露天風呂つき)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           }
         ],
         "max_stock": 1,
@@ -10066,17 +10122,17 @@
             "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
             "plan_type": "宿泊",
             "room_rank_name": "プリティタイプ 喫煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥11,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【まだ間に合う！】ドリンク付き当日ご宿泊プラン 日～木・祝日",
             "plan_type": "宿泊",
             "room_rank_name": "プリティタイプ 禁煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥11,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【まだ間に合う！】ドリンク付き当日ご宿泊プラン 日～木・祝日",

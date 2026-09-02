@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T23:07+00:00"
+    "generatedAt": "2026-09-02T23:36+00:00"
   },
   "hotels": [
     {
@@ -1838,9 +1838,34 @@
         "count": 13
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【人気☆モデレート】平日21時チェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,800"
+          },
+          {
+            "plan_name": "【人気☆ラグジュアリー】平日21時チェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,800"
+          },
+          {
+            "plan_name": "【スタンダード】☆コスパ最強☆平日21時チェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "スタンダード",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
