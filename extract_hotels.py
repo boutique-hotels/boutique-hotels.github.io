@@ -446,7 +446,6 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
         "hotels": results,
     }
     CURRENT_DATA_DIR.mkdir(parents=True, exist_ok=True)
-    ARCHIVE_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     detail_filename = f"{label}_hotels_detail.json"
     failure_filename = f"{label}_hotels_failures.json"
@@ -456,17 +455,6 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
     with open(detail_path, "w", encoding="utf-8") as f:
         json.dump(detail_payload, f, ensure_ascii=False, indent=2)
     with open(failure_path, "w", encoding="utf-8") as f:
-        json.dump(failures, f, ensure_ascii=False, indent=2)
-
-    # アーカイブ用のファイル名は「currentファイルの更新日時(mtime)」から作る。
-    # datetime.now() を別途呼ぶのではなく、実際に書き込んだファイルの
-    # タイムスタンプを読み直すことで、ファイル名が実体の更新日時と確実に一致する。
-    mtime = detail_path.stat().st_mtime
-    timestamp_suffix = datetime.fromtimestamp(mtime).strftime("%Y%m%d_%H%M%S")
-
-    with open(ARCHIVE_DATA_DIR / f"{label}_hotels_detail_{timestamp_suffix}.json", "w", encoding="utf-8") as f:
-        json.dump(detail_payload, f, ensure_ascii=False, indent=2)
-    with open(ARCHIVE_DATA_DIR / f"{label}_hotels_failures_{timestamp_suffix}.json", "w", encoding="utf-8") as f:
         json.dump(failures, f, ensure_ascii=False, indent=2)
 
     append_vacancy_history(label, generated_at, results)
