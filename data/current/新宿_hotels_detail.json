@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T13:10+00:00"
+    "generatedAt": "2026-09-02T13:42+00:00"
   },
   "hotels": [
     {
@@ -1104,9 +1104,9 @@
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日曜～木曜）",
             "plan_type": "宿泊",
             "room_rank_name": "バリュープラス",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,300"
           },
           {
             "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木・祝）",
@@ -1128,16 +1128,16 @@
             "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木・祝）",
             "plan_type": "宿泊",
             "room_rank_name": "バリュー",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,900"
           },
           {
             "plan_name": "【当日限定】訳ありご宿泊プラン 23時～チェックイン（日曜～木曜）",
             "plan_type": "宿泊",
             "room_rank_name": "バリュー",
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥9,900"
           },
           {
@@ -1152,12 +1152,12 @@
             "plan_name": "【当日予約】4000円以上お得♪ 学割ご宿泊プラン（日～木・祝）",
             "plan_type": "宿泊",
             "room_rank_name": "ピングプリティ喫煙可",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥13,000"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           }
         ],
-        "max_stock": 2,
+        "max_stock": 1,
         "has_vacancy": true
       }
     },
@@ -1746,8 +1746,8 @@
             "plan_name": "【本日限定】10,000円宿泊プランＡ",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "売切れ",
-            "stock_count": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥10,000"
           },
           {
@@ -3133,9 +3133,9 @@
             "plan_name": "【当日限定】素泊まりご宿泊スタンダードプラン(日～木 | 20時～)",
             "plan_type": "宿泊",
             "room_rank_name": "プリティタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥15,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【当日限定】デイユーススタンダードプラン（月～木│17時30分～）",
@@ -4178,410 +4178,13 @@
       }
     },
     {
-      "id": 543445,
-      "name": "ホテルバリアンリゾート東新宿店",
-      "address": "東京都新宿区歌舞伎町2-19-17",
-      "prices": [
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【全日】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥19,800",
-                  "timeZone": "18:00～翌 3:00の間で最大 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥7,800～￥22,800",
-                  "timeZone": "18:00～翌 3:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜3時を過ぎると自動的にご宿泊料金に切替\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～木1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥19,800",
-                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【土・連休中日】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥22,800",
-                  "timeZone": "18:00～翌 3:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜3時を過ぎると自動的にご宿泊料金に切替\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～木2部】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥19,800",
-                  "timeZone": "12:00～20:00の間で最大 5時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・祝前日1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥19,800",
-                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・祝前日2部】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥15,800",
-                  "timeZone": "12:00～20:00の間で最大 5時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・連休中日1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,800～￥22,800",
-                  "timeZone": "6:00～16:00の間で最大 10時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥14,800",
-                  "timeZone": "18:00～翌 3:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜3時を過ぎると自動的にご宿泊料金に切替\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【土・連休中日2部】",
-              "timePrice": [
-                {
-                  "price": "￥7,800～￥22,800",
-                  "timeZone": "12:00～20:00の間で最大 4時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝日1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,800～￥22,800",
-                  "timeZone": "6:00～16:00の間で最大 10時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝日2部】",
-              "timePrice": [
-                {
-                  "price": "￥7,800～￥22,800",
-                  "timeZone": "12:00～20:00の間で最大 4時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥13,300～￥34,800",
-                  "timeZone": "20:00～翌 11:00の間で最大 14時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜・祝前日】",
-              "timePrice": [
-                {
-                  "price": "￥15,800～￥39,800",
-                  "timeZone": "22:00～翌 10:00の間で最大 12時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・連休中日】",
-              "timePrice": [
-                {
-                  "price": "￥17,800～￥39,800",
-                  "timeZone": "22:00～翌 10:00の間で最大 12時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥13,300～￥34,800",
-                  "timeZone": "20:00～翌 11:00の間で最大 14時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n日～木・祝のご宿泊はチェックインより最低12時間保証、金・土・祝前のご宿泊は最低10時間保証です。（例）月曜深夜3時～15時（12h）、土曜深夜3時～13時（10ｈ)\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 743,
-          "room_name": "プラチナタイプ",
-          "type_name": "プラチナタイプ",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r743.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 943,
-          "room_name": "インペリアルタイプ",
-          "type_name": "インペリアルタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r943.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 843,
-          "room_name": "ロイヤルタイプ 露天風呂付",
-          "type_name": "ロイヤルタイプ 露天風呂付",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r843.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 647,
-          "room_name": "ロイヤルタイプ 岩盤浴付",
-          "type_name": "ロイヤルタイプ 岩盤浴付",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r647.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 944,
-          "room_name": "シアタータイプ",
-          "type_name": "シアタータイプ",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r944.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 241,
-          "room_name": "スーペリアタイプ　喫煙",
-          "type_name": "スーペリアタイプ　喫煙",
-          "rank_id": 6,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r241.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 441,
-          "room_name": "スーペリアタイプ　禁煙",
-          "type_name": "スーペリアタイプ　禁煙",
-          "rank_id": 7,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r441.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 245,
-          "room_name": "モデレートタイプ　喫煙",
-          "type_name": "モデレートタイプ　喫煙",
-          "rank_id": 8,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r245.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 445,
-          "room_name": "モデレートタイプ　禁煙",
-          "type_name": "モデレートタイプ　禁煙",
-          "rank_id": 9,
-          "image": "https://happyhotel.jp/hotenavi/std0711523/image/r445.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "東新宿駅",
-            "walk_min": 4
-          }
-        ],
-        "latitude": "35.697732",
-        "longitude": "139.704739",
-        "map_url": "https://www.google.com/maps?q=35.697732,139.704739",
-        "raw_access_text": "副都心線＆大江戸線「東新宿駅」A1出口より徒歩4分！ \n副都心線&丸ノ内線「新宿三丁目駅」E1出口より徒歩7分。 \nJR「新宿駅」東口より徒歩10分。\nJR「新大久保駅」北口より徒歩10分。\n\n池袋駅や渋谷駅と並ぶ山手三大副都心である新宿駅ですので\n大宮・赤羽・原宿・恵比寿・目黒・東京・中野・高円寺等の首都圏主要駅への\nアクセス抜群！!"
-      },
-      "amenities": {
-        "バス": [
-          "ジェットバス",
-          "ブロアバス",
-          "露天風呂(一部)",
-          "岩盤浴(一部)",
-          "浴室TV(一部)",
-          "*＜ゆったり入れるお風呂＞全室「バス・トイレ別」＆「ジェットバス付き」。上位ルームにはゆったり入れる円形の大型バス。大人気の「岩盤浴」を完備したお部屋をご用意。さらにご要望の多かった露天風呂もあるんです！最上位の『プラチナタイプ』は岩盤浴と露天風呂が両方楽しめちゃいます！"
-        ],
-        "テレビ": [
-          "大画面テレビ50インチ以上",
-          "5.1chサラウンド(一部)",
-          "ビデオ・オン・デマンド",
-          "持込用DVDデッキ",
-          "ブルーレイプレーヤー",
-          "*＜最新の映像を・・・＞全室55型以上の大型TVとVOD完備！無料で200タイトル以上の映画や番組を配信。話題の映画も配信しちゃいます！上位クラスのお部屋では映画好きにはたまらない5.1CHの高音質のスピーカーや大画面65型のハイビジョン「4Kテレビ」でシアタールームとしてもお使いいただけます。"
-        ],
-        "アミューズメント": [
-          "マッサージチェア(一部)",
-          "客室PC",
-          "有線LAN",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "お部屋": [
-          "禁煙ルーム(一部)",
-          "パーティールーム(一部)",
-          "お姫様ベッド（天蓋ベッド）",
-          "同性利用可(女性)",
-          "同性利用可(男性)",
-          "車椅子可(一部)",
-          "バリアフリー(一部)",
-          "バリアフリー(エントランス～ロビー)",
-          "バリアフリー(エレベーター)",
-          "バリアフリー(部屋の入口)(一部)",
-          "バリアフリー(お風呂)(一部)",
-          "バリアフリー(トイレ)(一部)",
-          "*＜お部屋＞全室天蓋付き「お姫様ベッド」のお部屋には専用の無料Wi‐Fi",
-          "ブルーレイプレイヤー",
-          "携帯充電器(i-phone",
-          "アンドロイド",
-          "FOMA",
-          "AU)やコンタクト保存液などの日用グッズを完備。一部のお部屋には「ヘッドスパ」",
-          "「ハンドスパ」などの美容家電もあり",
-          "身も心もキレイに。 女子会等でご利用いただける大きなお部屋もご用意しております。"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "空気清浄機",
-          "加湿器",
-          "シャワートイレ",
-          "くるくるドライヤー",
-          "ヘアアイロン",
-          "美顔器",
-          "ハンドマッサージャー(一部)",
-          "バスローブ",
-          "ルームウェア",
-          "男性化粧品",
-          "女性化粧品",
-          "各種シャンプー",
-          "アメニティ豊富",
-          "携帯電話充電器",
-          "Androidスマホ充電器",
-          "iPhone充電器",
-          "*・きれいな館内をぜひ",
-          "ご覧ください。"
-        ]
-      },
-      "review": {
-        "score": "4.7",
-        "count": 18
-      },
-      "vacancy": {
-        "details": [
-          {
-            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
-            "plan_type": "宿泊",
-            "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "あと3室",
-            "stock_count": 3,
-            "charge_text": "￥16,800"
-          },
-          {
-            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
-            "plan_type": "宿泊",
-            "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレートタイプ　喫煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥16,300"
-          },
-          {
-            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレートタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
-            "plan_type": "宿泊",
-            "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "あと2室",
-            "stock_count": 2,
-            "charge_text": "￥13,000"
-          },
-          {
-            "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
-            "plan_type": "宿泊",
-            "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          }
-        ],
-        "max_stock": 3,
-        "has_vacancy": true
-      }
+      "url": "https://happyhotel.jp/hotels/543445",
+      "id": null,
+      "name": null,
+      "address": null,
+      "prices": [],
+      "rooms": [],
+      "error": "request_error:HTTPSConnectionPool(host='happyhotel.jp', port=443): Read timed out. (read timeout=10)"
     },
     {
       "id": 540003,

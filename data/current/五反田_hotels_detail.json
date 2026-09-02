@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T13:10+00:00"
+    "generatedAt": "2026-09-02T13:42+00:00"
   },
   "hotels": [
     {
@@ -290,7 +290,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r506.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 601,
@@ -322,7 +322,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r303.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 306,
@@ -362,7 +362,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r503.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 603,
@@ -410,7 +410,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r502.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 602,
@@ -418,7 +418,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r602.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 203,
@@ -442,7 +442,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r404.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 504,
@@ -450,7 +450,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r504.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 509,
@@ -490,7 +490,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r407.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 507,
@@ -546,7 +546,7 @@
           "type_name": "EXECUTIVE",
           "rank_id": 6,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r405.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 409,
@@ -570,7 +570,7 @@
           "type_name": "EXECUTIVE",
           "rank_id": 6,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r605.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 609,
@@ -602,7 +602,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r308.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 408,
@@ -610,7 +610,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r408.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 508,
@@ -642,7 +642,7 @@
           "type_name": "SARA SWEET",
           "rank_id": 8,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r803.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 703,
@@ -650,7 +650,7 @@
           "type_name": "PARTY",
           "rank_id": 9,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r703.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 802,
@@ -2662,8 +2662,8 @@
             "plan_name": "【当日限定】日～木 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Aランク",
-            "stock_text": "あと4室",
-            "stock_count": 4,
+            "stock_text": "あと2室",
+            "stock_count": 2,
             "charge_text": "￥10,000"
           },
           {
@@ -2683,7 +2683,7 @@
             "charge_text": "￥15,000"
           }
         ],
-        "max_stock": 4,
+        "max_stock": 2,
         "has_vacancy": true
       }
     },
