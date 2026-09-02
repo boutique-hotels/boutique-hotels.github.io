@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T20:39+00:00"
+    "generatedAt": "2026-09-02T21:07+00:00"
   },
   "hotels": [
     {
@@ -1480,9 +1480,26 @@
         "count": 13
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "当日限定 休憩3時間プラン",
+            "plan_type": "休憩",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥4,800"
+          },
+          {
+            "plan_name": "当日宿泊プラン（月曜～木曜）  チェックイン21時～24時",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥6,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -4719,9 +4736,18 @@
         "count": 3
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "日～木限定！当日予約21時チェックイン素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "全部屋均一",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
