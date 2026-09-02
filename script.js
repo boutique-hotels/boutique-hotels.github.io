@@ -525,6 +525,7 @@ function render(hotels) {
   // ---- ホテル基本情報カード（アクセス・設備・口コミ・在庫） ----
   const cardDetails = document.createElement("details");
   cardDetails.id = "section-hotels";
+  cardDetails.className = "sticky-section";
   cardDetails.innerHTML = `<summary id="cardSummary">ホテル一覧（${hotels.length}件・クリックで展開）</summary>`;
 
   // フィルタツールバー
@@ -536,7 +537,7 @@ function render(hotels) {
   const amenityOptions = Array.from(amenitySet).sort((a, b) => a.localeCompare(b, "ja"));
 
   const cardToolbar = document.createElement("div");
-  cardToolbar.className = "hotel-card-toolbar";
+  cardToolbar.className = "hotel-card-toolbar sticky-toolbar";
   cardToolbar.innerHTML = `
     <div>
       <div style="color:var(--text-muted);margin-bottom:2px;">口コミ評価（以上）</div>
@@ -960,6 +961,12 @@ function render(hotels) {
       priceBody.appendChild(tr);
       });
     });
+
+    // tbody の内容が変わり .vacancy-cell 等の列幅が変化しうるため、
+    // 固定表示中のヘッダー幅も同期し直す
+    requestAnimationFrame(() => {
+      priceStickyHeader && priceStickyHeader.onScrollOrResize();
+    });
   }
 
   drawTable();
@@ -1093,6 +1100,10 @@ function drawRoomTable() {
       }
       return roomSortState.asc ? cmp : -cmp;
     });
+ 
+    requestAnimationFrame(() => {
+      roomStickyHeader && roomStickyHeader.onScrollOrResize();
+    });
   }
 
   roomTable.querySelectorAll("[data-arrow]").forEach(el => {
@@ -1173,8 +1184,10 @@ addHorizontalScrollbar(roomDetails, roomScroll, roomTable);
 drawRoomTable();
 document.getElementById("filterKeepValue").addEventListener("change", drawRoomTable);
 
-initFakeStickyHeader(priceDetails);
-initFakeStickyHeader(roomDetails);
+initPageTitleSticky();
+const cardStickyHeader = initFakeStickyHeader(cardDetails);
+const priceStickyHeader = initFakeStickyHeader(priceDetails);
+const roomStickyHeader = initFakeStickyHeader(roomDetails);
 }
 
 function addHorizontalScrollbar(parent, tableScroll, table) {
@@ -1270,7 +1283,7 @@ function initFakeStickyHeader(sec) {
   if (!summary && !headerRow) return;
 
   const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
-  if (isMobile) {
+  if (isMobile && headerRow && tableScroll) {
     if (!headerRow || !tableScroll) return;
 
     const mobileHeader = document.createElement("div");
@@ -1406,7 +1419,7 @@ function initFakeStickyHeader(sec) {
       mobileRo.observe(table);
     }
     updateMobileHeaderNow();
-    return;
+    return { update: updateMobileHeaderNow, onScrollOrResize: updateMobileHeader };
   }
 
   // 高さ0のマーカー要素を「本来の位置」の目印として常に静的配置のまま残す。
@@ -1484,17 +1497,28 @@ function initFakeStickyHeader(sec) {
   }
 
   const sizes = {}; // 各要素の高さ（offsetHeightはfixed状態でも正確に測れる）
+  let widthPxCache = 0;
 
   function measureSizes() {
-    if (summary) sizes.summary = summary.offsetHeight;
-    if (toolbar) sizes.toolbar = toolbar.offsetHeight;
+    /*
+    if (summary) {
+      sizes.summary = Math.ceil(summary.getBoundingClientRect().height);
+    }
+    if (toolbar) {
+      // 固定時と同じ幅に一時的にしてから高さを測る
+      const prevWidth = toolbar.style.width;
+      const prevPosition = toolbar.style.position;
+      toolbar.style.position = "fixed";
+      toolbar.style.width = widthPxCache + "px"; // ← update() 内で計算済みの widthPx を使う
+      sizes.toolbar = Math.ceil(toolbar.getBoundingClientRect().height);
+      toolbar.style.position = prevPosition;
+      toolbar.style.width = prevWidth;
+    }
+    */
+   
     if (headerRow) {
-      // th の幅は、固定(position:fixed)されたままだと「今表示している幅」しか
-      // 読めず、集約行の展開/折りたたみ等でtbody側の内容が変わって本来の列幅が
-      // 変化していても検知できない（＝ヘッダーと明細がずれる原因になっていた）。
-      // 一旦すべて解除して素のレイアウトで幅を測り直し、その後 update() 側で
-      // 改めて fixed を再適用する（同じ同期処理内で行うため描画のちらつきは無い）。
       const wasFixed = ths.map(th => th.style.position === "fixed");
+      const spacerWasShown = spacerRow && spacerRow.style.display !== "none";
       if (wasFixed.some(Boolean)) {
         ths.forEach(th => {
           th.style.position = "";
@@ -1504,12 +1528,23 @@ function initFakeStickyHeader(sec) {
           th.style.height = "";
         });
       }
+      if (spacerWasShown) {
+        spacerRow.style.display = "none";
+      }
 
       sizes.thead = Math.max(headerRow.offsetHeight, ...ths.map(th => th.getBoundingClientRect().height));
       ths.forEach(th => { th._fixedWidth = th.getBoundingClientRect().width; });
 
-      // スペーサー行（見出しが固定されている間、元の場所の高さ・幅を保持する
-      // ダミー行）も、同じく作成時の幅のまま固定されていたため更新する。
+      // .vacancy-cell だけは中身の量で幅が動的に変わり、かつ th 自身は短い
+      // ラベルしか持たないため、th 単体の measurement がテーブルの列共有幅と
+      // 一瞬ズレることがある。実データを持つ td（常に表示されている group-row の
+      // セル）から権威ある幅を直接借りることで、このズレを回避する。
+      const vacancyTh = headerRow.querySelector("th.vacancy-cell");
+      const vacancyTd = table.querySelector("tbody td.vacancy-cell");
+      if (vacancyTh && vacancyTd) {
+        vacancyTh._fixedWidth = vacancyTd.getBoundingClientRect().width;
+      }
+
       if (spacerRow) {
         spacerRow.querySelectorAll("th, td").forEach((cell, index) => {
           const width = ths[index]._fixedWidth;
@@ -1518,13 +1553,6 @@ function initFakeStickyHeader(sec) {
           cell.style.maxWidth = width + "px";
         });
       }
-      // このタイミングでは position:fixed を戻さない。呼び出し元の update() が
-      // このあとすぐ shouldStick の判定結果に応じて再適用するため、
-      // 二度手間にならないようここでは測定のみ行う。
-    }
-    if (scrollbarRow) {
-      const visible = getComputedStyle(scrollbarRow).display !== "none";
-      sizes.scrollbarRow = visible ? (scrollbarCell.offsetHeight || 10) : 0;
     }
   }
 
@@ -1543,6 +1571,8 @@ function initFakeStickyHeader(sec) {
       summary.style.left = "";
       summary.style.width = "";
       summary.style.marginTop = "";
+      summary.style.background = "";
+      summary.style.zIndex = "";
       summarySpacer.style.display = "none";
     }
     if (toolbar) {
@@ -1550,6 +1580,9 @@ function initFakeStickyHeader(sec) {
       toolbar.style.top = "";
       toolbar.style.left = "";
       toolbar.style.width = "";
+      toolbar.style.marginTop = "";
+      toolbar.style.background = "";
+      toolbar.style.zIndex = "";
       toolbarSpacer.style.display = "none";
     }
     if (headerRow) {
@@ -1565,7 +1598,7 @@ function initFakeStickyHeader(sec) {
   }
 
   function update() {
-    if (window.innerWidth <= 640) {
+    if (window.innerWidth <= 640 && headerRow) {
       return;
     }
 
@@ -1575,23 +1608,28 @@ function initFakeStickyHeader(sec) {
       return;
     }
 
+    // タイトルブロックのsticky状態を先に最新化してから、その高さぶん
+    // オフセットを下げる（同一フレーム内で古い値を参照しないようにする）
+    updatePageTitleSticky();
+        
     const scrollY = window.scrollY || window.pageYOffset;
     const sectionRect = sec.getBoundingClientRect();
     const tableRect = table ? table.getBoundingClientRect() : sectionRect;
     const leftPx = sectionRect.left;
     const widthPx = Math.ceil((table || sec).getBoundingClientRect().width) + 2;
+    widthPxCache = widthPx; // ← measureSizes より前にセット
 
     measureSizes();
 
     // セクション全体（表の下端）を過ぎたら固定を解除する
-    const totalStickyHeight = (sizes.summary || 0) + (sizes.toolbar || 0) + (sizes.thead || 0) + (sizes.scrollbarRow || 0);
+    const totalStickyHeight = pageTitleStickyHeight + (sizes.summary || 0) + (sizes.toolbar || 0) + (sizes.thead || 0) + (sizes.scrollbarRow || 0);
     const sectionBottom = sec.getBoundingClientRect().bottom;
     if (sectionBottom <= totalStickyHeight) {
       unfixAll();
       return;
     }
 
-    let offset = 0;
+    let offset = pageTitleStickyHeight;
 
     if (summary) {
       const naturalTop = summaryMarker.getBoundingClientRect().top + scrollY;
@@ -1602,14 +1640,23 @@ function initFakeStickyHeader(sec) {
         summary.style.left = leftPx + "px";
         summary.style.width = widthPx + "px";
         summary.style.marginTop = "0";
+        summary.style.background = "#fff";
+        summary.style.zIndex = "50";
+
+        // ← 適用後の実測値で spacer を作る（事前計算の sizes.summary は使わない）
+        const summaryHeight = Math.ceil(summary.getBoundingClientRect().height);
+        sizes.summary = summaryHeight;
         summarySpacer.style.display = "block";
-        summarySpacer.style.height = sizes.summary + "px";
+        summarySpacer.style.height = summaryHeight + "px";
       } else {
         summary.style.position = "";
         summary.style.top = "";
         summary.style.left = "";
         summary.style.width = "";
         summary.style.marginTop = "";
+        summary.style.background = "";
+        summary.style.zIndex = "";
+        sizes.summary = summary.offsetHeight;
         summarySpacer.style.display = "none";
       }
       offset += sizes.summary;
@@ -1623,13 +1670,23 @@ function initFakeStickyHeader(sec) {
         toolbar.style.top = offset + "px";
         toolbar.style.left = leftPx + "px";
         toolbar.style.width = widthPx + "px";
+        toolbar.style.marginTop = "0";
+        toolbar.style.background = "#fff";
+        toolbar.style.zIndex = "50";
+
+        // ← こちらも適用後に実測
+        const toolbarHeight = Math.ceil(toolbar.getBoundingClientRect().height);
+        sizes.toolbar = toolbarHeight;
         toolbarSpacer.style.display = "block";
-        toolbarSpacer.style.height = sizes.toolbar + "px";
+        toolbarSpacer.style.height = toolbarHeight + "px";
       } else {
         toolbar.style.position = "";
         toolbar.style.top = "";
         toolbar.style.left = "";
         toolbar.style.width = "";
+        toolbar.style.background = "";
+        toolbar.style.zIndex = "";
+        sizes.toolbar = toolbar.offsetHeight;
         toolbarSpacer.style.display = "none";
       }
       offset += sizes.toolbar;
@@ -1642,10 +1699,12 @@ function initFakeStickyHeader(sec) {
         let x = tableRect.left;
         ths.forEach(th => {
           const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
+          const left = Math.floor(x);
+          const right = Math.ceil(x + w);
           th.style.position = "fixed";
           th.style.top = offset + "px";
-          th.style.left = x + "px";
-          th.style.width = w + "px";
+          th.style.left = left + "px";        // ← x ではなく丸めた left を使う
+          th.style.width = (right - left) + "px";
           th.style.height = sizes.thead + "px";
           th.style.zIndex = "40";
           th.style.background = "#f4f4f4";
@@ -1729,5 +1788,94 @@ function initFakeStickyHeader(sec) {
     ro.observe(table);
   }
 
+  update();
+
+  return { update, onScrollOrResize };
+}
+
+// タイトルブロック（h1〜駅リンク〜更新日時）を最上部に固定表示する。
+// 各セクション（料金比較表・部屋比較表）のsticky処理は、この固定分の
+// 高さぶんだけ自分たちの開始位置(offset)を下げる必要があるため、
+// 現在の固定高さを他から参照できるよう共有しておく。
+let pageTitleStickyHeight = 0;
+let updatePageTitleSticky = () => {};
+
+function initPageTitleSticky() {
+  const wrapper = document.getElementById("pageTitleSticky");
+  if (!wrapper) return;
+
+  const marker = document.createElement("div");
+  marker.style.cssText = "height:0;margin:0;padding:0;border:0;overflow:hidden;";
+  marker.setAttribute("aria-hidden", "true");
+  wrapper.parentNode.insertBefore(marker, wrapper);
+
+  const spacer = document.createElement("div");
+  spacer.className = "page-title-sticky-spacer";
+  wrapper.parentNode.insertBefore(spacer, wrapper.nextSibling);
+
+  function contentBounds() {
+    const priceTable = document.getElementById("priceTable");
+    if (priceTable) {
+      const rect = priceTable.getBoundingClientRect();
+      return { left: rect.left, width: Math.ceil(rect.width) + 2 };
+    }
+    const content = document.getElementById("content");
+    const rect = (content || wrapper).getBoundingClientRect();
+    return { left: rect.left, width: rect.width };
+  }
+
+  function update() {
+    if (window.innerWidth <= 640) {
+      wrapper.style.position = "";
+      wrapper.style.top = "";
+      wrapper.style.left = "";
+      wrapper.style.width = "";
+      spacer.style.display = "none";
+      pageTitleStickyHeight = 0;
+      return;
+    }
+
+    const scrollY = window.scrollY || window.pageYOffset;
+    const naturalTop = marker.getBoundingClientRect().top + scrollY;
+    const shouldStick = scrollY >= naturalTop;
+
+    if (shouldStick) {
+      const { left, width } = contentBounds();
+      wrapper.style.position = "fixed";
+      wrapper.style.top = "0px";
+      wrapper.style.left = left + "px";
+      wrapper.style.width = width + "px";
+      wrapper.style.background = "#fff";   // CSS側の定義漏れに依存しない
+      wrapper.style.zIndex = "60";
+      spacer.style.display = "block";
+      spacer.style.height = wrapper.offsetHeight + "px";
+      pageTitleStickyHeight = wrapper.offsetHeight;
+    } else {
+      wrapper.style.position = "";
+      wrapper.style.top = "";
+      wrapper.style.left = "";
+      wrapper.style.width = "";
+      wrapper.style.zIndex = "";
+      spacer.style.display = "none";
+      pageTitleStickyHeight = 0;
+    }
+  }
+
+  let ticking = false;
+  function onScrollOrResize() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      update();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScrollOrResize, { passive: true });
+  window.addEventListener("resize", onScrollOrResize);
+
+  // 他コード（セクション側update、サイドバー開閉）から即座に最新状態を
+  // 反映させたい場合のために、同期版も公開しておく
+  updatePageTitleSticky = update;
   update();
 }
