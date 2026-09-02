@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T14:08+00:00"
+    "generatedAt": "2026-09-02T14:40+00:00"
   },
   "hotels": [
     {
@@ -756,9 +756,9 @@
             "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "ラグジュアリー",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,800"
           },
           {
             "plan_name": "月～木（平日）・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
