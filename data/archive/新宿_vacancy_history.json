@@ -150289,5 +150289,479 @@
         "plans": []
       }
     ]
+  },
+  {
+    "generatedAt": "2026-09-02T19:37+00:00",
+    "hotels": [
+      {
+        "name": "ホテルバリアンリゾート新宿アイランド店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテルバリアンリゾート新宿グランピング店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "PERRIER【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル LISTO",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "PASHA【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテルバリアンリゾート新宿本店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "晏 -AN- 【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "D-WAVE【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテルバリアンリゾート東新宿店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテルプティバリ東新宿店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "J-MEX【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL COLORFUL P&A 新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "FORSION【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "新宿区歌舞伎町　HOTEL SERIO",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ブレス 新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL ATLAS",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "オリオン",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL THE HOTEL",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL LaPia",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "PASHA RESORT【PASHAグループホテルズ（旧JHTグループ）】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテルプティバリフォレスト新宿3丁目店",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "グレイ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル 8",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL W-ARAMIS",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL STELLATE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "エクセレント",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "アビス",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ビーナス",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL W-BAGUS",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル KABUKI",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ミント歌舞伎町",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL PROUD",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL 新宿ジャルディーノ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "SENSE東京【スリースターグループ】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "GRAND CHARIOT【スリースターグループ】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "アランド新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "フォーラム",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル 風風（フー）",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "XO歌舞伎町",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "XO新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル チェルシー 新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "新宿歌舞伎町ホテルラビオ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル i（アイ）【スタイリッシュグループ(おとぼけビーバー)】",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "シーズン",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "セアン新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ラ・フランセパリス",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL PAL新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL WAKO",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "SUN",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ラモード新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL SEKITEI EMPEROR TOWER",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ティファード",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ブロンモード新宿",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL MALTA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL Monbijou",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル サンレモ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "アーバンステージ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "愛",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテルいいじま",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "イマージュ",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "かじか",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "叶",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "K",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "G-７",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "すいこう苑",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ボン",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "山城",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      }
+    ]
   }
 ]
