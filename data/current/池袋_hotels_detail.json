@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T15:13+00:00"
+    "generatedAt": "2026-09-02T15:42+00:00"
   },
   "hotels": [
     {
@@ -16080,13 +16080,33 @@
       }
     },
     {
-      "url": "https://happyhotel.jp/hotels/543879",
-      "id": null,
-      "name": null,
-      "address": null,
+      "id": 543879,
+      "name": "キャッツ",
+      "address": "東京都豊島区池袋1-3-18",
       "prices": [],
       "rooms": [],
-      "error": "request_error:HTTPSConnectionPool(host='happyhotel.jp', port=443): Read timed out. (read timeout=10)"
+      "access": {
+        "stations": [
+          {
+            "station": "池袋駅",
+            "walk_min": 6
+          }
+        ],
+        "latitude": "35.734136",
+        "longitude": "139.712644",
+        "map_url": "https://www.google.com/maps?q=35.734136,139.712644",
+        "raw_access_text": null
+      },
+      "amenities": {},
+      "review": {
+        "score": null,
+        "count": null
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
     },
     {
       "id": 540274,
