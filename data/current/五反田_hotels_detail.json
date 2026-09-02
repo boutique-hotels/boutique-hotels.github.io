@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T22:41+00:00"
+    "generatedAt": "2026-09-02T23:09+00:00"
   },
   "hotels": [
     {
@@ -650,7 +650,7 @@
           "type_name": "PARTY",
           "rank_id": 9,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r703.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 802,

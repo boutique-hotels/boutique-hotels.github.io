@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T22:41+00:00"
+    "generatedAt": "2026-09-02T23:08+00:00"
   },
   "hotels": [
     {
@@ -1869,9 +1869,42 @@
         "count": 39
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【本日限定】10,000円宿泊プランＡ",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "【本日限定】10,000円宿泊プランＢ",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "【当日限定】特別宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,100"
+          },
+          {
+            "plan_name": "【当日限定】レイトチェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,100"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -2964,6 +2997,22 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥20,400"
+          },
+          {
+            "plan_name": "【日曜・平日限定】お得な当日レイトステイプラン(スタンダードルーム)",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,000"
+          },
+          {
+            "plan_name": "【日曜・平日限定】お得な当日レイトステイプラン(スパルーム)",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,200"
           }
         ],
         "max_stock": 1,
@@ -5570,9 +5619,42 @@
         "count": 33
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "本日限定！レイトチェックイン 10,000円宿泊 プラン ＜チェックイン24時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "特別宿泊プラン ＜チェックイン21時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,900"
+          },
+          {
+            "plan_name": "レイトチェックインプラン ＜チェックイン24時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,900"
+          },
+          {
+            "plan_name": "本日限定！10,000円宿泊 プラン ＜チェックイン21時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -9972,22 +10054,6 @@
       },
       "vacancy": {
         "details": [
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 禁煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥6,300"
-          },
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 喫煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥6,300"
-          },
           {
             "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
             "plan_type": "宿泊",
