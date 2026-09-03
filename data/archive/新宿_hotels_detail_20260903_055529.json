@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T06:13+00:00"
+    "generatedAt": "2026-09-03T05:55+00:00"
   },
   "hotels": [
     {
@@ -1168,6 +1168,38 @@
             "plan_name": "【当日予約】4000円以上お得♪ 学割ご宿泊プラン（日～木・祝）",
             "plan_type": "宿泊",
             "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥7,800"
+          },
+          {
+            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
