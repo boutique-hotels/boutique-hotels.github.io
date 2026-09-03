@@ -139,7 +139,7 @@
         allSnapshots = snapshots;
         const nameSet = new Set();
         snapshots.forEach(snap => (snap.hotels || []).forEach(h => { if (h.name) nameSet.add(h.name); }));
-        hotelNames = Array.from(nameSet).sort((a, b) => a.localeCompare(b, "ja"));
+        hotelNames = Array.from(nameSet).sort(compareHotelPriority);
         populateHotelSelect(hotelNames);
         renderForHotel(hotelNames[0]);
       })
@@ -148,18 +148,44 @@
       });
   }
 
+  function getHotelPriority(hotelName) {
+    const series = buildSeries(hotelName);
+    const latest = series[series.length - 1];
+    if (latest && latest.hasVacancy === true) return 0;
+    if (series.some(snapshot => snapshot.hasVacancy === true)) return 1;
+    return 2;
+  }
+
+  function compareHotelPriority(a, b) {
+    const priorityDifference = getHotelPriority(a) - getHotelPriority(b);
+    return priorityDifference || a.localeCompare(b, "ja");
+  }
+
+  function getHotelPriorityLabel(hotelName) {
+    const priority = getHotelPriority(hotelName);
+    if (priority === 0) return "最新空室あり";
+    if (priority === 1) return "空室履歴あり";
+    return "空室なし（情報なし含む）";
+  }
+
+  function renderHotelOptions(names) {
+    return names.map(name =>
+      `<option value="${name}">【${getHotelPriorityLabel(name)}】 ${name}</option>`
+    ).join("");
+  }
+
   function populateHotelSelect(names) {
     const select = document.getElementById("hotelSelect");
-    select.innerHTML = names.map(n => `<option value="${n}">${n}</option>`).join("");
+    select.innerHTML = renderHotelOptions(names);
     select.addEventListener("change", () => renderForHotel(select.value));
   }
 
   document.getElementById("hotelFilter").addEventListener("input", e => {
     const q = e.target.value.trim();
-    const filtered = q ? hotelNames.filter(n => n.includes(q)) : hotelNames;
+    const filtered = (q ? hotelNames.filter(n => n.includes(q)) : hotelNames).sort(compareHotelPriority);
     const select = document.getElementById("hotelSelect");
     const prevValue = select.value;
-    select.innerHTML = filtered.map(n => `<option value="${n}">${n}</option>`).join("");
+    select.innerHTML = renderHotelOptions(filtered);
     if (filtered.includes(prevValue)) {
       select.value = prevValue;
     } else if (filtered.length) {
