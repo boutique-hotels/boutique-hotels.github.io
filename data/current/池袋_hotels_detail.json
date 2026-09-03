@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T00:44+00:00"
+    "generatedAt": "2026-09-03T01:07+00:00"
   },
   "hotels": [
     {
@@ -1485,8 +1485,8 @@
             "plan_name": "当日限定 休憩3時間プラン",
             "plan_type": "休憩",
             "room_rank_name": null,
-            "stock_text": "あと1室",
-            "stock_count": 1,
+            "stock_text": "売切れ",
+            "stock_count": null,
             "charge_text": "￥4,800"
           },
           {
