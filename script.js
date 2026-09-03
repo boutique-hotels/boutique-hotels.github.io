@@ -1218,6 +1218,7 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
   const updateWidth = () => {
     const visibleWidth = tableScroll.getBoundingClientRect().width;
     const tableWidth = Math.max(table.scrollWidth, table.getBoundingClientRect().width);
+    scrollbar.style.width = visibleWidth + "px";
     inner.style.width = tableWidth + "px";
     const needsScroll = tableWidth > visibleWidth + 1;
     scrollbarRow.style.display = needsScroll ? "table-row" : "none";
