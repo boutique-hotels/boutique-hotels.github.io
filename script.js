@@ -1221,6 +1221,7 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
     scrollbar.style.width = visibleWidth + "px";
     inner.style.width = tableWidth + "px";
     const needsScroll = tableWidth > visibleWidth + 1;
+    tableScroll.classList.toggle("has-horizontal-overflow", needsScroll);
     scrollbarRow.style.display = needsScroll ? "table-row" : "none";
   };
 
@@ -1231,12 +1232,17 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
   // 逆にページを横スクロールしたときはバーのつまみ位置を追従させる。
   scrollbar.addEventListener("scroll", () => {
     if (syncing) return;
+    scrollbar._userScroll = true;
+    scrollbar._pendingUserScroll = true;
     syncing = true;
     window.scrollTo(scrollbar.scrollLeft, window.scrollY);
     syncing = false;
   }, { passive: true });
   window.addEventListener("scroll", () => {
     if (syncing || scrollTicking) return;
+    const fromScrollbar = scrollbar._pendingUserScroll;
+    scrollbar._pendingUserScroll = false;
+    if (!fromScrollbar) scrollbar._userScroll = false;
     scrollTicking = true;
     requestAnimationFrame(() => {
       if (!syncing) scrollbar.scrollLeft = window.scrollX;
@@ -1249,6 +1255,7 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
     observer.observe(table);
   }
   scrollbar._updateWidth = updateWidth;
+  tableScroll._horizontalScrollbar = scrollbar;
   updateWidth();
 
   return { scrollbarRow, scrollbar };
@@ -1267,8 +1274,8 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
 // （スペーサーで高さを保持するので、この値は固定状態が変わっても
 // ずれない）、スクロール位置と比較して固定/解除を切り替える。
 //
-// トレードオフ: 横スクロール時に1列目（ホテル名）だけを画面端に
-// 固定する機能は、この縦方向の固定処理と競合するため無効にしている。
+// カスタム横スクロールバー使用時は1列目（ホテル名）を画面端に固定する。
+// ブラウザの横スクロールバー使用時は表全体と一緒に流す。
 // ============================================================
 function initFakeStickyHeader(sec) {
   const summary = sec.querySelector(":scope > summary");
@@ -1388,6 +1395,10 @@ function initFakeStickyHeader(sec) {
       mobileHeader.style.left = scrollRect.left + "px";
       mobileHeader.style.width = Math.max(0, scrollRect.width) + "px";
       mobileTable.style.transform = `translateX(${tableRect.left - scrollRect.left}px)`;
+      const mobileFirstHeader = mobileTable.querySelector("thead tr:first-child th");
+      if (mobileFirstHeader) {
+        mobileFirstHeader.style.transform = `translateX(${scrollRect.left - tableRect.left}px)`;
+      }
       mobileHeader.style.height = "auto";
     }
 
@@ -1535,6 +1546,12 @@ function initFakeStickyHeader(sec) {
 
       sizes.thead = Math.max(headerRow.offsetHeight, ...ths.map(th => th.getBoundingClientRect().height));
       ths.forEach(th => { th._fixedWidth = th.getBoundingClientRect().width; });
+
+      const hotelNameTh = ths[0];
+      const hotelNameTd = table.querySelector("tbody tr:not([aria-hidden]) td:first-child");
+      if (hotelNameTh && hotelNameTd) {
+        hotelNameTh._fixedWidth = Math.ceil(hotelNameTd.getBoundingClientRect().width);
+      }
 
       // .vacancy-cell だけは中身の量で幅が動的に変わり、かつ th 自身は短い
       // ラベルしか持たないため、th 単体の measurement がテーブルの列共有幅と
@@ -1697,21 +1714,30 @@ function initFakeStickyHeader(sec) {
       const naturalTop = theadMarkerRow.getBoundingClientRect().top + scrollY;
       const shouldStick = scrollY >= naturalTop - offset;
       if (shouldStick) {
-        let x = tableRect.left;
-        ths.forEach(th => {
+        spacerRow.style.display = "table-row";
+        let x = table.getBoundingClientRect().left;
+          const horizontalScrollbar = tableScroll?._horizontalScrollbar;
+          const isRoomTable = table.classList.contains("room-table");
+          const pinFirstColumn = isRoomTable
+            ? tableScroll.classList.contains("has-horizontal-overflow")
+            : horizontalScrollbar?._userScroll === true;
+          const stickyLeft = document.body.classList.contains("sidebar-collapsed") ? 48 : 220;
+          const bodyPaddingLeft = parseFloat(getComputedStyle(document.body).paddingLeft) || 0;
+          const frameDocumentLeft = stickyLeft + bodyPaddingLeft;
+          const currentScrollX = window.scrollX || window.pageXOffset || 0;
+          const hotelNameLeft = Math.max(stickyLeft, frameDocumentLeft - currentScrollX);
+        ths.forEach((th, index) => {
           const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
-          const left = Math.floor(x);
-          const right = Math.ceil(x + w);
           th.style.position = "fixed";
           th.style.top = offset + "px";
-          th.style.left = left + "px";        // ← x ではなく丸めた left を使う
-          th.style.width = (right - left) + "px";
+            th.style.left = Math.floor(index === 0 && pinFirstColumn ? hotelNameLeft : x) + "px";
+          th.style.width = w + "px";
           th.style.height = sizes.thead + "px";
           th.style.zIndex = "40";
           th.style.background = "#f4f4f4";
+            if (index === 0 && pinFirstColumn) th.style.zIndex = "45";
           x += w;
         });
-        spacerRow.style.display = "table-row";
       } else {
         ths.forEach(th => {
           th.style.position = "";
@@ -1729,10 +1755,14 @@ function initFakeStickyHeader(sec) {
 
     // 横スクロールバー行: 「見えている表示領域の幅」に合わせて常に
     // position:fixed で描画する（stuck/unstuck を問わない）。
-    if (scrollbarRow && getComputedStyle(scrollbarRow).display !== "none") {
+    const viewportRect = table ? table.getBoundingClientRect() : null;
+    const tableInViewport = viewportRect && viewportRect.bottom > 0 &&
+      viewportRect.top < window.innerHeight && viewportRect.right > 0 &&
+      viewportRect.left < window.innerWidth;
+    if (scrollbarRow && getComputedStyle(scrollbarRow).display !== "none" && tableInViewport) {
       const naturalTop = scrollbarMarkerRow.getBoundingClientRect().top + scrollY;
       const shouldStick = scrollY >= naturalTop - offset;
-      const viewportRect = tableScroll.getBoundingClientRect();
+      const scrollRect = tableScroll.getBoundingClientRect();
       const rowHeight = sizes.scrollbarRow || 10;
       const topPx = shouldStick ? offset : (naturalTop - scrollY);
 
@@ -1742,18 +1772,23 @@ function initFakeStickyHeader(sec) {
       //  枠の中の中身＝表そのものだけ）。scrollXを足し戻して、横スクロール量に
       // 依存しない「本来（scrollX=0のとき）の位置」を求めてから使う。
       const scrollXNow = window.scrollX || window.pageXOffset || 0;
-      const stableLeft = viewportRect.left + scrollXNow;
+      const stableLeft = scrollRect.left + scrollXNow;
 
       scrollbarCell.style.position = "fixed";
       scrollbarCell.style.top = topPx + "px";
       scrollbarCell.style.left = stableLeft + "px";   // ← ここが修正点
-      scrollbarCell.style.width = viewportRect.width + "px";
+      scrollbarCell.style.width = scrollRect.width + "px";
       scrollbarCell.style.height = rowHeight + "px";
       scrollbarCell.style.zIndex = "40";
       scrollbarSpacerRow.style.display = "table-row";
 
       offset += rowHeight;
     } else if (scrollbarSpacerRow) {
+      scrollbarCell.style.position = "";
+      scrollbarCell.style.top = "";
+      scrollbarCell.style.left = "";
+      scrollbarCell.style.width = "";
+      scrollbarCell.style.height = "";
       scrollbarSpacerRow.style.display = "none";
     }
   }

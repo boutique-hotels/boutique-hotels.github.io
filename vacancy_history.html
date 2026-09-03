@@ -66,11 +66,109 @@
     .no-data { color: #bbb; font-style: italic; }
     .loading, .error-msg { color: var(--text-muted); font-size: 13px; padding: 20px 0; }
     .error-msg { color: #dc2626; }
+
+    /* ---- サイドバーメニュー ---- */
+    body {
+      margin-left: 220px;
+      transition: margin-left 0.2s ease;
+    }
+    body.sidebar-collapsed { margin-left: 48px; }
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 220px;
+      height: 100vh;
+      background: #f8f9fa;
+      border-right: 1px solid var(--border);
+      padding: 14px 12px;
+      overflow-y: auto;
+      z-index: 200;
+      transition: width 0.2s ease, transform 0.2s ease;
+      box-sizing: border-box;
+    }
+    .sidebar-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .sidebar-brand {
+      font-weight: 700;
+      font-size: 13.5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .sidebar-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1;
+      padding: 5px 8px;
+      color: #444;
+      flex-shrink: 0;
+    }
+    .sidebar-toggle:hover { background: var(--accent-soft); color: var(--accent); }
+    .sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 6px;
+      border-radius: 6px;
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .sidebar nav a:hover { background: var(--accent-soft); color: var(--accent); }
+    .sidebar-icon { width: 18px; text-align: center; flex-shrink: 0; }
+    .sidebar-label { overflow: hidden; text-overflow: ellipsis; }
+    .sidebar.collapsed { width: 48px; padding: 14px 8px; }
+    .sidebar.collapsed .sidebar-brand,
+    .sidebar.collapsed .sidebar-label { display: none; }
+    .sidebar.collapsed .sidebar-top { justify-content: center; }
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 150;
+    }
+    .sidebar-backdrop.show { display: block; }
+    @media (max-width: 640px) {
+      body { margin-left: 0; }
+      .sidebar {
+        width: 230px;
+        transform: translateX(-100%);
+        box-shadow: 2px 0 14px rgba(0,0,0,0.15);
+      }
+      .sidebar.mobile-open { transform: translateX(0); }
+      .sidebar.collapsed { width: 230px; padding: 14px 12px; }
+      .sidebar.collapsed .sidebar-brand,
+      .sidebar.collapsed .sidebar-label { display: inline; }
+      .sidebar.collapsed .sidebar-top { justify-content: space-between; }
+    }
   </style>
 </head>
 <body>
 
-<a class="back-link" href="hotel_list.html">← 料金比較表に戻る</a>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <span class="sidebar-brand">メニュー</span>
+    <button class="sidebar-toggle" id="sidebarToggle" title="メニューの開閉" type="button">☰</button>
+  </div>
+  <nav>
+    <a href="hotel_list.html"><span class="sidebar-icon">🏨</span><span class="sidebar-label">ホテル一覧</span></a>
+    <a href="hotel_list.html#section-price"><span class="sidebar-icon">💴</span><span class="sidebar-label">料金比較表</span></a>
+    <a href="hotel_list.html#section-rooms"><span class="sidebar-icon">🛏️</span><span class="sidebar-label">部屋比較表</span></a>
+    <a href="vacancy_history.html" aria-current="page"><span class="sidebar-icon">📈</span><span class="sidebar-label">空室推移</span></a>
+  </nav>
+</div>
+
 <h1 id="pageTitle">空室状況の推移</h1>
 <div class="subtitle" id="pageSubtitle">スクレイピングのたびに蓄積される空室状況（在庫）だけの軽量な履歴を表示します。価格・設備・口コミなどはほぼ変化しないため対象外にしています。</div>
 
@@ -92,6 +190,47 @@
 </div>
 
 <script>
+  (function () {
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("sidebarToggle");
+    const backdrop = document.getElementById("sidebarBackdrop");
+    const isMobile = () => window.innerWidth <= 640;
+    let open = !isMobile();
+
+    function applyState() {
+      if (isMobile()) {
+        sidebar.classList.remove("collapsed");
+        sidebar.classList.toggle("mobile-open", open);
+        backdrop.classList.toggle("show", open);
+        document.body.classList.remove("sidebar-collapsed");
+      } else {
+        sidebar.classList.remove("mobile-open");
+        backdrop.classList.remove("show");
+        sidebar.classList.toggle("collapsed", !open);
+        document.body.classList.toggle("sidebar-collapsed", !open);
+      }
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      open = !open;
+      applyState();
+    });
+    backdrop.addEventListener("click", () => {
+      open = false;
+      applyState();
+    });
+    sidebar.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (isMobile()) {
+          open = false;
+          applyState();
+        }
+      });
+    });
+    window.addEventListener("resize", applyState);
+    applyState();
+  })();
+
   const stationData = {
     ikebukuro: { label: "池袋", historyFile: "./data/archive/池袋_vacancy_history.json" },
     shinjuku: { label: "新宿", historyFile: "./data/archive/新宿_vacancy_history.json" },

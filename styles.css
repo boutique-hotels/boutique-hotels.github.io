@@ -4,6 +4,7 @@
   --border: #dcdfe4;
   --text-muted: #6b7280;
   --bg-stripe: #f9fafb;
+  --sticky-column-left: 220px;
 }
 * { box-sizing: border-box; }
 body {
@@ -175,11 +176,17 @@ details[open] > summary::before {
   z-index: 20;
   box-sizing: border-box;
 }
-.sticky-section th:first-child,
-.sticky-section td:first-child {
+.sticky-section thead th:first-child {
+  position: sticky;
+  top: auto;
+  left: var(--sticky-column-left);
+  z-index: 25;
+}
+.sticky-section .table-scroll:not(.has-horizontal-overflow) thead th:first-child,
+.sticky-section .table-scroll:not(.has-horizontal-overflow) tbody td:first-child {
   position: static;
   left: auto;
-  z-index: auto;
+  z-index: 20;
 }
 .sticky-spacer { display: none; }
 .sticky-spacer-row { visibility: hidden; }
@@ -226,6 +233,15 @@ tr.scrollbar-row td {
   height: 10px;
   background: #f4f4f4;
 }
+tr.scrollbar-row td:first-child {
+  position: static;
+  left: auto;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: left;
+  white-space: normal;
+}
 .horizontal-scrollbar {
   width: 100%;
   height: 10px;
@@ -251,13 +267,19 @@ th { background: #f4f4f4; position: sticky; top: 0; z-index: 10; cursor: pointer
 th.sortable:hover { background: #eaeaea; }
 th .sort-arrow { font-size: 10px; color: var(--accent); margin-left: 2px; }
 th:first-child, td:first-child {
-  position: sticky; left: 0; background: #fff; z-index: 5;
+  position: sticky; left: var(--sticky-column-left); background: #fff; z-index: 5;
   text-align: left; white-space: normal;
   width: 250px;
   min-width: 250px;
   max-width: 250px;
 }
 th:first-child { z-index: 15; background: #f4f4f4; }
+.table-scroll:not(.has-horizontal-overflow) th:first-child,
+.table-scroll:not(.has-horizontal-overflow) td:first-child {
+  position: static;
+  left: auto;
+  z-index: auto;
+}
 tbody tr:nth-child(even) td { background: var(--bg-stripe); }
 tbody tr:nth-child(even) td:first-child { background: #f3f4f6; }
 tbody tr:hover td { background: #eef2ff; }
@@ -288,6 +310,12 @@ tbody tr:hover td:first-child { background: #e0e7ff; }
   min-width: 250px;
   max-width: 250px;
   overflow-wrap: anywhere;
+}
+.sticky-section .table-scroll.has-horizontal-overflow .room-table td:first-child {
+  position: sticky;
+  left: var(--sticky-column-left);
+  z-index: 6;
+  background: #fff;
 }
 .room-table {
   width: max-content;
@@ -353,6 +381,7 @@ tbody tr:hover td:first-child { background: #e0e7ff; }
 }
 
 @media (max-width: 640px) {
+  :root { --sticky-column-left: 0px; }
   body { padding: 10px 10px 24px; }
   h1 { font-size: 18px; }
   .subtitle { font-size: 12px; }
@@ -397,18 +426,16 @@ tbody tr:hover td:first-child { background: #e0e7ff; }
   .sticky-section .sticky-toolbar {
     position: static;
   }
-  tr.scrollbar-row {
-    display: none !important;
-  }
-
   table { font-size: 12px; }
   th, td { padding: 5px 6px; }
   th:first-child, td:first-child {
+    left: 0;
     width: 250px;
     min-width: 250px;
     max-width: 250px;
   }
   .room-table th:first-child, .room-table td:first-child {
+    left: 0;
     width: 250px;
     min-width: 250px;
     max-width: 250px;
@@ -435,6 +462,7 @@ body {
   transition: margin-left 0.2s ease;
 }
 body.sidebar-collapsed { margin-left: 48px; }
+body.sidebar-collapsed { --sticky-column-left: 48px; }
 
 .sidebar {
   position: fixed;
