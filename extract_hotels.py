@@ -41,6 +41,9 @@ STATION_CONFIGS = {
 DATA_DIR = Path("data")
 CURRENT_DATA_DIR = DATA_DIR / "current"
 ARCHIVE_DATA_DIR = DATA_DIR / "archive"
+ARCHIVE_DETAIL_PATTERN = re.compile(
+    r"^(?P<label>.+)_hotels_detail_(?P<date>\d{8})_(?P<time>\d{6})\.json$"
+)
 
 # -------------------------
 # ユーティリティ
@@ -454,14 +457,67 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
 
     with open(detail_path, "w", encoding="utf-8") as f:
         json.dump(detail_payload, f, ensure_ascii=False, indent=2)
-    with open(failure_path, "w", encoding="utf-8") as f:
-        json.dump(failures, f, ensure_ascii=False, indent=2)
+    if failures:
+        with open(failure_path, "w", encoding="utf-8") as f:
+            json.dump(failures, f, ensure_ascii=False, indent=2)
+    elif failure_path.exists():
+        failure_path.unlink()
 
     append_vacancy_history(label, generated_at, results)
+    cleanup_archive_detail_files()
     generate_station_manifest()
 
     print(f"保存完了: {CURRENT_DATA_DIR / detail_filename}")
     print(f"失敗件数: {len(failures)} (詳細は {label}_hotels_failures.json)")
+
+
+def cleanup_archive_detail_files(now: datetime = None) -> None:
+    """アーカイブの詳細 JSON を駅・日付・時間帯ごとの保持ルールで整理する。"""
+    if now is None:
+        now = datetime.now().astimezone().replace(tzinfo=None)
+    else:
+        now = now.replace(tzinfo=None)
+
+    candidates = {}
+    skipped = 0
+    for path in ARCHIVE_DATA_DIR.glob("*_hotels_detail_*.json"):
+        match = ARCHIVE_DETAIL_PATTERN.match(path.name)
+        if not match:
+            skipped += 1
+            continue
+        try:
+            captured_at = datetime.strptime(
+                f"{match.group('date')}_{match.group('time')}", "%Y%m%d_%H%M%S"
+            )
+        except ValueError:
+            skipped += 1
+            continue
+
+        age_days = (now.date() - captured_at.date()).days
+        if age_days < 0 or age_days <= 2:
+            continue
+        if age_days <= 7:
+            allowed_hours = {0, 9, 12, 15, 18, 21}
+        elif age_days <= 30:
+            allowed_hours = {0, 12, 18}
+        else:
+            path.unlink()
+            continue
+
+        if captured_at.hour not in allowed_hours:
+            path.unlink()
+            continue
+
+        slot = (match.group("label"), captured_at.date(), captured_at.hour)
+        candidates.setdefault(slot, []).append((captured_at, path))
+
+    removed = 0
+    for paths in candidates.values():
+        for _, path in sorted(paths, reverse=True)[1:]:
+            path.unlink()
+            removed += 1
+
+    print(f"アーカイブ掃除完了: 削除{removed}件、判定対象外{skipped}件")
 
 
 def _build_vacancy_snapshot_hotels(hotels: list) -> list:
@@ -663,9 +719,16 @@ if __name__ == "__main__":
             "vacancy_history.json を作り直す（--station で対象駅を指定、既定はall扱いで全駅）"
         ),
     )
+    parser.add_argument(
+        "--cleanup-archive",
+        action="store_true",
+        help="スクレイピングを実行せず、data/archive/ の詳細 JSON を保持ルールで掃除する",
+    )
     args = parser.parse_args()
 
-    if args.migrate_vacancy_history:
+    if args.cleanup_archive:
+        cleanup_archive_detail_files()
+    elif args.migrate_vacancy_history:
         targets = (
             list(STATION_CONFIGS.values())
             if args.station == "all"
