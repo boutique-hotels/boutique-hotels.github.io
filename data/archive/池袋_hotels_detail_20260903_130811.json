@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T13:39+00:00"
+    "generatedAt": "2026-09-03T13:08+00:00"
   },
   "hotels": [
     {
@@ -16209,33 +16209,13 @@
       }
     },
     {
-      "id": 540274,
-      "name": "HOTEL CORE 池袋",
-      "address": "東京都豊島区池袋2-12-9",
+      "url": "https://happyhotel.jp/hotels/540274",
+      "id": null,
+      "name": null,
+      "address": null,
       "prices": [],
       "rooms": [],
-      "access": {
-        "stations": [
-          {
-            "station": "池袋駅",
-            "walk_min": 6
-          }
-        ],
-        "latitude": "35.732568",
-        "longitude": "139.706922",
-        "map_url": "https://www.google.com/maps?q=35.732568,139.706922",
-        "raw_access_text": null
-      },
-      "amenities": {},
-      "review": {
-        "score": null,
-        "count": null
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
+      "error": "request_error:HTTPSConnectionPool(host='happyhotel.jp', port=443): Read timed out. (read timeout=10)"
     },
     {
       "id": 25901176,

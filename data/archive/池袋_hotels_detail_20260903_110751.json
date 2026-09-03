@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T13:39+00:00"
+    "generatedAt": "2026-09-03T11:07+00:00"
   },
   "hotels": [
     {
@@ -223,6 +223,30 @@
       },
       "vacancy": {
         "details": [
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
+            "plan_type": "休憩",
+            "room_rank_name": "バリューB(喫煙)",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥5,800"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(禁煙)",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥7,300"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(喫煙)",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥7,300"
+          },
           {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
@@ -744,6 +768,22 @@
       },
       "vacancy": {
         "details": [
+          {
+            "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "コンフォートタイプ",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥7,800"
+          },
+          {
+            "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート禁煙タイプ",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥8,300"
+          },
           {
             "plan_name": "【月～金曜】当日限定 20：00～ スタンダードデイユースプラン ",
             "plan_type": "休憩",
@@ -1360,7 +1400,16 @@
         "count": 13
       },
       "vacancy": {
-        "details": [],
+        "details": [
+          {
+            "plan_name": "当日宿泊プラン（月曜～木曜）  チェックイン21時～24時",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "￥6,800"
+          }
+        ],
         "max_stock": null,
         "has_vacancy": null
       }

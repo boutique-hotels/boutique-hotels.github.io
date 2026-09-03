@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T13:41+00:00"
+    "generatedAt": "2026-09-03T12:45+00:00"
   },
   "hotels": [
     {
@@ -1155,6 +1155,70 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥13,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～（月～木）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～（月～木）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～（月～木）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥7,800"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～（月～木）",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥11,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           }
         ],
         "max_stock": 1,
@@ -1754,8 +1818,8 @@
             "plan_name": "【本日限定】10,000円宿泊プランＢ",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "売切れ",
-            "stock_count": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥10,000"
           },
           {
@@ -3645,9 +3709,18 @@
         "count": 31
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日予約】平日限定 レイトチェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,900"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -4583,6 +4656,38 @@
             "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレートタイプ　喫煙",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレートタイプ　禁煙",
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
@@ -13053,13 +13158,465 @@
       }
     },
     {
-      "url": "https://happyhotel.jp/hotels/25901192",
-      "id": null,
-      "name": null,
-      "address": null,
-      "prices": [],
-      "rooms": [],
-      "error": "request_error:HTTPSConnectionPool(host='happyhotel.jp', port=443): Read timed out. (read timeout=10)"
+      "id": 25901192,
+      "name": "ホテル KABUKI",
+      "address": "東京都新宿区歌舞伎町1-16-9",
+      "prices": [
+        {
+          "name": "休憩 エコノミー/スタンダード/デラックス",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥7,980～￥9,980",
+                  "timeZone": "6:00～翌 3:00の間で最大 2時間ご利用"
+                },
+                {
+                  "price": "￥8,980～￥10,800",
+                  "timeZone": "6:00～翌 3:00の間で最大 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム） エコノミー/スタンダード/デラックス",
+          "priceInfo": [
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥10,800～￥12,800",
+                  "timeZone": "6:00～10:00チェックインより 7時間ご利用"
+                },
+                {
+                  "price": "￥10,800～￥12,800",
+                  "timeZone": "10:00～13:00チェックインより 6時間ご利用"
+                },
+                {
+                  "price": "￥10,800～￥12,800",
+                  "timeZone": "13:00～15:00チェックインより 5時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥11,800～￥13,800",
+                  "timeZone": "6:00～14:00の間で最大 11時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n※土/日/祝は6:00~10:00INチェックアウト14:00。\n"
+        },
+        {
+          "name": "宿泊 エコノミー/スタンダード/デラックス",
+          "priceInfo": [
+            {
+              "week": "【日～木】",
+              "timePrice": [
+                {
+                  "price": "￥13,800～￥15,800",
+                  "timeZone": "21:00～24:00チェックインより 13時間ご利用"
+                },
+                {
+                  "price": "￥13,800～￥15,800",
+                  "timeZone": "0時～2:00チェックインより 12時間ご利用"
+                },
+                {
+                  "price": "￥13,800～￥15,800",
+                  "timeZone": "2:00～14:00の間で最大 12時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥17,800～￥19,800",
+                  "timeZone": "23:00～翌 3:00チェックインより 10時間ご利用"
+                },
+                {
+                  "price": "￥17,800～￥19,800",
+                  "timeZone": "3:00～13:00の間で最大 10時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n※日~木宿泊3部は2:00~6:00INチェックアウト14:00。\n※金/土/祝前宿泊2部は3:00~6:00INチェックアウト13:00。\n"
+        },
+        {
+          "name": "休憩 ラグジュアリー/Jr.スイート/スイート",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥10,800～￥17,800",
+                  "timeZone": "6:00～翌 3:00の間で最大 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥11,800～￥18,800",
+                  "timeZone": "6:00～翌 3:00の間で最大 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥11,800～￥19,800",
+                  "timeZone": "6:00～翌 3:00の間で最大 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム） ラグジュアリー/Jr.スイート/スイート",
+          "priceInfo": [
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥13,800～￥19,800",
+                  "timeZone": "6:00～10:00チェックインより 7時間ご利用"
+                },
+                {
+                  "price": "￥13,800～￥19,800",
+                  "timeZone": "10:00～13:00チェックインより 6時間ご利用"
+                },
+                {
+                  "price": "￥13,800～￥19,800",
+                  "timeZone": "13:00～15:00チェックインより 5時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥15,800～￥25,800",
+                  "timeZone": "6:00～14:00の間で最大 11時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n※土/日/祝は6:00~10:00INチェックアウト14:00。\n"
+        },
+        {
+          "name": "宿泊 ラグジュアリー/Jr.スイート/スイート",
+          "priceInfo": [
+            {
+              "week": "【日～木】",
+              "timePrice": [
+                {
+                  "price": "￥19,800～￥29,800",
+                  "timeZone": "21:00～24:00チェックインより 13時間ご利用"
+                },
+                {
+                  "price": "￥19,800～￥29,800",
+                  "timeZone": "0時～2:00チェックインより 12時間ご利用"
+                },
+                {
+                  "price": "￥19,800～￥29,800",
+                  "timeZone": "2:00～14:00の間で最大 12時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥24,800～￥39,800",
+                  "timeZone": "23:00～翌 3:00チェックインより 10時間ご利用"
+                },
+                {
+                  "price": "￥24,800～￥39,800",
+                  "timeZone": "3:00～13:00の間で最大 10時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n※日~木宿泊3部は2:00~6:00INチェックアウト14:00。\n※金/土/祝前宿泊2部は3:00~6:00INチェックアウト13:00。\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 81,
+          "room_name": "81",
+          "type_name": "スイート",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r081.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 72,
+          "room_name": "72",
+          "type_name": "Jrスイート",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r072.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 91,
+          "room_name": "91",
+          "type_name": "Jrスイート",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r091.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 62,
+          "room_name": "62",
+          "type_name": "ラグジュアリー",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r062.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 63,
+          "room_name": "63",
+          "type_name": "ラグジュアリー",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r063.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 21,
+          "room_name": "21",
+          "type_name": "デラックス",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r021.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 31,
+          "room_name": "31",
+          "type_name": "デラックス",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r031.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 41,
+          "room_name": "41",
+          "type_name": "デラックス",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r041.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 51,
+          "room_name": "51",
+          "type_name": "デラックス",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r051.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 61,
+          "room_name": "61",
+          "type_name": "デラックス",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r061.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 71,
+          "room_name": "71",
+          "type_name": "デラックス",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r071.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 22,
+          "room_name": "22",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r022.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 23,
+          "room_name": "23",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r023.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 32,
+          "room_name": "32",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r032.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 33,
+          "room_name": "33",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r033.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 43,
+          "room_name": "43",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r043.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 45,
+          "room_name": "45",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r045.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 52,
+          "room_name": "52",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r052.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 53,
+          "room_name": "53",
+          "type_name": "スタンダード",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r053.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 11,
+          "room_name": "11",
+          "type_name": "エコノミー",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r011.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 25,
+          "room_name": "25",
+          "type_name": "エコノミー",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r025.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 35,
+          "room_name": "35",
+          "type_name": "エコノミー",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r035.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 46,
+          "room_name": "46",
+          "type_name": "エコノミー",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r046.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 55,
+          "room_name": "55",
+          "type_name": "エコノミー",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/kabuki/image/r055.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "新宿駅",
+            "walk_min": 5
+          }
+        ],
+        "latitude": "35.69396",
+        "longitude": "139.701899",
+        "map_url": "https://www.google.com/maps?q=35.69396,139.701899",
+        "raw_access_text": "JR新宿駅東口から徒歩5分"
+      },
+      "amenities": {
+        "バス": [
+          "レインボーバス",
+          "ジェットバス",
+          "ブロアバス",
+          "サウナ(一部)",
+          "浴室TV",
+          "マット(レンタル)",
+          "*81号室セルフロウリュ可能な本格ドライサウナ完備"
+        ],
+        "テレビ": [
+          "大画面テレビ50インチ以上",
+          "ビデオ・オン・デマンド",
+          "ブルーレイプレーヤー(レンタル)",
+          "*一部：65インチTV"
+        ],
+        "アミューズメント": [
+          "通信カラオケ(一部)",
+          "無料Wi-Fi(無線LAN)",
+          "*デラックスランク以上にDAMカラオケ完備"
+        ],
+        "お部屋": [
+          "同性利用可(女性)",
+          "同性利用可(男性)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫",
+          "空気清浄機",
+          "加湿器",
+          "シャワートイレ",
+          "ヘアアイロン",
+          "美顔器(レンタル)",
+          "ハンドマッサージャー(レンタル)",
+          "バスローブ(一部)",
+          "男性化粧品",
+          "女性化粧品",
+          "各種シャンプー(レンタル)",
+          "アメニティ豊富",
+          "コスチューム(販売)",
+          "携帯電話充電器",
+          "Androidスマホ充電器",
+          "iPhone充電器",
+          "*プライベートサウナKABUKI併設",
+          "USBコンセント全室完備",
+          "※Refaドライヤー",
+          "Refaシャワーヘッド",
+          "Refa32mmカールアイロン全室完備"
+        ]
+      },
+      "review": {
+        "score": "4.0",
+        "count": 1
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
     },
     {
       "id": 540007,

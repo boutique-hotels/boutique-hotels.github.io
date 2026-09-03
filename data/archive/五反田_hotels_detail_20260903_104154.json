@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T13:42+00:00"
+    "generatedAt": "2026-09-03T10:41+00:00"
   },
   "hotels": [
     {
@@ -2662,28 +2662,28 @@
             "plan_name": "【当日限定】日～木 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Aランク",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと5室",
+            "stock_count": 5,
             "charge_text": "￥10,000"
           },
           {
             "plan_name": "【当日限定】日～木 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Bランク",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,000"
           },
           {
             "plan_name": "【当日限定】日～木 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Cランク",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと2室",
+            "stock_count": 2,
             "charge_text": "￥15,000"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 5,
         "has_vacancy": true
       }
     },
@@ -2933,9 +2933,18 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
+            "plan_type": "宿泊",
+            "room_rank_name": "Ctype",
+            "stock_text": "あと4室",
+            "stock_count": 4,
+            "charge_text": "￥13,000"
+          }
+        ],
+        "max_stock": 4,
+        "has_vacancy": true
       }
     },
     {
