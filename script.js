@@ -1392,12 +1392,13 @@ function initFakeStickyHeader(sec) {
       const visible = sectionRect.top <= 1 && sectionRect.bottom > headerHeight;
       mobileHeader.style.display = visible ? "block" : "none";
       if (!visible) return;
-      mobileHeader.style.left = scrollRect.left + "px";
+      const stableLeft = scrollRect.left + (window.scrollX || window.pageXOffset || 0);
+      mobileHeader.style.left = stableLeft + "px";
       mobileHeader.style.width = Math.max(0, scrollRect.width) + "px";
-      mobileTable.style.transform = `translateX(${tableRect.left - scrollRect.left}px)`;
+      mobileTable.style.transform = `translateX(${tableRect.left - stableLeft}px)`;
       const mobileFirstHeader = mobileTable.querySelector("thead tr:first-child th");
       if (mobileFirstHeader) {
-        mobileFirstHeader.style.transform = `translateX(${scrollRect.left - tableRect.left}px)`;
+        mobileFirstHeader.style.transform = `translateX(${stableLeft - tableRect.left}px)`;
       }
       mobileHeader.style.height = "auto";
     }
