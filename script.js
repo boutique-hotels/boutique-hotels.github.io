@@ -1395,6 +1395,8 @@ function initFakeStickyHeader(sec) {
       const visible = sectionRect.top <= 1 && sectionRect.bottom > headerHeight;
       mobileHeader.style.display = visible ? "block" : "none";
       if (!visible) return;
+      const titleHeight = pageTitleStickyHeight;
+      mobileHeader.style.top = titleHeight + "px";
       const scrollX = window.scrollX || window.pageXOffset || 0;
       const stableLeft = scrollRect.left + scrollX;
       mobileHeader.style.left = stableLeft + "px";
@@ -1403,6 +1405,9 @@ function initFakeStickyHeader(sec) {
       const mobileFirstHeader = mobileTable.querySelector("thead tr:first-child th");
       if (mobileFirstHeader) {
         mobileFirstHeader.style.transform = `translateX(${stableLeft - tableRect.left}px)`;
+        mobileFirstHeader.style.position = "relative";
+        mobileFirstHeader.style.zIndex = "10";
+        mobileFirstHeader.style.background = "#f4f4f4";
       }
       mobileHeader.style.height = "auto";
     }
@@ -1871,19 +1876,36 @@ function initPageTitleSticky() {
   }
 
   function update() {
-    if (window.innerWidth <= 640) {
-      wrapper.style.position = "";
-      wrapper.style.top = "";
-      wrapper.style.left = "";
-      wrapper.style.width = "";
-      spacer.style.display = "none";
-      pageTitleStickyHeight = 0;
-      return;
-    }
-
     const scrollY = window.scrollY || window.pageYOffset;
     const naturalTop = marker.getBoundingClientRect().top + scrollY;
     const shouldStick = scrollY >= naturalTop;
+
+    if (window.innerWidth <= 640) {
+      if (shouldStick) {
+        const rect = wrapper.getBoundingClientRect();
+        const scrollX = window.scrollX || window.pageXOffset || 0;
+        const documentLeft = marker.getBoundingClientRect().left + scrollX;
+        wrapper.style.position = "fixed";
+        wrapper.style.top = "0px";
+        wrapper.style.left = documentLeft + "px";
+        wrapper.style.width = rect.width + "px";
+        wrapper.style.background = "#fff";
+        wrapper.style.zIndex = "400";
+        spacer.style.display = "block";
+        spacer.style.height = wrapper.offsetHeight + "px";
+        pageTitleStickyHeight = wrapper.offsetHeight;
+      } else {
+        wrapper.style.position = "";
+        wrapper.style.top = "";
+        wrapper.style.left = "";
+        wrapper.style.width = "";
+        wrapper.style.background = "";
+        wrapper.style.zIndex = "";
+        spacer.style.display = "none";
+        pageTitleStickyHeight = 0;
+      }
+      return;
+    }
 
     if (shouldStick) {
       const { left, width } = contentBounds();
@@ -1919,6 +1941,10 @@ function initPageTitleSticky() {
 
   window.addEventListener("scroll", onScrollOrResize, { passive: true });
   window.addEventListener("resize", onScrollOrResize);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.visualViewport.addEventListener("resize", onScrollOrResize, { passive: true });
+  }
 
   // 他コード（セクション側update、サイドバー開閉）から即座に最新状態を
   // 反映させたい場合のために、同期版も公開しておく
