@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T23:36+00:00"
+    "generatedAt": "2026-09-03T00:11+00:00"
   },
   "hotels": [
     {
@@ -575,6 +575,14 @@
             "charge_text": "￥10,800"
           },
           {
+            "plan_name": "月～木（平日）・当日、スタンダードルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥4,800"
+          },
+          {
             "plan_name": "月～木（平日）・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
             "plan_type": "休憩",
             "room_rank_name": "モデレート",
@@ -589,6 +597,14 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥6,100"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、スタンダードルーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,500"
           },
           {
             "plan_name": "月～木（平日）・当日、モデレートルーム240分デイユースプラン！チェックイン10時～27時",

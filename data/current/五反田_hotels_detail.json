@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T23:39+00:00"
+    "generatedAt": "2026-09-03T00:14+00:00"
   },
   "hotels": [
     {
@@ -474,7 +474,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r206.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 307,
