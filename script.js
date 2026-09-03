@@ -1245,7 +1245,11 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
     if (!fromScrollbar) scrollbar._userScroll = false;
     scrollTicking = true;
     requestAnimationFrame(() => {
-      if (!syncing) scrollbar.scrollLeft = window.scrollX;
+      if (!syncing) {
+        syncing = true;
+        scrollbar.scrollLeft = window.scrollX;
+        syncing = false;
+      }
       scrollTicking = false;
     });
   }, { passive: true });
@@ -1274,8 +1278,7 @@ function addHorizontalScrollbar(parent, tableScroll, table) {
 // （スペーサーで高さを保持するので、この値は固定状態が変わっても
 // ずれない）、スクロール位置と比較して固定/解除を切り替える。
 //
-// カスタム横スクロールバー使用時は1列目（ホテル名）を画面端に固定する。
-// ブラウザの横スクロールバー使用時は表全体と一緒に流す。
+// 横スクロール時は1列目（ホテル名）を画面端に固定する。
 // ============================================================
 function initFakeStickyHeader(sec) {
   const summary = sec.querySelector(":scope > summary");
@@ -1392,13 +1395,12 @@ function initFakeStickyHeader(sec) {
       const visible = sectionRect.top <= 1 && sectionRect.bottom > headerHeight;
       mobileHeader.style.display = visible ? "block" : "none";
       if (!visible) return;
-      const stableLeft = scrollRect.left + (window.scrollX || window.pageXOffset || 0);
-      mobileHeader.style.left = stableLeft + "px";
+      mobileHeader.style.left = scrollRect.left + "px";
       mobileHeader.style.width = Math.max(0, scrollRect.width) + "px";
-      mobileTable.style.transform = `translateX(${tableRect.left - stableLeft}px)`;
+      mobileTable.style.transform = `translateX(${tableRect.left - scrollRect.left}px)`;
       const mobileFirstHeader = mobileTable.querySelector("thead tr:first-child th");
       if (mobileFirstHeader) {
-        mobileFirstHeader.style.transform = `translateX(${stableLeft - tableRect.left}px)`;
+        mobileFirstHeader.style.transform = `translateX(${scrollRect.left - tableRect.left}px)`;
       }
       mobileHeader.style.height = "auto";
     }
@@ -1717,28 +1719,32 @@ function initFakeStickyHeader(sec) {
       if (shouldStick) {
         spacerRow.style.display = "table-row";
         let x = table.getBoundingClientRect().left;
-          const horizontalScrollbar = tableScroll?._horizontalScrollbar;
-          const isRoomTable = table.classList.contains("room-table");
-          const pinFirstColumn = isRoomTable
-            ? tableScroll.classList.contains("has-horizontal-overflow")
-            : horizontalScrollbar?._userScroll === true;
-          const stickyLeft = document.body.classList.contains("sidebar-collapsed") ? 48 : 220;
-          const bodyPaddingLeft = parseFloat(getComputedStyle(document.body).paddingLeft) || 0;
-          const frameDocumentLeft = stickyLeft + bodyPaddingLeft;
-          const currentScrollX = window.scrollX || window.pageXOffset || 0;
-          const hotelNameLeft = Math.max(stickyLeft, frameDocumentLeft - currentScrollX);
+        const pinFirstColumn = true;
+        const stickyLeft = document.body.classList.contains("sidebar-collapsed") ? 48 : 220;
+        const bodyPaddingLeft = parseFloat(getComputedStyle(document.body).paddingLeft) || 0;
+        const frameDocumentLeft = stickyLeft + bodyPaddingLeft;
+        const currentScrollX = window.scrollX || window.pageXOffset || 0;
+        const hotelNameLeft = Math.max(stickyLeft, frameDocumentLeft - currentScrollX);
+        const roomTableVisible = sec.id !== "section-rooms" ||
+          (tableRect.right > stickyLeft && tableRect.left < window.innerWidth);
         ths.forEach((th, index) => {
           const w = th._fixedWidth || (th._fixedWidth = th.getBoundingClientRect().width);
           th.style.position = "fixed";
           th.style.top = offset + "px";
-            th.style.left = Math.floor(index === 0 && pinFirstColumn ? hotelNameLeft : x) + "px";
+          th.style.left = Math.floor(index === 0 && pinFirstColumn ? hotelNameLeft : x) + "px";
           th.style.width = w + "px";
           th.style.height = sizes.thead + "px";
           th.style.zIndex = "40";
           th.style.background = "#f4f4f4";
-            if (index === 0 && pinFirstColumn) th.style.zIndex = "45";
+            th.style.visibility = index === 0 && !roomTableVisible ? "hidden" : "visible";
           x += w;
         });
+        if (pinFirstColumn && ths[0]) {
+          const firstTh = ths[0];
+          firstTh.style.left = Math.floor(hotelNameLeft) + "px";
+          firstTh.style.zIndex = "100";
+          firstTh.style.background = "#f4f4f4";
+        }
       } else {
         ths.forEach(th => {
           th.style.position = "";
@@ -1748,6 +1754,7 @@ function initFakeStickyHeader(sec) {
           th.style.height = "";
           th.style.zIndex = "";
           th.style.background = "";
+          th.style.visibility = "";
         });
         spacerRow.style.display = "none";
       }
