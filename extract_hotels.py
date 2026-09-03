@@ -441,7 +441,8 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
         sleep(sleep_sec)
 
     # 最新ファイルと履歴ファイルを保存
-    generated_at = datetime.now().astimezone().isoformat(timespec="minutes")
+    generated_now = datetime.now().astimezone()
+    generated_at = generated_now.isoformat(timespec="minutes")
     detail_payload = {
         "metadata": {
             "generatedAt": generated_at,
@@ -449,16 +450,24 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
         "hotels": results,
     }
     CURRENT_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    ARCHIVE_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     detail_filename = f"{label}_hotels_detail.json"
     failure_filename = f"{label}_hotels_failures.json"
+    archive_timestamp = generated_now.strftime("%Y%m%d_%H%M%S")
+    archive_detail_path = ARCHIVE_DATA_DIR / f"{label}_hotels_detail_{archive_timestamp}.json"
+    archive_failure_path = ARCHIVE_DATA_DIR / f"{label}_hotels_failures_{archive_timestamp}.json"
     detail_path = CURRENT_DATA_DIR / detail_filename
     failure_path = CURRENT_DATA_DIR / failure_filename
 
     with open(detail_path, "w", encoding="utf-8") as f:
         json.dump(detail_payload, f, ensure_ascii=False, indent=2)
+    with open(archive_detail_path, "w", encoding="utf-8") as f:
+        json.dump(detail_payload, f, ensure_ascii=False, indent=2)
     if failures:
         with open(failure_path, "w", encoding="utf-8") as f:
+            json.dump(failures, f, ensure_ascii=False, indent=2)
+        with open(archive_failure_path, "w", encoding="utf-8") as f:
             json.dump(failures, f, ensure_ascii=False, indent=2)
     elif failure_path.exists():
         failure_path.unlink()
