@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T23:39+00:00"
+    "generatedAt": "2026-09-04T00:13+00:00"
   },
   "hotels": [
     {
@@ -354,7 +354,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r406.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 503,
@@ -386,7 +386,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r302.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 402,
@@ -442,7 +442,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r404.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 504,
@@ -586,7 +586,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r201.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 207,
@@ -634,7 +634,7 @@
           "type_name": "SARA SWEET",
           "rank_id": 8,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r702.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 803,
@@ -2922,17 +2922,17 @@
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Aランク",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと5室",
+            "stock_count": 5,
             "charge_text": "￥12,000"
           },
           {
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Bランク",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥15,000"
           },
           {
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
@@ -2943,7 +2943,7 @@
             "charge_text": "￥17,000"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 5,
         "has_vacancy": true
       }
     },
