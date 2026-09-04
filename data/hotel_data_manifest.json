@@ -3,21 +3,21 @@
     "key": "gotanda",
     "label": "五反田",
     "file": "data/current/五反田_hotels_detail.json",
-    "updatedAt": "2026-09-04T22:39+00:00",
+    "updatedAt": "2026-09-04T23:09+00:00",
     "vacancyHistoryFile": "data/archive/五反田_vacancy_history.json"
   },
   {
     "key": "shinjuku",
     "label": "新宿",
     "file": "data/current/新宿_hotels_detail.json",
-    "updatedAt": "2026-09-04T22:38+00:00",
+    "updatedAt": "2026-09-04T23:09+00:00",
     "vacancyHistoryFile": "data/archive/新宿_vacancy_history.json"
   },
   {
     "key": "ikebukuro",
     "label": "池袋",
     "file": "data/current/池袋_hotels_detail.json",
-    "updatedAt": "2026-09-04T22:36+00:00",
+    "updatedAt": "2026-09-04T23:07+00:00",
     "vacancyHistoryFile": "data/archive/池袋_vacancy_history.json"
   }
 ]
