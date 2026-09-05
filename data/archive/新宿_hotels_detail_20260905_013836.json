@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-05T03:09+00:00"
+    "generatedAt": "2026-09-05T01:38+00:00"
   },
   "hotels": [
     {
@@ -1112,9 +1112,9 @@
             "plan_name": "《当日予約》昼の部 デイユースプラン 12時～ （土・日・祝）",
             "plan_type": "休憩",
             "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
           },
           {
             "plan_name": "《当日予約》昼の部 デイユースプラン 12時～ （土・日・祝）",
@@ -1125,8 +1125,8 @@
             "charge_text": "売切れ"
           }
         ],
-        "max_stock": null,
-        "has_vacancy": null
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -7226,18 +7226,9 @@
         "count": 27
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "【土曜・連休中】ハピホテ当日限定宿泊プラン",
-            "plan_type": "宿泊",
-            "room_rank_name": null,
-            "stock_text": "あと4室",
-            "stock_count": 4,
-            "charge_text": "￥17,900"
-          }
-        ],
-        "max_stock": 4,
-        "has_vacancy": true
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
