@@ -85,6 +85,7 @@ details[open] > summary::before {
   flex-wrap: wrap;
   align-items: flex-end;
 }
+.hotel-card-toolbar-break { flex-basis: 100%; height: 0; }
 .hotel-card {
   border: 1px solid var(--border);
   border-radius: 8px;

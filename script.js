@@ -567,6 +567,7 @@ function render(hotels) {
         ${amenityOptions.map(a => `<option value="${a}">${a}</option>`).join("")}
       </select>
     </div>
+    <span class="hotel-card-toolbar-break" aria-hidden="true"></span>
     <button id="cardClearBtn" class="clear-btn" type="button">条件クリア</button>
     <div id="cardResultCount" style="color:var(--text-muted);"></div>
   `;
