@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-04T23:38+00:00"
+    "generatedAt": "2026-09-05T00:13+00:00"
   },
   "hotels": [
     {
@@ -923,7 +923,7 @@
           "type_name": "ランク3",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/b-side/image/r201.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 402,
@@ -931,7 +931,7 @@
           "type_name": "ランク3",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/b-side/image/r402.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 405,
