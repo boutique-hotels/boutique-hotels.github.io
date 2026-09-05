@@ -160,6 +160,18 @@ function getPlanTypes(hotels) {
   return Array.from(types);
 }
 
+// 複数選択を Ctrl キーなしでクリックして切り替えられるようにする
+function enableMultiSelectToggle(select) {
+  select.addEventListener("mousedown", event => {
+    const option = event.target.closest("option");
+    if (!option) return;
+
+    event.preventDefault();
+    option.selected = !option.selected;
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+}
+
 // 料金抽出（最低料金・最高料金）
 function parsePriceRange(priceStr) {
   // 「xxx均一」対応：両方同じ値にする
@@ -608,7 +620,7 @@ function render(hotels) {
     if (vac.details && vac.details.length) {
       if (vac.has_vacancy === true) {
         vacBadge = `<span class="badge vacant">空室あり（${getVacancyTotal(vac)}室）</span>`;
-      } else if (vac.has_vacancy === false) {
+      } else if (vac.has_vacancy === false || vac.has_vacancy === null) {
         vacBadge = `<span class="badge full">満室</span>`;
       }
       // プランごとの空室内訳（上位3件まで表示）
@@ -728,7 +740,7 @@ function render(hotels) {
           <input id="filterPlan" class="filter-half-wide" placeholder="部分一致検索">
         </th>
         <th class="sortable" data-col="type">種類 <span class="sort-arrow" data-arrow="type"></span><br>
-          <select id="filterType" class="filter-type-select" multiple>
+          <select id="filterType" class="filter-type-select" multiple size="${Math.max(planTypes.length, 1)}">
             ${planTypes.map(t => `<option value="${t}">${t}</option>`).join("")}
           </select>
         </th>
@@ -778,10 +790,13 @@ function render(hotels) {
     if (!details.length) {
       return `<span class="no-data">情報なし</span>`;
     }
+    if (vacancy.has_vacancy === null) {
+      return `<span class="vacancy-status">満室</span>`;
+    }
 
     const status = vacancy.has_vacancy === true
       ? `空室あり（${getVacancyTotal(vacancy)}室）`
-      : vacancy.has_vacancy === false ? "満室" : "取得済み";
+      : "満室";
 
     // 満室（stock_count が null）の部屋は表示しない
     const available = details.filter(d => d.stock_count !== null && d.stock_count !== undefined);
@@ -971,6 +986,8 @@ function render(hotels) {
 
   drawTable();
 
+  enableMultiSelectToggle(document.getElementById("filterType"));
+
   document.querySelectorAll("input,select").forEach(el => {
     el.oninput = drawTable;
     el.onchange = drawTable;
@@ -1009,6 +1026,7 @@ function render(hotels) {
     drawTable();
   };
 
+/*
 const roomDetails = document.createElement("details");
 roomDetails.id = "section-rooms";
 roomDetails.className = "sticky-section";
@@ -1183,11 +1201,12 @@ addHorizontalScrollbar(roomDetails, roomScroll, roomTable);
 
 drawRoomTable();
 document.getElementById("filterKeepValue").addEventListener("change", drawRoomTable);
+*/
 
 initPageTitleSticky();
 const cardStickyHeader = initFakeStickyHeader(cardDetails);
 const priceStickyHeader = initFakeStickyHeader(priceDetails);
-const roomStickyHeader = initFakeStickyHeader(roomDetails);
+//const roomStickyHeader = initFakeStickyHeader(roomDetails);
 }
 
 function addHorizontalScrollbar(parent, tableScroll, table) {
@@ -1293,6 +1312,19 @@ function initFakeStickyHeader(sec) {
   const scrollbarCell = scrollbarRow ? scrollbarRow.querySelector("td") : null;
   if (!summary && !headerRow) return;
 
+  function syncHorizontalPosition(element, naturalLeft) {
+    if (!element || element.style.position === "fixed") return;
+    const scrollX = window.scrollX || window.pageXOffset || 0;
+    element.style.transform = `translateX(${scrollX}px)`;
+    element.style.marginLeft = naturalLeft + "px";
+  }
+
+  function clearHorizontalPosition(element) {
+    if (!element || element.style.position === "fixed") return;
+    element.style.transform = "";
+    element.style.marginLeft = "";
+  }
+
   const isMobile = window.innerWidth <= 640 || window.matchMedia("(max-width: 640px)").matches;
   if (isMobile && headerRow && tableScroll) {
     if (!headerRow || !tableScroll) return;
@@ -1333,6 +1365,9 @@ function initFakeStickyHeader(sec) {
       const originalControl = originalId ? document.getElementById(originalId) : null;
       control.removeAttribute("id");
       if (!originalControl) return;
+      if (control.tagName === "SELECT" && control.multiple) {
+        enableMultiSelectToggle(control);
+      }
       if (control.type === "checkbox" || control.type === "radio") {
         control.checked = originalControl.checked;
       } else if (control.tagName === "SELECT") {
@@ -1442,6 +1477,16 @@ function initFakeStickyHeader(sec) {
     }
     updateMobileHeaderNow();
     return { update: updateMobileHeaderNow, onScrollOrResize: updateMobileHeader };
+  }
+
+  function getStickyContentBounds() {
+    const sidebarWidth = document.body.classList.contains("sidebar-collapsed") ? 48 : 220;
+    const bodyPaddingLeft = parseFloat(getComputedStyle(document.body).paddingLeft) || 0;
+    const left = sidebarWidth + bodyPaddingLeft;
+    return {
+      left,
+      width: Math.max(0, window.innerWidth - left),
+    };
   }
 
   // 高さ0のマーカー要素を「本来の位置」の目印として常に静的配置のまま残す。
@@ -1633,6 +1678,9 @@ function initFakeStickyHeader(sec) {
     // details が閉じている場合は何もしない
     if (sec.tagName === "DETAILS" && !sec.open) {
       unfixAll();
+      if (summary) {
+        syncHorizontalPosition(summary, 0);
+      }
       return;
     }
 
@@ -1643,8 +1691,9 @@ function initFakeStickyHeader(sec) {
     const scrollY = window.scrollY || window.pageYOffset;
     const sectionRect = sec.getBoundingClientRect();
     const tableRect = table ? table.getBoundingClientRect() : sectionRect;
-    const leftPx = sectionRect.left;
-    const widthPx = Math.ceil((table || sec).getBoundingClientRect().width) + 2;
+    const stickyBounds = getStickyContentBounds();
+    const leftPx = stickyBounds.left;
+    const widthPx = stickyBounds.width;
     widthPxCache = widthPx; // ← measureSizes より前にセット
 
     measureSizes();
@@ -1670,6 +1719,8 @@ function initFakeStickyHeader(sec) {
         summary.style.marginTop = "0";
         summary.style.background = "#fff";
         summary.style.zIndex = "50";
+        summary.style.transform = "none";
+        summary.style.marginLeft = "0";
 
         // ← 適用後の実測値で spacer を作る（事前計算の sizes.summary は使わない）
         const summaryHeight = Math.ceil(summary.getBoundingClientRect().height);
@@ -1684,6 +1735,7 @@ function initFakeStickyHeader(sec) {
         summary.style.marginTop = "";
         summary.style.background = "";
         summary.style.zIndex = "";
+        syncHorizontalPosition(summary, 0);
         sizes.summary = summary.offsetHeight;
         summarySpacer.style.display = "none";
       }
@@ -1701,6 +1753,8 @@ function initFakeStickyHeader(sec) {
         toolbar.style.marginTop = "0";
         toolbar.style.background = "#fff";
         toolbar.style.zIndex = "50";
+        toolbar.style.transform = "none";
+        toolbar.style.marginLeft = "0";
 
         // ← こちらも適用後に実測
         const toolbarHeight = Math.ceil(toolbar.getBoundingClientRect().height);
@@ -1714,6 +1768,7 @@ function initFakeStickyHeader(sec) {
         toolbar.style.width = "";
         toolbar.style.background = "";
         toolbar.style.zIndex = "";
+        syncHorizontalPosition(toolbar, 0);
         sizes.toolbar = toolbar.offsetHeight;
         toolbarSpacer.style.display = "none";
       }
@@ -1727,11 +1782,8 @@ function initFakeStickyHeader(sec) {
         spacerRow.style.display = "table-row";
         let x = table.getBoundingClientRect().left;
         const pinFirstColumn = true;
-        const stickyLeft = document.body.classList.contains("sidebar-collapsed") ? 48 : 220;
-        const bodyPaddingLeft = parseFloat(getComputedStyle(document.body).paddingLeft) || 0;
-        const frameDocumentLeft = stickyLeft + bodyPaddingLeft;
-        const currentScrollX = window.scrollX || window.pageXOffset || 0;
-        const hotelNameLeft = Math.max(stickyLeft, frameDocumentLeft - currentScrollX);
+        const stickyLeft = getStickyContentBounds().left;
+        const hotelNameLeft = stickyLeft;
         const roomTableVisible = sec.id !== "section-rooms" ||
           (tableRect.right > stickyLeft && tableRect.left < window.innerWidth);
         ths.forEach((th, index) => {
@@ -1855,6 +1907,11 @@ function initPageTitleSticky() {
   const wrapper = document.getElementById("pageTitleSticky");
   if (!wrapper) return;
 
+  const leftCover = document.createElement("div");
+  leftCover.className = "sticky-left-cover";
+  leftCover.setAttribute("aria-hidden", "true");
+  document.body.appendChild(leftCover);
+
   const marker = document.createElement("div");
   marker.style.cssText = "height:0;margin:0;padding:0;border:0;overflow:hidden;";
   marker.setAttribute("aria-hidden", "true");
@@ -1865,14 +1922,10 @@ function initPageTitleSticky() {
   wrapper.parentNode.insertBefore(spacer, wrapper.nextSibling);
 
   function contentBounds() {
-    const priceTable = document.getElementById("priceTable");
-    if (priceTable) {
-      const rect = priceTable.getBoundingClientRect();
-      return { left: rect.left, width: Math.ceil(rect.width) + 2 };
-    }
-    const content = document.getElementById("content");
-    const rect = (content || wrapper).getBoundingClientRect();
-    return { left: rect.left, width: rect.width };
+    const sidebarWidth = document.body.classList.contains("sidebar-collapsed") ? 48 : 220;
+    const bodyPaddingLeft = parseFloat(getComputedStyle(document.body).paddingLeft) || 0;
+    const left = sidebarWidth + bodyPaddingLeft;
+    return { left, width: Math.max(0, window.innerWidth - left) };
   }
 
   function update() {
@@ -1883,16 +1936,15 @@ function initPageTitleSticky() {
     if (window.innerWidth <= 640) {
       if (shouldStick) {
         const rect = wrapper.getBoundingClientRect();
-        const scrollX = window.scrollX || window.pageXOffset || 0;
-        const documentLeft = marker.getBoundingClientRect().left + scrollX;
         wrapper.style.position = "fixed";
         wrapper.style.top = "0px";
-        wrapper.style.left = documentLeft + "px";
+        wrapper.style.left = "";
         wrapper.style.width = rect.width + "px";
         wrapper.style.background = "#fff";
         wrapper.style.zIndex = "400";
-        spacer.style.display = "block";
-        spacer.style.height = wrapper.offsetHeight + "px";
+        wrapper.style.transform = "none";
+        spacer.style.display = shouldStick ? "block" : "none";
+        spacer.style.height = shouldStick ? wrapper.offsetHeight + "px" : "";
         pageTitleStickyHeight = wrapper.offsetHeight;
       } else {
         wrapper.style.position = "";
@@ -1915,6 +1967,7 @@ function initPageTitleSticky() {
       wrapper.style.width = width + "px";
       wrapper.style.background = "#fff";   // CSS側の定義漏れに依存しない
       wrapper.style.zIndex = "60";
+      wrapper.style.transform = "none";
       spacer.style.display = "block";
       spacer.style.height = wrapper.offsetHeight + "px";
       pageTitleStickyHeight = wrapper.offsetHeight;
@@ -1923,7 +1976,9 @@ function initPageTitleSticky() {
       wrapper.style.top = "";
       wrapper.style.left = "";
       wrapper.style.width = "";
+      wrapper.style.background = "";
       wrapper.style.zIndex = "";
+      wrapper.style.transform = `translateX(${window.scrollX || window.pageXOffset || 0}px)`;
       spacer.style.display = "none";
       pageTitleStickyHeight = 0;
     }
