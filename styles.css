@@ -4,7 +4,8 @@
   --border: #dcdfe4;
   --text-muted: #6b7280;
   --bg-stripe: #f9fafb;
-  --sticky-column-left: 220px;
+  --sticky-column-left: 236px;
+  --sticky-content-left: 236px;
 }
 * { box-sizing: border-box; }
 body {
@@ -18,8 +19,13 @@ h1 { margin-bottom: 4px; font-size: 22px; }
 h2 { margin-top: 32px; margin-bottom: 10px; font-size: 17px; border-left: 4px solid var(--accent); padding-left: 8px; }
 
 .page-title-sticky {
+  position: static;
+  left: auto;
+  width: auto;
   background: #fff;
+  background-color: #fff;
   box-sizing: border-box;
+  z-index: 60;
 }
 .page-title-sticky h1 { margin-bottom: 4px; }
 .page-title-sticky .station-links { margin: 8px 0 4px; }
@@ -29,6 +35,14 @@ h2 { margin-top: 32px; margin-bottom: 10px; font-size: 17px; border-left: 4px so
 
 @media (max-width: 640px) {
   /* モバイルでは他のsticky同様に無効化（下記JS側でも早期returnする） */
+  .page-title-sticky,
+  .sticky-section > summary,
+  .sticky-section .sticky-toolbar {
+    position: static;
+    left: auto;
+    width: auto;
+  }
+  .sticky-left-cover { display: none; }
 }
 
 /* ---- ホテルカード ---- */
@@ -139,6 +153,9 @@ details[open] > summary::before {
 .detail-row[hidden] { display: none; }
 
 .sticky-section > summary {
+  position: static;
+  left: auto;
+  width: auto;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -146,6 +163,7 @@ details[open] > summary::before {
   cursor: pointer;
   z-index: 30;
   background: #fff;
+  background-color: #fff;
   box-sizing: border-box;
 }
 .sticky-section {
@@ -165,14 +183,19 @@ details[open] > summary::before {
   content: "▼";
 }
 .sticky-section .sticky-toolbar {
+  position: static;
+  left: auto;
+  width: auto;
   z-index: 25;
   background: #fff;
+  background-color: #fff;
   padding: 6px 2px;
   display: block;
   box-sizing: border-box;
 }
+.sticky-section .hotel-card-toolbar { display: flex; }
 .sticky-section thead th {
-  position: static;
+  position: sticky;
   z-index: 20;
   box-sizing: border-box;
 }
@@ -182,6 +205,12 @@ details[open] > summary::before {
   left: var(--sticky-column-left);
   z-index: 25;
 }
+.sticky-section .table-scroll.has-horizontal-overflow tbody td:first-child {
+  background-color: #fff !important;
+}
+.sticky-section thead th:first-child {
+  background-color: #f4f4f4 !important;
+}
 .sticky-section .table-scroll:not(.has-horizontal-overflow) thead th:first-child,
 .sticky-section .table-scroll:not(.has-horizontal-overflow) tbody td:first-child {
   position: static;
@@ -190,9 +219,27 @@ details[open] > summary::before {
 }
 .sticky-spacer { display: none; }
 .sticky-spacer-row { visibility: hidden; }
+.sticky-left-cover {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 220px;
+  width: 16px;
+  background: #fff;
+  z-index: 110;
+  pointer-events: none;
+}
+body.sidebar-collapsed .sticky-left-cover {
+  left: 48px;
+}
+@media (max-width: 640px) {
+  .sticky-left-cover { display: none; }
+}
 .mobile-sticky-header {
   display: none;
   position: fixed;
+  top: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -381,7 +428,10 @@ tbody tr:hover td:first-child { background: #e0e7ff; }
 }
 
 @media (max-width: 640px) {
-  :root { --sticky-column-left: 0px; }
+  :root {
+    --sticky-column-left: 0px;
+    --sticky-content-left: 0px;
+  }
   body { padding: 10px 10px 24px; }
   h1 { font-size: 18px; }
   .subtitle { font-size: 12px; }
@@ -462,7 +512,10 @@ body {
   transition: margin-left 0.2s ease;
 }
 body.sidebar-collapsed { margin-left: 48px; }
-body.sidebar-collapsed { --sticky-column-left: 48px; }
+body.sidebar-collapsed {
+  --sticky-column-left: 64px;
+  --sticky-content-left: 64px;
+}
 
 .sidebar {
   position: fixed;
