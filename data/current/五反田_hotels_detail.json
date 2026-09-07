@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-06T23:39+00:00"
+    "generatedAt": "2026-09-07T00:14+00:00"
   },
   "hotels": [
     {
@@ -274,7 +274,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r205.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 301,
