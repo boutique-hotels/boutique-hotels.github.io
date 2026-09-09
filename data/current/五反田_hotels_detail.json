@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-08T23:39+00:00"
+    "generatedAt": "2026-09-09T00:14+00:00"
   },
   "hotels": [
     {
@@ -434,7 +434,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r304.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 404,
@@ -602,7 +602,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r308.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 408,
