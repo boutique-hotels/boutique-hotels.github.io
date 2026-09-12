@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-11T23:36+00:00"
+    "generatedAt": "2026-09-12T00:09+00:00"
   },
   "hotels": [
     {
@@ -291,9 +291,9 @@
             "plan_name": "【当日限定】ご宿泊プラン 21時～チェックイン (土・祝中)",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥17,800"
           },
           {
             "plan_name": "【当日限定】ご宿泊プラン 22時～チェックイン (土・祝中)",
@@ -4248,18 +4248,9 @@
         "count": 3
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "土曜限定！当日予約22時チェックイン素泊まりプラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "全部屋均一",
-            "stock_text": "あと3室",
-            "stock_count": 3,
-            "charge_text": "￥11,800"
-          }
-        ],
-        "max_stock": 3,
-        "has_vacancy": true
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
