@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-12T23:37+00:00"
+    "generatedAt": "2026-09-13T00:12+00:00"
   },
   "hotels": [
     {
@@ -235,17 +235,17 @@
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥15,300"
           },
           {
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
             "plan_type": "宿泊",
             "room_rank_name": "バリュープラス",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,300"
           },
           {
             "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
@@ -4994,9 +4994,9 @@
             "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
             "plan_type": "宿泊",
             "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,800"
           },
           {
             "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
@@ -5010,33 +5010,33 @@
             "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
             "plan_type": "宿泊",
             "room_rank_name": "モデレートタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,300"
           },
           {
             "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと3室",
+            "stock_count": 3,
             "charge_text": "￥13,000"
           },
           {
             "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,000"
           },
           {
             "plan_name": "★《当日予約》昼から4時間利用 デイユースプラン（土・日・祝・連休）",
             "plan_type": "休憩",
             "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,800"
           },
           {
             "plan_name": "★《当日予約》昼から4時間利用 デイユースプラン（土・日・祝・連休）",
