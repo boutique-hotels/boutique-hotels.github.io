@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-16T23:38+00:00"
+    "generatedAt": "2026-09-17T00:10+00:00"
   },
   "hotels": [
     {
@@ -3021,9 +3021,34 @@
         "count": 8
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "プリティルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "プリティ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "モデレートルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥9,800"
+          },
+          {
+            "plan_name": "スーペリアルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリア",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,800"
+          }
+        ],
+        "max_stock": 3,
+        "has_vacancy": true
       }
     },
     {
