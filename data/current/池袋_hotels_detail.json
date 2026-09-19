@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-18T23:37+00:00"
+    "generatedAt": "2026-09-19T00:09+00:00"
   },
   "hotels": [
     {
@@ -514,9 +514,9 @@
             "plan_name": "【土曜当日限定プラン】スタンダードルーム☆リニューアル記念 ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "スタンダード",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥13,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【土曜当日限定プラン】モデレート☆リニューアル記念 ご宿泊プラン☆",
@@ -6123,18 +6123,9 @@
         "count": 3
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "土曜限定！当日予約22時チェックイン素泊まりプラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "全部屋均一",
-            "stock_text": "あと2室",
-            "stock_count": 2,
-            "charge_text": "￥11,800"
-          }
-        ],
-        "max_stock": 2,
-        "has_vacancy": true
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
