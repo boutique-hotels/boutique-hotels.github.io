@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-19T00:09+00:00"
+    "generatedAt": "2026-09-18T22:07+00:00"
   },
   "hotels": [
     {
@@ -514,9 +514,9 @@
             "plan_name": "【土曜当日限定プラン】スタンダードルーム☆リニューアル記念 ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "スタンダード",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,800"
           },
           {
             "plan_name": "【土曜当日限定プラン】モデレート☆リニューアル記念 ご宿泊プラン☆",
@@ -756,9 +756,9 @@
             "plan_name": "【土曜・日曜・祝日】当日限定 18：00～ スタンダードデイユースプラン ",
             "plan_type": "休憩",
             "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
           }
         ],
         "max_stock": 1,
@@ -3361,34 +3361,9 @@
         "count": 8
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "プリティルーム・土曜限定！22時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "プリティ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥12,800"
-          },
-          {
-            "plan_name": "モデレートルーム・土曜限定！22時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレート",
-            "stock_text": "あと5室",
-            "stock_count": 5,
-            "charge_text": "￥13,800"
-          },
-          {
-            "plan_name": "スーペリアルーム・土曜限定！22時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "スーペリア",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥15,800"
-          }
-        ],
-        "max_stock": 5,
-        "has_vacancy": true
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
@@ -6123,9 +6098,18 @@
         "count": 3
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "土曜限定！当日予約22時チェックイン素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "全部屋均一",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥11,800"
+          }
+        ],
+        "max_stock": 3,
+        "has_vacancy": true
       }
     },
     {
