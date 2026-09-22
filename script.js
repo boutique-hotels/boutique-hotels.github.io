@@ -716,6 +716,13 @@ function render(hotels) {
 
   const clearBtnWrap = document.createElement("div");
   clearBtnWrap.className = "sticky-toolbar";
+
+  const expandAllBtn = document.createElement("button");
+  expandAllBtn.type = "button";
+  expandAllBtn.textContent = "全て展開";
+  expandAllBtn.className = "clear-btn";
+  clearBtnWrap.appendChild(expandAllBtn);
+
   const clearBtn = document.createElement("button");
   clearBtn.textContent = "フィルタをクリア";
   clearBtn.className = "clear-btn";
@@ -760,8 +767,8 @@ function render(hotels) {
         </th>
         <th class="sortable" data-col="hours">時間（数値） <span class="sort-arrow" data-arrow="hours"></span><br>
           <div class="filter-range-stack">
-            <input id="minHours" type="number" class="filter-range-narrow" placeholder="min">
-            <input id="maxHours" type="number" class="filter-range-narrow" placeholder="max">
+            <input id="minHours" type="number" step="0.1" class="filter-range-narrow" placeholder="min">
+            <input id="maxHours" type="number" step="0.1" class="filter-range-narrow" placeholder="max">
           </div>
         </th>
         <th class="week-source">曜日（元情報）</th>
@@ -833,6 +840,19 @@ function render(hotels) {
     return `<span class="vacancy-status">${status}</span><div class="vacancy-detail">${planHtml}</div>`;
   }
 
+  function updateExpandAllButton() {
+    const visibleHotels = Array.from(priceBody.querySelectorAll(".group-row")).map(row => row.dataset.hotel);
+    if (!visibleHotels.length) {
+      expandAllBtn.disabled = true;
+      expandAllBtn.textContent = "全て展開";
+      return;
+    }
+
+    const allExpanded = visibleHotels.every(hotelName => expandedPriceHotels.has(hotelName));
+    expandAllBtn.disabled = false;
+    expandAllBtn.textContent = allExpanded ? "全て閉じる" : "全て展開";
+  }
+
   function drawTable() {
     priceBody.innerHTML = "";
 
@@ -845,8 +865,8 @@ function render(hotels) {
     const minPrice = parseInt(document.getElementById("minPrice").value) || 0;
     const maxPrice = parseInt(document.getElementById("maxPrice").value) || Infinity;
 
-    const minHours = parseInt(document.getElementById("minHours").value) || 0;
-    const maxHours = parseInt(document.getElementById("maxHours").value) || Infinity;
+    const minHours = parseFloat(document.getElementById("minHours").value) || 0;
+    const maxHours = parseFloat(document.getElementById("maxHours").value) || Infinity;
 
     const weekChecks = Array.from(document.querySelectorAll("input[name='week']:checked")).map(c => c.value);
 
@@ -988,12 +1008,26 @@ function render(hotels) {
       });
     });
 
+    updateExpandAllButton();
+
     // tbody の内容が変わり .vacancy-cell 等の列幅が変化しうるため、
     // 固定表示中のヘッダー幅も同期し直す
     requestAnimationFrame(() => {
       priceStickyHeader && priceStickyHeader.onScrollOrResize();
     });
   }
+
+  expandAllBtn.addEventListener("click", () => {
+    const visibleHotels = Array.from(priceBody.querySelectorAll(".group-row")).map(row => row.dataset.hotel);
+    if (!visibleHotels.length) return;
+
+    const shouldExpand = visibleHotels.some(hotelName => !expandedPriceHotels.has(hotelName));
+    visibleHotels.forEach(hotelName => {
+      if (shouldExpand) expandedPriceHotels.add(hotelName);
+      else expandedPriceHotels.delete(hotelName);
+    });
+    drawTable();
+  });
 
   drawTable();
 
