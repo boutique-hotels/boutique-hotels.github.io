@@ -397,6 +397,7 @@ def get_hotel_detail(hotel_url):
     vacancy = extract_vacancy_from_reserve_plans(pageData)
 
     return {
+        "url": hotel_url,
         "id": basic.get("hotelId"),
         "name": basic.get("hotelName"),
         "address": basic.get("address"),
@@ -693,8 +694,18 @@ def generate_station_manifest() -> None:
         })
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    with open(DATA_DIR / "hotel_data_manifest.json", "w", encoding="utf-8") as f:
-        json.dump(stations, f, ensure_ascii=False, indent=2)
+    manifest_path = DATA_DIR / "hotel_data_manifest.json"
+    new_manifest = json.dumps(stations, ensure_ascii=False, indent=2) + "\n"
+    existing_manifest = (
+        manifest_path.read_text(encoding="utf-8")
+        if manifest_path.exists()
+        else None
+    )
+    if existing_manifest == new_manifest:
+        print("マニフェスト変更なし: hotel_data_manifest.json")
+        return
+
+    manifest_path.write_text(new_manifest, encoding="utf-8")
     print("マニフェスト更新: hotel_data_manifest.json")
 
 # -------------------------

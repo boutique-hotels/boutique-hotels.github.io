@@ -591,6 +591,7 @@ function render(hotels) {
   function buildHotelCard(h) {
     const card = document.createElement("div");
     card.className = "hotel-card";
+    const hotelUrl = h.url || (h.id ? `https://happyhotel.jp/hotels/${encodeURIComponent(h.id)}` : "");
 
     // アクセス
     const access = h.access || {};
@@ -642,7 +643,9 @@ function render(hotels) {
       : `<div class="amenity-tags"><span class="no-data">情報なし</span></div>`;
 
     card.innerHTML = `
-      <h3>${h.name || "(名称不明)"}</h3>
+      <h3>${hotelUrl
+        ? `<a href="${hotelUrl}" target="_blank" rel="noopener noreferrer">${h.name || "(名称不明)"}</a>`
+        : (h.name || "(名称不明)")}</h3>
       <div class="row"><span>住所</span><span class="val">${h.address || "—"}</span></div>
       <div class="row"><span>アクセス</span><span class="val">${accessHtml}${mapLink}</span></div>
       <div class="row"><span>口コミ</span><span class="val">${reviewHtml}</span></div>
@@ -884,6 +887,7 @@ function render(hotels) {
 
             rows.push({
               hotel: hotel.name,
+              hotelUrl: hotel.url || (hotel.id ? `https://happyhotel.jp/hotels/${encodeURIComponent(hotel.id)}` : ""),
               vacancy: formatVacancy(hotel),
               plan: plan.name,
               type: planType,
@@ -936,8 +940,11 @@ function render(hotels) {
       const groupRow = document.createElement("tr");
       groupRow.className = "group-row" + (expandedPriceHotels.has(hotelName) ? " expanded" : "");
       groupRow.dataset.hotel = hotelName;
+      const hotelNameCell = first.hotelUrl
+        ? `<a href="${first.hotelUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${hotelName}</a>`
+        : hotelName;
       groupRow.innerHTML = `
-        <td>${hotelName}</td>
+        <td>${hotelNameCell}</td>
         <td class="vacancy-cell">${first.vacancy}</td>
         <td>${types}</td>
         <td>明細 ${hotelRows.length} 件</td>
@@ -953,8 +960,11 @@ function render(hotels) {
       tr.className = "detail-row";
       tr.dataset.hotel = hotelName;
       tr.hidden = !expandedPriceHotels.has(hotelName);
+      const detailHotelNameCell = r.hotelUrl
+        ? `<a href="${r.hotelUrl}" target="_blank" rel="noopener">${r.hotel}</a>`
+        : r.hotel;
       tr.innerHTML = `
-        <td>${r.hotel}</td>
+        <td>${detailHotelNameCell}</td>
         <td class="vacancy-cell">${r.vacancy}</td>
         <td>${r.plan}</td>
         <td>${r.type}</td>
@@ -1009,6 +1019,7 @@ function render(hotels) {
     });
   });
   priceBody.addEventListener("click", event => {
+    if (event.target.closest("a")) return;
     const groupRow = event.target.closest(".group-row");
     if (!groupRow) return;
     const hotelName = groupRow.dataset.hotel;
