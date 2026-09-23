@@ -503,18 +503,7 @@ def cleanup_archive_detail_files(now: datetime = None) -> None:
             skipped += 1
             continue
 
-        age_days = (now.date() - captured_at.date()).days
-        if age_days < 0 or age_days <= 2:
-            continue
-        if age_days <= 7:
-            allowed_hours = {0, 9, 12, 15, 18, 21}
-        elif age_days <= 30:
-            allowed_hours = {0, 12, 18}
-        else:
-            path.unlink()
-            continue
-
-        if captured_at.hour not in allowed_hours:
+        if not _is_retained_archive_time(captured_at, now):
             path.unlink()
             continue
 
@@ -528,6 +517,18 @@ def cleanup_archive_detail_files(now: datetime = None) -> None:
             removed += 1
 
     print(f"アーカイブ掃除完了: 削除{removed}件、判定対象外{skipped}件")
+
+
+def _is_retained_archive_time(captured_at: datetime, now: datetime) -> bool:
+    """詳細 JSON と空室履歴に共通する保持ルールを判定する。"""
+    age_days = (now.date() - captured_at.date()).days
+    if age_days < 0 or age_days <= 2:
+        return True
+    if age_days <= 7:
+        return captured_at.hour in {0, 9, 12, 15, 18, 21}
+    if age_days <= 30:
+        return captured_at.hour in {0, 12, 18}
+    return False
 
 
 def _build_vacancy_snapshot_hotels(hotels: list) -> list:
@@ -606,9 +607,42 @@ def append_vacancy_history(label: str, generated_at: str, hotels: list) -> None:
         "hotels": snapshot_hotels,
     })
 
+    history = _cleanup_vacancy_history(history)
+
     with open(history_path, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
     print(f"空室履歴を追記: {history_path}（累計{len(history)}件のスナップショット）")
+
+
+def _cleanup_vacancy_history(history: list, now: datetime = None) -> list:
+    """空室履歴を詳細 JSON と同じ日付・時間帯の保持ルールで整理する。"""
+    if now is None:
+        now = datetime.now().astimezone().replace(tzinfo=None)
+    else:
+        now = now.replace(tzinfo=None)
+
+    candidates = {}
+    skipped = 0
+    for snapshot in history:
+        generated_at = snapshot.get("generatedAt") if isinstance(snapshot, dict) else None
+        if not generated_at:
+            skipped += 1
+            continue
+        try:
+            captured_at = datetime.fromisoformat(generated_at).replace(tzinfo=None)
+        except (TypeError, ValueError):
+            skipped += 1
+            continue
+
+        if not _is_retained_archive_time(captured_at, now):
+            continue
+        slot = captured_at.date(), captured_at.hour
+        candidates.setdefault(slot, []).append((captured_at, snapshot))
+
+    retained = [max(snapshots, key=lambda item: item[0])[1] for snapshots in candidates.values()]
+    retained.sort(key=lambda snapshot: snapshot["generatedAt"])
+    print(f"空室履歴掃除完了: 保持{len(retained)}件、スキップ{skipped}件")
+    return retained
 
 
 def migrate_vacancy_history_from_archive(label: str) -> None:
@@ -664,6 +698,8 @@ def migrate_vacancy_history_from_archive(label: str) -> None:
             "hotels": _build_vacancy_snapshot_hotels(hotels),
         })
         print(f"  取り込み: {path.name} -> {generated_at}")
+
+    history = _cleanup_vacancy_history(history)
 
     history_path = ARCHIVE_DATA_DIR / f"{label}_vacancy_history.json"
     with open(history_path, "w", encoding="utf-8") as f:
