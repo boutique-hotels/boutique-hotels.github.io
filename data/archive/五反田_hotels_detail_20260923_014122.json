@@ -1,9 +1,10 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-20T03:10+00:00"
+    "generatedAt": "2026-09-23T01:41+00:00"
   },
   "hotels": [
     {
+      "url": "https://happyhotel.jp/hotels/25901181",
       "id": 25901181,
       "name": "SARA GRANDE五反田",
       "address": "東京都品川区東五反田1-20-3",
@@ -745,6 +746,644 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/543794",
+      "id": 543794,
+      "name": "ホテル エメラルド 五反田",
+      "address": "東京都品川区西五反田2-16-10",
+      "prices": [
+        {
+          "name": "ショートステイ",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥3,200～",
+                  "timeZone": "5:00～翌 3:59チェックインより 1時間10分ご利用"
+                },
+                {
+                  "price": "￥4,100～",
+                  "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
+                },
+                {
+                  "price": "￥4,500～",
+                  "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
+                },
+                {
+                  "price": "￥6,500～",
+                  "timeZone": "21:00～翌 3:59チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥3,500～",
+                  "timeZone": "5:00～翌 3:59チェックインより 1時間10分ご利用"
+                },
+                {
+                  "price": "￥4,400～",
+                  "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
+                },
+                {
+                  "price": "￥4,800～",
+                  "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
+                },
+                {
+                  "price": "￥6,900～",
+                  "timeZone": "21:00～翌 3:59チェックインより 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "フリータイム",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥4,900～",
+                  "timeZone": "5:00～13:00の間で最大 8時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊",
+          "priceInfo": [
+            {
+              "week": "【日～木】",
+              "timePrice": [
+                {
+                  "price": "￥7,800～",
+                  "timeZone": "21:00～翌 10:00の間で最大 13時間ご利用"
+                },
+                {
+                  "price": "￥5,700～",
+                  "timeZone": "2:00～11:00の間で最大 9時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥9,500～",
+                  "timeZone": "22:00～翌 10:00の間で最大 12時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 501,
+          "room_name": "501",
+          "type_name": "Aランク",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/emerald/image/r501.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 202,
+          "room_name": "202",
+          "type_name": "Bランク",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/emerald/image/r202.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 101,
+          "room_name": "101",
+          "type_name": "Cランク",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/emerald/image/r101.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "五反田駅",
+            "walk_min": 5
+          }
+        ],
+        "latitude": "35.626232",
+        "longitude": "139.720792",
+        "map_url": "https://www.google.com/maps?q=35.626232,139.720792",
+        "raw_access_text": "都営地下鉄浅草線五反田駅A2出口から徒歩約3分、JR五反田駅西口から徒歩約5分"
+      },
+      "amenities": {
+        "バス": [
+          "ジェットバス",
+          "ブロアバス"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV",
+          "ビデオ・オン・デマンド"
+        ],
+        "アミューズメント": [
+          "有線放送",
+          "無料Wi-Fi(無線LAN)"
+        ],
+        "お部屋": [
+          "同性利用可(女性)",
+          "同性利用可(男性)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫",
+          "シャワートイレ",
+          "くるくるドライヤー(レンタル)",
+          "ヘアアイロン(レンタル)",
+          "バスローブ",
+          "男性化粧品",
+          "女性化粧品",
+          "各種シャンプー(レンタル)",
+          "アメニティ豊富",
+          "携帯電話充電器(レンタル)",
+          "Androidスマホ充電器(レンタル)",
+          "iPhone充電器(レンタル)"
+        ]
+      },
+      "review": {
+        "score": "4.0",
+        "count": 2
+      },
+      "vacancy": {
+        "details": [
+          {
+            "plan_name": "【当日限定】日～木 宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Aランク",
+            "stock_text": "あと6室",
+            "stock_count": 6,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "【当日限定】日～木 宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Bランク",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,000"
+          },
+          {
+            "plan_name": "【当日限定】日～木 宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Cランク",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥15,000"
+          }
+        ],
+        "max_stock": 6,
+        "has_vacancy": true
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/25901084",
+      "id": 25901084,
+      "name": "The CALM Hotel Tokyo",
+      "address": "東京都品川区東五反田1-23-1",
+      "prices": [
+        {
+          "name": "休憩1",
+          "priceInfo": [
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥3,300～￥3,800",
+                  "timeZone": "5:00～18:00の間で最大 1時間10分ご利用"
+                },
+                {
+                  "price": "￥3,800～￥4,300",
+                  "timeZone": "18:00～翌 4:59の間で最大 1時間10分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・日・祝・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥3,800～￥4,300",
+                  "timeZone": "5:00～翌 4:59の間で最大 1時間10分ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
+        },
+        {
+          "name": "休憩2",
+          "priceInfo": [
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥3,800～￥5,800",
+                  "timeZone": "5:00～18:00の間で最大 1時間30分ご利用"
+                },
+                {
+                  "price": "￥4,300～￥6,300",
+                  "timeZone": "18:00～翌 4:59の間で最大 1時間30分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・日・祝・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥6,300",
+                  "timeZone": "5:00～翌 4:59の間で最大 1時間30分ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
+        },
+        {
+          "name": "休憩3",
+          "priceInfo": [
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥4,200～￥6,400",
+                  "timeZone": "5:00～18:00の間で最大 2時間ご利用"
+                },
+                {
+                  "price": "￥4,700～￥6,900",
+                  "timeZone": "18:00～翌 4:59の間で最大 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・日・祝・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥4,700～￥6,900",
+                  "timeZone": "5:00～翌 4:59の間で最大 2時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
+        },
+        {
+          "name": "休憩4",
+          "priceInfo": [
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥6,400～￥8,400",
+                  "timeZone": "5:00～18:00の間で最大 3時間ご利用"
+                },
+                {
+                  "price": "￥6,900～￥8,900",
+                  "timeZone": "18:00～翌 4:59の間で最大 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・日・祝・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥6,900～￥8,900",
+                  "timeZone": "5:00～翌 4:59の間で最大 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
+        },
+        {
+          "name": "フリータイム1部",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥8,400～￥11,400",
+                  "timeZone": "5:00～17:00の間で最大 12時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土】",
+              "timePrice": [
+                {
+                  "price": "￥8,900～￥13,500",
+                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥8,900～￥13,500",
+                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊1部",
+          "priceInfo": [
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥8,300～￥11,400",
+                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥9,800～￥13,500",
+                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥8,300～￥11,400",
+                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊2部",
+          "priceInfo": [
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥8,300～￥11,400",
+                  "timeZone": "1:00～13:00の間で最大 12時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥9,800～￥13,500",
+                  "timeZone": "1:00～13:00の間で最大 12時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n※年末年始など、時期によって特別料金になる場合がございます。あらかじめご了承下さい。\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 101,
+          "room_name": "101",
+          "type_name": "コンパクトタイプ",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r101.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 102,
+          "room_name": "102",
+          "type_name": "コンパクトタイプ",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r102.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 201,
+          "room_name": "201",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r201.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 202,
+          "room_name": "202",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r202.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 203,
+          "room_name": "203",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r203.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 301,
+          "room_name": "301",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r301.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 302,
+          "room_name": "302",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 303,
+          "room_name": "303",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r303.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 401,
+          "room_name": "401",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r401.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 402,
+          "room_name": "402",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r402.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 403,
+          "room_name": "403",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r403.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 501,
+          "room_name": "501",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r501.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 502,
+          "room_name": "502",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r502.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 503,
+          "room_name": "503",
+          "type_name": "スタンダードタイプ",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r503.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 204,
+          "room_name": "204",
+          "type_name": "デラックスタイプ",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r204.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 304,
+          "room_name": "304",
+          "type_name": "デラックスタイプ",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r304.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 404,
+          "room_name": "404",
+          "type_name": "デラックスタイプ",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r404.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 504,
+          "room_name": "504",
+          "type_name": "デラックスタイプ",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r504.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 1,
+          "room_name": "B01",
+          "type_name": "プレミアムタイプ",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r001.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 2,
+          "room_name": "B02",
+          "type_name": "プレミアムタイプ",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r002.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "五反田駅",
+            "walk_min": 4
+          }
+        ],
+        "latitude": "35.626545",
+        "longitude": "139.726916",
+        "map_url": "https://www.google.com/maps?q=35.626545,139.726916",
+        "raw_access_text": "jr山手線「五反田駅」東口より徒歩4分\n\n都営浅草線「五反田駅」a5/a6出口より徒歩3分\n\n東急池上線「五反田駅」より徒歩4分\n池袋、新宿、渋谷、品川からもjr山手線で1本です。"
+      },
+      "amenities": {
+        "バス": [
+          "浴室TV(一部)"
+        ],
+        "テレビ": [
+          "ビデオ・オン・デマンド",
+          "ブルーレイプレーヤー"
+        ],
+        "アミューズメント": [
+          "客室インターネット",
+          "無料Wi-Fi(無線LAN)"
+        ],
+        "お部屋": [
+          "禁煙ルーム(一部)",
+          "同性利用可(女性)",
+          "同性利用可(男性)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "空気清浄機",
+          "加湿器(レンタル)",
+          "シャワートイレ",
+          "くるくるドライヤー(レンタル)",
+          "ヘアアイロン",
+          "美顔器(レンタル)",
+          "ハンドマッサージャー",
+          "バスローブ",
+          "ルームウェア",
+          "男性化粧品",
+          "女性化粧品",
+          "各種シャンプー",
+          "アメニティ豊富",
+          "コスチューム(レンタル)",
+          "携帯電話充電器",
+          "Androidスマホ充電器",
+          "iPhone充電器"
+        ]
+      },
+      "review": {
+        "score": "4.8",
+        "count": 29
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/25901172",
       "id": 25901172,
       "name": "ホテル バリバリANNEX 五反田",
       "address": "東京都品川区東五反田1-17-1",
@@ -1208,6 +1847,387 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/540227",
+      "id": 540227,
+      "name": "HOTEL B-SIDE",
+      "address": "東京都品川区西五反田1-11-4",
+      "prices": [
+        {
+          "name": "ショートタイム",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥4,800～￥6,200",
+                  "timeZone": "5:00～20:00の間で最大 2時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "休憩",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,100",
+                  "timeZone": "5:00～翌 1:00の間で最大 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム1部",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,100",
+                  "timeZone": "5:00～17:00の間で最大 12時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,100",
+                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム2部",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,100",
+                  "timeZone": "12:00～20:00の間で最大 8時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,100",
+                  "timeZone": "12:00～18:00の間で最大 6時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,100",
+                  "timeZone": "12:00～22:00の間で最大 10時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊 1部",
+          "priceInfo": [
+            {
+              "week": "【月～土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥9,800～￥16,300",
+                  "timeZone": "19:00～翌 12:00の間で最大 17時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥9,800～￥16,300",
+                  "timeZone": "16:00～翌 12:00の間で最大 20時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊 2部",
+          "priceInfo": [
+            {
+              "week": "【月～木・日・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥9,800～￥16,300",
+                  "timeZone": "1:00～14:00の間で最大 13時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 202,
+          "room_name": "202",
+          "type_name": "ランク1",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r202.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 203,
+          "room_name": "203",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r203.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 302,
+          "room_name": "302",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 305,
+          "room_name": "305",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r305.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 306,
+          "room_name": "306",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r306.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 201,
+          "room_name": "201",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r201.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 402,
+          "room_name": "402",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r402.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 405,
+          "room_name": "405",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r405.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 505,
+          "room_name": "505",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r505.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 301,
+          "room_name": "301",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r301.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 406,
+          "room_name": "406",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r406.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 502,
+          "room_name": "502",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r502.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 506,
+          "room_name": "506",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r506.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 601,
+          "room_name": "601",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r601.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 303,
+          "room_name": "303",
+          "type_name": "ランク5",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r303.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 401,
+          "room_name": "401",
+          "type_name": "ランク5",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r401.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 501,
+          "room_name": "501",
+          "type_name": "ランク5",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r501.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 602,
+          "room_name": "602",
+          "type_name": "ランク5",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r602.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 403,
+          "room_name": "403",
+          "type_name": "ランク6",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r403.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 503,
+          "room_name": "503",
+          "type_name": "ランク6",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r503.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 603,
+          "room_name": "603",
+          "type_name": "ランク7",
+          "rank_id": 7,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r603.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 605,
+          "room_name": "605",
+          "type_name": "ランク7",
+          "rank_id": 7,
+          "image": "https://happyhotel.jp/hotenavi/b-side/image/r605.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "五反田駅",
+            "walk_min": 3
+          }
+        ],
+        "latitude": "35.624306",
+        "longitude": "139.723541",
+        "map_url": "https://www.google.com/maps?q=35.624306,139.723541",
+        "raw_access_text": "JR五反田駅または東急池上線五反田駅より徒歩3分"
+      },
+      "amenities": {
+        "バス": [
+          "レインボーバス",
+          "ジェットバス",
+          "ブロアバス",
+          "温泉",
+          "浴室TV",
+          "マット(一部)",
+          "マッサージローション"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV",
+          "大画面テレビ50インチ以上(一部)",
+          "ビデオ・オン・デマンド"
+        ],
+        "アミューズメント": [
+          "玩具(販売)",
+          "通信カラオケ(一部)",
+          "有線放送",
+          "無料Wi-Fi(無線LAN)"
+        ],
+        "お部屋": [
+          "和室(一部)",
+          "ブラックライト",
+          "同性利用可(女性)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫",
+          "コンビニBOX",
+          "空気清浄機",
+          "加湿器",
+          "シャワートイレ",
+          "くるくるドライヤー",
+          "ヘアアイロン(レンタル)",
+          "ハンドマッサージャー",
+          "バスローブ",
+          "女性化粧品",
+          "各種シャンプー(レンタル)",
+          "アメニティ豊富",
+          "コスチューム(販売)",
+          "携帯電話充電器",
+          "Androidスマホ充電器",
+          "iPhone充電器"
+        ]
+      },
+      "review": {
+        "score": "4.3",
+        "count": 10
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/25901189",
       "id": 25901189,
       "name": "HOTEL ZHIPAGO",
       "address": "東京都品川区東五反田1-20-5",
@@ -1674,832 +2694,36 @@
       }
     },
     {
-      "id": 25901084,
-      "name": "The CALM Hotel Tokyo",
-      "address": "東京都品川区東五反田1-23-1",
+      "url": "https://happyhotel.jp/hotels/25901039",
+      "id": 25901039,
+      "name": "ホテル バリバリ 五反田",
+      "address": "東京都品川区西五反田2-5-10",
       "prices": [
-        {
-          "name": "休憩1",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥3,300～￥3,800",
-                  "timeZone": "5:00～18:00の間で最大 1時間10分ご利用"
-                },
-                {
-                  "price": "￥3,800～￥4,300",
-                  "timeZone": "18:00～翌 4:59の間で最大 1時間10分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥3,800～￥4,300",
-                  "timeZone": "5:00～翌 4:59の間で最大 1時間10分ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
-        },
-        {
-          "name": "休憩2",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥3,800～￥5,800",
-                  "timeZone": "5:00～18:00の間で最大 1時間30分ご利用"
-                },
-                {
-                  "price": "￥4,300～￥6,300",
-                  "timeZone": "18:00～翌 4:59の間で最大 1時間30分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥6,300",
-                  "timeZone": "5:00～翌 4:59の間で最大 1時間30分ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
-        },
-        {
-          "name": "休憩3",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥4,200～￥6,400",
-                  "timeZone": "5:00～18:00の間で最大 2時間ご利用"
-                },
-                {
-                  "price": "￥4,700～￥6,900",
-                  "timeZone": "18:00～翌 4:59の間で最大 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥4,700～￥6,900",
-                  "timeZone": "5:00～翌 4:59の間で最大 2時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
-        },
-        {
-          "name": "休憩4",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥6,400～￥8,400",
-                  "timeZone": "5:00～18:00の間で最大 3時間ご利用"
-                },
-                {
-                  "price": "￥6,900～￥8,900",
-                  "timeZone": "18:00～翌 4:59の間で最大 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥6,900～￥8,900",
-                  "timeZone": "5:00～翌 4:59の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\nコンパクトタイプ⇒シャワーブースですがリーズナブルにご利用頂けます☆\nスタンダードタイプ⇒当館が自慢する居心地の良さと機能性を重視したモダン空間♪\nデラックスタイプ⇒デザイン性の高い洗練されたムードが満載のちょっとお披露目のお部屋&#9825;\nプレミアムタイプ⇒ラグジュアリーな一番お広めの禁煙部屋となっております☆彡\n"
-        },
-        {
-          "name": "フリータイム1部",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥8,400～￥11,400",
-                  "timeZone": "5:00～17:00の間で最大 12時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土】",
-              "timePrice": [
-                {
-                  "price": "￥8,900～￥13,500",
-                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥8,900～￥13,500",
-                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊1部",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥8,300～￥11,400",
-                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥9,800～￥13,500",
-                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥8,300～￥11,400",
-                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊2部",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥8,300～￥11,400",
-                  "timeZone": "1:00～13:00の間で最大 12時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥9,800～￥13,500",
-                  "timeZone": "1:00～13:00の間で最大 12時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n※年末年始など、時期によって特別料金になる場合がございます。あらかじめご了承下さい。\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 101,
-          "room_name": "101",
-          "type_name": "コンパクトタイプ",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r101.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 102,
-          "room_name": "102",
-          "type_name": "コンパクトタイプ",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r102.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 201,
-          "room_name": "201",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r201.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 202,
-          "room_name": "202",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r202.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 203,
-          "room_name": "203",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r203.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 301,
-          "room_name": "301",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r301.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 303,
-          "room_name": "303",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r303.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 401,
-          "room_name": "401",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r401.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 402,
-          "room_name": "402",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r402.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 403,
-          "room_name": "403",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r403.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 501,
-          "room_name": "501",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r501.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 502,
-          "room_name": "502",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r502.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 503,
-          "room_name": "503",
-          "type_name": "スタンダードタイプ",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r503.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 204,
-          "room_name": "204",
-          "type_name": "デラックスタイプ",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r204.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 304,
-          "room_name": "304",
-          "type_name": "デラックスタイプ",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r304.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 404,
-          "room_name": "404",
-          "type_name": "デラックスタイプ",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r404.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 504,
-          "room_name": "504",
-          "type_name": "デラックスタイプ",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r504.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 1,
-          "room_name": "B01",
-          "type_name": "プレミアムタイプ",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r001.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 2,
-          "room_name": "B02",
-          "type_name": "プレミアムタイプ",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/the-calm/image/r002.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "五反田駅",
-            "walk_min": 4
-          }
-        ],
-        "latitude": "35.626545",
-        "longitude": "139.726916",
-        "map_url": "https://www.google.com/maps?q=35.626545,139.726916",
-        "raw_access_text": "jr山手線「五反田駅」東口より徒歩4分\n\n都営浅草線「五反田駅」a5/a6出口より徒歩3分\n\n東急池上線「五反田駅」より徒歩4分\n池袋、新宿、渋谷、品川からもjr山手線で1本です。"
-      },
-      "amenities": {
-        "バス": [
-          "浴室TV(一部)"
-        ],
-        "テレビ": [
-          "ビデオ・オン・デマンド",
-          "ブルーレイプレーヤー"
-        ],
-        "アミューズメント": [
-          "客室インターネット",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "お部屋": [
-          "禁煙ルーム(一部)",
-          "同性利用可(女性)",
-          "同性利用可(男性)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "空気清浄機",
-          "加湿器(レンタル)",
-          "シャワートイレ",
-          "くるくるドライヤー(レンタル)",
-          "ヘアアイロン",
-          "美顔器(レンタル)",
-          "ハンドマッサージャー",
-          "バスローブ",
-          "ルームウェア",
-          "男性化粧品",
-          "女性化粧品",
-          "各種シャンプー",
-          "アメニティ豊富",
-          "コスチューム(レンタル)",
-          "携帯電話充電器",
-          "Androidスマホ充電器",
-          "iPhone充電器"
-        ]
-      },
-      "review": {
-        "score": "4.8",
-        "count": 29
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
-      "id": 540227,
-      "name": "HOTEL B-SIDE",
-      "address": "東京都品川区西五反田1-11-4",
-      "prices": [
-        {
-          "name": "ショートタイム",
-          "priceInfo": [
-            {
-              "week": "【全日】",
-              "timePrice": [
-                {
-                  "price": "￥4,800～￥6,200",
-                  "timeZone": "5:00～20:00の間で最大 2時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
         {
           "name": "休憩",
           "priceInfo": [
             {
-              "week": "【全日】",
+              "week": "【月～木】",
               "timePrice": [
                 {
-                  "price": "￥7,000～￥11,100",
-                  "timeZone": "5:00～翌 1:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム1部",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,100",
-                  "timeZone": "5:00～17:00の間で最大 12時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,100",
-                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム2部",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,100",
-                  "timeZone": "12:00～20:00の間で最大 8時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,100",
-                  "timeZone": "12:00～18:00の間で最大 6時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,100",
-                  "timeZone": "12:00～22:00の間で最大 10時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊 1部",
-          "priceInfo": [
-            {
-              "week": "【月～土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥9,800～￥16,300",
-                  "timeZone": "19:00～翌 12:00の間で最大 17時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥9,800～￥16,300",
-                  "timeZone": "16:00～翌 12:00の間で最大 20時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊 2部",
-          "priceInfo": [
-            {
-              "week": "【月～木・日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥9,800～￥16,300",
-                  "timeZone": "1:00～14:00の間で最大 13時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 202,
-          "room_name": "202",
-          "type_name": "ランク1",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r202.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 203,
-          "room_name": "203",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r203.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 305,
-          "room_name": "305",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r305.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 306,
-          "room_name": "306",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r306.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 201,
-          "room_name": "201",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r201.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 402,
-          "room_name": "402",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r402.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 405,
-          "room_name": "405",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r405.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 505,
-          "room_name": "505",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r505.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 301,
-          "room_name": "301",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r301.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 406,
-          "room_name": "406",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r406.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 502,
-          "room_name": "502",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r502.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 506,
-          "room_name": "506",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r506.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 601,
-          "room_name": "601",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r601.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 303,
-          "room_name": "303",
-          "type_name": "ランク5",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r303.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 401,
-          "room_name": "401",
-          "type_name": "ランク5",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r401.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 501,
-          "room_name": "501",
-          "type_name": "ランク5",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r501.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 602,
-          "room_name": "602",
-          "type_name": "ランク5",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r602.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 403,
-          "room_name": "403",
-          "type_name": "ランク6",
-          "rank_id": 6,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r403.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 503,
-          "room_name": "503",
-          "type_name": "ランク6",
-          "rank_id": 6,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r503.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 603,
-          "room_name": "603",
-          "type_name": "ランク7",
-          "rank_id": 7,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r603.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 605,
-          "room_name": "605",
-          "type_name": "ランク7",
-          "rank_id": 7,
-          "image": "https://happyhotel.jp/hotenavi/b-side/image/r605.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "五反田駅",
-            "walk_min": 3
-          }
-        ],
-        "latitude": "35.624306",
-        "longitude": "139.723541",
-        "map_url": "https://www.google.com/maps?q=35.624306,139.723541",
-        "raw_access_text": "JR五反田駅または東急池上線五反田駅より徒歩3分"
-      },
-      "amenities": {
-        "バス": [
-          "レインボーバス",
-          "ジェットバス",
-          "ブロアバス",
-          "温泉",
-          "浴室TV",
-          "マット(一部)",
-          "マッサージローション"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV",
-          "大画面テレビ50インチ以上(一部)",
-          "ビデオ・オン・デマンド"
-        ],
-        "アミューズメント": [
-          "玩具(販売)",
-          "通信カラオケ(一部)",
-          "有線放送",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "お部屋": [
-          "和室(一部)",
-          "ブラックライト",
-          "同性利用可(女性)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "コンビニBOX",
-          "空気清浄機",
-          "加湿器",
-          "シャワートイレ",
-          "くるくるドライヤー",
-          "ヘアアイロン(レンタル)",
-          "ハンドマッサージャー",
-          "バスローブ",
-          "女性化粧品",
-          "各種シャンプー(レンタル)",
-          "アメニティ豊富",
-          "コスチューム(販売)",
-          "携帯電話充電器",
-          "Androidスマホ充電器",
-          "iPhone充電器"
-        ]
-      },
-      "review": {
-        "score": "4.3",
-        "count": 10
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
-      "id": 543794,
-      "name": "ホテル エメラルド 五反田",
-      "address": "東京都品川区西五反田2-16-10",
-      "prices": [
-        {
-          "name": "ショートステイ",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥3,200～",
-                  "timeZone": "5:00～翌 3:59チェックインより 1時間10分ご利用"
+                  "price": "￥3,700～",
+                  "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
                 },
                 {
                   "price": "￥4,100～",
+                  "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
+                },
+                {
+                  "price": "￥6,400～",
+                  "timeZone": "5:00～翌 3:59チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥4,000～",
                   "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
                 },
                 {
@@ -2507,44 +2731,8 @@
                   "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
                 },
                 {
-                  "price": "￥6,500～",
-                  "timeZone": "21:00～翌 3:59チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥3,500～",
-                  "timeZone": "5:00～翌 3:59チェックインより 1時間10分ご利用"
-                },
-                {
-                  "price": "￥4,400～",
-                  "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
-                },
-                {
-                  "price": "￥4,800～",
-                  "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
-                },
-                {
                   "price": "￥6,900～",
-                  "timeZone": "21:00～翌 3:59チェックインより 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "フリータイム",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥4,900～",
-                  "timeZone": "5:00～13:00の間で最大 8時間ご利用"
+                  "timeZone": "5:00～翌 3:59チェックインより 3時間ご利用"
                 }
               ]
             }
@@ -2555,15 +2743,11 @@
           "name": "宿泊",
           "priceInfo": [
             {
-              "week": "【日～木】",
+              "week": "【日～木・祝】",
               "timePrice": [
                 {
-                  "price": "￥7,800～",
-                  "timeZone": "21:00～翌 10:00の間で最大 13時間ご利用"
-                },
-                {
-                  "price": "￥5,700～",
-                  "timeZone": "2:00～11:00の間で最大 9時間ご利用"
+                  "price": "￥7,900～",
+                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
                 }
               ]
             },
@@ -2571,8 +2755,8 @@
               "week": "【金・土・祝前】",
               "timePrice": [
                 {
-                  "price": "￥9,500～",
-                  "timeZone": "22:00～翌 10:00の間で最大 12時間ご利用"
+                  "price": "￥9,800～",
+                  "timeZone": "23:00～翌 11:00の間で最大 12時間ご利用"
                 }
               ]
             }
@@ -2582,27 +2766,123 @@
       ],
       "rooms": [
         {
-          "room_no": 501,
-          "room_name": "501",
-          "type_name": "Aランク",
+          "room_no": 101,
+          "room_name": "101",
+          "type_name": "Atype",
           "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/emerald/image/r501.jpg",
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r101.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 701,
+          "room_name": "701",
+          "type_name": "Btype",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r701.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 802,
+          "room_name": "802",
+          "type_name": "Btype",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r802.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 201,
+          "room_name": "201",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r201.jpg",
           "keep_flag": 0
         },
         {
           "room_no": 202,
           "room_name": "202",
-          "type_name": "Bランク",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/emerald/image/r202.jpg",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r202.jpg",
           "keep_flag": 0
         },
         {
-          "room_no": 101,
-          "room_name": "101",
-          "type_name": "Cランク",
+          "room_no": 301,
+          "room_name": "301",
+          "type_name": "Ctype",
           "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/emerald/image/r101.jpg",
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r301.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 302,
+          "room_name": "302",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 401,
+          "room_name": "401",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r401.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 402,
+          "room_name": "402",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r402.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 501,
+          "room_name": "501",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r501.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 502,
+          "room_name": "502",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r502.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 601,
+          "room_name": "601",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r601.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 602,
+          "room_name": "602",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r602.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 702,
+          "room_name": "702",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r702.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 801,
+          "room_name": "801",
+          "type_name": "Ctype",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/balibali/image/r801.jpg",
           "keep_flag": 0
         }
       ],
@@ -2610,42 +2890,45 @@
         "stations": [
           {
             "station": "五反田駅",
-            "walk_min": 5
+            "walk_min": 2
           }
         ],
-        "latitude": "35.626232",
-        "longitude": "139.720792",
-        "map_url": "https://www.google.com/maps?q=35.626232,139.720792",
-        "raw_access_text": "都営地下鉄浅草線五反田駅A2出口から徒歩約3分、JR五反田駅西口から徒歩約5分"
+        "latitude": "35.6269459",
+        "longitude": "139.722291",
+        "map_url": "https://www.google.com/maps?q=35.6269459,139.722291",
+        "raw_access_text": "都営地下鉄浅草線五反田駅A2出口から徒歩約2分、JR五反田駅西口から徒歩約3分"
       },
       "amenities": {
         "バス": [
+          "レインボーバス",
           "ジェットバス",
-          "ブロアバス"
+          "ブロアバス",
+          "浴室TV"
         ],
         "テレビ": [
-          "42インチ以上大型TV",
-          "ビデオ・オン・デマンド"
+          "ビデオ・オン・デマンド",
+          "持込用DVDデッキ",
+          "ブルーレイプレーヤー"
         ],
         "アミューズメント": [
           "有線放送",
           "無料Wi-Fi(無線LAN)"
         ],
         "お部屋": [
-          "同性利用可(女性)",
-          "同性利用可(男性)"
+          "同性利用可(女性)"
         ],
         "設備": [
           "電子レンジ",
           "電気ポット",
           "持込用冷蔵庫",
+          "空気清浄機",
           "シャワートイレ",
           "くるくるドライヤー(レンタル)",
-          "ヘアアイロン(レンタル)",
-          "バスローブ",
+          "ヘアアイロン",
+          "ルームウェア",
           "男性化粧品",
           "女性化粧品",
-          "各種シャンプー(レンタル)",
+          "各種シャンプー",
           "アメニティ豊富",
           "携帯電話充電器(レンタル)",
           "Androidスマホ充電器(レンタル)",
@@ -2653,41 +2936,26 @@
         ]
       },
       "review": {
-        "score": "4.0",
-        "count": 2
+        "score": "4.5",
+        "count": 4
       },
       "vacancy": {
         "details": [
           {
-            "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
+            "plan_name": "【当日限定】お得な素泊まりプラン！【金・土・祝前】",
             "plan_type": "宿泊",
-            "room_rank_name": "Aランク",
-            "stock_text": "あと3室",
-            "stock_count": 3,
-            "charge_text": "￥12,000"
-          },
-          {
-            "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
-            "plan_type": "宿泊",
-            "room_rank_name": "Bランク",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥15,000"
-          },
-          {
-            "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
-            "plan_type": "宿泊",
-            "room_rank_name": "Cランク",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥17,000"
+            "room_rank_name": "Ctype",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥17,800"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 2,
         "has_vacancy": true
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/25900976",
       "id": 25900976,
       "name": "HOTEL PEACE",
       "address": "東京都品川区西五反田2-5-2",
@@ -3075,266 +3343,7 @@
       }
     },
     {
-      "id": 25901039,
-      "name": "ホテル バリバリ 五反田",
-      "address": "東京都品川区西五反田2-5-10",
-      "prices": [
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥3,700～",
-                  "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
-                },
-                {
-                  "price": "￥4,100～",
-                  "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
-                },
-                {
-                  "price": "￥6,400～",
-                  "timeZone": "5:00～翌 3:59チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥4,000～",
-                  "timeZone": "5:00～翌 3:59チェックインより 1時間30分ご利用"
-                },
-                {
-                  "price": "￥4,500～",
-                  "timeZone": "5:00～翌 3:59チェックインより 2時間ご利用"
-                },
-                {
-                  "price": "￥6,900～",
-                  "timeZone": "5:00～翌 3:59チェックインより 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【日～木・祝】",
-              "timePrice": [
-                {
-                  "price": "￥7,900～",
-                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥9,800～",
-                  "timeZone": "23:00～翌 11:00の間で最大 12時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 101,
-          "room_name": "101",
-          "type_name": "Atype",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r101.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 701,
-          "room_name": "701",
-          "type_name": "Btype",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r701.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 802,
-          "room_name": "802",
-          "type_name": "Btype",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r802.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 201,
-          "room_name": "201",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r201.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 202,
-          "room_name": "202",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r202.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 301,
-          "room_name": "301",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r301.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 401,
-          "room_name": "401",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r401.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 402,
-          "room_name": "402",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r402.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 501,
-          "room_name": "501",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r501.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 502,
-          "room_name": "502",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r502.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 601,
-          "room_name": "601",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r601.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 602,
-          "room_name": "602",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r602.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 702,
-          "room_name": "702",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r702.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 801,
-          "room_name": "801",
-          "type_name": "Ctype",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/balibali/image/r801.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "五反田駅",
-            "walk_min": 2
-          }
-        ],
-        "latitude": "35.6269459",
-        "longitude": "139.722291",
-        "map_url": "https://www.google.com/maps?q=35.6269459,139.722291",
-        "raw_access_text": "都営地下鉄浅草線五反田駅A2出口から徒歩約2分、JR五反田駅西口から徒歩約3分"
-      },
-      "amenities": {
-        "バス": [
-          "レインボーバス",
-          "ジェットバス",
-          "ブロアバス",
-          "浴室TV"
-        ],
-        "テレビ": [
-          "ビデオ・オン・デマンド",
-          "持込用DVDデッキ",
-          "ブルーレイプレーヤー"
-        ],
-        "アミューズメント": [
-          "有線放送",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "お部屋": [
-          "同性利用可(女性)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "空気清浄機",
-          "シャワートイレ",
-          "くるくるドライヤー(レンタル)",
-          "ヘアアイロン",
-          "ルームウェア",
-          "男性化粧品",
-          "女性化粧品",
-          "各種シャンプー",
-          "アメニティ豊富",
-          "携帯電話充電器(レンタル)",
-          "Androidスマホ充電器(レンタル)",
-          "iPhone充電器(レンタル)"
-        ]
-      },
-      "review": {
-        "score": "4.5",
-        "count": 4
-      },
-      "vacancy": {
-        "details": [
-          {
-            "plan_name": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
-            "plan_type": "宿泊",
-            "room_rank_name": "Ctype",
-            "stock_text": "あと2室",
-            "stock_count": 2,
-            "charge_text": "￥13,000"
-          }
-        ],
-        "max_stock": 2,
-        "has_vacancy": true
-      }
-    },
-    {
+      "url": "https://happyhotel.jp/hotels/540230",
       "id": 540230,
       "name": "SARA五反田",
       "address": "東京都品川区東五反田1-17-3",
@@ -3805,6 +3814,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/540229",
       "id": 540229,
       "name": "HOTEL W1",
       "address": "東京都品川区西五反田2-16-2",
@@ -3939,6 +3949,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/25900520",
       "id": 25900520,
       "name": "DESIGN HOTEL NOX",
       "address": "東京都品川区西五反田2-3-9",
@@ -4341,6 +4352,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/25900977",
       "id": 25900977,
       "name": "HOTEL BIX",
       "address": "東京都品川区東五反田1-16-4",
@@ -4903,6 +4915,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/540232",
       "id": 540232,
       "name": "HOTEL LiosIII",
       "address": "東京都品川区東五反田1-19-11",
@@ -5215,6 +5228,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/541490",
       "id": 541490,
       "name": "ホテル ウエスト",
       "address": "東京都品川区西五反田2-4-10",
@@ -5618,323 +5632,7 @@
       }
     },
     {
-      "id": 540228,
-      "name": "Hotel Pualani（プアラニ）旧リオス五反田",
-      "address": "東京都品川区西五反田1-13-8",
-      "prices": [
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【全日】",
-              "timePrice": [
-                {
-                  "price": "￥5,600～￥8,500",
-                  "timeZone": "5:00～翌 1:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥5,600～￥8,500",
-                  "timeZone": "5:00～16:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥5,600～￥8,500",
-                  "timeZone": "13:00～19:00の間で最大 6時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥5,600～￥8,500",
-                  "timeZone": "5:00～16:00の間で最大 11時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【日～木・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥10,000～￥14,000",
-                  "timeZone": "20:00～翌 12:00の間で最大 16時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥10,000～￥14,000",
-                  "timeZone": "20:00～翌 10:00の間で最大 14時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\nご延長料金は３０分１，５００円です。\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 101,
-          "room_name": "101",
-          "type_name": "ランク1",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r101.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 102,
-          "room_name": "102",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r102.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 202,
-          "room_name": "202",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r202.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 203,
-          "room_name": "203",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r203.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 205,
-          "room_name": "205",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r205.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 206,
-          "room_name": "206",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r206.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 303,
-          "room_name": "303",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r303.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 305,
-          "room_name": "305",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r305.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 403,
-          "room_name": "403",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r403.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 406,
-          "room_name": "406",
-          "type_name": "ランク2",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r406.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 201,
-          "room_name": "201",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r201.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 207,
-          "room_name": "207",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r207.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 301,
-          "room_name": "301",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r301.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 306,
-          "room_name": "306",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r306.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 307,
-          "room_name": "307",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r307.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 401,
-          "room_name": "401",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r401.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 407,
-          "room_name": "407",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r407.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 501,
-          "room_name": "501",
-          "type_name": "ランク3",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r501.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 405,
-          "room_name": "405",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r405.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 502,
-          "room_name": "502",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r502.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 503,
-          "room_name": "503",
-          "type_name": "ランク5",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r503.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "大崎広小路駅",
-            "walk_min": 2
-          }
-        ],
-        "latitude": "35.624199",
-        "longitude": "139.72395",
-        "map_url": "https://www.google.com/maps?q=35.624199,139.72395",
-        "raw_access_text": "五反田駅西口から徒歩2分。\n\n山手線を利用することで隣接の目黒、大崎、恵比寿、渋谷など、タクシー利用なら品川、白金台、高輪台、東急線周辺の荏原、戸越、千束、旗の台、大岡山、雪が谷大塚、池上、久が原、蒲田、大森海岸からもアクセスも◎\nJR山手線、東急池上線、都営浅草線沿線の方もご利用ください。"
-      },
-      "amenities": {
-        "バス": [
-          "レインボーバス",
-          "ジェットバス",
-          "ブロアバス",
-          "浴室TV(一部)"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV(一部)",
-          "大画面テレビ50インチ以上(一部)",
-          "ビデオ・オン・デマンド",
-          "ブルーレイプレーヤー(レンタル)"
-        ],
-        "アミューズメント": [
-          "マッサージチェア(一部)",
-          "客室インターネット",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "お部屋": [
-          "同性利用可(女性)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "空気清浄機(一部)",
-          "加湿器(レンタル)",
-          "シャワートイレ",
-          "ヘアアイロン",
-          "ハンドマッサージャー",
-          "バスローブ",
-          "女性化粧品",
-          "各種シャンプー",
-          "アメニティ豊富",
-          "コスチューム(レンタル)",
-          "Androidスマホ充電器(レンタル)",
-          "iPhone充電器(レンタル)"
-        ]
-      },
-      "review": {
-        "score": "4.2",
-        "count": 14
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
+      "url": "https://happyhotel.jp/hotels/25900889",
       "id": 25900889,
       "name": "HOTEL LUXE SHINAGAWA",
       "address": "東京都品川区西五反田2-5-5",
@@ -6220,727 +5918,7 @@
       }
     },
     {
-      "id": 540231,
-      "name": "ホテル イーアイ五反田",
-      "address": "東京都品川区東五反田1-18-12",
-      "prices": [
-        {
-          "name": "60分休憩",
-          "priceInfo": [
-            {
-              "week": "【全日1部】",
-              "timePrice": [
-                {
-                  "price": "￥2,500～￥4,000",
-                  "timeZone": "5:00～18:00チェックインより 1時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【全日2部】",
-              "timePrice": [
-                {
-                  "price": "￥2,700～￥4,200",
-                  "timeZone": "18:00～翌 2:00チェックインより 1時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
-        },
-        {
-          "name": "90分休憩",
-          "priceInfo": [
-            {
-              "week": "【月～木曜日1部】",
-              "timePrice": [
-                {
-                  "price": "￥3,400～￥5,100",
-                  "timeZone": "5:00～18:00チェックインより 1時間30分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【月～木曜日2部】",
-              "timePrice": [
-                {
-                  "price": "￥4,100～￥5,800",
-                  "timeZone": "18:00～翌 1:30チェックインより 1時間30分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・祝前日1部】",
-              "timePrice": [
-                {
-                  "price": "￥3,400～￥5,100",
-                  "timeZone": "5:00～18:00チェックインより 1時間30分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・祝前日2部】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥5,800",
-                  "timeZone": "18:00～翌 1:30チェックインより 1時間30分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土曜日・連休中日】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥5,800",
-                  "timeZone": "5:00～翌 1:30チェックインより 1時間30分ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日曜日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥5,800",
-                  "timeZone": "5:00～翌 1:30チェックインより 1時間30分ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
-        },
-        {
-          "name": "2時間休憩",
-          "priceInfo": [
-            {
-              "week": "【月～木曜日1部】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥7,000",
-                  "timeZone": "5:00～18:00チェックインより 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【月～木曜日2部】",
-              "timePrice": [
-                {
-                  "price": "￥4,500～￥7,700",
-                  "timeZone": "18:00～翌 1:00チェックインより 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・祝前日1部】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥7,000",
-                  "timeZone": "5:00～18:00チェックインより 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・祝前日2部】",
-              "timePrice": [
-                {
-                  "price": "￥5,100～￥7,800",
-                  "timeZone": "18:00～翌 1:00チェックインより 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土曜日・連休中日】",
-              "timePrice": [
-                {
-                  "price": "￥5,100～￥7,700",
-                  "timeZone": "5:00～翌 1:00チェックインより 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日曜日・祝日】",
-              "timePrice": [
-                {
-                  "price": "￥5,100～￥7,700",
-                  "timeZone": "5:00～翌 1:00チェックインより 2時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
-        },
-        {
-          "name": "3時間休憩",
-          "priceInfo": [
-            {
-              "week": "【月～木曜日1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,400～￥9,700",
-                  "timeZone": "5:00～18:00チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【月～木曜日2部】",
-              "timePrice": [
-                {
-                  "price": "￥7,900～￥10,500",
-                  "timeZone": "18:00～24:00チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・祝前日1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,400～￥9,700",
-                  "timeZone": "5:00～18:00チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・祝前日2部】",
-              "timePrice": [
-                {
-                  "price": "￥8,200～￥10,500",
-                  "timeZone": "18:00～24:00チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土曜日・連休中日】",
-              "timePrice": [
-                {
-                  "price": "￥8,200～￥10,500",
-                  "timeZone": "5:00～24:00チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日曜日・祝日1部】",
-              "timePrice": [
-                {
-                  "price": "￥8,200～￥10,500",
-                  "timeZone": "5:00～18:00チェックインより 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日曜日・祝日2部】",
-              "timePrice": [
-                {
-                  "price": "￥7,400～￥9,700",
-                  "timeZone": "18:00～24:00チェックインより 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）ABCのみ",
-          "priceInfo": [
-            {
-              "week": "【月～金・祝前日（A・Bタイプは7時間）】",
-              "timePrice": [
-                {
-                  "price": "￥9,200～￥10,900",
-                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝中・祝日（A・Bタイプは7時間）】",
-              "timePrice": [
-                {
-                  "price": "￥10,800～￥12,800",
-                  "timeZone": "5:00～15:00の間で最大 9時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【月～木1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥14,300",
-                  "timeZone": "21:00～翌 11:00の間で最大 14時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【月～木2部】",
-              "timePrice": [
-                {
-                  "price": "￥5,900～￥12,100",
-                  "timeZone": "0時～11:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前・祝中】",
-              "timePrice": [
-                {
-                  "price": "￥9,600～￥16,500",
-                  "timeZone": "23:00～翌 10:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝1部】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥14,300",
-                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【日・祝2部】",
-              "timePrice": [
-                {
-                  "price": "￥5,900～￥12,100",
-                  "timeZone": "0時～11:00の間で最大 11時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n全てのお部屋がご利用時間後の延長料金は、30分毎で１，５００円～1，9００円です。\n＊部屋毎で異なります。\n\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 403,
-          "room_name": "403",
-          "type_name": "A",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r403.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 402,
-          "room_name": "402",
-          "type_name": "B",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r402.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 401,
-          "room_name": "401",
-          "type_name": "C",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r401.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 501,
-          "room_name": "501",
-          "type_name": "C",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r501.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 502,
-          "room_name": "502",
-          "type_name": "C",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r502.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 503,
-          "room_name": "503",
-          "type_name": "C",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r503.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 101,
-          "room_name": "101",
-          "type_name": "D",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r101.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 201,
-          "room_name": "201",
-          "type_name": "D",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r201.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 203,
-          "room_name": "203",
-          "type_name": "D",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r203.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 301,
-          "room_name": "301",
-          "type_name": "D",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r301.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "D",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 204,
-          "room_name": "204",
-          "type_name": "E",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r204.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 205,
-          "room_name": "205",
-          "type_name": "E",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r205.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 303,
-          "room_name": "303",
-          "type_name": "E",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r303.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 202,
-          "room_name": "202",
-          "type_name": "F",
-          "rank_id": 6,
-          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r202.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "五反田駅",
-            "walk_min": 2
-          }
-        ],
-        "latitude": "35.626684",
-        "longitude": "139.725953",
-        "map_url": "https://www.google.com/maps?q=35.626684,139.725953",
-        "raw_access_text": "JR山手線 五反田駅東口より徒歩2分"
-      },
-      "amenities": {
-        "バス": [
-          "レインボーバス(一部)",
-          "ジェットバス",
-          "ブロアバス(一部)",
-          "浴室TV(一部)"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV(一部)",
-          "ビデオ・オン・デマンド",
-          "持込用DVDデッキ"
-        ],
-        "アミューズメント": [
-          "マッサージチェア(一部)",
-          "有線放送",
-          "客室インターネット"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫(一部)",
-          "加湿器(レンタル)",
-          "シャワートイレ",
-          "くるくるドライヤー(レンタル)",
-          "バスローブ",
-          "各種シャンプー(レンタル)",
-          "アメニティ豊富",
-          "コスチューム(レンタル)"
-        ]
-      },
-      "review": {
-        "score": "4.3",
-        "count": 6
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
-      "id": 543796,
-      "name": "ホテル MARE",
-      "address": "東京都品川区西五反田2-3-1",
-      "prices": [
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【全日】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥7,000",
-                  "timeZone": "6:00～翌 1:00の間で最大 2時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～金】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥7,000",
-                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土･日･祝】",
-              "timePrice": [
-                {
-                  "price": "￥4,300～￥7,000",
-                  "timeZone": "6:00～14:00の間で最大 8時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【日～木】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,000",
-                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥11,000",
-                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        }
-      ],
-      "rooms": [],
-      "access": {
-        "stations": [
-          {
-            "station": "五反田駅",
-            "walk_min": 5
-          }
-        ],
-        "latitude": "35.627416",
-        "longitude": "139.721702",
-        "map_url": "https://www.google.com/maps?q=35.627416,139.721702",
-        "raw_access_text": "五反田駅より徒歩5分"
-      },
-      "amenities": {
-        "バス": [
-          "レインボーバス(一部)",
-          "ジェットバス",
-          "ブロアバス"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV(一部)",
-          "ビデオ・オン・デマンド",
-          "持込用DVDデッキ",
-          "持込用VTRデッキ",
-          "ブルーレイプレーヤー"
-        ],
-        "アミューズメント": [
-          "玩具(販売)",
-          "有線放送"
-        ],
-        "お部屋": [
-          "ブラックライト(一部)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "シャワートイレ",
-          "くるくるドライヤー(レンタル)",
-          "アメニティ豊富"
-        ]
-      },
-      "review": {
-        "score": null,
-        "count": 0
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
-      "id": 543800,
-      "name": "ホテル マーブル",
-      "address": "東京都品川区東五反田1-12-4",
-      "prices": [
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【全日】",
-              "timePrice": [
-                {
-                  "price": "￥4,500～￥5,500",
-                  "timeZone": "6:00～24:00の間で最大 2時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～金】",
-              "timePrice": [
-                {
-                  "price": "￥4,500～￥5,500",
-                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥4,500～￥5,500",
-                  "timeZone": "6:00～15:00の間で最大 9時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【全日】",
-              "timePrice": [
-                {
-                  "price": "￥6,200～￥8,000",
-                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "B Type",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/marble/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 401,
-          "room_name": "401",
-          "type_name": "C Type",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/marble/image/r401.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 704,
-          "room_name": "704",
-          "type_name": "D Type",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/marble/image/r704.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "五反田駅",
-            "walk_min": 5
-          }
-        ],
-        "latitude": "35.627053",
-        "longitude": "139.725149",
-        "map_url": "https://www.google.com/maps?q=35.627053,139.725149",
-        "raw_access_text": "JR・都営浅草線 五反田駅東口徒歩5分"
-      },
-      "amenities": {
-        "バス": [
-          "ジェットバス",
-          "ブロアバス"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV(一部)",
-          "ビデオ・オン・デマンド",
-          "持込用DVDデッキ"
-        ],
-        "アミューズメント": [
-          "玩具(販売)",
-          "有線放送"
-        ],
-        "お部屋": [
-          "和室(一部)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "シャワートイレ"
-        ]
-      },
-      "review": {
-        "score": "4.5",
-        "count": 2
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
+      "url": "https://happyhotel.jp/hotels/25901154",
       "id": 25901154,
       "name": "hotel min.",
       "address": "東京都品川区東五反田1-16-8",
@@ -7462,6 +6440,1049 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/543796",
+      "id": 543796,
+      "name": "ホテル MARE",
+      "address": "東京都品川区西五反田2-3-1",
+      "prices": [
+        {
+          "name": "休憩",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥7,000",
+                  "timeZone": "6:00～翌 1:00の間で最大 2時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム）",
+          "priceInfo": [
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥7,000",
+                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土･日･祝】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥7,000",
+                  "timeZone": "6:00～14:00の間で最大 8時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊",
+          "priceInfo": [
+            {
+              "week": "【日～木】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,000",
+                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥11,000",
+                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        }
+      ],
+      "rooms": [],
+      "access": {
+        "stations": [
+          {
+            "station": "五反田駅",
+            "walk_min": 5
+          }
+        ],
+        "latitude": "35.627416",
+        "longitude": "139.721702",
+        "map_url": "https://www.google.com/maps?q=35.627416,139.721702",
+        "raw_access_text": "五反田駅より徒歩5分"
+      },
+      "amenities": {
+        "バス": [
+          "レインボーバス(一部)",
+          "ジェットバス",
+          "ブロアバス"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV(一部)",
+          "ビデオ・オン・デマンド",
+          "持込用DVDデッキ",
+          "持込用VTRデッキ",
+          "ブルーレイプレーヤー"
+        ],
+        "アミューズメント": [
+          "玩具(販売)",
+          "有線放送"
+        ],
+        "お部屋": [
+          "ブラックライト(一部)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫",
+          "シャワートイレ",
+          "くるくるドライヤー(レンタル)",
+          "アメニティ豊富"
+        ]
+      },
+      "review": {
+        "score": null,
+        "count": 0
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/540228",
+      "id": 540228,
+      "name": "Hotel Pualani（プアラニ）旧リオス五反田",
+      "address": "東京都品川区西五反田1-13-8",
+      "prices": [
+        {
+          "name": "休憩",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥5,600～￥8,500",
+                  "timeZone": "5:00～翌 1:00の間で最大 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム）",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥5,600～￥8,500",
+                  "timeZone": "5:00～16:00の間で最大 11時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【月～木】",
+              "timePrice": [
+                {
+                  "price": "￥5,600～￥8,500",
+                  "timeZone": "13:00～19:00の間で最大 6時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・日・祝・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥5,600～￥8,500",
+                  "timeZone": "5:00～16:00の間で最大 11時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊",
+          "priceInfo": [
+            {
+              "week": "【日～木・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥10,000～￥14,000",
+                  "timeZone": "20:00～翌 12:00の間で最大 16時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前】",
+              "timePrice": [
+                {
+                  "price": "￥10,000～￥14,000",
+                  "timeZone": "20:00～翌 10:00の間で最大 14時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\nご延長料金は３０分１，５００円です。\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 101,
+          "room_name": "101",
+          "type_name": "ランク1",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r101.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 102,
+          "room_name": "102",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r102.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 202,
+          "room_name": "202",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r202.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 203,
+          "room_name": "203",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r203.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 205,
+          "room_name": "205",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r205.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 206,
+          "room_name": "206",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r206.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 302,
+          "room_name": "302",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 303,
+          "room_name": "303",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r303.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 305,
+          "room_name": "305",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r305.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 403,
+          "room_name": "403",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r403.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 406,
+          "room_name": "406",
+          "type_name": "ランク2",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r406.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 201,
+          "room_name": "201",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r201.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 207,
+          "room_name": "207",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r207.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 301,
+          "room_name": "301",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r301.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 306,
+          "room_name": "306",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r306.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 307,
+          "room_name": "307",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r307.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 401,
+          "room_name": "401",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r401.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 407,
+          "room_name": "407",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r407.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 501,
+          "room_name": "501",
+          "type_name": "ランク3",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r501.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 405,
+          "room_name": "405",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r405.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 502,
+          "room_name": "502",
+          "type_name": "ランク4",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r502.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 503,
+          "room_name": "503",
+          "type_name": "ランク5",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/lios-gota/image/r503.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "大崎広小路駅",
+            "walk_min": 2
+          }
+        ],
+        "latitude": "35.624199",
+        "longitude": "139.72395",
+        "map_url": "https://www.google.com/maps?q=35.624199,139.72395",
+        "raw_access_text": "五反田駅西口から徒歩2分。\n\n山手線を利用することで隣接の目黒、大崎、恵比寿、渋谷など、タクシー利用なら品川、白金台、高輪台、東急線周辺の荏原、戸越、千束、旗の台、大岡山、雪が谷大塚、池上、久が原、蒲田、大森海岸からもアクセスも◎\nJR山手線、東急池上線、都営浅草線沿線の方もご利用ください。"
+      },
+      "amenities": {
+        "バス": [
+          "レインボーバス",
+          "ジェットバス",
+          "ブロアバス",
+          "浴室TV(一部)"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV(一部)",
+          "大画面テレビ50インチ以上(一部)",
+          "ビデオ・オン・デマンド",
+          "ブルーレイプレーヤー(レンタル)"
+        ],
+        "アミューズメント": [
+          "マッサージチェア(一部)",
+          "客室インターネット",
+          "無料Wi-Fi(無線LAN)"
+        ],
+        "お部屋": [
+          "同性利用可(女性)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫",
+          "空気清浄機(一部)",
+          "加湿器(レンタル)",
+          "シャワートイレ",
+          "ヘアアイロン",
+          "ハンドマッサージャー",
+          "バスローブ",
+          "女性化粧品",
+          "各種シャンプー",
+          "アメニティ豊富",
+          "コスチューム(レンタル)",
+          "Androidスマホ充電器(レンタル)",
+          "iPhone充電器(レンタル)"
+        ]
+      },
+      "review": {
+        "score": "4.2",
+        "count": 14
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/543800",
+      "id": 543800,
+      "name": "ホテル マーブル",
+      "address": "東京都品川区東五反田1-12-4",
+      "prices": [
+        {
+          "name": "休憩",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥4,500～￥5,500",
+                  "timeZone": "6:00～24:00の間で最大 2時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム）",
+          "priceInfo": [
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥4,500～￥5,500",
+                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥4,500～￥5,500",
+                  "timeZone": "6:00～15:00の間で最大 9時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊",
+          "priceInfo": [
+            {
+              "week": "【全日】",
+              "timePrice": [
+                {
+                  "price": "￥6,200～￥8,000",
+                  "timeZone": "22:00～翌 11:00の間で最大 13時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 302,
+          "room_name": "302",
+          "type_name": "B Type",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/marble/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 401,
+          "room_name": "401",
+          "type_name": "C Type",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/marble/image/r401.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 704,
+          "room_name": "704",
+          "type_name": "D Type",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/marble/image/r704.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "五反田駅",
+            "walk_min": 5
+          }
+        ],
+        "latitude": "35.627053",
+        "longitude": "139.725149",
+        "map_url": "https://www.google.com/maps?q=35.627053,139.725149",
+        "raw_access_text": "JR・都営浅草線 五反田駅東口徒歩5分"
+      },
+      "amenities": {
+        "バス": [
+          "ジェットバス",
+          "ブロアバス"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV(一部)",
+          "ビデオ・オン・デマンド",
+          "持込用DVDデッキ"
+        ],
+        "アミューズメント": [
+          "玩具(販売)",
+          "有線放送"
+        ],
+        "お部屋": [
+          "和室(一部)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫",
+          "シャワートイレ"
+        ]
+      },
+      "review": {
+        "score": "4.5",
+        "count": 2
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/540231",
+      "id": 540231,
+      "name": "ホテル イーアイ五反田",
+      "address": "東京都品川区東五反田1-18-12",
+      "prices": [
+        {
+          "name": "60分休憩",
+          "priceInfo": [
+            {
+              "week": "【全日1部】",
+              "timePrice": [
+                {
+                  "price": "￥2,500～￥4,000",
+                  "timeZone": "5:00～18:00チェックインより 1時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【全日2部】",
+              "timePrice": [
+                {
+                  "price": "￥2,700～￥4,200",
+                  "timeZone": "18:00～翌 2:00チェックインより 1時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
+        },
+        {
+          "name": "90分休憩",
+          "priceInfo": [
+            {
+              "week": "【月～木曜日1部】",
+              "timePrice": [
+                {
+                  "price": "￥3,400～￥5,100",
+                  "timeZone": "5:00～18:00チェックインより 1時間30分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【月～木曜日2部】",
+              "timePrice": [
+                {
+                  "price": "￥4,100～￥5,800",
+                  "timeZone": "18:00～翌 1:30チェックインより 1時間30分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金曜日・祝前日1部】",
+              "timePrice": [
+                {
+                  "price": "￥3,400～￥5,100",
+                  "timeZone": "5:00～18:00チェックインより 1時間30分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金曜日・祝前日2部】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥5,800",
+                  "timeZone": "18:00～翌 1:30チェックインより 1時間30分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土曜日・連休中日】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥5,800",
+                  "timeZone": "5:00～翌 1:30チェックインより 1時間30分ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日曜日・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥5,800",
+                  "timeZone": "5:00～翌 1:30チェックインより 1時間30分ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
+        },
+        {
+          "name": "2時間休憩",
+          "priceInfo": [
+            {
+              "week": "【月～木曜日1部】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥7,000",
+                  "timeZone": "5:00～18:00チェックインより 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【月～木曜日2部】",
+              "timePrice": [
+                {
+                  "price": "￥4,500～￥7,700",
+                  "timeZone": "18:00～翌 1:00チェックインより 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金曜日・祝前日1部】",
+              "timePrice": [
+                {
+                  "price": "￥4,300～￥7,000",
+                  "timeZone": "5:00～18:00チェックインより 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金曜日・祝前日2部】",
+              "timePrice": [
+                {
+                  "price": "￥5,100～￥7,800",
+                  "timeZone": "18:00～翌 1:00チェックインより 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土曜日・連休中日】",
+              "timePrice": [
+                {
+                  "price": "￥5,100～￥7,700",
+                  "timeZone": "5:00～翌 1:00チェックインより 2時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日曜日・祝日】",
+              "timePrice": [
+                {
+                  "price": "￥5,100～￥7,700",
+                  "timeZone": "5:00～翌 1:00チェックインより 2時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
+        },
+        {
+          "name": "3時間休憩",
+          "priceInfo": [
+            {
+              "week": "【月～木曜日1部】",
+              "timePrice": [
+                {
+                  "price": "￥7,400～￥9,700",
+                  "timeZone": "5:00～18:00チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【月～木曜日2部】",
+              "timePrice": [
+                {
+                  "price": "￥7,900～￥10,500",
+                  "timeZone": "18:00～24:00チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金曜日・祝前日1部】",
+              "timePrice": [
+                {
+                  "price": "￥7,400～￥9,700",
+                  "timeZone": "5:00～18:00チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金曜日・祝前日2部】",
+              "timePrice": [
+                {
+                  "price": "￥8,200～￥10,500",
+                  "timeZone": "18:00～24:00チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土曜日・連休中日】",
+              "timePrice": [
+                {
+                  "price": "￥8,200～￥10,500",
+                  "timeZone": "5:00～24:00チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日曜日・祝日1部】",
+              "timePrice": [
+                {
+                  "price": "￥8,200～￥10,500",
+                  "timeZone": "5:00～18:00チェックインより 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日曜日・祝日2部】",
+              "timePrice": [
+                {
+                  "price": "￥7,400～￥9,700",
+                  "timeZone": "18:00～24:00チェックインより 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n深夜３時を超えた滞在は、宿泊料金が別途掛かります。\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム）ABCのみ",
+          "priceInfo": [
+            {
+              "week": "【月～金・祝前日（A・Bタイプは7時間）】",
+              "timePrice": [
+                {
+                  "price": "￥9,200～￥10,900",
+                  "timeZone": "5:00～15:00の間で最大 10時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝中・祝日（A・Bタイプは7時間）】",
+              "timePrice": [
+                {
+                  "price": "￥10,800～￥12,800",
+                  "timeZone": "5:00～15:00の間で最大 9時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊",
+          "priceInfo": [
+            {
+              "week": "【月～木1部】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥14,300",
+                  "timeZone": "21:00～翌 11:00の間で最大 14時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【月～木2部】",
+              "timePrice": [
+                {
+                  "price": "￥5,900～￥12,100",
+                  "timeZone": "0時～11:00の間で最大 11時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金・土・祝前・祝中】",
+              "timePrice": [
+                {
+                  "price": "￥9,600～￥16,500",
+                  "timeZone": "23:00～翌 10:00の間で最大 11時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日・祝1部】",
+              "timePrice": [
+                {
+                  "price": "￥7,000～￥14,300",
+                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【日・祝2部】",
+              "timePrice": [
+                {
+                  "price": "￥5,900～￥12,100",
+                  "timeZone": "0時～11:00の間で最大 11時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n全てのお部屋がご利用時間後の延長料金は、30分毎で１，５００円～1，9００円です。\n＊部屋毎で異なります。\n\n"
+        }
+      ],
+      "rooms": [
+        {
+          "room_no": 403,
+          "room_name": "403",
+          "type_name": "A",
+          "rank_id": 1,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r403.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 402,
+          "room_name": "402",
+          "type_name": "B",
+          "rank_id": 2,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r402.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 401,
+          "room_name": "401",
+          "type_name": "C",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r401.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 501,
+          "room_name": "501",
+          "type_name": "C",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r501.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 502,
+          "room_name": "502",
+          "type_name": "C",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r502.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 503,
+          "room_name": "503",
+          "type_name": "C",
+          "rank_id": 3,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r503.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 101,
+          "room_name": "101",
+          "type_name": "D",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r101.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 201,
+          "room_name": "201",
+          "type_name": "D",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r201.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 203,
+          "room_name": "203",
+          "type_name": "D",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r203.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 301,
+          "room_name": "301",
+          "type_name": "D",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r301.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 302,
+          "room_name": "302",
+          "type_name": "D",
+          "rank_id": 4,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 204,
+          "room_name": "204",
+          "type_name": "E",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r204.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 205,
+          "room_name": "205",
+          "type_name": "E",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r205.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 303,
+          "room_name": "303",
+          "type_name": "E",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r303.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 202,
+          "room_name": "202",
+          "type_name": "F",
+          "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/std0710906/image/r202.jpg",
+          "keep_flag": 0
+        }
+      ],
+      "access": {
+        "stations": [
+          {
+            "station": "五反田駅",
+            "walk_min": 2
+          }
+        ],
+        "latitude": "35.626684",
+        "longitude": "139.725953",
+        "map_url": "https://www.google.com/maps?q=35.626684,139.725953",
+        "raw_access_text": "JR山手線 五反田駅東口より徒歩2分"
+      },
+      "amenities": {
+        "バス": [
+          "レインボーバス(一部)",
+          "ジェットバス",
+          "ブロアバス(一部)",
+          "浴室TV(一部)"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV(一部)",
+          "ビデオ・オン・デマンド",
+          "持込用DVDデッキ"
+        ],
+        "アミューズメント": [
+          "マッサージチェア(一部)",
+          "有線放送",
+          "客室インターネット"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット",
+          "持込用冷蔵庫(一部)",
+          "加湿器(レンタル)",
+          "シャワートイレ",
+          "くるくるドライヤー(レンタル)",
+          "バスローブ",
+          "各種シャンプー(レンタル)",
+          "アメニティ豊富",
+          "コスチューム(レンタル)"
+        ]
+      },
+      "review": {
+        "score": "4.3",
+        "count": 6
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/543798",
       "id": 543798,
       "name": "シーズ五反田",
       "address": "東京都品川区西五反田2-3-6",
@@ -7788,6 +7809,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/25900748",
       "id": 25900748,
       "name": "ヒルズホテル五反田",
       "address": "東京都品川区東五反田1-19-10",
@@ -7832,6 +7854,7 @@
       }
     },
     {
+      "url": "https://happyhotel.jp/hotels/543795",
       "id": 543795,
       "name": "宝翠",
       "address": "東京都品川区西五反田2-16-1",
