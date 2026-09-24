@@ -3,7 +3,8 @@ name: Scrape hotel data
 # 30分ごとに自動実行。GitHubの手元でも「Actions」タブから手動実行できるようにしている。
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # 毎時00分・30分はGitHub Actionsの混雑で遅延・欠落しやすいため避ける
+    - cron: "7,37 * * * *"
   workflow_dispatch: {}
 
 # data/ ディレクトリの変更をこのリポジトリ自身にコミット・プッシュするための権限
