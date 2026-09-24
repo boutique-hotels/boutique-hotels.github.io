@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-23T23:28+00:00"
+    "generatedAt": "2026-09-24T01:38+00:00"
   },
   "hotels": [
     {
@@ -840,8 +840,8 @@
             "plan_name": "『本日の予約』昼デイユースプラン（月～木）",
             "plan_type": "休憩",
             "room_rank_name": "スイートタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
+            "stock_text": "あと3室",
+            "stock_count": 3,
             "charge_text": "￥10,300"
           },
           {
@@ -869,7 +869,7 @@
             "charge_text": "￥17,300"
           }
         ],
-        "max_stock": 1,
+        "max_stock": 3,
         "has_vacancy": true
       }
     },
@@ -1202,25 +1202,25 @@
             "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
             "plan_type": "休憩",
             "room_rank_name": "ピングプリティ喫煙可",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
           },
           {
             "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
             "plan_type": "休憩",
             "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥7,800"
           },
           {
             "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
             "plan_type": "休憩",
             "room_rank_name": "バリュープラス",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥6,800"
           },
           {
             "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
@@ -5456,9 +5456,9 @@
             "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,000"
           },
           {
             "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
@@ -5472,9 +5472,9 @@
             "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
             "plan_type": "休憩",
             "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥9,300"
           },
           {
             "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
@@ -5504,17 +5504,17 @@
             "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
             "plan_type": "休憩",
             "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥9,300"
           },
           {
             "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
             "plan_type": "休憩",
             "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
           },
           {
             "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
@@ -9672,9 +9672,18 @@
         "count": 27
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【月-木】当日宿泊予約ハピホテ限定",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと5室",
+            "stock_count": 5,
+            "charge_text": "￥9,980"
+          }
+        ],
+        "max_stock": 5,
+        "has_vacancy": true
       }
     },
     {
