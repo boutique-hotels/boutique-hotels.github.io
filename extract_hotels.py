@@ -7,6 +7,7 @@ from pathlib import Path
 from datetime import datetime
 from time import sleep
 from typing import List, Tuple
+from zoneinfo import ZoneInfo
 
 # -------------------------
 # 設定
@@ -41,6 +42,7 @@ STATION_CONFIGS = {
 DATA_DIR = Path("data")
 CURRENT_DATA_DIR = DATA_DIR / "current"
 ARCHIVE_DATA_DIR = DATA_DIR / "archive"
+JST = ZoneInfo("Asia/Tokyo")
 ARCHIVE_DETAIL_PATTERN = re.compile(
     r"^(?P<label>.+)_hotels_detail_(?P<date>\d{8})_(?P<time>\d{6})\.json$"
 )
@@ -442,7 +444,7 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
         sleep(sleep_sec)
 
     # 最新ファイルと履歴ファイルを保存
-    generated_now = datetime.now().astimezone()
+    generated_now = datetime.now(JST)
     generated_at = generated_now.isoformat(timespec="minutes")
     detail_payload = {
         "metadata": {
@@ -484,9 +486,9 @@ def scrape_all_hotels_kodawari(pref_id: int, route_id: str, station_id: str, lab
 def cleanup_archive_detail_files(now: datetime = None) -> None:
     """アーカイブの詳細 JSON を駅・日付・時間帯ごとの保持ルールで整理する。"""
     if now is None:
-        now = datetime.now().astimezone().replace(tzinfo=None)
+        now = datetime.now(JST).replace(tzinfo=None)
     else:
-        now = now.replace(tzinfo=None)
+        now = now.astimezone(JST).replace(tzinfo=None) if now.tzinfo else now
 
     candidates = {}
     skipped = 0
@@ -617,9 +619,9 @@ def append_vacancy_history(label: str, generated_at: str, hotels: list) -> None:
 def _cleanup_vacancy_history(history: list, now: datetime = None) -> list:
     """空室履歴を詳細 JSON と同じ日付・時間帯の保持ルールで整理する。"""
     if now is None:
-        now = datetime.now().astimezone().replace(tzinfo=None)
+        now = datetime.now(JST).replace(tzinfo=None)
     else:
-        now = now.replace(tzinfo=None)
+        now = now.astimezone(JST).replace(tzinfo=None) if now.tzinfo else now
 
     candidates = {}
     skipped = 0
@@ -629,7 +631,12 @@ def _cleanup_vacancy_history(history: list, now: datetime = None) -> list:
             skipped += 1
             continue
         try:
-            captured_at = datetime.fromisoformat(generated_at).replace(tzinfo=None)
+            parsed_at = datetime.fromisoformat(generated_at)
+            captured_at = (
+                parsed_at.astimezone(JST).replace(tzinfo=None)
+                if parsed_at.tzinfo
+                else parsed_at
+            )
         except (TypeError, ValueError):
             skipped += 1
             continue
@@ -689,9 +696,13 @@ def migrate_vacancy_history_from_archive(label: str) -> None:
             # から復元する。それも無理なら、ファイル自体の更新日時を使う。
             m = re.search(r"_(\d{8}_\d{6})\.json$", path.name)
             if m:
-                generated_at = datetime.strptime(m.group(1), "%Y%m%d_%H%M%S").isoformat(timespec="minutes")
+                generated_at = datetime.strptime(
+                    m.group(1), "%Y%m%d_%H%M%S"
+                ).replace(tzinfo=JST).isoformat(timespec="minutes")
             else:
-                generated_at = datetime.fromtimestamp(path.stat().st_mtime).isoformat(timespec="minutes")
+                generated_at = datetime.fromtimestamp(
+                    path.stat().st_mtime, JST
+                ).isoformat(timespec="minutes")
 
         history.append({
             "generatedAt": generated_at,
