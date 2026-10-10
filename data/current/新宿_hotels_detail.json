@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-11T00:52+09:00"
+    "generatedAt": "2026-10-11T05:00+09:00"
   },
   "hotels": [
     {
@@ -21302,12 +21302,33 @@
     },
     {
       "url": "https://happyhotel.jp/hotels/540002",
-      "id": null,
-      "name": null,
-      "address": null,
+      "id": 540002,
+      "name": "G-７",
+      "address": "東京都新宿区歌舞伎町2-5-5",
       "prices": [],
       "rooms": [],
-      "error": "request_error:HTTPSConnectionPool(host='happyhotel.jp', port=443): Read timed out. (read timeout=10)"
+      "access": {
+        "stations": [
+          {
+            "station": "東新宿駅",
+            "walk_min": 3
+          }
+        ],
+        "latitude": "35.696872",
+        "longitude": "139.70604",
+        "map_url": "https://www.google.com/maps?q=35.696872,139.70604",
+        "raw_access_text": null
+      },
+      "amenities": {},
+      "review": {
+        "score": null,
+        "count": null
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
     },
     {
       "url": "https://happyhotel.jp/hotels/25900854",
