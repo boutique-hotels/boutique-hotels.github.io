@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-12T08:36+09:00"
+    "generatedAt": "2026-10-12T11:39+09:00"
   },
   "hotels": [
     {
@@ -1867,20 +1867,20 @@
             "charge_text": "￥10,000"
           },
           {
-            "plan_name": "【当日限定】和室ルームプラン ",
-            "plan_type": "宿泊",
-            "room_rank_name": null,
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥14,400"
-          },
-          {
             "plan_name": "【当日限定】ローションマットルームプラン",
             "plan_type": "宿泊",
             "room_rank_name": null,
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥15,100"
+          },
+          {
+            "plan_name": "【当日限定】和室ルームプラン ",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "￥14,400"
           }
         ],
         "max_stock": 2,
@@ -2101,36 +2101,28 @@
       "vacancy": {
         "details": [
           {
-            "plan_name": "【当日限定】訳ありご宿泊プラン 23時～チェックイン（日～木）",
-            "plan_type": "宿泊",
-            "room_rank_name": "バリュー",
-            "stock_text": "あと2室",
-            "stock_count": 2,
-            "charge_text": "￥9,900"
-          },
-          {
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
             "plan_type": "宿泊",
             "room_rank_name": "ピングプリティ禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥17,300"
           },
           {
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
             "plan_type": "宿泊",
             "room_rank_name": "ピングプリティ喫煙可",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥17,300"
           },
           {
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥15,300"
           },
           {
             "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
@@ -2139,6 +2131,158 @@
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥20,800"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥20,800"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥19,800"
+          },
+          {
+            "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,400"
+          },
+          {
+            "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,400"
+          },
+          {
+            "plan_name": "【当日予約】ビジネス利用におすすめ♪ アーリーチェックアウトご宿泊プラン 20時～（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,900"
+          },
+          {
+            "plan_name": "【当日限定】訳ありご宿泊プラン 23時～チェックイン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュー",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥9,900"
+          },
+          {
+            "plan_name": "【当日予約】3000円以上お得♪ 学割ご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,300"
+          },
+          {
+            "plan_name": "【当日予約】3000円以上お得♪ 学割ご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,300"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥11,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日限定》夜の部2時間デイユースプラン 17時～チェックイン(土・日)",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "《当日限定》夜の部2時間デイユースプラン 17時～チェックイン(土・日)",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
           }
         ],
         "max_stock": 2,
@@ -2943,6 +3087,14 @@
           },
           {
             "plan_name": "特別宿泊プラン ＜チェックイン21時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,900"
+          },
+          {
+            "plan_name": "レイトチェックインプラン ＜チェックイン24時より＞",
             "plan_type": "宿泊",
             "room_rank_name": null,
             "stock_text": "あと1室",

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-12T08:37+09:00"
+    "generatedAt": "2026-10-12T11:40+09:00"
   },
   "hotels": [
     {
@@ -925,8 +925,8 @@
             "plan_name": "【当日限定】日～木 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Aランク",
-            "stock_text": "あと4室",
-            "stock_count": 4,
+            "stock_text": "あと3室",
+            "stock_count": 3,
             "charge_text": "￥10,000"
           },
           {
@@ -946,7 +946,7 @@
             "charge_text": "￥15,000"
           }
         ],
-        "max_stock": 4,
+        "max_stock": 3,
         "has_vacancy": true
       }
     },
