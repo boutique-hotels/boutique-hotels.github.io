@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-13T10:59+09:00"
+    "generatedAt": "2026-10-13T18:16+09:00"
   },
   "hotels": [
     {
@@ -837,14 +837,6 @@
       "vacancy": {
         "details": [
           {
-            "plan_name": "『本日の予約』昼デイユースプラン（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "スイートタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥10,300"
-          },
-          {
             "plan_name": "『本日の予約』夜デイユースプラン（月～木）",
             "plan_type": "休憩",
             "room_rank_name": "スイートタイプ",
@@ -1459,16 +1451,16 @@
             "plan_name": "【本日限定】10,000円宿泊プランＡ",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥10,000"
           },
           {
             "plan_name": "【本日限定】10,000円宿泊プランＢ",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥10,000"
           },
           {
@@ -2152,36 +2144,36 @@
             "plan_name": "【当日限定】訳ありご宿泊プラン 23時～チェックイン（日～木）",
             "plan_type": "宿泊",
             "room_rank_name": "バリュー",
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥9,900"
           },
           {
-            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
             "plan_type": "休憩",
             "room_rank_name": "ピングプリティ禁煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥12,000"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
             "plan_type": "休憩",
             "room_rank_name": "ピングプリティ喫煙可",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥12,000"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
             "plan_type": "休憩",
             "room_rank_name": "モデレート",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥11,000"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
             "plan_type": "休憩",
             "room_rank_name": "バリュープラス",
             "stock_text": "売切れ",
@@ -2189,7 +2181,7 @@
             "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
             "plan_type": "休憩",
             "room_rank_name": "ピングプリティ禁煙",
             "stock_text": "売切れ",
@@ -2197,7 +2189,7 @@
             "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
             "plan_type": "休憩",
             "room_rank_name": "ピングプリティ喫煙可",
             "stock_text": "売切れ",
@@ -2205,7 +2197,7 @@
             "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
             "plan_type": "休憩",
             "room_rank_name": "モデレート",
             "stock_text": "売切れ",
@@ -2213,39 +2205,7 @@
             "charge_text": "売切れ"
           },
           {
-            "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
-            "plan_type": "休憩",
-            "room_rank_name": "バリュープラス",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "ピングプリティ禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "ピングプリティ喫煙可",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～チェックイン（月～木）",
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
             "plan_type": "休憩",
             "room_rank_name": "バリュープラス",
             "stock_text": "売切れ",
@@ -2253,7 +2213,7 @@
             "charge_text": "売切れ"
           }
         ],
-        "max_stock": 2,
+        "max_stock": 1,
         "has_vacancy": true
       }
     },
@@ -4128,14 +4088,6 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥12,900"
-          },
-          {
-            "plan_name": "【当日予約】平日限定 アーリーチェックアウトプラン",
-            "plan_type": "宿泊",
-            "room_rank_name": null,
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥12,900"
           }
         ],
         "max_stock": 1,
@@ -4540,38 +4492,6 @@
             "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
-            "plan_type": "休憩",
-            "room_rank_name": "スーペリアタイプ　喫煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥9,300"
-          },
-          {
-            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
-            "plan_type": "休憩",
-            "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレートタイプ　喫煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥8,800"
-          },
-          {
-            "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレートタイプ　禁煙",
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
@@ -9351,9 +9271,18 @@
         "count": 80
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "当日予約プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,500"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -10390,29 +10319,13 @@
             "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
             "plan_type": "宿泊",
             "room_rank_name": "プリティタイプ 禁煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥11,800"
-          },
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
-            "plan_type": "宿泊",
-            "room_rank_name": "プリティタイプ 喫煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥11,800"
-          },
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（月～木）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 禁煙",
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
           },
           {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（月～木）",
-            "plan_type": "休憩",
+            "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
             "room_rank_name": "プリティタイプ 喫煙",
             "stock_text": "売切れ",
             "stock_count": null,
@@ -10435,8 +10348,8 @@
             "charge_text": "売切れ"
           }
         ],
-        "max_stock": 1,
-        "has_vacancy": true
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
@@ -15553,329 +15466,6 @@
       "review": {
         "score": "4.3",
         "count": 26
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
-      "url": "https://happyhotel.jp/hotels/543512",
-      "id": 543512,
-      "name": "ホテル 風風（フー）",
-      "address": "東京都新宿区百人町1-3-6",
-      "prices": [
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥3,300～￥4,180",
-                  "timeZone": "24時間制の間で最大 2時間ご利用"
-                },
-                {
-                  "price": "￥4,400～￥5,280",
-                  "timeZone": "24時間制の間で最大 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥4,180～￥4,840",
-                  "timeZone": "24時間制の間で最大 2時間ご利用"
-                },
-                {
-                  "price": "￥6,380～￥7,040",
-                  "timeZone": "24時間制の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥4,980～￥6,980",
-                  "timeZone": "5:00～16:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜日・  祝前日】",
-              "timePrice": [
-                {
-                  "price": "￥7,980～￥9,980",
-                  "timeZone": "5:00～16:00の間で最大 11時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥12,980～￥14,980",
-                  "timeZone": "5:00～13:00の間で最大 8時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【日～木・祝】",
-              "timePrice": [
-                {
-                  "price": "￥6,980～￥8,980",
-                  "timeZone": "23:00～翌 10:00の間で最大 13時間ご利用"
-                },
-                {
-                  "price": "￥6,980～￥8,980",
-                  "timeZone": "2:00～12:00の間で最大 10時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金・土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥9,980～￥14,980",
-                  "timeZone": "23:00～翌 10:00の間で最大 13時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        }
-      ],
-      "rooms": [
-        {
-          "room_no": 101,
-          "room_name": "101",
-          "type_name": "バリュー",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r101.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 102,
-          "room_name": "102",
-          "type_name": "バリュー",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r102.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 201,
-          "room_name": "201",
-          "type_name": "バリュー",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r201.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 202,
-          "room_name": "202",
-          "type_name": "バリュー",
-          "rank_id": 1,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r202.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 103,
-          "room_name": "103",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r103.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 106,
-          "room_name": "106",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r106.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 107,
-          "room_name": "107",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r107.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 203,
-          "room_name": "203",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r203.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 205,
-          "room_name": "205",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r205.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 206,
-          "room_name": "206",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r206.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 207,
-          "room_name": "207",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r207.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 208,
-          "room_name": "208",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r208.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 212,
-          "room_name": "212",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r212.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 213,
-          "room_name": "213",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r213.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 215,
-          "room_name": "215",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r215.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 216,
-          "room_name": "216",
-          "type_name": "スタンダード",
-          "rank_id": 2,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r216.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 105,
-          "room_name": "105",
-          "type_name": "コンフォート",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r105.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 108,
-          "room_name": "108",
-          "type_name": "コンフォート",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r108.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 111,
-          "room_name": "111",
-          "type_name": "コンフォート",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r111.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 211,
-          "room_name": "211",
-          "type_name": "コンフォート",
-          "rank_id": 3,
-          "image": "https://happyhotel.jp/hotenavi/std0712167/image/r211.jpg",
-          "keep_flag": 0
-        }
-      ],
-      "access": {
-        "stations": [
-          {
-            "station": "新大久保駅",
-            "walk_min": 3
-          }
-        ],
-        "latitude": "35.700038",
-        "longitude": "139.701838",
-        "map_url": "https://www.google.com/maps?q=35.700038,139.701838",
-        "raw_access_text": "新大久保駅から徒歩３分/歌舞伎町から徒歩５分"
-      },
-      "amenities": {
-        "バス": [
-          "ジェットバス",
-          "ブロアバス(一部)"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV",
-          "大画面テレビ50インチ以上(一部)"
-        ],
-        "アミューズメント": [
-          "有線放送(一部)",
-          "客室インターネット",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "お部屋": [
-          "和室(一部)",
-          "バリアフリー(トイレ)(一部)"
-        ],
-        "設備": [
-          "電子レンジ(一部)",
-          "電気ポット",
-          "持込用冷蔵庫",
-          "シャワートイレ",
-          "くるくるドライヤー",
-          "ヘアアイロン",
-          "美顔器",
-          "ハンドマッサージャー",
-          "バスローブ(一部)",
-          "ルームウェア(一部)",
-          "男性化粧品",
-          "女性化粧品",
-          "各種シャンプー",
-          "アメニティ豊富",
-          "コスチューム(レンタル)",
-          "携帯電話充電器",
-          "Androidスマホ充電器",
-          "iPhone充電器"
-        ]
-      },
-      "review": {
-        "score": "4.5",
-        "count": 8
       },
       "vacancy": {
         "details": [],
