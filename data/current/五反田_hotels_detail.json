@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-14T15:03+09:00"
+    "generatedAt": "2026-10-14T20:39+09:00"
   },
   "hotels": [
     {
@@ -2220,7 +2220,7 @@
       },
       "review": {
         "score": "4.7",
-        "count": 38
+        "count": 39
       },
       "vacancy": {
         "details": [],
