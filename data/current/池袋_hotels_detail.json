@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-15T00:58+09:00"
+    "generatedAt": "2026-10-15T05:07+09:00"
   },
   "hotels": [
     {
@@ -836,9 +836,82 @@
         "count": 8
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "plan_type": "宿泊",
+            "room_rank_name": "スタンダード",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "plan_type": "宿泊",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,800"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,100"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、ラグジュアリールーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥6,100"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、モデレートルーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,800"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、ラグジュアリールーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥6,500"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、スタンダードルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、スタンダードルーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -2975,9 +3048,26 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "平日【当日限定★】Bランク宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Btype",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥10,900"
+          },
+          {
+            "plan_name": "平日【当日限定★】Aランク宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Atype",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥9,900"
+          }
+        ],
+        "max_stock": 2,
+        "has_vacancy": true
       }
     },
     {
