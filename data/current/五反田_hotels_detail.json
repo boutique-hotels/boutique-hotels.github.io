@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-15T05:10+09:00"
+    "generatedAt": "2026-10-15T08:13+09:00"
   },
   "hotels": [
     {
@@ -379,7 +379,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r606.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 302,
@@ -2008,9 +2008,18 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
+            "plan_type": "宿泊",
+            "room_rank_name": "Ctype",
+            "stock_text": "あと4室",
+            "stock_count": 4,
+            "charge_text": "￥13,000"
+          }
+        ],
+        "max_stock": 4,
+        "has_vacancy": true
       }
     },
     {
