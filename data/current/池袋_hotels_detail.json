@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-16T06:13+09:00"
+    "generatedAt": "2026-10-16T08:48+09:00"
   },
   "hotels": [
     {
@@ -1257,6 +1257,22 @@
             "stock_text": "あと2室",
             "stock_count": 2,
             "charge_text": "￥12,800"
+          },
+          {
+            "plan_name": "金・日・祝・当日、スタンダードルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,400"
+          },
+          {
+            "plan_name": "金・日・祝・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,700"
           }
         ],
         "max_stock": 2,
