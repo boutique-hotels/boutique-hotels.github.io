@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-16T08:50+09:00"
+    "generatedAt": "2026-10-16T13:09+09:00"
   },
   "hotels": [
     {
@@ -840,9 +840,9 @@
             "plan_name": "『本日の予約』昼デイユースプラン（金曜）",
             "plan_type": "休憩",
             "room_rank_name": "スイートタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥10,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "『本日の予約』夜デイユースプラン（金曜）",
@@ -2117,6 +2117,70 @@
       "vacancy": {
         "details": [
           {
+            "plan_name": "【当日限定】アーリーチェックインご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】アーリーチェックインご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥33,800"
+          },
+          {
+            "plan_name": "【当日限定】アーリーチェックインご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】アーリーチェックインご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥28,800"
+          },
+          {
+            "plan_name": "【当日限定】レイトチェックアウトご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】レイトチェックアウトご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥26,800"
+          },
+          {
+            "plan_name": "【当日限定】レイトチェックアウトご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥24,800"
+          },
+          {
+            "plan_name": "【当日限定】レイトチェックアウトご宿泊プラン（金・土・祝前）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥22,800"
+          },
+          {
             "plan_name": "《当日予約》昼の部 デイユースプラン 13時～ （月～金・祝前）",
             "plan_type": "休憩",
             "room_rank_name": "ピングプリティ禁煙",
@@ -2147,6 +2211,86 @@
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 3時間デイユースプラン 18時～ （土・日・祝）",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥7,300"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,000"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 4時間デイユースプラン 18時～チェックイン",
+            "plan_type": "休憩",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,900"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 2時間デイユースプラン 18時～ （金）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "《当日予約》夜の部 2時間デイユースプラン 18時～ （金）",
+            "plan_type": "休憩",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
           }
         ],
         "max_stock": 1,
@@ -10114,22 +10258,6 @@
       "vacancy": {
         "details": [
           {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（金）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（金）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 喫煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
             "plan_name": "【1時間延長付き♪】お得な1時間延長付き当日宿泊プラン（金・祝前）",
             "plan_type": "宿泊",
             "room_rank_name": "プリティタイプ 禁煙",
@@ -11655,140 +11783,10 @@
     },
     {
       "url": "https://happyhotel.jp/hotels/543492",
-      "id": 543492,
-      "name": "エクセレント",
-      "address": "東京都新宿区歌舞伎町2-7-10",
-      "prices": [
-        {
-          "name": "ショートタイム",
-          "priceInfo": [
-            {
-              "week": "【月～金】",
-              "timePrice": [
-                {
-                  "price": "￥3,900均一",
-                  "timeZone": "5:00～翌 2:00の間で最大 2時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥4,100均一",
-                  "timeZone": "5:00～翌 2:00の間で最大 2時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "休憩",
-          "priceInfo": [
-            {
-              "week": "【月～金】",
-              "timePrice": [
-                {
-                  "price": "￥5,200～￥6,410",
-                  "timeZone": "5:00～翌 2:00の間で最大 3時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥5,480～￥7,870",
-                  "timeZone": "5:00～翌 2:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム（フリータイム）",
-          "priceInfo": [
-            {
-              "week": "【月～金】",
-              "timePrice": [
-                {
-                  "price": "￥5,200～￥6,410",
-                  "timeZone": "5:00～18:00の間で最大 13時間ご利用"
-                },
-                {
-                  "price": "￥5,200～￥6,410",
-                  "timeZone": "11:00～20:00の間で最大 9時間ご利用"
-                },
-                {
-                  "price": "￥5,200～￥6,410",
-                  "timeZone": "17:00～23:00の間で最大 6時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥5,480～￥7,870",
-                  "timeZone": "5:00～17:00の間で最大 12時間ご利用"
-                },
-                {
-                  "price": "￥5,480～￥7,870",
-                  "timeZone": "13:00～19:00の間で最大 6時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "宿泊",
-          "priceInfo": [
-            {
-              "week": "【日～木・祝】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥10,730",
-                  "timeZone": "19:00～翌 12:00の間で最大 17時間ご利用"
-                },
-                {
-                  "price": "￥7,000～￥10,730",
-                  "timeZone": "0時～15:00の間で最大 15時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金曜】",
-              "timePrice": [
-                {
-                  "price": "￥7,200～￥12,740",
-                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
-                },
-                {
-                  "price": "￥7,200～￥12,740",
-                  "timeZone": "1:00～13:00の間で最大 12時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・祝前】",
-              "timePrice": [
-                {
-                  "price": "￥7,300～￥14,880",
-                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
-                },
-                {
-                  "price": "￥7,300～￥14,880",
-                  "timeZone": "1:00～13:00の間で最大 12時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        }
-      ],
+      "id": null,
+      "name": null,
+      "address": null,
+      "prices": [],
       "rooms": [
         {
           "room_no": 202,
@@ -11896,60 +11894,16 @@
         }
       ],
       "access": {
-        "stations": [
-          {
-            "station": "東新宿駅",
-            "walk_min": 4
-          }
-        ],
-        "latitude": "35.695722",
-        "longitude": "139.705942",
-        "map_url": "https://www.google.com/maps?q=35.695722,139.705942",
-        "raw_access_text": "地下鉄大江戸線 東新宿駅A1出口より徒歩5分\n各線新宿駅より徒歩9分"
+        "stations": [],
+        "latitude": null,
+        "longitude": null,
+        "map_url": null,
+        "raw_access_text": null
       },
-      "amenities": {
-        "バス": [
-          "レインボーバス",
-          "ジェットバス",
-          "ブロアバス",
-          "浴室TV"
-        ],
-        "テレビ": [
-          "42インチ以上大型TV",
-          "ビデオ・オン・デマンド"
-        ],
-        "アミューズメント": [
-          "玩具(販売)",
-          "通信カラオケ",
-          "客室インターネット",
-          "無料Wi-Fi(無線LAN)"
-        ],
-        "設備": [
-          "電子レンジ",
-          "持込用冷蔵庫",
-          "コンビニBOX",
-          "空気清浄機",
-          "シャワートイレ",
-          "くるくるドライヤー",
-          "ヘアアイロン",
-          "ハンドマッサージャー",
-          "各種シャンプー(レンタル)",
-          "アメニティ豊富",
-          "コスチューム(レンタル)",
-          "携帯電話充電器",
-          "Androidスマホ充電器",
-          "iPhone充電器",
-          "*ナイトスチーマー",
-          "イオンドライヤー有り。",
-          "YouTube",
-          "Netflix",
-          "Prime VIdeo",
-          "DAZNなどを全室テレビの大画面で視聴可能。"
-        ]
-      },
+      "amenities": {},
       "review": {
-        "score": "4.1",
-        "count": 45
+        "score": null,
+        "count": null
       },
       "vacancy": {
         "details": [],
