@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-17T05:53+09:00"
+    "generatedAt": "2026-10-17T08:28+09:00"
   },
   "hotels": [
     {
@@ -2008,7 +2008,16 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
+        "details": [
+          {
+            "plan_name": "【当日限定】お得な素泊まりプラン！【金・土・祝前】",
+            "plan_type": "宿泊",
+            "room_rank_name": "Ctype",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
         "max_stock": null,
         "has_vacancy": null
       }
