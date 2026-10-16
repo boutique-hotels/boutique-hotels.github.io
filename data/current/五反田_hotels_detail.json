@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-16T18:02+09:00"
+    "generatedAt": "2026-10-16T22:56+09:00"
   },
   "hotels": [
     {
@@ -933,20 +933,20 @@
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Bランク",
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥15,000"
           },
           {
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Cランク",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥17,000"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 1,
         "has_vacancy": true
       }
     },
