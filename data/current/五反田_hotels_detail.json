@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-16T13:10+09:00"
+    "generatedAt": "2026-10-16T18:02+09:00"
   },
   "hotels": [
     {
@@ -925,8 +925,8 @@
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Aランク",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥12,000"
           },
           {
