@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-17T08:27+09:00"
+    "generatedAt": "2026-10-17T10:31+09:00"
   },
   "hotels": [
     {
@@ -2589,9 +2589,34 @@
         "count": 33
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【週末限定】ミッドナイトチェックインプラン ＜チェックイン24時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥18,900"
+          },
+          {
+            "plan_name": "週末限定！当日スタンダードプラン ＜チェックイン22時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥16,900"
+          },
+          {
+            "plan_name": "週末限定！当日レイトチェックインプラン ＜チェックイン深夜２時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥15,800"
+          }
+        ],
+        "max_stock": 2,
+        "has_vacancy": true
       }
     },
     {
@@ -6804,9 +6829,26 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "金曜、土曜、 当日22時チェックイン スタンダードルーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Standard",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥15,000"
+          },
+          {
+            "plan_name": "金曜、土曜、 当日22時チェックイン モデレートルーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Moderate",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,000"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
