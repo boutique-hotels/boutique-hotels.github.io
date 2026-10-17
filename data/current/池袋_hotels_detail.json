@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-18T06:41+09:00"
+    "generatedAt": "2026-10-18T08:56+09:00"
   },
   "hotels": [
     {
@@ -527,9 +527,9 @@
             "plan_name": "【土曜・日曜・祝日】当日限定 18：00～ スタンダードデイユースプラン ",
             "plan_type": "休憩",
             "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
           }
         ],
         "max_stock": 1,
@@ -799,17 +799,17 @@
             "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,800"
           },
           {
             "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "ラグジュアリー",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,800"
           }
         ],
         "max_stock": 1,
