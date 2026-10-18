@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-19T04:25+09:00"
+    "generatedAt": "2026-10-19T06:48+09:00"
   },
   "hotels": [
     {
@@ -275,7 +275,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r205.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 301,
@@ -283,7 +283,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r301.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 506,
@@ -387,7 +387,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r302.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 402,
@@ -395,7 +395,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r402.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 501,
@@ -427,7 +427,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r203.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 304,
@@ -475,7 +475,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r206.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 307,
@@ -1983,9 +1983,18 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
+            "plan_type": "宿泊",
+            "room_rank_name": "Ctype",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,000"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
