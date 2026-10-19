@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-19T13:28+09:00"
+    "generatedAt": "2026-10-19T19:12+09:00"
   },
   "hotels": [
     {
@@ -228,9 +228,9 @@
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
             "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "あと2室",
-            "stock_count": 2,
-            "charge_text": "￥9,300"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
@@ -247,38 +247,14 @@
             "stock_text": "あと2室",
             "stock_count": 2,
             "charge_text": "￥13,800"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥5,800"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥7,300"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥7,300"
           },
           {
             "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
             "plan_type": "休憩",
             "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥5,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
@@ -575,6 +551,54 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥10,800"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,100"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、ラグジュアリールーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥6,100"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、モデレートルーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥5,800"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、ラグジュアリールーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥6,500"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、スタンダードルーム180分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "月～木（平日）・当日、スタンダードルーム240分デイユースプラン！チェックイン10時～27時",
+            "plan_type": "休憩",
+            "room_rank_name": "スタンダード",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           }
         ],
         "max_stock": 1,
@@ -812,30 +836,6 @@
             "charge_text": "￥14,800"
           },
           {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "コンフォートタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥8,300"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "スーペリアタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥9,300"
-          },
-          {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
             "plan_type": "休憩",
             "room_rank_name": "コンフォートタイプ",
@@ -845,6 +845,22 @@
           },
           {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート禁煙タイプ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "【月～金曜】当日限定 20：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "コンフォートタイプ",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【月～金曜】当日限定 20：00～ スタンダードデイユースプラン ",
             "plan_type": "休憩",
             "room_rank_name": "モデレート禁煙タイプ",
             "stock_text": "あと1室",
@@ -1230,9 +1246,9 @@
             "plan_name": "【スタンダード】☆コスパ最強☆平日21時チェックインプラン",
             "plan_type": "宿泊",
             "room_rank_name": "スタンダード",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥8,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           }
         ],
         "max_stock": 1,
@@ -4625,18 +4641,9 @@
         "count": 3
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "日～木限定！当日予約21時チェックイン素泊まりプラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "全部屋均一",
-            "stock_text": "あと3室",
-            "stock_count": 3,
-            "charge_text": "￥8,800"
-          }
-        ],
-        "max_stock": 3,
-        "has_vacancy": true
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
@@ -16486,36 +16493,6 @@
       }
     },
     {
-      "url": "https://happyhotel.jp/hotels/543934",
-      "id": 543934,
-      "name": "ティファニー",
-      "address": "東京都豊島区南池袋2-26-1",
-      "prices": [],
-      "rooms": [],
-      "access": {
-        "stations": [
-          {
-            "station": "池袋駅",
-            "walk_min": 5
-          }
-        ],
-        "latitude": "35.727609",
-        "longitude": "139.713297",
-        "map_url": "https://www.google.com/maps?q=35.727609,139.713297",
-        "raw_access_text": null
-      },
-      "amenities": {},
-      "review": {
-        "score": null,
-        "count": null
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
-    },
-    {
       "url": "https://happyhotel.jp/hotels/543903",
       "id": 543903,
       "name": "ときわ",
@@ -16592,6 +16569,36 @@
         "latitude": "35.733028",
         "longitude": "139.714419",
         "map_url": "https://www.google.com/maps?q=35.733028,139.714419",
+        "raw_access_text": null
+      },
+      "amenities": {},
+      "review": {
+        "score": null,
+        "count": null
+      },
+      "vacancy": {
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
+      }
+    },
+    {
+      "url": "https://happyhotel.jp/hotels/543934",
+      "id": 543934,
+      "name": "福寿草",
+      "address": "東京都豊島区南池袋2-26-1",
+      "prices": [],
+      "rooms": [],
+      "access": {
+        "stations": [
+          {
+            "station": "池袋駅",
+            "walk_min": 5
+          }
+        ],
+        "latitude": "35.727609",
+        "longitude": "139.713297",
+        "map_url": "https://www.google.com/maps?q=35.727609,139.713297",
         "raw_access_text": null
       },
       "amenities": {},
