@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-19T09:08+09:00"
+    "generatedAt": "2026-10-19T13:31+09:00"
   },
   "hotels": [
     {
@@ -275,7 +275,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r205.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 301,
@@ -291,7 +291,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r506.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 601,
@@ -299,7 +299,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r601.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 801,
@@ -331,7 +331,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r306.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 401,
@@ -363,7 +363,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r503.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 603,
@@ -371,7 +371,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r603.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 606,
@@ -387,7 +387,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r302.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 402,
@@ -395,7 +395,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r402.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 501,
@@ -427,7 +427,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r203.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 304,
@@ -451,7 +451,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r504.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 509,
@@ -459,7 +459,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r509.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 604,
@@ -467,7 +467,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r604.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 206,
@@ -475,7 +475,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r206.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 307,
@@ -507,7 +507,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r607.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 202,
@@ -547,7 +547,7 @@
           "type_name": "EXECUTIVE",
           "rank_id": 6,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r405.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 409,
@@ -611,7 +611,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r408.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 508,
@@ -619,7 +619,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r508.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 608,
@@ -643,7 +643,7 @@
           "type_name": "SARA SWEET",
           "rank_id": 8,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r803.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 703,
@@ -667,7 +667,7 @@
           "type_name": "GRANDE",
           "rank_id": 10,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r701.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         }
       ],
       "access": {
@@ -2484,9 +2484,18 @@
         "count": 39
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日予約】急な宿泊でも安心！ウェルカムサービス付き♪",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
