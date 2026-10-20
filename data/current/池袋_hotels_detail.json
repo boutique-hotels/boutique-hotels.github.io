@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-20T06:44+09:00"
+    "generatedAt": "2026-10-20T10:01+09:00"
   },
   "hotels": [
     {
@@ -1262,9 +1262,9 @@
             "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
             "plan_type": "休憩",
             "room_rank_name": "スーペリアタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥9,300"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
@@ -1276,6 +1276,22 @@
           },
           {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート禁煙タイプ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "【月～金曜】当日限定 20：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "コンフォートタイプ",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【月～金曜】当日限定 20：00～ スタンダードデイユースプラン ",
             "plan_type": "休憩",
             "room_rank_name": "モデレート禁煙タイプ",
             "stock_text": "あと1室",
@@ -2676,8 +2692,8 @@
             "plan_name": "当日宿泊プラン（月曜～木曜）  チェックイン21時～24時",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "あと1室",
-            "stock_count": 1,
+            "stock_text": "売切れ",
+            "stock_count": null,
             "charge_text": "￥6,800"
           }
         ],
