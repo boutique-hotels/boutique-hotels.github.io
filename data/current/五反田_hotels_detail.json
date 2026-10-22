@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-22T13:19+09:00"
+    "generatedAt": "2026-10-22T18:38+09:00"
   },
   "hotels": [
     {
@@ -2013,12 +2013,12 @@
             "plan_name": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
             "plan_type": "宿泊",
             "room_rank_name": "Ctype",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと2室",
+            "stock_count": 2,
             "charge_text": "￥13,000"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 2,
         "has_vacancy": true
       }
     },
