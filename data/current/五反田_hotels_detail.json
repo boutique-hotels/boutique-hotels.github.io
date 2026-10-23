@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-23T07:19+09:00"
+    "generatedAt": "2026-10-23T09:56+09:00"
   },
   "hotels": [
     {
@@ -299,7 +299,7 @@
           "type_name": "STANDARD",
           "rank_id": 1,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r601.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 801,
@@ -315,7 +315,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r208.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 303,
@@ -363,7 +363,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r503.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 603,
@@ -379,7 +379,7 @@
           "type_name": "MODERATE",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r606.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 302,
@@ -395,7 +395,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r402.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 501,
@@ -411,7 +411,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r502.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 602,
@@ -531,7 +531,7 @@
           "type_name": "EXECUTIVE",
           "rank_id": 6,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r305.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 309,
@@ -595,7 +595,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r207.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 308,
@@ -603,7 +603,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r308.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 408,
@@ -619,7 +619,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r508.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 608,
@@ -627,7 +627,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r608.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 702,
@@ -643,7 +643,7 @@
           "type_name": "SARA SWEET",
           "rank_id": 8,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r803.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 703,
@@ -659,7 +659,7 @@
           "type_name": "PARTY",
           "rank_id": 9,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r802.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 701,
@@ -1304,28 +1304,28 @@
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Aランク",
-            "stock_text": "あと5室",
-            "stock_count": 5,
+            "stock_text": "あと6室",
+            "stock_count": 6,
             "charge_text": "￥12,000"
           },
           {
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Bランク",
-            "stock_text": "あと1室",
-            "stock_count": 1,
+            "stock_text": "あと2室",
+            "stock_count": 2,
             "charge_text": "￥15,000"
           },
           {
             "plan_name": "【当日限定】金・土・祝前日 宿泊プラン",
             "plan_type": "宿泊",
             "room_rank_name": "Cランク",
-            "stock_text": "あと2室",
-            "stock_count": 2,
+            "stock_text": "あと3室",
+            "stock_count": 3,
             "charge_text": "￥17,000"
           }
         ],
-        "max_stock": 5,
+        "max_stock": 6,
         "has_vacancy": true
       }
     },

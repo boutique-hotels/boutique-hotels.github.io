@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-23T07:17+09:00"
+    "generatedAt": "2026-10-23T09:53+09:00"
   },
   "hotels": [
     {
@@ -1178,6 +1178,22 @@
       "vacancy": {
         "details": [
           {
+            "plan_name": "【金曜・祝前】当日限定 21時～チェックイン スタンダードご宿泊プラン  ",
+            "plan_type": "宿泊",
+            "room_rank_name": "コンフォートタイプ",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【金曜・祝前】当日限定 21時～チェックイン スタンダードご宿泊プラン  ",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート禁煙タイプ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,800"
+          },
+          {
             "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
             "plan_type": "休憩",
             "room_rank_name": "コンフォートタイプ",
@@ -1200,22 +1216,6 @@
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【金曜・祝前】当日限定 21時～チェックイン スタンダードご宿泊プラン  ",
-            "plan_type": "宿泊",
-            "room_rank_name": "コンフォートタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【金曜・祝前】当日限定 21時～チェックイン スタンダードご宿泊プラン  ",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥16,800"
           },
           {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
@@ -2976,8 +2976,8 @@
             "plan_name": "モデレートルーム・金曜・祝前日限定！22時チェックイン当日素泊まり予約プラン！",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと2室",
+            "stock_count": 2,
             "charge_text": "￥11,800"
           },
           {
@@ -2989,7 +2989,7 @@
             "charge_text": "￥13,800"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 2,
         "has_vacancy": true
       }
     },
