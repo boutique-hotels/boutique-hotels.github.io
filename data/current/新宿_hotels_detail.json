@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-26T06:12+09:00"
+    "generatedAt": "2026-10-26T08:33+09:00"
   },
   "hotels": [
     {
@@ -1454,9 +1454,58 @@
         "count": 39
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【本日限定】10,000円宿泊プランＡ",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "【本日限定】10,000円宿泊プランＢ",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "【当日限定】特別宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,100"
+          },
+          {
+            "plan_name": "【当日限定】レイトチェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,100"
+          },
+          {
+            "plan_name": "【当日限定】和室ルームプラン ",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,400"
+          },
+          {
+            "plan_name": "【当日限定】ローションマットルームプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥15,100"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -2889,9 +2938,26 @@
         "count": 73
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日予約】平日限定スタンダードプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,600"
+          },
+          {
+            "plan_name": "【当日予約】平日限定スパプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥20,400"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -3396,9 +3462,42 @@
         "count": 33
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "本日限定！レイトチェックイン 10,000円宿泊 プラン ＜チェックイン24時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "特別宿泊プラン ＜チェックイン21時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,900"
+          },
+          {
+            "plan_name": "レイトチェックインプラン ＜チェックイン24時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,900"
+          },
+          {
+            "plan_name": "本日限定！10,000円宿泊 プラン ＜チェックイン21時より＞",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,000"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -4247,9 +4346,26 @@
         "count": 31
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日予約】平日限定 レイトチェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,900"
+          },
+          {
+            "plan_name": "【当日予約】平日限定 アーリーチェックアウトプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,900"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -6313,9 +6429,34 @@
         "count": 4
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "日～木 当日22時チェックイン スタンダードルーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Standard",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥11,800"
+          },
+          {
+            "plan_name": "日～木 当日22時チェックイン モデレートルーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Moderate",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥12,800"
+          },
+          {
+            "plan_name": "日～木 当日22時チェックイン ラグジュアリールーム素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "Luxury",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -7220,9 +7361,18 @@
         "count": 27
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【月-木】当日宿泊予約ハピホテ限定",
+            "plan_type": "宿泊",
+            "room_rank_name": null,
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥9,980"
+          }
+        ],
+        "max_stock": 2,
+        "has_vacancy": true
       }
     },
     {

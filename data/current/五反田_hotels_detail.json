@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-26T06:13+09:00"
+    "generatedAt": "2026-10-26T08:33+09:00"
   },
   "hotels": [
     {
@@ -443,7 +443,7 @@
           "type_name": "DELUXE",
           "rank_id": 4,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r404.jpg",
-          "keep_flag": 1
+          "keep_flag": 0
         },
         {
           "room_no": 504,
@@ -611,7 +611,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r408.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 508,
@@ -901,7 +901,7 @@
           "type_name": "ランク2",
           "rank_id": 2,
           "image": "https://happyhotel.jp/hotenavi/b-side/image/r302.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 305,
@@ -1005,7 +1005,7 @@
           "type_name": "ランク5",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/b-side/image/r401.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 501,
@@ -1021,7 +1021,7 @@
           "type_name": "ランク5",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/b-side/image/r602.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 403,
@@ -1731,9 +1731,34 @@
         "count": 2
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日限定】日～木 宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Aランク",
+            "stock_text": "あと6室",
+            "stock_count": 6,
+            "charge_text": "￥10,000"
+          },
+          {
+            "plan_name": "【当日限定】日～木 宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Bランク",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,000"
+          },
+          {
+            "plan_name": "【当日限定】日～木 宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "Cランク",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥15,000"
+          }
+        ],
+        "max_stock": 6,
+        "has_vacancy": true
       }
     },
     {
