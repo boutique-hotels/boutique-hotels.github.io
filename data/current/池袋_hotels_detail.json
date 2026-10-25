@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-25T07:43+09:00"
+    "generatedAt": "2026-10-25T09:59+09:00"
   },
   "hotels": [
     {
@@ -225,52 +225,28 @@
       "vacancy": {
         "details": [
           {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
-            "plan_type": "休憩",
-            "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
             "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,300"
           },
           {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,800"
           },
           {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,800"
           },
           {
             "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
@@ -284,12 +260,36 @@
             "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
             "plan_type": "休憩",
             "room_rank_name": "モデレート(禁煙)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(喫煙)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "バリューB(喫煙)",
             "stock_text": "売切れ",
             "stock_count": null,
             "charge_text": "売切れ"
           },
           {
-            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
+            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(禁煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
             "plan_type": "休憩",
             "room_rank_name": "モデレート(喫煙)",
             "stock_text": "売切れ",
@@ -297,8 +297,8 @@
             "charge_text": "売切れ"
           }
         ],
-        "max_stock": null,
-        "has_vacancy": null
+        "max_stock": 2,
+        "has_vacancy": true
       }
     },
     {
@@ -1534,18 +1534,9 @@
         "count": 8
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "モデレートルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレート",
-            "stock_text": "あと3室",
-            "stock_count": 3,
-            "charge_text": "￥9,800"
-          }
-        ],
-        "max_stock": 3,
-        "has_vacancy": true
+        "details": [],
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
