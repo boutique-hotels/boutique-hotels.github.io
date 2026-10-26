@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-26T10:34+09:00"
+    "generatedAt": "2026-10-26T15:52+09:00"
   },
   "hotels": [
     {
@@ -247,30 +247,6 @@
             "stock_text": "あと2室",
             "stock_count": 2,
             "charge_text": "￥13,800"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥5,800"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥7,300"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥7,300"
           },
           {
             "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (月～金・祝前)",
@@ -947,9 +923,9 @@
             "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "ラグジュアリー",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥10,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "月～木（平日）・当日、モデレートルーム180分デイユースプラン！チェックイン10時～27時",
@@ -1233,30 +1209,6 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥14,800"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "コンフォートタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "スーペリアタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
           },
           {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
@@ -6672,10 +6624,10 @@
       "address": "東京都豊島区池袋1-3-3",
       "prices": [
         {
-          "name": "Rest",
+          "name": "休憩（サービスタイム）",
           "priceInfo": [
             {
-              "week": "【Week day】",
+              "week": "【月～木】",
               "timePrice": [
                 {
                   "price": "￥7,000～￥15,000",
@@ -6684,7 +6636,7 @@
               ]
             },
             {
-              "week": "【Friday・Sataday・Sunday】",
+              "week": "【金・土・日】",
               "timePrice": [
                 {
                   "price": "￥7,500～￥16,000",
@@ -6696,10 +6648,10 @@
           "remarks": "※表示金額は税込です\n"
         },
         {
-          "name": "Srevice time",
+          "name": "サービスタイム",
           "priceInfo": [
             {
-              "week": "【Week day】",
+              "week": "【月～木】",
               "timePrice": [
                 {
                   "price": "￥7,000～￥15,000",
@@ -6716,7 +6668,7 @@
               ]
             },
             {
-              "week": "【Friday】",
+              "week": "【金】",
               "timePrice": [
                 {
                   "price": "￥7,500～￥16,000",
@@ -6729,7 +6681,7 @@
               ]
             },
             {
-              "week": "【Sataday・Sunday・Holidays】",
+              "week": "【土・日・祝】",
               "timePrice": [
                 {
                   "price": "￥7,500～￥16,000",
@@ -6741,10 +6693,10 @@
           "remarks": "※表示金額は税込です\n"
         },
         {
-          "name": "Stay",
+          "name": "宿泊",
           "priceInfo": [
             {
-              "week": "【Sunday・weekday】",
+              "week": "【日～木】",
               "timePrice": [
                 {
                   "price": "￥11,500～￥23,000",
@@ -6757,7 +6709,7 @@
               ]
             },
             {
-              "week": "【Friday】",
+              "week": "【金】",
               "timePrice": [
                 {
                   "price": "￥14,800～￥24,000",
@@ -6766,7 +6718,7 @@
               ]
             },
             {
-              "week": "【Sataday・Before holidays】",
+              "week": "【土・祝前】",
               "timePrice": [
                 {
                   "price": "￥15,500～￥25,000",
@@ -6779,22 +6731,6 @@
         }
       ],
       "rooms": [
-        {
-          "room_no": 302,
-          "room_name": "302",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r302.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 303,
-          "room_name": "303",
-          "type_name": "ランク4",
-          "rank_id": 4,
-          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r303.jpg",
-          "keep_flag": 0
-        },
         {
           "room_no": 202,
           "room_name": "202",
@@ -6809,14 +6745,6 @@
           "type_name": "ランク5",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/std0712099/image/r203.jpg",
-          "keep_flag": 0
-        },
-        {
-          "room_no": 207,
-          "room_name": "207",
-          "type_name": "ランク5",
-          "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r207.jpg",
           "keep_flag": 0
         },
         {
@@ -6836,11 +6764,19 @@
           "keep_flag": 0
         },
         {
-          "room_no": 307,
-          "room_name": "307",
+          "room_no": 302,
+          "room_name": "302",
           "type_name": "ランク5",
           "rank_id": 5,
-          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r307.jpg",
+          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r302.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 303,
+          "room_name": "303",
+          "type_name": "ランク5",
+          "rank_id": 5,
+          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r303.jpg",
           "keep_flag": 0
         },
         {
@@ -6868,34 +6804,50 @@
           "keep_flag": 0
         },
         {
-          "room_no": 301,
-          "room_name": "301",
+          "room_no": 207,
+          "room_name": "207",
           "type_name": "ランク6",
           "rank_id": 6,
+          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r207.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 301,
+          "room_name": "301",
+          "type_name": "ランク7",
+          "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/std0712099/image/r301.jpg",
           "keep_flag": 0
         },
         {
           "room_no": 305,
           "room_name": "305",
-          "type_name": "ランク6",
-          "rank_id": 6,
+          "type_name": "ランク7",
+          "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/std0712099/image/r305.jpg",
           "keep_flag": 0
         },
         {
           "room_no": 306,
           "room_name": "306",
-          "type_name": "ランク6",
-          "rank_id": 6,
+          "type_name": "ランク7",
+          "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/std0712099/image/r306.jpg",
+          "keep_flag": 0
+        },
+        {
+          "room_no": 307,
+          "room_name": "307",
+          "type_name": "ランク7",
+          "rank_id": 7,
+          "image": "https://happyhotel.jp/hotenavi/std0712099/image/r307.jpg",
           "keep_flag": 0
         },
         {
           "room_no": 308,
           "room_name": "308",
           "type_name": "ランク8",
-          "rank_id": 7,
+          "rank_id": 8,
           "image": "https://happyhotel.jp/hotenavi/std0712099/image/r308.jpg",
           "keep_flag": 0
         }
