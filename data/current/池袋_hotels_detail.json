@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-28T08:58+09:00"
+    "generatedAt": "2026-10-28T14:10+09:00"
   },
   "hotels": [
     {
@@ -236,9 +236,9 @@
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥13,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
@@ -297,8 +297,8 @@
             "charge_text": "売切れ"
           }
         ],
-        "max_stock": 1,
-        "has_vacancy": true
+        "max_stock": null,
+        "has_vacancy": null
       }
     },
     {
@@ -899,6 +899,22 @@
       "vacancy": {
         "details": [
           {
+            "plan_name": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
+            "plan_type": "宿泊",
+            "room_rank_name": "コンフォートタイプ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,800"
+          },
+          {
+            "plan_name": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート禁煙タイプ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥14,800"
+          },
+          {
             "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
             "plan_type": "休憩",
             "room_rank_name": "コンフォートタイプ",
@@ -910,9 +926,9 @@
             "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
             "plan_type": "休憩",
             "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥8,300"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
@@ -937,22 +953,6 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥8,300"
-          },
-          {
-            "plan_name": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
-            "plan_type": "宿泊",
-            "room_rank_name": "コンフォートタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
           }
         ],
         "max_stock": 1,
@@ -2561,28 +2561,12 @@
       "vacancy": {
         "details": [
           {
-            "plan_name": "プリティルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "プリティ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
             "plan_name": "モデレートルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート",
             "stock_text": "あと2室",
             "stock_count": 2,
             "charge_text": "￥9,800"
-          },
-          {
-            "plan_name": "スーペリアルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "スーペリア",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
           }
         ],
         "max_stock": 2,
