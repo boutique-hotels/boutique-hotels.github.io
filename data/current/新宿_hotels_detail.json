@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-29T06:55+09:00"
+    "generatedAt": "2026-10-29T10:44+09:00"
   },
   "hotels": [
     {
@@ -4922,9 +4922,9 @@
             "plan_name": "★《当日予約》昼から5時間利用 デイユースプラン（月～金・祝前）",
             "plan_type": "休憩",
             "room_rank_name": "スーペリアタイプ　禁煙",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥9,300"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "★《当日予約》夜から3時間利用 デイユースプラン（月～金）",
