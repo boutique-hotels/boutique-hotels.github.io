@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-29T10:42+09:00"
+    "generatedAt": "2026-10-29T17:19+09:00"
   },
   "hotels": [
     {
@@ -243,30 +243,6 @@
           {
             "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
             "plan_type": "宿泊",
-            "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (月～金・祝前)",
-            "plan_type": "休憩",
             "room_rank_name": "モデレート(喫煙)",
             "stock_text": "売切れ",
             "stock_count": null,
@@ -667,9 +643,9 @@
             "plan_name": "【人気☆ラグジュアリー】平日21時チェックインプラン",
             "plan_type": "宿泊",
             "room_rank_name": "ラグジュアリー",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥10,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【スタンダード】☆コスパ最強☆平日21時チェックインプラン",
@@ -902,9 +878,9 @@
             "plan_name": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
             "plan_type": "宿泊",
             "room_rank_name": "コンフォートタイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥13,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【当日予約】スタンダードご宿泊プラン20時～(日～木)",
@@ -913,30 +889,6 @@
             "stock_text": "あと1室",
             "stock_count": 1,
             "charge_text": "￥14,800"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "コンフォートタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート禁煙タイプ",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥8,300"
-          },
-          {
-            "plan_name": "【月～金曜】当日限定 12：00～ スタンダードデイユースプラン",
-            "plan_type": "休憩",
-            "room_rank_name": "スーペリアタイプ",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
           },
           {
             "plan_name": "【月～金曜】当日限定 18：00～ スタンダードデイユースプラン ",
@@ -2580,8 +2532,8 @@
             "plan_name": "当日宿泊プラン（月曜～木曜）  チェックイン21時～24時",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "あと1室",
-            "stock_count": 1,
+            "stock_text": "売切れ",
+            "stock_count": null,
             "charge_text": "￥6,800"
           }
         ],
@@ -7217,51 +7169,6 @@
                 {
                   "price": "￥7,500～￥16,000",
                   "timeZone": "6:00～24:00の間で最大 3時間ご利用"
-                }
-              ]
-            }
-          ],
-          "remarks": "※表示金額は税込です\n"
-        },
-        {
-          "name": "サービスタイム",
-          "priceInfo": [
-            {
-              "week": "【月～木】",
-              "timePrice": [
-                {
-                  "price": "￥7,000～￥15,000",
-                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
-                },
-                {
-                  "price": "￥7,000～￥15,000",
-                  "timeZone": "13:00～20:00の間で最大 7時間ご利用"
-                },
-                {
-                  "price": "￥7,000～￥15,000",
-                  "timeZone": "16:00～22:00の間で最大 6時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【金】",
-              "timePrice": [
-                {
-                  "price": "￥7,500～￥16,000",
-                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
-                },
-                {
-                  "price": "￥7,500～￥16,000",
-                  "timeZone": "13:00～20:00の間で最大 7時間ご利用"
-                }
-              ]
-            },
-            {
-              "week": "【土・日・祝】",
-              "timePrice": [
-                {
-                  "price": "￥7,500～￥16,000",
-                  "timeZone": "6:00～16:00の間で最大 10時間ご利用"
                 }
               ]
             }
