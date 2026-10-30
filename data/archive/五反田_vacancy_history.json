@@ -1,171 +1,5 @@
 [
   {
-    "generatedAt": "2026-09-30T00:41+09:00",
-    "hotels": [
-      {
-        "name": "SARA GRANDE五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL B-SIDE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリANNEX 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL ZHIPAGO",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "The CALM Hotel Tokyo",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル エメラルド 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL PEACE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリ 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "SARA五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL BIX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL W1",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LiosIII",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "DESIGN HOTEL NOX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル ウエスト",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "hotel min.",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LUXE SHINAGAWA",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル マーブル",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "シーズ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル イーアイ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル MARE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ヒルズホテル五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "宝翠",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      }
-    ]
-  },
-  {
     "generatedAt": "2026-10-06T00:51+09:00",
     "hotels": [
       {
@@ -1949,191 +1783,6 @@
     ]
   },
   {
-    "generatedAt": "2026-10-23T09:56+09:00",
-    "hotels": [
-      {
-        "name": "SARA GRANDE五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL B-SIDE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル エメラルド 五反田",
-        "hasVacancy": true,
-        "maxStock": 6,
-        "totalStock": 11,
-        "plans": [
-          {
-            "planName": "【当日限定】金・土・祝前日 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Aランク",
-            "stockCount": 6
-          },
-          {
-            "planName": "【当日限定】金・土・祝前日 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Bランク",
-            "stockCount": 2
-          },
-          {
-            "planName": "【当日限定】金・土・祝前日 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Cランク",
-            "stockCount": 3
-          }
-        ]
-      },
-      {
-        "name": "The CALM Hotel Tokyo",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリ 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL ZHIPAGO",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリANNEX 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL PEACE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "SARA五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL W1",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL BIX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LiosIII",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "hotel min.",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "DESIGN HOTEL NOX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル ウエスト",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LUXE SHINAGAWA",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "シーズ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル イーアイ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル MARE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル マーブル",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ヒルズホテル五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "宝翠",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      }
-    ]
-  },
-  {
     "generatedAt": "2026-10-24T00:55+09:00",
     "hotels": [
       {
@@ -3029,583 +2678,7 @@
     ]
   },
   {
-    "generatedAt": "2026-10-28T05:37+09:00",
-    "hotels": [
-      {
-        "name": "SARA GRANDE五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL B-SIDE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリANNEX 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル エメラルド 五反田",
-        "hasVacancy": true,
-        "maxStock": 6,
-        "totalStock": 12,
-        "plans": [
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Aランク",
-            "stockCount": 6
-          },
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Bランク",
-            "stockCount": 2
-          },
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Cランク",
-            "stockCount": 4
-          }
-        ]
-      },
-      {
-        "name": "The CALM Hotel Tokyo",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリ 五反田",
-        "hasVacancy": true,
-        "maxStock": 4,
-        "totalStock": 4,
-        "plans": [
-          {
-            "planName": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
-            "planType": "宿泊",
-            "roomRankName": "Ctype",
-            "stockCount": 4
-          }
-        ]
-      },
-      {
-        "name": "HOTEL ZHIPAGO",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL PEACE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "SARA五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL BIX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL W1",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LiosIII",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "hotel min.",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LUXE SHINAGAWA",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "DESIGN HOTEL NOX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル MARE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル ウエスト",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "シーズ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル マーブル",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル イーアイ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ヒルズホテル五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "宝翠",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      }
-    ]
-  },
-  {
     "generatedAt": "2026-10-28T09:00+09:00",
-    "hotels": [
-      {
-        "name": "SARA GRANDE五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL B-SIDE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリANNEX 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル エメラルド 五反田",
-        "hasVacancy": true,
-        "maxStock": 6,
-        "totalStock": 12,
-        "plans": [
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Aランク",
-            "stockCount": 6
-          },
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Bランク",
-            "stockCount": 2
-          },
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Cランク",
-            "stockCount": 4
-          }
-        ]
-      },
-      {
-        "name": "The CALM Hotel Tokyo",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリ 五反田",
-        "hasVacancy": true,
-        "maxStock": 4,
-        "totalStock": 4,
-        "plans": [
-          {
-            "planName": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
-            "planType": "宿泊",
-            "roomRankName": "Ctype",
-            "stockCount": 4
-          }
-        ]
-      },
-      {
-        "name": "HOTEL ZHIPAGO",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL PEACE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "SARA五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL BIX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL W1",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LiosIII",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "hotel min.",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LUXE SHINAGAWA",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "DESIGN HOTEL NOX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル MARE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル ウエスト",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "シーズ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル マーブル",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル イーアイ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ヒルズホテル五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "宝翠",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      }
-    ]
-  },
-  {
-    "generatedAt": "2026-10-28T14:12+09:00",
-    "hotels": [
-      {
-        "name": "SARA GRANDE五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL B-SIDE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリANNEX 五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル エメラルド 五反田",
-        "hasVacancy": true,
-        "maxStock": 6,
-        "totalStock": 12,
-        "plans": [
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Aランク",
-            "stockCount": 6
-          },
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Bランク",
-            "stockCount": 2
-          },
-          {
-            "planName": "【当日限定】日～木 宿泊プラン",
-            "planType": "宿泊",
-            "roomRankName": "Cランク",
-            "stockCount": 4
-          }
-        ]
-      },
-      {
-        "name": "The CALM Hotel Tokyo",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル バリバリ 五反田",
-        "hasVacancy": true,
-        "maxStock": 4,
-        "totalStock": 4,
-        "plans": [
-          {
-            "planName": " 【当日限定】お得な素泊まりプラン【平日・日祝限定】",
-            "planType": "宿泊",
-            "roomRankName": "Ctype",
-            "stockCount": 4
-          }
-        ]
-      },
-      {
-        "name": "HOTEL ZHIPAGO",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL PEACE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "SARA五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL BIX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL W1",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LiosIII",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "hotel min.",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "HOTEL LUXE SHINAGAWA",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "DESIGN HOTEL NOX",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル MARE",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル ウエスト",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "シーズ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル マーブル",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ホテル イーアイ五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "ヒルズホテル五反田",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      },
-      {
-        "name": "宝翠",
-        "hasVacancy": null,
-        "maxStock": null,
-        "totalStock": 0,
-        "plans": []
-      }
-    ]
-  },
-  {
-    "generatedAt": "2026-10-28T20:36+09:00",
     "hotels": [
       {
         "name": "SARA GRANDE五反田",
@@ -5437,6 +4510,172 @@
       },
       {
         "name": "ホテル MARE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "シーズ五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ヒルズホテル五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "宝翠",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      }
+    ]
+  },
+  {
+    "generatedAt": "2026-10-31T03:50+09:00",
+    "hotels": [
+      {
+        "name": "SARA GRANDE五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル エメラルド 五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL B-SIDE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "The CALM Hotel Tokyo",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル バリバリANNEX 五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL ZHIPAGO",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル バリバリ 五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL PEACE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "SARA五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL BIX",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL LiosIII",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL W1",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "hotel min.",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル ウエスト",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "DESIGN HOTEL NOX",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル MARE",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "HOTEL LUXE SHINAGAWA",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "Hotel Pualani（プアラニ）旧リオス五反田",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル マーブル",
+        "hasVacancy": null,
+        "maxStock": null,
+        "totalStock": 0,
+        "plans": []
+      },
+      {
+        "name": "ホテル イーアイ五反田",
         "hasVacancy": null,
         "maxStock": null,
         "totalStock": 0,
