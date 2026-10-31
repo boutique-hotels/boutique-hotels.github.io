@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-01T04:31+09:00"
+    "generatedAt": "2026-11-01T07:45+09:00"
   },
   "hotels": [
     {
@@ -223,9 +223,82 @@
         "count": 72
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "バリューB(喫煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(禁煙)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 夕方～夜の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(喫煙)",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,300"
+          },
+          {
+            "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリューB(喫煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート(禁煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】ご宿泊プラン 20時～チェックイン (日～木・祝)",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート(喫煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "バリューB(喫煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(禁煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート(喫煙)",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -581,9 +654,34 @@
         "count": 13
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【人気☆モデレート】平日21時チェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,800"
+          },
+          {
+            "plan_name": "【人気☆ラグジュアリー】平日21時チェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥10,800"
+          },
+          {
+            "plan_name": "【スタンダード】☆コスパ最強☆平日21時チェックインプラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "スタンダード",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -799,7 +897,24 @@
         "count": 18
       },
       "vacancy": {
-        "details": [],
+        "details": [
+          {
+            "plan_name": "【土曜・日曜・祝日】当日限定 18：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "コンフォートタイプ",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【土曜・日曜・祝日】当日限定 18：00～ スタンダードデイユースプラン ",
+            "plan_type": "休憩",
+            "room_rank_name": "モデレート禁煙タイプ",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
         "max_stock": null,
         "has_vacancy": null
       }
@@ -1054,9 +1169,34 @@
         "count": 8
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "plan_type": "宿泊",
+            "room_rank_name": "スタンダード",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥9,800"
+          },
+          {
+            "plan_name": "【当日限定プラン】日～木・祝日☆リニューアル記念  ご宿泊プラン☆",
+            "plan_type": "宿泊",
+            "room_rank_name": "ラグジュアリー",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
+        "max_stock": 1,
+        "has_vacancy": true
       }
     },
     {
@@ -1403,9 +1543,34 @@
         "count": 8
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "プリティルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "プリティ",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥8,800"
+          },
+          {
+            "plan_name": "モデレートルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥9,800"
+          },
+          {
+            "plan_name": "スーペリアルーム・日～木・祝日限定！21時チェックイン当日素泊まり予約プラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリア",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
+        "max_stock": 2,
+        "has_vacancy": true
       }
     },
     {
@@ -2833,9 +2998,18 @@
         "count": 3
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "日～木限定！当日予約21時チェックイン素泊まりプラン！",
+            "plan_type": "宿泊",
+            "room_rank_name": "全部屋均一",
+            "stock_text": "あと5室",
+            "stock_count": 5,
+            "charge_text": "￥8,800"
+          }
+        ],
+        "max_stock": 5,
+        "has_vacancy": true
       }
     },
     {
@@ -4804,10 +4978,108 @@
     },
     {
       "url": "https://happyhotel.jp/hotels/540287",
-      "id": null,
-      "name": null,
-      "address": null,
-      "prices": [],
+      "id": 540287,
+      "name": "ホテル ティファナイン 池袋",
+      "address": "東京都豊島区東池袋1-26-2",
+      "prices": [
+        {
+          "name": "休憩",
+          "priceInfo": [
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥3,900～￥5,900",
+                  "timeZone": "6:00～24:00の間で最大 2時間ご利用"
+                },
+                {
+                  "price": "￥4,800～￥7,500",
+                  "timeZone": "6:00～24:00の間で最大 3時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥4,200～￥6,000",
+                  "timeZone": "6:00～24:00の間で最大 2時間ご利用"
+                },
+                {
+                  "price": "￥5,000～￥7,800",
+                  "timeZone": "6:00～24:00の間で最大 3時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n時間帯により２時間制の場合あり\n"
+        },
+        {
+          "name": "サービスタイム（フリータイム）",
+          "priceInfo": [
+            {
+              "week": "【月～金】",
+              "timePrice": [
+                {
+                  "price": "￥4,800～￥7,500",
+                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
+                },
+                {
+                  "price": "￥4,800～￥7,500",
+                  "timeZone": "13:00～20:00の間で最大 7時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土・日・祝】",
+              "timePrice": [
+                {
+                  "price": "￥5,000～￥7,800",
+                  "timeZone": "6:00～17:00の間で最大 11時間ご利用"
+                },
+                {
+                  "price": "￥5,000～￥7,800",
+                  "timeZone": "13:00～20:00の間で最大 7時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        },
+        {
+          "name": "宿泊",
+          "priceInfo": [
+            {
+              "week": "【日～木】",
+              "timePrice": [
+                {
+                  "price": "￥7,700～￥12,000",
+                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【金】",
+              "timePrice": [
+                {
+                  "price": "￥8,200～￥13,000",
+                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
+                }
+              ]
+            },
+            {
+              "week": "【土】",
+              "timePrice": [
+                {
+                  "price": "￥8,700～￥13,500",
+                  "timeZone": "20:00～翌 11:00の間で最大 15時間ご利用"
+                }
+              ]
+            }
+          ],
+          "remarks": "※表示金額は税込です\n"
+        }
+      ],
       "rooms": [
         {
           "room_no": 601,
@@ -5003,16 +5275,68 @@
         }
       ],
       "access": {
-        "stations": [],
-        "latitude": null,
-        "longitude": null,
-        "map_url": null,
-        "raw_access_text": null
+        "stations": [
+          {
+            "station": "池袋駅",
+            "walk_min": 5
+          }
+        ],
+        "latitude": "35.728979",
+        "longitude": "139.716213",
+        "map_url": "https://www.google.com/maps?q=35.728979,139.716213",
+        "raw_access_text": "🚊JR池袋駅東口徒歩5分\n🚊有楽町線東池袋徒歩2分\n🏢サンシャインから徒歩2分"
       },
-      "amenities": {},
+      "amenities": {
+        "バス": [
+          "ジェットバス",
+          "ブロアバス(一部)",
+          "岩盤浴(一部)",
+          "サウナ(一部)",
+          "浴室TV",
+          "マット(一部)",
+          "*306",
+          "503",
+          "603号室にReFaシャワーヘッド導入"
+        ],
+        "テレビ": [
+          "42インチ以上大型TV(一部)",
+          "ビデオ・オン・デマンド",
+          "持込用DVDデッキ(一部)",
+          "ブルーレイプレーヤー(一部)"
+        ],
+        "アミューズメント": [
+          "マッサージチェア(一部)",
+          "有線放送(一部)",
+          "無料Wi-Fi(無線LAN)",
+          "*20種類以上のコスプレレンタル開始"
+        ],
+        "お部屋": [
+          "和室(一部)",
+          "同性利用可(女性)",
+          "同性利用可(男性)"
+        ],
+        "設備": [
+          "電子レンジ",
+          "電気ポット(一部)",
+          "空気清浄機(一部)",
+          "シャワートイレ",
+          "くるくるドライヤー(レンタル)",
+          "ヘアアイロン(レンタル)",
+          "ルームウェア",
+          "男性化粧品",
+          "女性化粧品",
+          "各種シャンプー",
+          "アメニティ豊富",
+          "コスチューム(レンタル)",
+          "携帯電話充電器",
+          "Androidスマホ充電器",
+          "iPhone充電器",
+          "*全室ハンディマッサージャー設置"
+        ]
+      },
       "review": {
-        "score": null,
-        "count": null
+        "score": "4.7",
+        "count": 3
       },
       "vacancy": {
         "details": [],
