@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-02T08:50+09:00"
+    "generatedAt": "2026-11-02T14:32+09:00"
   },
   "hotels": [
     {
@@ -1612,12 +1612,12 @@
             "plan_name": "モデレートルーム・土曜限定！22時チェックイン当日素泊まり予約プラン！",
             "plan_type": "宿泊",
             "room_rank_name": "モデレート",
-            "stock_text": "あと4室",
-            "stock_count": 4,
+            "stock_text": "あと3室",
+            "stock_count": 3,
             "charge_text": "￥13,800"
           }
         ],
-        "max_stock": 4,
+        "max_stock": 3,
         "has_vacancy": true
       }
     },
