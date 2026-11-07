@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-07T12:09+09:00"
+    "generatedAt": "2026-11-07T18:59+09:00"
   },
   "hotels": [
     {
@@ -840,8 +840,8 @@
             "plan_name": "『本日の予約』夜デイユースプラン（土・日・祝・連休）",
             "plan_type": "休憩",
             "room_rank_name": "スイートタイプ",
-            "stock_text": "あと3室",
-            "stock_count": 3,
+            "stock_text": "あと1室",
+            "stock_count": 1,
             "charge_text": "￥10,800"
           },
           {
@@ -861,7 +861,7 @@
             "charge_text": "売切れ"
           }
         ],
-        "max_stock": 3,
+        "max_stock": 2,
         "has_vacancy": true
       }
     },
@@ -5470,8 +5470,8 @@
             "plan_name": "週末限定！当日スタンダードプラン ＜チェックイン22時より＞",
             "plan_type": "宿泊",
             "room_rank_name": null,
-            "stock_text": "あと1室",
-            "stock_count": 1,
+            "stock_text": "売切れ",
+            "stock_count": null,
             "charge_text": "￥16,900"
           },
           {
@@ -11801,22 +11801,6 @@
       },
       "vacancy": {
         "details": [
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（土日祝）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 禁煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【まだ間に合う！】当日スタンダード・デイユースプラン 昼の部（土日祝）",
-            "plan_type": "休憩",
-            "room_rank_name": "プリティタイプ 喫煙",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
           {
             "plan_name": "【1時間延長付き♪】お得な1時間延長付き当日宿泊プラン（土・特日）",
             "plan_type": "宿泊",
