@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-08T01:17+09:00"
+    "generatedAt": "2026-11-08T05:29+09:00"
   },
   "hotels": [
     {
@@ -2041,7 +2041,64 @@
         "count": 17
       },
       "vacancy": {
-        "details": [],
+        "details": [
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日限定】スタンダード ご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "バリュープラス",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "ピングプリティ喫煙可",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【当日予約】アーリーチェックインご宿泊プラン（日～木）",
+            "plan_type": "宿泊",
+            "room_rank_name": "モデレート",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
         "max_stock": null,
         "has_vacancy": null
       }
@@ -4230,9 +4287,42 @@
         "count": 18
       },
       "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
+        "details": [
+          {
+            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと3室",
+            "stock_count": 3,
+            "charge_text": "￥16,800"
+          },
+          {
+            "plan_name": "★【当日予約】待ち時間0分!! スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥16,800"
+          },
+          {
+            "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　喫煙",
+            "stock_text": "あと2室",
+            "stock_count": 2,
+            "charge_text": "￥13,000"
+          },
+          {
+            "plan_name": "★【当日予約】4,000円相当お得！期間限定 ご宿泊プラン",
+            "plan_type": "宿泊",
+            "room_rank_name": "スーペリアタイプ　禁煙",
+            "stock_text": "あと1室",
+            "stock_count": 1,
+            "charge_text": "￥13,000"
+          }
+        ],
+        "max_stock": 3,
+        "has_vacancy": true
       }
     },
     {
@@ -11725,7 +11815,24 @@
         "count": 11
       },
       "vacancy": {
-        "details": [],
+        "details": [
+          {
+            "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "プリティタイプ 禁煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          },
+          {
+            "plan_name": "【まだ間に合う！】当日スタンダードご宿泊プラン（日～木・祝日）",
+            "plan_type": "宿泊",
+            "room_rank_name": "プリティタイプ 喫煙",
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
+          }
+        ],
         "max_stock": null,
         "has_vacancy": null
       }
