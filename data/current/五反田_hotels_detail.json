@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-15T11:34+09:00"
+    "generatedAt": "2026-11-15T18:52+09:00"
   },
   "hotels": [
     {
@@ -387,7 +387,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r302.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 402,
@@ -403,7 +403,7 @@
           "type_name": "SUPERIOR",
           "rank_id": 3,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r501.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 502,
@@ -491,7 +491,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r407.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 507,
@@ -499,7 +499,7 @@
           "type_name": "LUXURY",
           "rank_id": 5,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r507.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 607,
@@ -563,7 +563,7 @@
           "type_name": "EXECUTIVE",
           "rank_id": 6,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r505.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 605,
@@ -579,7 +579,7 @@
           "type_name": "EXECUTIVE",
           "rank_id": 6,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r609.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 201,
@@ -595,7 +595,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r207.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 308,
@@ -603,7 +603,7 @@
           "type_name": "CONCEPT",
           "rank_id": 7,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r308.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 408,
@@ -635,7 +635,7 @@
           "type_name": "SARA SWEET",
           "rank_id": 8,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r702.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 803,
@@ -659,7 +659,7 @@
           "type_name": "PARTY",
           "rank_id": 9,
           "image": "https://happyhotel.jp/hotenavi/sara-gra/image/r802.jpg",
-          "keep_flag": 0
+          "keep_flag": 1
         },
         {
           "room_no": 701,
@@ -6616,7 +6616,7 @@
               "week": "【全日1部】",
               "timePrice": [
                 {
-                  "price": "￥2,500～￥4,000",
+                  "price": "￥2,500～￥4,600",
                   "timeZone": "5:00～18:00チェックインより 1時間ご利用"
                 }
               ]
@@ -6625,7 +6625,7 @@
               "week": "【全日2部】",
               "timePrice": [
                 {
-                  "price": "￥2,700～￥4,200",
+                  "price": "￥2,700～￥4,800",
                   "timeZone": "18:00～翌 2:00チェックインより 1時間ご利用"
                 }
               ]
@@ -6640,7 +6640,7 @@
               "week": "【月～木曜日1部】",
               "timePrice": [
                 {
-                  "price": "￥3,400～￥5,100",
+                  "price": "￥3,400～￥5,500",
                   "timeZone": "5:00～18:00チェックインより 1時間30分ご利用"
                 }
               ]
@@ -6649,7 +6649,7 @@
               "week": "【月～木曜日2部】",
               "timePrice": [
                 {
-                  "price": "￥4,100～￥5,800",
+                  "price": "￥4,100～￥6,300",
                   "timeZone": "18:00～翌 1:30チェックインより 1時間30分ご利用"
                 }
               ]
@@ -6658,7 +6658,7 @@
               "week": "【金曜日・祝前日1部】",
               "timePrice": [
                 {
-                  "price": "￥3,400～￥5,100",
+                  "price": "￥3,400～￥5,500",
                   "timeZone": "5:00～18:00チェックインより 1時間30分ご利用"
                 }
               ]
@@ -6667,7 +6667,7 @@
               "week": "【金曜日・祝前日2部】",
               "timePrice": [
                 {
-                  "price": "￥4,300～￥5,800",
+                  "price": "￥4,300～￥6,300",
                   "timeZone": "18:00～翌 1:30チェックインより 1時間30分ご利用"
                 }
               ]
@@ -6676,7 +6676,7 @@
               "week": "【土曜日・連休中日】",
               "timePrice": [
                 {
-                  "price": "￥4,300～￥5,800",
+                  "price": "￥4,300～￥6,300",
                   "timeZone": "5:00～翌 1:30チェックインより 1時間30分ご利用"
                 }
               ]
@@ -6685,7 +6685,7 @@
               "week": "【日曜日・祝日】",
               "timePrice": [
                 {
-                  "price": "￥4,300～￥5,800",
+                  "price": "￥4,300～￥6,300",
                   "timeZone": "5:00～翌 1:30チェックインより 1時間30分ご利用"
                 }
               ]
@@ -6700,7 +6700,7 @@
               "week": "【月～木曜日1部】",
               "timePrice": [
                 {
-                  "price": "￥4,300～￥7,000",
+                  "price": "￥4,300～￥7,300",
                   "timeZone": "5:00～18:00チェックインより 2時間ご利用"
                 }
               ]
@@ -6709,7 +6709,7 @@
               "week": "【月～木曜日2部】",
               "timePrice": [
                 {
-                  "price": "￥4,500～￥7,700",
+                  "price": "￥4,500～￥8,000",
                   "timeZone": "18:00～翌 1:00チェックインより 2時間ご利用"
                 }
               ]
@@ -6718,7 +6718,7 @@
               "week": "【金曜日・祝前日1部】",
               "timePrice": [
                 {
-                  "price": "￥4,300～￥7,000",
+                  "price": "￥4,300～￥7,300",
                   "timeZone": "5:00～18:00チェックインより 2時間ご利用"
                 }
               ]
@@ -6727,7 +6727,7 @@
               "week": "【金曜日・祝前日2部】",
               "timePrice": [
                 {
-                  "price": "￥5,100～￥7,800",
+                  "price": "￥5,100～￥8,100",
                   "timeZone": "18:00～翌 1:00チェックインより 2時間ご利用"
                 }
               ]
@@ -6736,7 +6736,7 @@
               "week": "【土曜日・連休中日】",
               "timePrice": [
                 {
-                  "price": "￥5,100～￥7,700",
+                  "price": "￥5,100～￥8,000",
                   "timeZone": "5:00～翌 1:00チェックインより 2時間ご利用"
                 }
               ]
@@ -6745,7 +6745,7 @@
               "week": "【日曜日・祝日】",
               "timePrice": [
                 {
-                  "price": "￥5,100～￥7,700",
+                  "price": "￥5,100～￥8,000",
                   "timeZone": "5:00～翌 1:00チェックインより 2時間ご利用"
                 }
               ]
@@ -6760,7 +6760,7 @@
               "week": "【月～木曜日1部】",
               "timePrice": [
                 {
-                  "price": "￥7,400～￥9,700",
+                  "price": "￥7,800～￥10,200",
                   "timeZone": "5:00～18:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6769,7 +6769,7 @@
               "week": "【月～木曜日2部】",
               "timePrice": [
                 {
-                  "price": "￥7,900～￥10,500",
+                  "price": "￥8,200～￥11,000",
                   "timeZone": "18:00～24:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6778,7 +6778,7 @@
               "week": "【金曜日・祝前日1部】",
               "timePrice": [
                 {
-                  "price": "￥7,400～￥9,700",
+                  "price": "￥7,800～￥10,200",
                   "timeZone": "5:00～18:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6787,7 +6787,7 @@
               "week": "【金曜日・祝前日2部】",
               "timePrice": [
                 {
-                  "price": "￥8,200～￥10,500",
+                  "price": "￥8,600～￥11,000",
                   "timeZone": "18:00～24:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6796,7 +6796,7 @@
               "week": "【土曜日・連休中日】",
               "timePrice": [
                 {
-                  "price": "￥8,200～￥10,500",
+                  "price": "￥8,600～￥11,000",
                   "timeZone": "5:00～24:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6805,7 +6805,7 @@
               "week": "【日曜日・祝日1部】",
               "timePrice": [
                 {
-                  "price": "￥8,200～￥10,500",
+                  "price": "￥8,600～￥11,000",
                   "timeZone": "5:00～18:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6814,7 +6814,7 @@
               "week": "【日曜日・祝日2部】",
               "timePrice": [
                 {
-                  "price": "￥7,400～￥9,700",
+                  "price": "￥7,800～￥10,200",
                   "timeZone": "18:00～24:00チェックインより 3時間ご利用"
                 }
               ]
@@ -6829,7 +6829,7 @@
               "week": "【月～金・祝前日（A・Bタイプは7時間）】",
               "timePrice": [
                 {
-                  "price": "￥9,200～￥10,900",
+                  "price": "￥9,600～￥10,900",
                   "timeZone": "5:00～15:00の間で最大 10時間ご利用"
                 }
               ]
