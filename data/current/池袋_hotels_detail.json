@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-27T06:51+09:00"
+    "generatedAt": "2026-11-27T13:02+09:00"
   },
   "hotels": [
     {
@@ -223,32 +223,7 @@
         "count": 72
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
-            "plan_type": "休憩",
-            "room_rank_name": "バリューB(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(禁煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          },
-          {
-            "plan_name": "【当日限定】デイユースプラン 昼の部 (土・日・祝)",
-            "plan_type": "休憩",
-            "room_rank_name": "モデレート(喫煙)",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          }
-        ],
+        "details": [],
         "max_stock": null,
         "has_vacancy": null
       }
@@ -899,9 +874,9 @@
             "plan_name": "【金曜当日限定プラン】スタンダードルーム☆リニューアル記念 ご宿泊プラン☆",
             "plan_type": "宿泊",
             "room_rank_name": "スタンダード",
-            "stock_text": "あと1室",
-            "stock_count": 1,
-            "charge_text": "￥11,800"
+            "stock_text": "売切れ",
+            "stock_count": null,
+            "charge_text": "売切れ"
           },
           {
             "plan_name": "【金曜当日限定プラン】モデレートルーム☆リニューアル記念 ご宿泊プラン☆",
@@ -2651,16 +2626,7 @@
         "count": 8
       },
       "vacancy": {
-        "details": [
-          {
-            "plan_name": "モデレートルーム・金曜・祝前日限定！22時チェックイン当日素泊まり予約プラン！",
-            "plan_type": "宿泊",
-            "room_rank_name": "モデレート",
-            "stock_text": "売切れ",
-            "stock_count": null,
-            "charge_text": "売切れ"
-          }
-        ],
+        "details": [],
         "max_stock": null,
         "has_vacancy": null
       }
@@ -16303,33 +16269,12 @@
     },
     {
       "url": "https://happyhotel.jp/hotels/543903",
-      "id": 543903,
-      "name": "ときわ",
-      "address": "東京都豊島区池袋2-43-8",
+      "id": null,
+      "name": null,
+      "address": null,
       "prices": [],
       "rooms": [],
-      "access": {
-        "stations": [
-          {
-            "station": "池袋駅",
-            "walk_min": 5
-          }
-        ],
-        "latitude": "35.733697",
-        "longitude": "139.710216",
-        "map_url": "https://www.google.com/maps?q=35.733697,139.710216",
-        "raw_access_text": null
-      },
-      "amenities": {},
-      "review": {
-        "score": null,
-        "count": null
-      },
-      "vacancy": {
-        "details": [],
-        "max_stock": null,
-        "has_vacancy": null
-      }
+      "error": "request_error:HTTPSConnectionPool(host='happyhotel.jp', port=443): Read timed out. (read timeout=10)"
     },
     {
       "url": "https://happyhotel.jp/hotels/543901",
